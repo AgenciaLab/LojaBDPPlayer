@@ -1,46 +1,60 @@
 <header>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 col-xs-12">
-                <a href="{{ links.home }}" class="site-logo" data-tray-tst="logotipo_loja">
-                    {{ Image('logo') }}
+    <div class="hdr_Info">
+        <div class="hdr_InfoLeft col-md-6">
+            <span>OFFICIAL PRODUCTS LICENSED</span>
+        </div>
+        <div class="hdr_InfoRight col-md-6">
+            <span>@Bdpplayer All Rights Reserved</span>
+        </div>
+    </div>
+
+    <div class="hdr_AreaLogo">
+    <div class="noSpacing col-md-3">
+        <div class="noSpacing col-md-8">
+            <a onclick="openMenu()">
+                <div class="hdr_AreaButton">
+                    <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
+                    <span>MENU</span>
+                </div>            
+            </a>
+
+            {% element 'snippets/menu' %}
+
+            {% element 'snippets/brands' %}
+                        
+        </div>
+        <div class="areaBusca col-md-4">
+            <div id="areaMenu">
+                <a onclick="openSearch()">
+                    <div class="hdr_AreaButton">                
+                        <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>
+                        <input type="text" placeholder="BUSCAR"/>
+                    </div>            
                 </a>
-            </div>
-            
-            
-            <div class="col-sm-9 col-xs-12">
-                {% element 'snippets/customer' %}
-                <div class="row">
-                    {% if settings.structure == 1 %}
-                    <div class="col-md-9 col-sm-8 hidden-xs">
-                    {% elseif settings.structure == 2 %}
-                    <div class="col-md-8 col-sm-8 hidden-xs">
-                    {% endif %}    
-                        {% element 'snippets/search' %}
-                    </div>
-                    
-                    {% if settings.structure == 1 %}
-                    <div class="col-md-3 col-sm-4 hidden-xs">
-                    {% elseif settings.structure == 2 %}
-                    <div class="col-md-4 col-sm-4 hidden-xs">
-                    {% endif %} 
-                        {% element 'snippets/cart' %}
-                    </div>
-                </div>
-            </div>
-            <div class="wrapper-nav clearfix visible-xs-block">
-                <div class="col-xs-2">
-                    <button class="trigger-menu">
-                        <img src="{{ asset('img/menu.svg') }}" alt="Menu">
-                    </button>
-                </div>
-                <div class="col-xs-8">
-                    {% element 'snippets/search' %}
-                </div>
-                <div class="col-xs-2 wrapp-cart">
-                    {% element 'snippets/cart' %}
-                </div>
             </div>
         </div>
     </div>
+    <div class="col-md-6">
+        <img class="img-responsive" src="{{ asset('img/assets/logo.png') }}'" alt=""/>
+    </div>
+    <div class="col-md-3">
+        <div class="AreaBotaoLogin col-md-6">
+            <a onclick="showLogin()">
+                <div class="hdr_AreaButton">
+                    <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                    <span>LOGIN</span>
+                </div>            
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a>
+                <div class="hdr_AreaButton">                
+                    <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
+                    <span>CARRINHO</span>
+                </div>            
+            </a>
+        </div>
+        {% element 'snippets/flyoutCart' %}
+    </div>
+</div>
 </header>

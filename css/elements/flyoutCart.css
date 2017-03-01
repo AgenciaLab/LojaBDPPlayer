@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/02/2017, 15:21:34
+    Author     : MarceloMacedo
+*/
+
+.fly_Area {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    min-width: 420px;
+    height: 420px;
+    background: #252525;
+    top: 150px;
+    right: -400px;
+    font-family: OswaldBold;
+    display: none;
+}
+
+.fly_header a {
+    color: #fff;
+}
+
+.fly_header {
+    height: 100px;
+}
+
+.flyMenu {
+    height: 10px;
+    width: 100%;
+    text-align: center;    
+}
+
+.flyMenu span {
+    padding-top: 15px;
+    line-height: 100px;
+}
+
+.Selected {
+    background-color: #fff02a;
+}
+
+.UnSelected {
+    background-color: #5c5c5c;
+}
+
+.fly_AreaInput {
+    max-width: 380px;
+    margin: 5px auto;
+}
+
+.fly_AreaInput input[type="email"],
+.fly_AreaInput input[type="text"],
+.fly_AreaInput input[type="password"] {
+    margin-bottom: 10px;
+    height: 40px;
+    border-radius: 0px;
+}
+
+.fly_AreaInput button {
+    width: 100%;
+    height: 45px;
+    margin-top: 15px;
+    background-color: #fff02a;
+    color: #070003;
+    border: none;
+}
+
+.fly_AreaInput .buttonFb { 
+    width: 100%;
+    height: 45px;
+    margin-top: 15px;
+    background-color: #3b5b95;
+    color: #fff;
+    border: none;
+}
+
+.fly_AreaInput span {
+    line-height: 40px;   
+}
+
+.fly_AreaInput a {
+    text-decoration: underline;
+    color: #fff02a;  
+    font-family: OxygenRegular;
+    font-size: 10pt;
+}
+
+.checkbox label {
+    color: #fff;
+}

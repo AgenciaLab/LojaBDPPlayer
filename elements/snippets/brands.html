@@ -1,0 +1,10 @@
+<div id="mrc_Marcas" class="areaBusca areaPesquisa" data-bind="event: { mouseout: funcoes.sairMenuMarcas">
+    <div class="mrc_Container" data-bind="foreach: variables.marcas">
+        <div class="mrc_Area noSpacing col-md-4"  data-bind="event: { mouseover: $parent.funcoes.mouseOver.bind($data, $index()), mouseout: $parent.funcoes.mouseLeave.bind($data, $index()) }, attr: {'id': 'minhaBox' + $index() }">
+            <div class="mrc_AreaImage">
+                <img class="img-responsive" data-bind="attr: { src: $data }"/>
+            </div>
+        </div>        
+    </div>
+</div>
+

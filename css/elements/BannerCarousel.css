@@ -1,0 +1,105 @@
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition-property: opacity;
+        }
+        
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .carousel-control {
+        z-index: 2;
+    }
+}
+
+.carousel, 
+.carousel-inner, 
+.carousel-inner .item {
+    height: 100%;
+    min-height: 100%;
+}
+.left {
+    width: 12%;
+}
+.right {
+    width: 12%;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    z-index: 15;
+    width: 30%;
+    margin-left: -12%;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+.carousel-indicators .active {
+    height: 3px;
+}
+
+.carousel-indicators .active .Selected {
+    background: red !important;
+}
+
+.tabBannerHome{
+    width: 25% !important;
+}
+
+.tabBannerHome .flyMenu{
+    height: 3px;
+}
+
+.carousel-caption {
+    position: absolute;
+    left: 25%;
+    right: 35%;
+    bottom: 20px;
+    top: 23%;
+    z-index: 10;
+    /* padding-top: 20px; */
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+.captionFirst h4, h3{
+    float:right;
+    
+    padding: 0;
+}
+.captionFirst h3 {
+    margin: 0;
+}
+
+.btn-comprarAgora {
+    float: right;
+    width: 170px;
+    height: 35px;
+    padding: 8px 0 0 0;
+    text-align: center;
+    border: 1px solid #fff;
+    font-size: smaller;
+    margin: 9px 0;
+    color:#fff;
+}

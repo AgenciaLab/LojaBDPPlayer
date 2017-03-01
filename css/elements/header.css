@@ -1,0 +1,81 @@
+.hdr_Info {
+    background-color: #070003;
+    color: #a49919;
+    height: 30px;
+    font-family: ArialNarrow;
+    border-bottom: 1px solid #a49919;
+}
+
+.hdr_InfoRight {
+    text-align: right;
+}
+
+.hdr_InfoLeft {
+    text-align: left;
+}
+
+.hdr_Info span {
+    font-size: 10pt;
+    line-height: 30px;
+}
+
+.hdr_AreaLogo {
+    background-color: #070003;
+    color: #a49919;
+    height: 150px;    
+}
+
+.hdr_AreaLogo img {
+    margin: 40px auto;    
+}
+
+.hdr_AreaButton {
+    margin: 20px auto; 
+    max-width: 250px;
+    text-align: center;
+    height: 100%;
+    font-family: OswaldBold;
+}
+
+.hdr_AreaButton img {
+}
+
+.hdr_AreaButton input {
+    position: absolute;
+    top: 52px;
+    left: 60px;
+    color: #000;
+    width: 160px;
+    height: 40px;
+    padding: 0px 5px;
+    border-bottom: 2px solid #a49919;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    display: none;
+}
+
+.hdr_AreaButton span {
+    margin-left: 10px;
+    color: #fff;
+    font-size: 10pt;
+    vertical-align: middle;
+}
+
+#areaMenu {
+    position: absolute;
+    left: 0px;
+    width: 260px;
+        padding-bottom: 28px;
+}
+
+#imgSearch {
+    float: left;
+    margin-left: 20px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    opacity: 1 !important;
+    color: #000;
+}

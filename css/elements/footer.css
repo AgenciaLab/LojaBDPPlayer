@@ -1,0 +1,128 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01/03/2017, 10:24:35
+    Author     : MarceloMacedo
+*/
+
+.rdp_Faixa {
+    height: 80px;
+}
+
+.rdp_Area {
+    background-color: #070003;
+}
+
+.rdp_Conteudo {
+    padding: 20px 0px;
+    height: 60px;
+}
+
+.rdp_Conteudo img {
+    float: left;
+    margin-top: 3px;
+}
+
+
+
+.rdp_ConteudoTexto h5 {
+    line-height: 25px;
+    font-size: 10pt;
+    font-weight: 100;
+}
+
+.rdp_ConteudoTexto h6 {
+    line-height: 12px;
+    font-size: 8pt;
+    font-weight: 100;
+}
+
+.rdp_ConteudoTextoB {
+    color: #fff;
+    margin-left: 10px;
+    font-family: OxygenLight;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.rdp_ConteudoTextoB h5 {
+    line-height: 5px;
+    font-size: 10pt;
+    font-weight: 100;
+}
+
+.rdp_ConteudoTextoB h6 {
+    line-height: 13px;
+    font-size: 8pt;
+    font-weight: 100;
+}
+
+.rdp_Container {
+    width: 90%;
+    margin: auto;
+}
+
+.rdp_ConteudoPrimary {
+    height: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.rdp_ConteudoPrimary {
+    font-family: OxygenLight;
+    color: #fff;
+}
+
+.rdp_ConteudoPrimary h5 {
+    font-size: 9pt;
+    line-height: 20px;
+}
+
+.rdp_ConteudoPrimary span {
+    font-size: 10pt;
+    line-height: 20px;
+    font-family: OswaldBold;
+}
+
+.rdp_ConteudoPrimary img {
+    padding: 5px;
+}
+
+
+.rdp_ConteudoPrimary h4 {
+    font-size: 22pt;
+    font-family: OswaldBold;
+    letter-spacing: -2px;
+    line-height: 27px;
+}
+
+@media (max-width: 1400px)
+{
+    .rdp_AreaImagens {
+        max-width: 80%;
+    }
+    .rdp_ConteudoTexto {
+        float: left;
+        color: #fff;
+        margin-left: 10px;
+        font-family: OxygenLight;
+    }
+}
+
+@media (min-width: 1400px)
+{
+    .rdp_AreaImagens {
+        max-width: 65%;
+    }
+    .rdp_ConteudoTexto {
+        float: left;
+        color: #fff;
+        margin-left: 20px;
+        font-family: OxygenLight;
+    }
+}
+
+
