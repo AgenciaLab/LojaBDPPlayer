@@ -1,0 +1,14 @@
+{% set categorias = [41,43,14,45,47,49,51] %} 
+{% for level1 in categories %} 
+    {% if level1.id in categorias %}
+    <li>
+        <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">
+            <div class="mnu_AreaCategoria">
+                <div class="mnu_Link">
+                    <span>{{ level1.name }}</span>
+                </div>
+            </div>
+        </a>
+    </li>
+    {% endif %} 
+{% endfor %}

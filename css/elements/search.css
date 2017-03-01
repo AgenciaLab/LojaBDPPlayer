@@ -1,0 +1,30 @@
+.search {
+    margin-top: 40px;
+    width: 90%;
+}
+
+
+#btnOpenSearch {
+    width: 90%;
+    margin: auto;
+}
+
+.search .search-key {
+    background: #fff02a;
+    border: none;
+    border-right: none;
+    border-bottom: 2px solid #000;
+    font-size: 1.5rem;
+    height: 55px;
+    padding: 19px 10px;
+    width: 100%;
+}
+
+.search .search-button {
+    background: #fff02a;
+    color: #000;
+}
+
+.search-button svg {
+    fill: #000;
+}

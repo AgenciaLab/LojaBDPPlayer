@@ -18,19 +18,22 @@
                 </div>            
             </a>
 
-            {% element 'snippets/menu' %}
-
-            {% element 'snippets/brands' %}
+            <div class="areaDoMenu">
+                {% element 'snippets/menu' %}
+                {% element 'snippets/brands' %}
+            </div>
                         
         </div>
         <div class="areaBusca col-md-4">
-            <div id="areaMenu">
-                <a onclick="openSearch()">
+            <div id="areaMenu" class="areaPesquisa">
+                <a onclick="openSearch()" id="btnAbrirMarcas">
                     <div class="hdr_AreaButton">                
-                        <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>
-                        <input type="text" placeholder="BUSCAR"/>
+                        <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
                     </div>            
                 </a>
+                <div id="btnOpenSearch">
+                    {% element 'snippets/search' %}
+                </div>
             </div>
         </div>
     </div>
