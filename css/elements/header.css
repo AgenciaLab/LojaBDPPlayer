@@ -83,3 +83,27 @@
     opacity: 1 !important;
     color: #000;
 }
+
+.owl-pagination {
+        position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.owl-theme .owl-controls .owl-page {
+    background:rgba(0, 0, 0, 0.5);
+    width: 100px;
+    margin-left: 20px;
+}
+
+.owl-theme .owl-controls .owl-page span {
+    background: none!important;
+    width: 100px;
+    margin: 0px!important;
+}
+
+
+.active {
+    background: #fff02a!important;
+}

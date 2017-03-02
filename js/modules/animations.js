@@ -1,16 +1,24 @@
-(function(jQuery){    
-    jQuery(document).ready( function(){
-        jQuery(".areaDoMenu").on("mouseleave", function(e) {
+(function (jQuery) {
+    jQuery(document).ready(function () {
+
+        jQuery("#owl-demo").owlCarousel({
+            items: 1,
+            loop: true,
+            autoPlay: 5000,
+            stopOnHover: false
+        });
+
+        jQuery(".areaDoMenu").on("mouseleave", function (e) {
 
             if (
                 (e.toElement.className !== "mnu_Area") &&
                 (e.toElement.className !== "mnu_Link") &&
-                (e.toElement.className !== "mnu_AreaCategoria categoriaSlide")  &&
-                (e.toElement.className !== "areaPesquisa")                                
-            ){
+                (e.toElement.className !== "mnu_AreaCategoria categoriaSlide") &&
+                (e.toElement.className !== "areaPesquisa")
+            ) {
                 closeMenu();
             }
-        });     
+        });
     })
 })(jQuery);
 
@@ -28,14 +36,12 @@ function mouseLeaveCategorias() {
 ;
 function changeMenuIcon() {
 
-    if (jQuery("#mrc_Marcas").css('display') === "block")
-    {
+    if (jQuery("#mrc_Marcas").css('display') === "block") {
         //jQuery("#imgSearch").attr("src", "img/btnSearchHover.png");
         jQuery("#areaMenu").css("background", "#fff02a");
         jQuery(".hdr_AreaButton input").css("display", "block");
         jQuery('#overlay-back').fadeIn(500);
-    } else
-    {
+    } else {
         //jQuery("#imgSearch").attr("src", "img/btnSearch.png");
         jQuery("#areaMenu").css("background", "none");
         jQuery(".hdr_AreaButton input").css("display", "none");
@@ -45,74 +51,74 @@ function changeMenuIcon() {
 }
 ;
 function openMenu() {
-    
+
     var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
     jQuery(".mnu_Area").css('display', 'block');
     jQuery(".mnu_Area").animate({
         width: "100%",
         height: altura
     }, {
-        duration: 200,
-        specialEasing: {
-            width: 'linear'
-        }
-    });
+            duration: 200,
+            specialEasing: {
+                width: 'linear'
+            }
+        });
     jQuery(".mnu_Links").animate({
         width: "100%"
     }, {
-        duration: 200,
-        specialEasing: {
-            width: 'linear'
-        }
-    });
+            duration: 200,
+            specialEasing: {
+                width: 'linear'
+            }
+        });
 
     jQuery('#overlay-back').fadeIn(500);
     setTimeout(
-            jQuery(".mnu_AreaCategoria").addClass("categoriaSlide")
-            , 400);
+        jQuery(".mnu_AreaCategoria").addClass("categoriaSlide")
+        , 400);
 
     setTimeout(
-            function () {
-                jQuery(".mnu_Link").css("display", "block");
-                jQuery(".mnu_Link").animate({marginLeft: "20%"});
-            }
-    , 400);
+        function () {
+            jQuery(".mnu_Link").css("display", "block");
+            jQuery(".mnu_Link").animate({ marginLeft: "20%" });
+        }
+        , 400);
 }
 ;
 
 function openMenuFast() {
-    
+
     var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
     jQuery(".mnu_Area").css('display', 'block');
     jQuery(".mnu_Area").animate({
         width: "100%",
         height: altura
     }, {
-        duration: 0,
-        specialEasing: {
-            width: 'linear'
-        }
-    });
+            duration: 0,
+            specialEasing: {
+                width: 'linear'
+            }
+        });
     jQuery(".mnu_Links").animate({
         width: "100%"
     }, {
-        duration: 0,
-        specialEasing: {
-            width: 'linear'
-        }
-    });
+            duration: 0,
+            specialEasing: {
+                width: 'linear'
+            }
+        });
 
     jQuery('#overlay-back').fadeIn(500);
     setTimeout(
-            jQuery(".mnu_AreaCategoria").addClass("categoriaSlide")
-            , 0);
+        jQuery(".mnu_AreaCategoria").addClass("categoriaSlide")
+        , 0);
 
     setTimeout(
-            function () {
-                jQuery(".mnu_Link").css("display", "block");
-                jQuery(".mnu_Link").animate({marginLeft: "20%"});
-            }
-    , 0);
+        function () {
+            jQuery(".mnu_Link").css("display", "block");
+            jQuery(".mnu_Link").animate({ marginLeft: "20%" });
+        }
+        , 0);
 }
 ;
 
@@ -128,31 +134,31 @@ function openMenuMarcas() {
         width: "100%",
         height: altura
     }, {
-        duration: 0,
-        specialEasing: {
-            width: 'linear'
-        }
-    });
+            duration: 0,
+            specialEasing: {
+                width: 'linear'
+            }
+        });
     jQuery(".mnu_Links").animate({
         width: "100%"
     }, {
-        duration: 0,
-        specialEasing: {
-            width: 'linear'
-        }
-    });
+            duration: 0,
+            specialEasing: {
+                width: 'linear'
+            }
+        });
 
     jQuery('#overlay-back').fadeIn(0);
     setTimeout(
-            jQuery(".mnu_AreaCategoria").addClass("categoriaSlide")
-            , 0);
+        jQuery(".mnu_AreaCategoria").addClass("categoriaSlide")
+        , 0);
 
     setTimeout(
-            function () {
-                jQuery(".mnu_Link").css("display", "block");
-                jQuery(".mnu_Link").animate({marginLeft: "20%"});
-            }
-    , 0);
+        function () {
+            jQuery(".mnu_Link").css("display", "block");
+            jQuery(".mnu_Link").animate({ marginLeft: "20%" });
+        }
+        , 0);
 
 
 }
@@ -167,40 +173,36 @@ function closeMenu() {
     jQuery(".mnu_Area").animate({
         width: "0%"
     }, {
-        duration: 400,
-        specialEasing: {
-            width: 'linear'
-        }
-    });
+            duration: 400,
+            specialEasing: {
+                width: 'linear'
+            }
+        });
 
     jQuery(".mnu_Area").css('display', 'none');
     jQuery(".mnu_Link").css("display", "none");
-    jQuery(".mnu_Links").animate({marginLeft: "0%"});
+    jQuery(".mnu_Links").animate({ marginLeft: "0%" });
     jQuery('#overlay-back').fadeOut(500);
 
-    if (jQuery("#mrc_Marcas").css('display') === 'block')
-    {
+    if (jQuery("#mrc_Marcas").css('display') === 'block') {
         jQuery("#mrc_Marcas").css('display', 'none');
     }
     changeMenuIcon();
 }
 ;
-function showLogin()
-{
-    if (jQuery(".fly_Area").css('display') === 'none')
-    {
+function showLogin() {
+    if (jQuery(".fly_Area").css('display') === 'none') {
         escureATela();
         jQuery(".AreaBotaoLogin").css("z-index", "25");
         jQuery(".AreaBotaoLogin").css('background', '#252525');
         jQuery(".fly_Area").css('display', 'block');
-        jQuery(".fly_Area").animate({right: "0px"}, 200);
-    } else
-    {
+        jQuery(".fly_Area").animate({ right: "0px" }, 200);
+    } else {
         clareiaATela();
         jQuery(".AreaBotaoLogin").css("z-index", "0");
         jQuery(".AreaBotaoLogin").css('background', 'none');
         jQuery(".fly_Area").css('display', 'none');
-        jQuery(".fly_Area").animate({right: "-400px"}, 200);
+        jQuery(".fly_Area").animate({ right: "-400px" }, 200);
     }
 
 }
@@ -210,11 +212,10 @@ function hideLogin() {
     jQuery(".AreaBotaoLogin").css("z-index", "0");
     jQuery(".AreaBotaoLogin").css('background', 'none');
     jQuery(".fly_Area").css('display', 'none');
-    jQuery(".fly_Area").animate({right: "-400px"}, 300);
+    jQuery(".fly_Area").animate({ right: "-400px" }, 300);
 }
 
-function showTab(tabActive, tabInative, areaActive, areaInative)
-{
+function showTab(tabActive, tabInative, areaActive, areaInative) {
     if (jQuery('#' + areaActive).css('display', 'none')) {
 
         jQuery('#' + areaActive).css('display', 'block');
@@ -228,8 +229,7 @@ function showTab(tabActive, tabInative, areaActive, areaInative)
 function openSearch() {
 
     var altura = jQuery("#bannerHome").height() / 4;
-    if (jQuery("#mrc_Marcas").css('display') === 'none')
-    {
+    if (jQuery("#mrc_Marcas").css('display') === 'none') {
         openMenuMarcas();
 
         jQuery("#areaMenu").css("z-index", "22");
@@ -252,21 +252,19 @@ function openSearch() {
 jQuery(window).resize(function () {
 
     var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
-    if (jQuery(".mnu_Area").css('display') === "block")
-    {
+    if (jQuery(".mnu_Area").css('display') === "block") {
         jQuery(".mnu_Area").css('display', 'block');
         jQuery(".mnu_Area").animate({
             height: altura
         }, {
-            duration: 0,
-            specialEasing: {
-                width: 'linear'
-            }
-        });
+                duration: 0,
+                specialEasing: {
+                    width: 'linear'
+                }
+            });
     }
 
-    if (jQuery("#mrc_Marcas").css('display') === "block")
-    {
+    if (jQuery("#mrc_Marcas").css('display') === "block") {
         var left = jQuery(".mnu_Area").width();
         var alturaMarcas = jQuery("#bannerHome").height() / 4;
         jQuery(".mrc_Area").css("height", alturaMarcas);
@@ -288,3 +286,22 @@ function fecharMenuMarcas() {
     jQuery(".mnu_AreaCategoria span").first().css("color", "#fff");
 }
 
+function trocaBannerHome() {
+    
+    if (jQuery("#linkBannerA").attr('class') === "areaLinkBannerA active")
+    {
+        jQuery("#linkBannerA").removeClass("active");
+        jQuery("#linkBannerB").addClass("active");
+
+        jQuery(".areaBannerA").css("display", "none");
+        jQuery(".areaBannerB").css("display", "block");
+    }
+    else
+    {
+        jQuery("#linkBannerA").addClass("active");
+        jQuery("#linkBannerB").removeClass("active");
+        jQuery(".areaBannerA").css("display", "block");
+        jQuery(".areaBannerB").css("display", "none");
+    }
+
+}

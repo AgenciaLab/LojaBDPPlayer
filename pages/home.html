@@ -6,13 +6,120 @@ endif %} {% if settings.showcase == "featured" %} {% set showcaseText = "Destaqu
 "top_seller" %}
 <div id="prognoos_popv1"></div>
 {% set products = Products({ 'filter': 'available', 'limit': limitProducts, 'order': {'quantity_sold': 'desc'} }) %} {% else
-%} {% set products = Products({ 'filter': settings.showcase, 'limit': limitProducts, 'order': 'rand' }) %} {% endif %}
+%} {% set products = Products({ 'filter': settings.showcase, 'limit': limitProducts, 'order': 'rand' }) %} {% endif %} {%
+if banner.extra7 %}
 
+<div id="bannerHome">
+  <div id="owl-demo" class="owl-carousel owl-theme">
+    {% for slide in banners.extra7.slides %}
+    <div class="item">
+      <a href="{{ slide.link }}">
+        <img src="{{ slide.image }}" alt="{{ slide.label}}">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
 
-<div id="bannerHome" class="noSpacing col-md-12">
-    <div class="banner_teste"></div>
+<div class="areaBanners row" style="margin-left: 0px; margin-right: 0px">
+  <div class="noSpacing col-md-6">
+    {% if banner.extra8 %}
+    <a href="{{ banners.extra8.link }}" target="{{ banners.extra8.target }}">
+      <img src="{{ banners.extra8.src }}" class="imgBannerEx3" alt="{{ banners.extra8.alt }}">
+    </a>
+    {% endif %}
+  </div>
+  <div class="noSpacing col-md-6">
+    <div class="areaTroca">
+      <div class="noSpacing col-md-6">
+        <a onclick="trocaBannerHome()">
+          <div id="linkBannerA" class="areaLinkBannerA active"><span style="color:transparent">_</span></div>
+        </a>
+      </div>
+      <div class="noSpacing col-md-6">
+        <a onclick="trocaBannerHome()">
+          <div id="linkBannerB" class="areaLinkBannerB"><span style="color:transparent">_</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="areaBannerA">
+      {% if banner.extra9 %}
+      <a href="{{ banners.extra9.link }}" target="{{ banners.extra9.target }}">
+        <img src="{{ banners.extra9.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra9.alt }}">
+      </a>
+      {% endif %}
+    </div>
+    <div class="areaBannerB">
+      {% if banner.extra10 %}
+      <a href="{{ banners.extra10.link }}" target="{{ banners.extra10.target }}">
+        <img src="{{ banners.extra10.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra10.alt }}">
+      </a>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<div class="noSpacing row" style="margin-left: 0px; margin-right: 0px">
+  <div class="noSpacing col-md-4">
+    {% if banner.extra11 %}
+    <a href="{{ banners.extra11.link }}" target="{{ banners.extra11.target }}">
+      <img src="{{ banners.extra11.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra11.alt }}" style="min-width: 100%">
+    </a>
+    {% endif %}
+  </div>
+  <div class="noSpacing col-md-4">
+    {% if banner.extra12 %}
+    <a href="{{ banners.extra12.link }}" target="{{ banners.extra12.target }}">
+      <img src="{{ banners.extra12.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra12.alt }}" style="min-width: 100%">
+    </a>
+    {% endif %}
+  </div>
+  <div class="noSpacing col-md-4">
+    {% if banner.extra13 %}
+    <a href="{{ banners.extra13.link }}" target="{{ banners.extra13.target }}">
+      <img src="{{ banners.extra13.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra13.alt }}" style="min-width: 100%">
+    </a>
+    {% endif %}
+
+    <div class="areaBannerCategory">
+      <div class="areaBannerCategoryContent">
+        <div class="col-md-2">
+          <img src="{{ asset('img/assets/banners/barraEsquerda.png') }}" />
+        </div>
+        <div class="col-md-8"></div>
+        <div class="col-md-2" style="text-align: right">
+          <img src="{{ asset('img/assets/banners/barraDireita.png') }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="noSpacing row" style="margin-left: 0px; margin-right: 0px">
+  Área de Produtos
 </div>
 
 
+<script type="text/javascript">
+                    var params = {};
 
-<div>teste</div>
+                    params["category_id"] = "41";
+                    params["page"] = "1";
+                    params["limit"] = "4";
+                    params["store_id"] = {{ store.id }}
+
+                    $.ajax({
+                      method: "GET",
+                      url: "/web_api/products/",
+                      data: params
+                    }).done(function (response, textStatus, jqXHR) {
+                      console.log(response);
+                    }).fail(function (jqXHR, status, errorThrown) {
+                      var response = $.parseJSON(jqXHR.responseText);
+                      console.log(response);
+                    });
+
+</script>
