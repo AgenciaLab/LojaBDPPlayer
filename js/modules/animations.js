@@ -75,14 +75,14 @@ function openMenu() {
     jQuery('#overlay-back').fadeIn(500);
     setTimeout(
         jQuery(".mnu_AreaCategoria").addClass("categoriaSlide")
-        , 400);
+        , 200);
 
     setTimeout(
         function () {
             jQuery(".mnu_Link").css("display", "block");
             jQuery(".mnu_Link").animate({ marginLeft: "20%" });
         }
-        , 400);
+        , 200);
 }
 ;
 

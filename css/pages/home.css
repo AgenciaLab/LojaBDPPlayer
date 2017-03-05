@@ -70,3 +70,55 @@ body {
     transform: translate(-50%, -50%)
 
 }
+
+
+
+.prd_AreaInfo {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.prd_AreaInfo h4 {
+    font-family: OswaldBold;
+    font-size: 12pt; 
+    margin-bottom: 5px;
+} 
+ 
+.prd_AreaInfo h5 {
+    font-family: OswaldRegular;
+    font-size: 12pt;
+    color: #999999;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.prd_AreaInfo span {
+    color: #0099cc;
+    font-size: 16pt;
+    font-family: OswaldBold;
+}
+
+.prd_AreaInfo h6 {
+    font-family: OswaldRegular;
+    font-size: 12pt;
+    color: #999999;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.prd_loading {
+        background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    display: block;
+    z-index: 999;
+    text-align: center;
+}
+
+.prd_loading span {
+    font-size: 18pt;
+    line-height: 300px;
+    font-family: OswaldBold;
+    color: #c2c2c2;
+}

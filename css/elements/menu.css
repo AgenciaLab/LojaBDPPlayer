@@ -67,7 +67,12 @@ and open the template in the editor.
 
 .mnu_Link {
     display: none; 
-    //margin-left: 20%;
+    font-family: OswaldRegular; 
+    text-transform: uppercase;
+}
+
+.mnu_Link:last-child {
+    color: #e9da26;
 }
 
 .mnu_AreaLinks img {
