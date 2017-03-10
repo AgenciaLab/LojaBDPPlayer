@@ -1,69 +1,102 @@
-<div class="catalog-header">
-    
-    {% if banner.title %}
-        <div class="banner banner-title">
-            {{ banner.title }}
+<div>
+    <div id="bannerHome" class="catalog_Banner">
+        <img class="img-responsive" src="{{ asset('img/assets/categories/vestuario.jpg') }}" />
+    </div>
+    <div class="catalog_Filter">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="catalog_Filter_Item filter">
+                    <div class="catalog_Filter_Area">
+                        <img src="{{ asset('img/assets/icons/iconFilter.png') }}" />
+                        <span>Filtros</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 col-md-offset-1">
+                <div class="catalog_Filter_Item">
+                    <div class="catalog_Filter_Area category">
+                        <span>NOVIDADES</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="catalog_Filter_Item">
+                    <div class="catalog_Filter_Area category">
+                        <span>MASCULINO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="catalog_Filter_Item">
+                    <div class="catalog_Filter_Area category">
+                        <span>FEMININO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="catalog_Filter_Item">
+                    <div class="catalog_Filter_Area category">
+                        <span>INFANTIL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="catalog_Filter_Item">
+                    <div class="catalog_Filter_Area category">
+                        <span>ACESSÓRIOS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="catalog_Filter_Item">
+                    <div class="catalog_Filter_Area category">
+                        <span>INVERNO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="catalog_Filter_Item">
+                    {% if products|length > 0 %}
+                        {% element 'snippets/filter' { 'brands': category.brands } %}
+                    {% endif %}                
+                </div>
+            </div>
         </div>
-    {% endif %}
-    
-    <h2 class="catalog-name">{{ category.name }}</h2>
-    
-    {% if products|length > 0 %}
-    
-        {% if breadcrumb %}
-            {% element 'snippets/breadcrumb' %}
-        {% endif %}
-        
-        <div class="system-filter">
-            {% if settings.compare %}
-                <a href="/loja/comparador.php?loja={{store.id}}&IdDep={{category.id}}" class="button-compare">Comparar Produtos</a>
-            {% endif %}
-            
-            {% element 'snippets/filter' {
-                'brands': category.brands
-            } %}
+        <div class="row">
+            <div class="catalog_AreaFiltros">
+                <div class="catalog_ContentFiltros">
+                    <div class="catalog_Close">
+                        <a><h3>X</h3></a>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-        <div class="pagination">
-            {% element 'snippets/paginate' %}
-        </div>
-        
-    {% endif %} 
-    
+    </div>
 </div>
 
 
 {% if products|length > 0 %}
 
-    <div class="catalog-content row">
-        {% element 'showcase-catalog' {
-            "products": products
-        } %}
-    </div>
+<div class="catalog-content row" style="margin-left: 0px; margin-right: 0px">
+    {% element 'showcase-catalog' { "products": products } %}
+</div>
 
-    <div class="catalog-footer pagination">
-        {% element 'snippets/paginate' %}
-    </div>
 
 {% else %}
-    
-    <div class="catalog-empty">
-        <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
-        <p>Nenhum produto encontrado nessa categoria.</p>
-    </div>
+
+<div class="catalog-empty">
+    <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
+    <p>Nenhum produto encontrado nessa categoria.</p>
+</div>
 
 {% endif %}
 
 <div style="display:none;">
-    {% element 'snippets/history' {
-        'store.id': store.id,
-        'pages.current': pages.current,
-        'category.id': category.id
-    } %}
+    {% element 'snippets/history' { 'store.id': store.id, 'pages.current': pages.current, 'category.id': category.id } %}
 </div>
 
 {% if banner.bottom %}
-    <div class="banner banner-bottom">
-        {{ banner.bottom }}
-    </div>
+<div class="banner banner-bottom">
+    {{ banner.bottom }}
+</div>
 {% endif %}

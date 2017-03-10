@@ -76,6 +76,7 @@ body {
 .prd_AreaInfo {
     margin-top: 20px;
     margin-left: 10px;
+    padding: 0px 5px;
 }
 
 .prd_AreaInfo h4 {
@@ -94,7 +95,7 @@ body {
 
 .prd_AreaInfo span {
     color: #0099cc;
-    font-size: 16pt;
+    font-size: 12pt;
     font-family: OswaldBold;
 }
 
