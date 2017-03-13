@@ -10,14 +10,27 @@
 
         jQuery(".areaDoMenu").on("mouseleave", function (e) {
 
-            if (
-                (e.toElement.className !== "mnu_Area") &&
-                (e.toElement.className !== "mnu_Link") &&
-                (e.toElement.className !== "mnu_AreaCategoria categoriaSlide") &&
-                (e.toElement.className !== "areaPesquisa")
-            ) {
+            if (e.toElement === null)
+            {
                 closeMenu();
             }
+            else
+            {
+                if (e.toElement.className.lenght === 0)
+                {
+                    closeMenu();
+                }
+
+                if (
+                    (e.toElement.className !== "mnu_Area") &&
+                    (e.toElement.className !== "mnu_Link") &&
+                    (e.toElement.className !== "mnu_AreaCategoria categoriaSlide") &&
+                    (e.toElement.className !== "areaPesquisa")
+                ) {
+                    closeMenu();
+                }
+            }
+            
         });
     })
 })(jQuery);
@@ -82,7 +95,7 @@ function openMenu() {
             jQuery(".mnu_Link").css("display", "block");
             jQuery(".mnu_Link").animate({ marginLeft: "20%" });
         }
-        , 200);
+        , 0);
 }
 ;
 
@@ -236,40 +249,38 @@ function openSearch() {
         jQuery("#mrc_Marcas").css('display', 'block');
         jQuery(".mrc_Area").css("height", altura);
 
-        setTimeout(function () {
-            var left = jQuery(".mnu_Area").width();
-            jQuery(".mrc_Container").css("left", left);
-        }, 400);
-
+        var left = jQuery("#hdr_AreaMenu").width();
+        jQuery(".mrc_Container").css("left", left);
+        
         jQuery(".mnu_AreaCategoria").first().css("background", "#fff02a");
         jQuery(".mnu_AreaCategoria").first().css("margin-top", "2px");
         jQuery(".mnu_AreaCategoria").first().css("padding-right", "2px");
         jQuery(".mnu_AreaCategoria span").first().css("color", "#1d1607");
+    }
+    else
+    {
+        fecharMenuMarcas();
     }
 
 }
 
 jQuery(window).resize(function () {
 
-    var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
-    if (jQuery(".mnu_Area").css('display') === "block") {
-        jQuery(".mnu_Area").css('display', 'block');
-        jQuery(".mnu_Area").animate({
-            height: altura
-        }, {
-                duration: 0,
-                specialEasing: {
-                    width: 'linear'
-                }
-            });
-    }
+    setTimeout(
+        function () {
 
-    if (jQuery("#mrc_Marcas").css('display') === "block") {
-        var left = jQuery(".mnu_Area").width();
-        var alturaMarcas = jQuery("#bannerHome").height() / 4;
-        jQuery(".mrc_Area").css("height", alturaMarcas);
-        jQuery(".mrc_Container").css("left", left);
-    }
+            var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
+            if (jQuery(".mnu_Area").css('display') === "block") {
+                jQuery(".mnu_Area").css("height", altura);
+            }
+
+            if (jQuery("#mrc_Marcas").css('display') === "block") {
+                var left = jQuery(".mnu_Area").width();
+                var alturaMarcas = jQuery("#bannerHome").height() / 4;
+                jQuery(".mrc_Area").css("height", alturaMarcas);
+                jQuery(".mrc_Container").css("left", left);
+            }
+        }, 200);
 
 });
 
@@ -284,6 +295,9 @@ function fecharMenuMarcas() {
     jQuery("#mrc_Marcas").css("display", "none");
     jQuery(".mnu_AreaCategoria").first().css("background", "#070003");
     jQuery(".mnu_AreaCategoria span").first().css("color", "#fff");
+    jQuery("#btnOpenSearch").css('display', 'none');
+    jQuery("#btnAbrirMarcas").css('display', 'block');    
+    jQuery("#areaMenu").css('background', '#070003');
 }
 
 function trocaBannerHome() {

@@ -104,6 +104,59 @@ and open the template in the editor.
     line-height: 27px;
 }
 
+@media (max-width: 786px){
+    .rdp_Area {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+
+    .rdp_ConteudoPrimary h4 {
+        font-size: 22pt;
+        font-family: OswaldBold;
+        letter-spacing: -2px;
+        line-height: 30px;
+    }
+
+    .rdp_ConteudoPrimary {
+        text-align: center;
+    }
+
+    .rdp_AreaRedes {
+        margin-top: 30px;
+    }
+
+    .rdp_AreaImagens {
+        width: 100%;
+        height: 100px;
+        margin: auto;
+    }
+
+    .rdp_ConteudoPrimary img {
+        padding: 10px;
+    }
+
+    .rdp_Conteudo {
+        height: 100px;
+    }
+
+    .rdp_ConteudoPrimary span {
+        font-size: 14pt;
+        line-height: 20px;
+        font-family: OswaldBold;
+    }
+
+    .rdp_ConteudoPrimary h5 {
+        font-size: 9pt;
+        line-height: 20px;
+        margin-top:2px;
+    }
+
+    .rdp_AreaLinksSection {
+        margin-bottom: 40px;
+    }
+}
+
 @media (max-width: 1400px)
 {
     .rdp_AreaImagens {

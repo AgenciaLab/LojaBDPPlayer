@@ -32,12 +32,12 @@ if banner.extra7 %}
   </div>
   <div class="noSpacing col-md-6">
     <div class="areaTroca">
-      <div class="noSpacing col-md-6">
+      <div class="noSpacing col-xs-6">
         <a onclick="trocaBannerHome()">
           <div id="linkBannerA" class="areaLinkBannerA active"><span style="color:transparent">_</span></div>
         </a>
       </div>
-      <div class="noSpacing col-md-6">
+      <div class="noSpacing col-xs-6">
         <a onclick="trocaBannerHome()">
           <div id="linkBannerB" class="areaLinkBannerB"><span style="color:transparent">_</span></div>
         </a>
@@ -63,14 +63,14 @@ if banner.extra7 %}
 </div>
 
 <div class="noSpacing row" style="margin-left: 0px; margin-right: 0px">
-  <div class="noSpacing col-md-4">
+  <div class="noSpacing col-md-4 col-xs-6">
     {% if banner.extra11 %}
     <a href="{{ banners.extra11.link }}" target="{{ banners.extra11.target }}">
       <img src="{{ banners.extra11.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra11.alt }}" style="min-width: 100%">
     </a>
     {% endif %}
   </div>
-  <div class="noSpacing col-md-4">
+  <div class="noSpacing col-md-4 col-xs-6">
     {% if banner.extra12 %}
     <a href="{{ banners.extra12.link }}" target="{{ banners.extra12.target }}">
       <img src="{{ banners.extra12.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra12.alt }}" style="min-width: 100%">
@@ -89,7 +89,20 @@ if banner.extra7 %}
         <div class="col-md-2" onclick="trocarCategoria('diminuir')">
           <img src="{{ asset('img/assets/banners/barraEsquerda.png') }}" />
         </div>
-        <div class="col-md-8"></div>
+        <div class="col-md-8" style="    text-align: center;    margin-top: -20px;    height: 80px;     line-height: 80px;">
+
+          {% set categorias = [14,3,4,8,17] %} 
+            {% for level1 in categories %} 
+              {% if level1.id in categorias %}
+                {% if loop.index == 3 %}
+                    <span id="option_{{ loop.index }}_{{ level1.id }}" class="optionDisplay">{{ level1.name }}</span>
+                {% else %}
+                    <span id="option_{{ loop.index }}_{{ level1.id }}" class="notDisplay">{{ level1.name }}</span>
+                {% endif %}    
+              {% endif %}    
+            {% endfor %}
+
+        </div>
         <div class="col-md-2" style="text-align: right" onclick="trocarCategoria('aumentar')">
           <img src="{{ asset('img/assets/banners/barraDireita.png') }}" />
         </div>
@@ -155,17 +168,38 @@ if banner.extra7 %}
 
   function trocarCategoria(acao) {
 
+    var option;
+    
     if (acao === "aumentar")
     {
-      carregarProdutos(41);
+      option = jQuery(".optionDisplay").next();
     }
     else
     {
-        carregarProdutos(17);
+      option = jQuery(".optionDisplay").prev();
     }
+
+    if (typeof option.attr("id") !== "undefined")
+    {
+      jQuery(".optionDisplay").addClass("notDisplay");
+      jQuery(".optionDisplay").removeClass("optionDisplay");
+      jQuery(option).addClass("optionDisplay");
+      jQuery(option).removeClass("notDisplay");
+
+      var optionId = option.attr("id"); 
+      var ordem = optionId.split("_")[1];
+      var id = optionId.split("_")[2];
+
+      carregarProdutos(id);
+    }
+    
   }
 
-  //carregarProdutos(41);
+  var optionId = jQuery(".optionDisplay").attr("id"); 
+  var ordem = optionId.split("_")[1];
+  var id = optionId.split("_")[2];
+
+  carregarProdutos(id);
 
   function carregarProdutos(categoriaId) {
                     var params = {};

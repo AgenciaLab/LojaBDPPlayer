@@ -1,5 +1,5 @@
 <div>
-    <a>
+    <a href="{{ product.link }}">
         <div class="product-image">
             {% if product.images %}
                 <img data-original="{{ product.images[0].large }}" class="lazy" src="{{ asset('img/loading.svg') }}" alt="{{ product.name }}">

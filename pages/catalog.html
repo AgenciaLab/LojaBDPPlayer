@@ -5,7 +5,7 @@
     <div class="catalog_Filter">
         <div class="row">
             <div class="col-md-2">
-                <div class="catalog_Filter_Item filter">
+                <div class="catalog_Filter_Item filter" onclick="filtersClick()" style="cursor: pointer">
                     <div class="catalog_Filter_Area">
                         <img src="{{ asset('img/assets/icons/iconFilter.png') }}" />
                         <span>Filtros</span>
@@ -56,24 +56,46 @@
             </div>
             <div class="col-md-2">
                 <div class="catalog_Filter_Item">
-                    {% if products|length > 0 %}
-                        {% element 'snippets/filter' { 'brands': category.brands } %}
-                    {% endif %}                
+                    {% if products|length > 0 %} {% element 'snippets/filter' { 'brands': category.brands } %} {% endif %}
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
             <div class="catalog_AreaFiltros">
                 <div class="catalog_ContentFiltros">
-                    <div class="catalog_Close">
-                        <a><h3>X</h3></a>
+                    <div class="col-md-1">
+                        <div class="catalog_Close">
+                            <a>
+                                <h3>X</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="catalog_Apply">
+                            <a>
+                                <h3>APLICAR FILTROS</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-1">
+                        <div class="catalog_Search">
+                            <a><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 
+<div class="row">
+    {% element 'snippets/smart_filter' %}
+</div>
 
 {% if products|length > 0 %}
 
@@ -100,3 +122,27 @@
     {{ banner.bottom }}
 </div>
 {% endif %}
+
+<script>
+    function filtersClick() {
+
+        if (jQuery(".catalog_AreaFiltros").css("display") === "none") {
+            jQuery(".catalog_AreaFiltros").css("display", "block");
+
+            jQuery(".catalog_AreaFiltros").animate({
+                height: "100px"
+            }, {
+                    duration: 300,
+                    specialEasing: {
+                        width: 'linear'
+                    }
+                });
+        }
+        else {
+            jQuery(".catalog_AreaFiltros").css("display", "none");
+            jQuery(".catalog_AreaFiltros").css("height", "0px");
+        }
+
+    }
+
+</script>
