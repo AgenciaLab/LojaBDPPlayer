@@ -65,7 +65,29 @@ function changeMenuIcon() {
 ;
 function openMenu() {
 
-    var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
+    var altura = 0;
+            if (jQuery("#bannerHome").height() === null)
+            {
+                if (jQuery("#areaImagem").height() === null)
+                {
+
+                }
+                else
+                {
+                    altura = jQuery("#areaImagem").height()
+                }
+            }
+            else
+            {
+                altura = jQuery("#bannerHome").height();
+            }
+
+            altura = jQuery(".hdr_AreaLogo").height() + altura;
+                if (jQuery(".mnu_Area").css('display') === "block") {
+                    jQuery(".mnu_Area").css("height", altura);
+                }
+
+    var altura = jQuery(".hdr_AreaLogo").height() + altura;
     jQuery(".mnu_Area").css('display', 'block');
     jQuery(".mnu_Area").animate({
         width: "100%",
@@ -101,7 +123,29 @@ function openMenu() {
 
 function openMenuFast() {
 
-    var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
+     var altura = 0;
+            if (jQuery("#bannerHome").height() === null)
+            {
+                if (jQuery("#areaImagem").height() === null)
+                {
+
+                }
+                else
+                {
+                    altura = jQuery("#areaImagem").height()
+                }
+            }
+            else
+            {
+                altura = jQuery("#bannerHome").height();
+            }
+
+            altura = jQuery(".hdr_AreaLogo").height() + altura;
+                if (jQuery(".mnu_Area").css('display') === "block") {
+                    jQuery(".mnu_Area").css("height", altura);
+                }
+
+    var altura = jQuery(".hdr_AreaLogo").height() + altura;
     jQuery(".mnu_Area").css('display', 'block');
     jQuery(".mnu_Area").animate({
         width: "100%",
@@ -138,7 +182,29 @@ function openMenuFast() {
 function openMenuMarcas() {
 
 
-    var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
+     var altura = 0;
+            if (jQuery("#bannerHome").height() === null)
+            {
+                if (jQuery("#areaImagem").height() === null)
+                {
+
+                }
+                else
+                {
+                    altura = jQuery("#areaImagem").height()
+                }
+            }
+            else
+            {
+                altura = jQuery("#bannerHome").height();
+            }
+
+            altura = jQuery(".hdr_AreaLogo").height() + altura;
+                if (jQuery(".mnu_Area").css('display') === "block") {
+                    jQuery(".mnu_Area").css("height", altura);
+                }
+
+    var altura = jQuery(".hdr_AreaLogo").height() + altura;
     jQuery("#btnOpenSearch").css('display', 'block');
     jQuery("#btnAbrirMarcas").css('display', 'none');
     jQuery(".mnu_Area").css('display', 'block');
@@ -241,13 +307,23 @@ function showTab(tabActive, tabInative, areaActive, areaInative) {
 
 function openSearch() {
 
-    var altura = jQuery("#bannerHome").height() / 4;
+    var alturaMarcas = 0;
+
+                if (jQuery("#bannerHome").height() === null)
+                {
+                    alturaMarcas = 150;
+                }
+                else
+                {
+                    alturaMarcas = jQuery("#bannerHome").height() / 4;
+                }
+
     if (jQuery("#mrc_Marcas").css('display') === 'none') {
         openMenuMarcas();
 
         jQuery("#areaMenu").css("z-index", "22");
         jQuery("#mrc_Marcas").css('display', 'block');
-        jQuery(".mrc_Area").css("height", altura);
+        jQuery(".mrc_Area").css("height", alturaMarcas);
 
         var left = jQuery("#hdr_AreaMenu").width();
         jQuery(".mrc_Container").css("left", left);
@@ -269,14 +345,42 @@ jQuery(window).resize(function () {
     setTimeout(
         function () {
 
-            var altura = jQuery(".hdr_AreaLogo").height() + jQuery("#bannerHome").height();
-            if (jQuery(".mnu_Area").css('display') === "block") {
-                jQuery(".mnu_Area").css("height", altura);
+            var altura = 0;
+            if (jQuery("#bannerHome").height() === null)
+            {
+                console.log(jQuery("#areaImagem").height())
+                if (jQuery("#areaImagem").height() === null)
+                {
+
+                }
+                else
+                {
+                    altura = jQuery("#areaImagem").height()
+                }
             }
+            else
+            {
+                altura = jQuery("#bannerHome").height();
+            }
+
+            altura = jQuery(".hdr_AreaLogo").height() + altura;
+                if (jQuery(".mnu_Area").css('display') === "block") {
+                    jQuery(".mnu_Area").css("height", altura);
+                }
 
             if (jQuery("#mrc_Marcas").css('display') === "block") {
                 var left = jQuery(".mnu_Area").width();
-                var alturaMarcas = jQuery("#bannerHome").height() / 4;
+                var alturaMarcas = 0;
+
+                if (jQuery("#bannerHome").height() === null)
+                {
+                    alturaMarcas = 250;
+                }
+                else
+                {
+                    alturaMarcas = jQuery("#bannerHome").height() / 4;
+                }
+
                 jQuery(".mrc_Area").css("height", alturaMarcas);
                 jQuery(".mrc_Container").css("left", left);
             }

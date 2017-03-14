@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : MarceloMacedo
 */
 
+body {
+    background-color: #fff!important;
+}
+
 a:hover {
     cursor: pointer;
     text-decoration: none;

@@ -26,10 +26,6 @@ and open the template in the editor.
     height: 60px;
 }
 
-.rdp_Conteudo img {
-    float: left;
-    margin-top: 3px;
-}
 
 
 
@@ -59,11 +55,7 @@ and open the template in the editor.
     font-weight: 100;
 }
 
-.rdp_ConteudoTextoB h6 {
-    line-height: 13px;
-    font-size: 8pt;
-    font-weight: 100;
-}
+
 
 .rdp_Container {
     width: 90%;
@@ -81,28 +73,16 @@ and open the template in the editor.
     color: #fff;
 }
 
-.rdp_ConteudoPrimary h5 {
-    font-size: 9pt;
-    line-height: 20px;
-}
 
-.rdp_ConteudoPrimary span {
-    font-size: 10pt;
-    line-height: 20px;
-    font-family: OswaldBold;
-}
+
+
 
 .rdp_ConteudoPrimary img {
     padding: 5px;
 }
 
 
-.rdp_ConteudoPrimary h4 {
-    font-size: 22pt;
-    font-family: OswaldBold;
-    letter-spacing: -2px;
-    line-height: 27px;
-}
+
 
 @media (max-width: 786px){
     .rdp_Area {
@@ -168,10 +148,46 @@ and open the template in the editor.
         margin-left: 10px;
         font-family: OxygenLight;
     }
+
+    .rdp_ConteudoPrimary span {
+        font-size: 10pt;
+        line-height: 20px;
+        font-family: OswaldBold;
+    }
+
+    .rdp_ConteudoPrimary h4 {
+        font-size: 22pt;
+        font-family: OswaldBold;
+        letter-spacing: -2px;
+        line-height: 27px;
+    }
+
+    .rdp_ConteudoPrimary h5 {
+        font-size: 9pt;
+        line-height: 20px;
+    }
+
+    .rdp_ConteudoTextoB h6 {
+        line-height: 13px;
+        font-size: 8pt;
+        font-weight: 100;
+    }
+
+    .rdp_Conteudo img {
+        float: left;
+        margin-top: 3px;
+    }
+
 }
 
 @media (min-width: 1400px)
 {
+    .rdp_ConteudoPrimary span {
+        font-size: 12pt;
+        line-height: 24px;
+        font-family: OswaldBold;
+    }
+
     .rdp_AreaImagens {
         max-width: 65%;
     }
@@ -181,6 +197,30 @@ and open the template in the editor.
         margin-left: 20px;
         font-family: OxygenLight;
     }
+
+    .rdp_ConteudoPrimary h4 {
+        font-size: 24pt;
+        font-family: OswaldBold;
+        letter-spacing: -2px;
+        line-height: 30px;
+    }
+
+    .rdp_ConteudoPrimary h5 {
+        font-size: 10pt;
+        line-height: 24px;
+    }
+
+    .rdp_ConteudoTextoB h6 {
+        line-height: 15px;
+        font-size: 10pt;
+        font-weight: 100;
+    }
+
+    .rdp_Conteudo img {
+        float: left;
+        margin-top: 8px;
+    }
+
 }
 
 

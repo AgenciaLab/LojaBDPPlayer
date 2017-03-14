@@ -60,12 +60,6 @@
     display: none;
 }
 
-.hdr_AreaButton span {
-    margin-left: 10px;
-    color: #fff;
-    font-size: 10pt;
-    vertical-align: middle;
-}
 
 #areaMenu {
     position: absolute;
@@ -114,7 +108,7 @@
     }
 }
 
-@media (min-width: 768px)
+@media (min-width: 768px) and (max-width: 1400px)
 {
     .owl-theme .owl-controls .owl-page {
         background:rgba(0, 0, 0, 0.5); 
@@ -122,4 +116,22 @@
         margin-left: 20px;
         height: 10px;
     }
+
+    .hdr_AreaButton span {
+        margin-left: 10px;
+        color: #fff;
+        font-size: 10pt;
+        vertical-align: middle;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .hdr_AreaButton span {
+        margin-left: 10px;
+        color: #fff;
+        font-size: 14pt;
+        vertical-align: middle;
+    }
+
 }
