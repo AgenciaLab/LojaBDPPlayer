@@ -66,11 +66,13 @@ function changeMenuIcon() {
 function openMenu() {
 
     var altura = 0;
+
+    
             if (jQuery("#bannerHome").height() === null)
             {
                 if (jQuery("#areaImagem").height() === null)
                 {
-
+                    altura = 1200;
                 }
                 else
                 {
@@ -81,6 +83,7 @@ function openMenu() {
             {
                 altura = jQuery("#bannerHome").height();
             }
+
 
             altura = jQuery(".hdr_AreaLogo").height() + altura;
                 if (jQuery(".mnu_Area").css('display') === "block") {
@@ -124,11 +127,13 @@ function openMenu() {
 function openMenuFast() {
 
      var altura = 0;
+
+    
             if (jQuery("#bannerHome").height() === null)
             {
                 if (jQuery("#areaImagem").height() === null)
                 {
-
+                    altura = 1200;
                 }
                 else
                 {
@@ -140,12 +145,8 @@ function openMenuFast() {
                 altura = jQuery("#bannerHome").height();
             }
 
-            altura = jQuery(".hdr_AreaLogo").height() + altura;
-                if (jQuery(".mnu_Area").css('display') === "block") {
-                    jQuery(".mnu_Area").css("height", altura);
-                }
 
-    var altura = jQuery(".hdr_AreaLogo").height() + altura;
+            altura = jQuery(".hdr_AreaLogo").height() + altura;
     jQuery(".mnu_Area").css('display', 'block');
     jQuery(".mnu_Area").animate({
         width: "100%",
@@ -183,11 +184,13 @@ function openMenuMarcas() {
 
 
      var altura = 0;
+
+    
             if (jQuery("#bannerHome").height() === null)
             {
                 if (jQuery("#areaImagem").height() === null)
                 {
-
+                    altura = 1200;
                 }
                 else
                 {
@@ -199,12 +202,8 @@ function openMenuMarcas() {
                 altura = jQuery("#bannerHome").height();
             }
 
-            altura = jQuery(".hdr_AreaLogo").height() + altura;
-                if (jQuery(".mnu_Area").css('display') === "block") {
-                    jQuery(".mnu_Area").css("height", altura);
-                }
 
-    var altura = jQuery(".hdr_AreaLogo").height() + altura;
+            altura = jQuery(".hdr_AreaLogo").height() + altura;
     jQuery("#btnOpenSearch").css('display', 'block');
     jQuery("#btnAbrirMarcas").css('display', 'none');
     jQuery(".mnu_Area").css('display', 'block');

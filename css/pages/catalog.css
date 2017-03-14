@@ -12,13 +12,7 @@
     display:  none;
 }
 
-.filtro-ordem {
-        float: left;
-    color: #fff;
-    margin-top: 28px;
-    font-size: 8pt;
-    margin-left: 10px;
-}
+
 
 .catalog_Filter_Item select {
         position: absolute;
@@ -40,14 +34,7 @@
     float: left;
 }
 
-.catalog_Filter_Area span {
-    float: left;
-    font-size: 11pt;
-    font-family: OswaldRegular;
-    margin-left: 12px;
-    line-height: 22px;
-    text-transform: uppercase;
-}
+
 
 .filter {
     background-color: #ffff33;
@@ -122,4 +109,93 @@
     width: 100%;
     line-height: 44px;
     font-family: OswaldRegular;
+}
+
+@media (max-width: 1400px) {
+
+    
+
+    .catalog_Filter_Area span {
+        float: left;
+        font-size: 11pt;
+        font-family: OswaldRegular;
+        margin-left: 12px;
+        line-height: 22px;
+        text-transform: uppercase;
+    }
+
+    .filtro-ordem {
+        float: left;
+        color: #fff;
+        margin-top: 28px;
+        font-size: 8pt;
+        margin-left: 10px;
+    }
+
+    #select_ordem {
+        margin-left: 5px;
+        border-radius: 0;
+        display: inline-block;
+        font: 600 12px 'OxygenRegular',sans-serif;
+        margin: 0;
+        width: auto;
+        height: 34px;
+        padding: 6px 12px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        color: #555;
+    }
+
+}
+
+@media (min-width: 1400px) {
+
+    .product-payment-catalog, .product-payment-catalog span {
+        font-family: OswaldRegular;
+        font-size: 11pt;
+        color: #999999;
+        margin-bottom: 5px;
+        line-height: 8px;
+    }
+
+    .product-price-catalog span, .price-promotion-catalog  {
+        color: #0099cc;
+        font-size: 2rem;
+        font-family: OswaldBold;
+    }
+
+    .catalog_Filter_Area span {
+        float: left;
+        font-size: 12pt;
+        font-family: OswaldRegular;
+        margin-left: 12px;
+        line-height: 26px;
+        text-transform: uppercase;
+    }
+
+    .filtro-ordem {
+        float: left;
+        color: #fff;
+        margin-top: 28px;
+        font-size: 8pt;
+        margin-left: 30px;
+        font-family: OswaldRegular;
+        letter-spacing: 1px;
+    }
+
+    #select_ordem {
+        margin-left: 5px;
+        border-radius: 0;
+        display: inline-block;
+        font: 600 12px 'OxygenRegular',sans-serif;
+        margin: 0;
+        width: auto;
+        height: 34px;
+        padding: 6px 13px;
+        background-color: #000;
+        border: none;
+        color: #fff;
+        margin-top: -9px;
+    }
+    
 }

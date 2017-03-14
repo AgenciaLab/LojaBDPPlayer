@@ -430,19 +430,7 @@ input::-webkit-calendar-picker-indicator {
     margin: auto;
 }
 
-#select_ordem {
-        margin-left: 5px;
-    border-radius: 0;
-    display: inline-block;
-    font: 600 12px 'OxygenRegular',sans-serif;
-    margin: 0;
-    width: auto;
-    height: 34px;
-    padding: 6px 12px;
-        background-color: #fff;
-    border: 1px solid #ccc;
-    color: #555;
-}
+
 
 #catalog_OrganizarLbl {
     color: #433f3f;
@@ -846,6 +834,23 @@ input::-webkit-calendar-picker-indicator {
         font-size: 16pt;
     }
 
+    .texto_Formas {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .texto_Formas h2 {
+        font-size: 2rem;
+    }
+
+    .selectFormasPgto {
+        padding: 10px 5px;
+        margin-right: 10px;
+        font-size: 1.4rem;
+        width: 130px;
+    }
+
+
     .texto_Quantidade h2 {
         font-size: 2rem;
     }
@@ -1013,9 +1018,35 @@ input::-webkit-calendar-picker-indicator {
     .product .product-image:before {
         width: 0%!important;
     }
+
+    .product-name {
+        font-family: OswaldBold;
+        font-size: 12pt; 
+        margin-bottom: 5px;
+        color: #000;
+        text-transform: uppercase;
+        height: 40px; 
+    }
+
+    .price-before-catalog {
+        font-family: OswaldRegular;
+        color: #999999;
+        font-size: 10pt;
+        text-decoration: line-through;
+        line-height: 15px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1400px) {
+
+    .product-name {
+        font-family: OswaldBold;
+        font-size: 12pt; 
+        margin-bottom: 5px;
+        color: #000;
+        text-transform: uppercase;
+        height: 35px; 
+    }
 
     .prd_AreaInfo .product-payment span, .product-payment {
         font-family: OswaldRegular;
