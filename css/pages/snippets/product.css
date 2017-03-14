@@ -22,11 +22,9 @@
     line-height: 21px; 
 }
 
-.product_PriceValue { 
-    font-family: OswaldRegular;
-    color: #3399ff;
-    font-size: 32pt;
-}
+
+
+
 
 /* Style the tab */
 div.tab {
@@ -36,18 +34,7 @@ div.tab {
 }
 
 /* Style the buttons inside the tab */
-div.tab span {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 4px 16px;
-    transition: 0.3s;
-    margin: auto;
-    text-align: center;
-    width: 100%;
-}
+
 
 
 div.tab p {
@@ -74,23 +61,10 @@ div.tab .active p {
     background-color: #333333!important;
 }
 
-.tablinks {
-    background-color: #333333!important;
-    width: 25%;
-    height: 70px;
-    color: #fff;
-    padding: 20px 10px;
-    font-size: 13pt;
-    border: none;
-    font-family: OswaldBold;
-    text-align: center; 
-    line-height: 32px;
-    float: left;
-}
 
 div.tab {
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: none;
     background-color: #f1f1f1;
     /* position: fixed; */
     /* bottom: 26px; */
@@ -112,5 +86,5 @@ div.tab {
 }
 
 .product_Cart {    
-    margin: 20px 45px;
+    margin: -25px 45px;
 }

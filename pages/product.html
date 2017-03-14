@@ -1,6 +1,6 @@
 <section> 
     <div class="row "> <!--  .is-table-row -->
-        <div class="col-md-5 noSpacing">
+        <div class="col-md-5 noSpacing" id="areaImagem">
             {% if utils.is_mobile %}
                 <div class="product-gallery">
                     {{ productHelper.gallery() }}
@@ -46,16 +46,17 @@
                 {% endif %}
                 <!-- /Galeria -->
         </div>
+
         <div class="col-md-7 noSpacing">
             <div class="product_Share">
                 <div class="col-md-6"></div>
-                <div class="col-md-6 noSpacing">                                            
+                <div class="col-md-6 noSpacing product_ShareTextArea">                                            
                     <span class="product_ShareText">COMPARTILHAR</span>
                     <div class="product_ShareArea">                        
                         {{ productHelper.social() }}
                     </div>
                 </div>                
-            </div>
+            </div>            
 
             <div>
 
@@ -83,7 +84,7 @@
                         <div class="col-md-6 noSpacing">
                             
                             {% if productHelper.variants != '' %}
-                            <div style="position:relative;">
+                            <div class="product_Variants">
                                 {{ productHelper.variants() }}
                             </div>
                             {% endif %}
@@ -99,10 +100,13 @@
 
                     <div class="row"> 
 
-                        <div class="col-md-6 noSpacing">
-                        </div>
+                        <div class="col-md-12 noSpacing product_BuyArea">
 
-                        <div class="col-md-6 noSpacing">
+                            <a>
+                                <span class="product_WishList">Colocar na lista de desejos</span>
+                            </a>
+
+
                             {% element 'snippets/buy-form' {"product": product} %}
 
 
@@ -120,18 +124,35 @@
                 </div>
             </div>
 
-            <div id="Paris" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p> 
+            <div id="Informacoes" class="tabcontent">
+                <div class="product_Info">
+                    <div class="product_Title"> 
+                        <h1>INFORMAÇÕES</h1>
+                        <h5>DESCRIÇÃO GERAL</h5>
+
+                        <div class="board">
+                            <div class="board_htm description">
+                                {{ product.description ? product.description : product.description_small }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div id="Tokyo" class="tabcontent">
+            <div id="Medidas" class="tabcontent">
             <h3>Tokyo</h3>
             <p>Tokyo is the capital of Japan.</p>
             </div>
-            <div id="Teste" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
+            <div id="Comentarios" class="tabcontent">
+                <div class="product_Info">
+                    <div class="product_Title"> 
+                        <h1>COMENTÁRIOS</h1>
+                        
+                        <div class="board">
+                            {% element 'product/comments' %}
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -142,19 +163,19 @@
                         <span>COMPRAR</span>
                     </div>
                 </a>
-                <a onclick="openCity(event, 'Paris')">
+                <a onclick="openCity(event, 'Informacoes')" >
                     <div id="spanInfo" class="tablinks">
                         <p></p>
                         <span>INFORMAÇÕES</span>
                     </div>
                 </a>
-                <a onclick="openCity(event, 'Tokyo')">
+                <a onclick="openCity(event, 'Medidas')">
                     <div id="spanMedidas" class="tablinks">
                         <p></p>
                         <span>TABELA DE MEDIDAS</span>
                     </div>
                 </a>
-                <a onclick="openCity(event, 'Teste')">
+                <a onclick="openCity(event, 'Comentarios')">
                     <div id="spanComentarios" class="tablinks">
                         <p></p>
                         <span>COMENTÁRIOS</span>
@@ -163,17 +184,51 @@
             </div>
         </div>
     </div>
+    </div>
 
-</section>  
+    {% if product.related_products %}
+
+    <div class="row">
+        <div class="product_RelatedArea">
+            <div class="product_RelatedTitle">
+                <h3>QUEM VIU, TAMBÉM CURTIU</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row product-list">
+    {% for related in product.related_products %}
+          <div class="col-sm-3 product">
+              {% element 'snippets/product' {"product": related} %}
+          </div>
+    {% endfor %}
+    </div>
 
 
+    {% endif %}
+
+    
 
 <script>    
+    jQuery(window).resize(function () {
+        ajustaTela();
+    });
+
     (function (jQuery) {
         jQuery(document).ready(function () {
-            document.getElementById('Comprar').style.display = "block";
+            ajustaTela();
         })
+
+        jQuery(".texto_variacao h2").text("Tamanho");
     })(jQuery); 
+
+    function ajustaTela() {
+        document.getElementById('Informacoes').style.display = "block";
+        var altura = jQuery("#areaImagem").height() - jQuery(".product_Share").height() - 12;
+        jQuery("#Comprar").height(altura);
+        jQuery("#Informacoes").height(altura);        
+        jQuery("#Medidas").height(altura);   
+        jQuery("#Comentarios").height(altura);   
+    }
 
     function openCity(evt, cityName) {
         // Declare all variables

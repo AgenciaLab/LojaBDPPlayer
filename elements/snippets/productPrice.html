@@ -8,13 +8,10 @@
         <p>Produto Sob Consulta</p>
         {% else %}
 
-        {% if product.has_other_prices %}
-        <span class="price-various">{{ Translation('a_partir_de') }}</span>
-        {% endif %}
 
         {% if product.price_offer > 0 and product.show_price %}
         <div class="price-before">
-            <div itemprop="priceCurrency" content="BRL"><abbr class="currency" title="BRL">por: {{ settings.currency }}</abbr> {{ product.price|currency }}</div>
+            <div itemprop="priceCurrency" content="BRL"><abbr class="currency" title="BRL">de: {{ settings.currency }}</abbr> {{ product.price|currency }}</div>
         </div>
         <div class="price-promotion">
             <div itemprop="offers" class="price-off" itemscope itemtype="http://schema.org/Offer">por R$ {{ product.price_offer|currency  }}</div>
@@ -33,6 +30,6 @@
     </div>
 
     {% if product.payment %} 
-    <h4 style="line-height: 6px; font-size: 13pt; font-family: OswaldRegular">{{ product.payment }}</h4>
+    <h4 class="product-PaymentForm">{{ product.payment }}</h4>
     {% endif %}
 </div>
