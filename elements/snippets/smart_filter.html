@@ -1,9 +1,6 @@
 <div style="height: 100px">
 
-<h3>miau</h3>
-
 {% if filters %}
- <h3>aqui</h3>
 <form name="form-filter" method="get" class="smart-filter">
     <input type="hidden" name="loja" value="{{ store.id }}">
  
@@ -13,32 +10,45 @@
  
     {% for myFilter in filters %}
  
-        {% if myFilter.items %}
- 
-            <h3 class="{{ myFilter.title|lower }}">{{ myFilter.title }}</h3>
-            <ul class="{{ myFilter.title|lower }}">
-            {% for item in myFilter.items %}
-                <li>
-                    <a href="{{ item.url }}">{{ item.title }}</a>
-                </li>
-            {% endfor %}
-            </ul>
- 
-        {% elseif myFilter|length %}
- 
-           {% for var in myFilter %}
-                {% if var.title|length %}
-                   <h3>{{ var.title }}</h3>
-                {% endif %}
-                <ul class="filter-{{ var.title|lower }}">
-                {% for item in var.items %}
-                    <li>
-                        <a href="{{ item.url }}">{{ item.title }}</a>
-                    </li>
-                {% endfor %}
-                </ul>
-           {% endfor %}
- 
+        {% if myFilter.items|length > 1 %}
+            <h2>{{ myFilter.title }}</h2>
+            {% if myFilter.title == 'Filtrar por Marca' %}
+
+                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                                <option value="NonSelected">Marca</option>
+                                 {% for item in myFilter.items %}
+                                    <option value="{{ item.url }}">
+                                        {{ item.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+            {% endif %}
+
+            {% if 'Faixa de Pre' in myFilter.title  %}     
+
+            <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                                <option value="NonSelected">Faixa de Preço</option>
+                                 {% for item in myFilter.items %}
+                                    <option value="{{ item.url }}">
+                                        {{ item.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>           
+
+            {% endif %}
+        {% elseif myFilter.items|length %}
+
+                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                               
+
+                                 {% for item in myFilter.items %}
+                                    <option value="{{ item.url }}">
+                                        {{ item.title }}
+                                    </option>
+                                {% endfor %}
+                                <option value="NonSelected">Remover</option>
+                            </select>
+
         {% endif %}
  
     {% endfor %}
@@ -48,3 +58,13 @@
 {% endif %}
 
 </div>
+
+<script>
+    function filtroAlterado(valor) {
+
+        if (valor.value !== "NonSelected")
+        {
+            window.location.replace(valor.value);
+        }        
+    }
+</script>

@@ -347,10 +347,9 @@ jQuery(window).resize(function () {
             var altura = 0;
             if (jQuery("#bannerHome").height() === null)
             {
-                console.log(jQuery("#areaImagem").height())
                 if (jQuery("#areaImagem").height() === null)
                 {
-
+                    altura = 1200;
                 }
                 else
                 {

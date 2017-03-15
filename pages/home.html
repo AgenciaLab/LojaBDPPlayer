@@ -23,14 +23,14 @@ if banner.extra7 %}
 {% endif %}
 
 <div class="areaBanners row" style="margin-left: 0px; margin-right: 0px">
-  <div class="noSpacing col-md-6">
+  <div class="noSpacing col-sm-6">
     {% if banner.extra8 %}
     <a href="{{ banners.extra8.link }}" target="{{ banners.extra8.target }}">
       <img src="{{ banners.extra8.src }}" class="imgBannerEx3" alt="{{ banners.extra8.alt }}">
     </a>
     {% endif %}
   </div>
-  <div class="noSpacing col-md-6">
+  <div class="noSpacing col-sm-6">
     <div class="areaTroca">
       <div class="noSpacing col-xs-6">
         <a onclick="trocaBannerHome()">
@@ -63,21 +63,21 @@ if banner.extra7 %}
 </div>
 
 <div class="noSpacing row" style="margin-left: 0px; margin-right: 0px">
-  <div class="noSpacing col-md-4 col-xs-6">
+  <div class="noSpacing col-sm-4 col-xs-6">
     {% if banner.extra11 %}
     <a href="{{ banners.extra11.link }}" target="{{ banners.extra11.target }}">
       <img src="{{ banners.extra11.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra11.alt }}" style="min-width: 100%">
     </a>
     {% endif %}
   </div>
-  <div class="noSpacing col-md-4 col-xs-6">
+  <div class="noSpacing col-sm-4 col-xs-6">
     {% if banner.extra12 %}
     <a href="{{ banners.extra12.link }}" target="{{ banners.extra12.target }}">
       <img src="{{ banners.extra12.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra12.alt }}" style="min-width: 100%">
     </a>
     {% endif %}
   </div>
-  <div class="noSpacing col-md-4">
+  <div class="noSpacing col-sm-4">
     {% if banner.extra13 %}
     <a href="{{ banners.extra13.link }}" target="{{ banners.extra13.target }}">
       <img src="{{ banners.extra13.src }}" class="img-responsive imgBannerEx3" alt="{{ banners.extra13.alt }}" style="min-width: 100%">
@@ -86,10 +86,10 @@ if banner.extra7 %}
 
     <div class="areaBannerCategory">
       <div class="areaBannerCategoryContent">
-        <div class="col-md-2" onclick="trocarCategoria('diminuir')">
+        <div class="col-sm-2" onclick="trocarCategoria('diminuir')">
           <img src="{{ asset('img/assets/banners/barraEsquerda.png') }}" />
         </div>
-        <div class="col-md-8 roteTab" >
+        <div class="col-sm-8 roteTab" >
 
           {% set categorias = [14,3,4,8,17] %} 
             {% for level1 in categories %} 
@@ -103,7 +103,7 @@ if banner.extra7 %}
             {% endfor %}
 
         </div>
-        <div class="col-md-2" style="text-align: right" onclick="trocarCategoria('aumentar')">
+        <div class="col-sm-2" style="text-align: right" onclick="trocarCategoria('aumentar')">
           <img src="{{ asset('img/assets/banners/barraDireita.png') }}" />
         </div>
       </div>
