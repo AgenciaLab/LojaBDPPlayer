@@ -17,14 +17,6 @@ div.tab {
 
 
 
-div.tab p {
-    width: 25%;
-    height: 10px;
-    background: #666666;
-    position: absolute;
-    top: 0px;    
-    margin-left: -10px;
-}
 
 div.tab .active p {
     background: yellow;

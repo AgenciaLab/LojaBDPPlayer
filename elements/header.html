@@ -12,7 +12,11 @@
     <div class="noSpacing col-sm-3">
         <div class="noSpacing col-sm-8" id="hdr_AreaMenu">
             <a onclick="openMenu()">
-                <div class="hdr_AreaButton">
+                <div class="hdr_AreaButton hidden-sm">
+                    <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
+                    <span>MENU</span>
+                </div>            
+                <div class="hdr_AreaButton visible-sm">
                     <div class="hdr_AreaImagem">
                         <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
                     </div>
@@ -47,7 +51,11 @@
     <div class="col-sm-3">
         <div class="AreaBotaoLogin col-sm-6">
             <a onclick="showLogin()">
-                <div class="hdr_AreaButton">
+                <div class="hdr_AreaButton hidden-sm">
+                    <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                    <span>LOGIN</span>
+                </div>            
+                <div class="hdr_AreaButton visible-sm">
                     <div class="hdr_AreaImagem">
                         <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
                     </div>
@@ -57,10 +65,14 @@
         </div>
         <div class="col-sm-6">
             <a>
-                <div class="hdr_AreaButton">    
+                <div class="hdr_AreaButton visible-sm">    
                     <div class="hdr_AreaImagem">            
                         <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
                     </div>
+                    <span>CARRINHO</span>
+                </div>      
+                <div class="hdr_AreaButton hidden-sm">    
+                    <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
                     <span>CARRINHO</span>
                 </div>            
             </a>
