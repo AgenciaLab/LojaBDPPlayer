@@ -1,19 +1,21 @@
 <header>
     <div class="hdr_Info">
-        <div class="hdr_InfoLeft col-md-6">
+        <div class="hdr_InfoLeft col-sm-6">
             <span>OFFICIAL PRODUCTS LICENSED</span>
         </div>
-        <div class="hdr_InfoRight col-md-6">
+        <div class="hdr_InfoRight col-sm-6">
             <span>@Bdpplayer All Rights Reserved</span>
         </div>
     </div>
 
     <div class="hdr_AreaLogo">
-    <div class="noSpacing col-md-3">
-        <div class="noSpacing col-md-8" id="hdr_AreaMenu">
+    <div class="noSpacing col-sm-3">
+        <div class="noSpacing col-sm-8" id="hdr_AreaMenu">
             <a onclick="openMenu()">
                 <div class="hdr_AreaButton">
-                    <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
+                    <div class="hdr_AreaImagem">
+                        <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
+                    </div>
                     <span>MENU</span>
                 </div>            
             </a>
@@ -24,11 +26,13 @@
             </div>
                         
         </div>
-        <div class="areaBusca col-md-4">
+        <div class="areaBusca col-sm-4">
             <div id="areaMenu" class="areaPesquisa">
                 <a onclick="openSearch()" id="btnAbrirMarcas">
-                    <div class="hdr_AreaButton">                
-                        <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
+                    <div class="hdr_AreaButton">      
+                        <div class="hdr_AreaImagem">             
+                            <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
+                        </div>
                     </div>            
                 </a>
                 <div id="btnOpenSearch">
@@ -37,22 +41,26 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-sm-6">
         <img class="img-responsive" src="{{ asset('img/assets/logo.png') }}'" alt=""/>
     </div>
-    <div class="col-md-3">
-        <div class="AreaBotaoLogin col-md-6">
+    <div class="col-sm-3">
+        <div class="AreaBotaoLogin col-sm-6">
             <a onclick="showLogin()">
                 <div class="hdr_AreaButton">
-                    <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                    <div class="hdr_AreaImagem">
+                        <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                    </div>
                     <span>LOGIN</span>
                 </div>            
             </a>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
             <a>
-                <div class="hdr_AreaButton">                
-                    <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
+                <div class="hdr_AreaButton">    
+                    <div class="hdr_AreaImagem">            
+                        <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
+                    </div>
                     <span>CARRINHO</span>
                 </div>            
             </a>
