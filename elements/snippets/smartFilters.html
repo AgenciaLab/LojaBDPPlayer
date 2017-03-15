@@ -26,55 +26,134 @@
 
             {% for myFilter in filters %}
                 
-                {% if myFilter.items %}
+                {% if myFilter.items |length > 1 %}
 
-                {% if myFilter.title == 'Filtrar por Marca' %}
-                    <select class="selectFormasPgto" onchange="filtroAlterado(this)" >
-                        <option value="NonSelected">Marca</option>
-                        {% for item in myFilter.items %}
-                            <option value="{{ item.url }}">
-                                {{ item.title }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                {% endif %}
-                {% if 'Faixa de Pre' in  myFilter.title %}
-                    <select class="selectFormasPgto" onchange="filtroAlterado(this)">
-                        <option value="NonSelected">Faixa de Preço</option>
-                        {% for item in myFilter.items %}
-                            <option value="{{ item.url }}">
-                                {{ item.title }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                {% endif %}
+                    {% if myFilter.title == 'Filtrar por Marca' %}
+                        <select class="selectFormasPgto" onchange="filtroAlterado(this)" >
+                            <option value="NonSelected">Marca</option>
+                            {% for item in myFilter.items %}
+                                <option value="{{ item.url }}">
+                                    {{ item.title }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
+                    {% if 'Faixa de Pre' in  myFilter.title %}
+                        <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                            <option value="NonSelected">Faixa de Preço</option>
+                            {% for item in myFilter.items %}
+                                <option value="{{ item.url }}">
+                                    {{ item.title }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
 
-                {% elseif myFilter|length %}
-                    {% for var in myFilter %}   
-                        
-                        {% if var.title == 'Tamanho' %}
-                            <select class="selectFormasPgto" onchange="filtroAlterado(this)">
-                                <option value="NonSelected">Tamanho</option>
-                                {% for item in var.items %}
+
+                {% else %}
+
+                    {% if myFilter.title == 'Filtrar por Marca' %}
+                        <select class="selectFormasPgto" >
+                            {% if myFilter.items |length == 1 %}
+                                {% for item in myFilter.items %}
                                     <option value="{{ item.url }}">
                                         {{ item.title }}
                                     </option>
                                 {% endfor %}
-                            </select>
-                        {% elseif var.title == 'Cor' %}
-                            <select class="selectFormasPgto" onchange="filtroAlterado(this)">
-                                <option value="NonSelected">Modelo</option>
-                                {% for item in var.items %}
+                            {% else %}
+                                <option value="NonSelected">Marca</option>
+                            {% endif %}
+                        </select>
+                    {% endif %}
+                    {% if 'Faixa de Pre' in  myFilter.title %}
+                        <select class="selectFormasPgto">
+                            {% if myFilter.items |length == 1 %}
+                                {% for item in myFilter.items %}
                                     <option value="{{ item.url }}">
                                         {{ item.title }}
                                     </option>
                                 {% endfor %}
-                            </select>
+                            {% else %}
+                                <option value="NonSelected">Faixa de Preço</option>
+                            {% endif %}
+                        </select>
+                    {% endif %}
+                    
+                {% endif %}
+                <PRE>
+                {{ dump(myFilter) }}
+                </PRE>
+                {% if myFilter|length %}
+                    
+                    {% for var in myFilter %}  
+                        <PRE>
+                            {{ dump("TESTE") }}
+                        {{ dump(myFilter) }}
+                        </PRE>
+                        {% if var.items |length > 1 %}
+
+                            {% if var.title == 'Tamanho' %}
+                                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                                    <option value="NonSelected">Tamanho</option>
+                                        {% for item in var.items %}
+                                            <option value="{{ item.url }}">
+                                                {{ item.title }}
+                                            </option>
+                                        {% endfor %}                                    
+                                </select>
+                            {% elseif var.title == 'Cor' %}
+                                <select class="selectFormasPgto" >  
+                                        {% for item in var.items %}
+                                        <option value="NonSelected">Cor</option>
+                                            <option value="{{ item.url }}">
+                                                {{ item.title }}
+                                            </option>
+                                        {% endfor %}                                    
+                                </select>
+                            {% endif %}
+
+                        {% else %}
+
+                            {% if var.title == 'Tamanho' %}
+                                <select class="selectFormasPgto" >
+                                    {% if var.items |length == 1 %}
+                                        {% for item in var.items %}
+                                            <option value="{{ item.url }}">
+                                                {{ item.title }}
+                                            </option>
+                                        {% endfor %}
+                                    {% else %}
+                                        <option value="NonSelected">Tamanho</option>
+                                    {% endif %}
+                                </select>
+                            {% elseif var.title == 'Cor' %}
+                                <select class="selectFormasPgto" >
+                                    {% if var.items |length == 1 %}
+                                        {% for item in var.items %}
+                                            <option value="{{ item.url }}">
+                                                {{ item.title }}
+                                            </option>
+                                        {% endfor %}
+                                    {% else %}
+                                        <option value="NonSelected">Cor</option>
+                                    {% endif %}
+                                </select>
+                            {% endif %}
+
+
                         {% endif %}
+
+
+
+
+
+                        
                         
                     {% endfor %}
 
                 {% endif %}
+
+
             </form>        
         {% endfor %}
         
