@@ -310,7 +310,7 @@ function openSearch() {
 
                 if (jQuery("#bannerHome").height() === null)
                 {
-                    alturaMarcas = 150;
+                    alturaMarcas = 115;
                 }
                 else
                 {
