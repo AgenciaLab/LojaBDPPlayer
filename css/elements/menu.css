@@ -8,7 +8,41 @@ and open the template in the editor.
     Author     : MarceloMacedo
 */
 
+
+@media (min-width: 768px) and (max-width: 992px)
+{
+    .mnu_AreaLinks img {
+        margin-top: 10px;
+    }
+
+    .mnu_Links span {
+        margin-left: 5px;
+        line-height: 45px;
+        font-size: 9pt;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+    .mnu_AreaLinks img {
+        margin-top: 37px;
+    }
+    
+    .mnu_AreaCategoria {
+        padding: 2px 0px;
+    }
+
+    .mnu_Links span {
+        margin-left: 5px;
+        line-height: 45px;
+        font-size: 11pt;
+    }
+}
+
 @media (min-width: 1400px) {
+    .mnu_AreaLinks img {
+        margin-top: 37px;
+    }
+
     .mnu_AreaCategoria {
         padding: 8px 0px;
     }
@@ -20,17 +54,7 @@ and open the template in the editor.
     }
 }
 
-@media (max-width: 1400px) {
-    .mnu_AreaCategoria {
-        padding: 2px 0px;
-    }
 
-    .mnu_Links span {
-        margin-left: 5px;
-        line-height: 45px;
-        font-size: 11pt;
-    }
-}
 
 .mnu_Area {
     background-color: #070003;
@@ -76,9 +100,7 @@ and open the template in the editor.
     color: #e9da26;
 }
 
-.mnu_AreaLinks img {
-    margin-top: 37px;
-}
+
 
 
 

@@ -18,28 +18,13 @@
     text-align: left;
 }
 
-.hdr_Info span {
-    font-size: 10pt;
-    line-height: 30px;
-}
 
-.hdr_AreaLogo {
-    background-color: #070003;
-    color: #a49919;
-    height: 150px;    
-}
 
-.hdr_AreaLogo img {
-    margin: 40px auto;    
-}
 
-.hdr_AreaButton {
-    margin: 20px auto; 
-    max-width: 250px;
-    text-align: center;
-    height: 100%;
-    font-family: OswaldBold;
-}
+
+
+
+
 
 .hdr_AreaButton img {
 }
@@ -61,13 +46,6 @@
 }
 
 
-#areaMenu {
-    position: absolute;
-    left: 0px;
-    width: 260px;
-    padding-bottom: 28px;
-    height: 150px;
-}
 
 #imgSearch {
     float: left;
@@ -108,8 +86,104 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1400px)
+@media (min-width: 768px) and (max-width: 992px)
 {
+    
+    #areaMenu {
+        position: absolute;
+        left: 0px;
+        width: 250px;
+        padding-bottom: 28px;
+        height: 110px;
+    }
+
+    #imgSearch {
+        margin-top: 30px;
+    }
+
+    .hdr_AreaImagem { 
+        height: 55px;
+    }
+
+    .hdr_AreaImagem img {
+        height: 23px;
+    }
+
+    .hdr_AreaLogo {
+        background-color: #070003;
+        color: #a49919;
+        height: 100px;    
+    }
+
+    .hdr_AreaButton {
+        margin: 6px auto; 
+        max-width: 250px;
+        text-align: center;
+        height: 100%;
+        font-family: OswaldBold;
+    }
+
+    .hdr_AreaLogo img {
+        margin: 23px auto 10px auto;  
+    }
+
+
+    .hdr_AreaLogo img {
+        max-width: 250px;
+    }
+
+    .hdr_Info span {
+        font-size: 8pt;
+        line-height: 30px;
+    }
+
+    .hdr_AreaButton span {
+        color: #fff;
+        font-size: 9pt;
+        vertical-align: middle;
+        font-family: OswaldRegular;
+    }
+
+    .AreaBotaoLogin  {
+        padding-bottom: 20px;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1400px)
+{
+
+    #areaMenu {
+        position: absolute;
+        left: 0px;
+        width: 260px;
+        padding-bottom: 28px;
+        height: 150px;
+    }
+
+    .hdr_AreaLogo {
+        background-color: #070003;
+        color: #a49919;
+        height: 150px;    
+    }
+
+    .hdr_AreaButton {
+        margin: 20px auto; 
+        max-width: 250px;
+        text-align: center;
+        height: 100%;
+        font-family: OswaldBold;
+    }
+
+    .hdr_AreaLogo img {
+        margin: 40px auto;    
+    }
+
+    .hdr_Info span {
+        font-size: 10pt;
+        line-height: 30px;
+    }
+
     .owl-theme .owl-controls .owl-page {
         background:rgba(0, 0, 0, 0.5); 
         width: 100px;
@@ -127,6 +201,38 @@
 }
 
 @media (min-width: 1400px) {
+
+    #areaMenu {
+        position: absolute;
+        left: 0px;
+        width: 260px;
+        padding-bottom: 28px;
+        height: 150px;
+    }
+
+    .hdr_AreaLogo {
+        background-color: #070003;
+        color: #a49919;
+        height: 150px;    
+    }
+
+    .hdr_AreaButton {
+        margin: 20px auto; 
+        max-width: 250px;
+        text-align: center;
+        height: 100%;
+        font-family: OswaldBold;
+    }
+
+    .hdr_AreaLogo img {
+        margin: 40px auto;    
+    }
+
+    .hdr_Info span {
+        font-size: 10pt;
+        line-height: 30px;
+    }
+
     .hdr_AreaButton span {
         margin-left: 10px;
         color: #fff;
