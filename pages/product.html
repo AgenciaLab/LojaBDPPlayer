@@ -49,8 +49,8 @@
 
         <div class="col-md-7 col-sm-6 noSpacing">
             <div class="product_Share">
-                <div class="col-md-6"></div>
-                <div class="col-md-6 noSpacing product_ShareTextArea">                                            
+                <div class="col-sm-6"></div>
+                <div class="col-sm-6 noSpacing product_ShareTextArea">                                            
                     <span class="product_ShareText">COMPARTILHAR</span>
                     <div class="product_ShareArea">                        
                         {{ productHelper.social() }}
@@ -71,10 +71,10 @@
                 </div>
                 <div class="product_Price">
                     <div class="row"> 
-                        <div class="col-md-6 noSpacing">
+                        <div class="col-sm-6 noSpacing">
                             {% element 'snippets/productPrice' {"product": product} %}    
                         </div>
-                        <div class="col-md-6 noSpacing"> 
+                        <div class="col-sm-6 noSpacing"> 
 
                             <div class="texto_Formas">
                                 <h2>Formas Pagamento</h2>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="product_Cart">
                     <div class="row">
-                        <div class="col-md-6 noSpacing">
+                        <div class="col-sm-6 noSpacing">
                             
                             {% if productHelper.variants != '' %}
                             <div class="product_Variants">
@@ -114,7 +114,7 @@
 
                         </div>
 
-                        <div class="col-md-6 noSpacing">
+                        <div class="col-sm-6 noSpacing">
 
                             {% element 'snippets/qtd-form' {"product": product} %}
 
@@ -123,7 +123,7 @@
 
                     <div class="row"> 
 
-                        <div class="col-md-12 noSpacing product_BuyArea">
+                        <div class="col-sm-12 noSpacing product_BuyArea">
 
                             <a>
                                 <span class="product_WishList">Colocar na lista de desejos</span>
@@ -195,7 +195,7 @@
                 <a onclick="openCity(event, 'Medidas')">
                     <div id="spanMedidas" class="tablinks">
                         <p></p>
-                        <span>TABELA DE MEDIDAS</span>
+                        <span>MEDIDAS</span>
                     </div>
                 </a>
                 <a onclick="openCity(event, 'Comentarios')">
