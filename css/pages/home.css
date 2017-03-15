@@ -106,11 +106,7 @@ body {
     margin-bottom: 5px;
 }
 
-.prd_AreaInfo span {
-    color: #0099cc;
-    font-size: 15pt;
-    font-family: OswaldBold;
-}
+
 
 .product .product-payment,
 .product .product-payment span, .product .product-payment strong {

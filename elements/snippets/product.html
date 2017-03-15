@@ -12,11 +12,11 @@
                 {{ product.name }}
             </div>
             
-            <div class="product-price">
-                {% element 'snippets/price' {"product": product} %}
+            <div class="product-price-catalog">
+                {% element 'snippets/priceCatalog' {"product": product} %}
             </div>
         
-            <div class="product-payment">
+            <div class="product-payment-catalog">
                 {{ product.payment }}
             </div>
         </div>

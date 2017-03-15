@@ -57,9 +57,7 @@ and open the template in the editor.
         margin: 0px;
     }
 
-    .product-image {
-        margin-left: -3px;
-    }
+    
 
     .product .product-image {
         margin-bottom: 5px;
@@ -67,11 +65,7 @@ and open the template in the editor.
         height: auto;
     }
 
-    .product .product-name {
-        font-family: OswaldBold;
-        font-size: 14pt;
-        height: 30px;
-    }
+    
 
     .product {
         padding: 0px;
@@ -80,19 +74,6 @@ and open the template in the editor.
     }
 
     
-
-    .page-product .product-quantity>div>span:nth-child(2):before {
-        background: #666;
-        content: '';
-        height: 3px;
-        left: 50%;
-        margin-left: -4px;
-        margin-top: -1px;
-        position: absolute;
-        top: 50%;
-        width: 13px;
-    }
-
     
 
    
@@ -436,19 +417,7 @@ input::-webkit-calendar-picker-indicator {
     margin: auto;
 }
 
-#select_ordem {
-        margin-left: 5px;
-    border-radius: 0;
-    display: inline-block;
-    font: 600 12px 'OxygenRegular',sans-serif;
-    margin: 0;
-    width: auto;
-    height: 34px;
-    padding: 6px 12px;
-        background-color: #fff;
-    border: 1px solid #ccc;
-    color: #555;
-}
+
 
 #catalog_OrganizarLbl {
     color: #433f3f;
@@ -684,22 +653,9 @@ input::-webkit-calendar-picker-indicator {
     border: 1px solid #666;
 }
 
-.product_RelatedArea {
-    width: 100%;
-    height: 120px;
-    background: #000;
-    margin-top: -2px;
-    text-align: center;
-}
 
-.product_RelatedTitle h3 {
-    color: #fff;
-    font-size: 28pt;
-    font-family: OswaldRegular;
-    line-height: 117px;
-    margin: auto;
-    float: inherit;
-}
+
+
 
 @media (min-width: 1400px) {
     .product_Share {
@@ -865,6 +821,23 @@ input::-webkit-calendar-picker-indicator {
         font-size: 16pt;
     }
 
+    .texto_Formas {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .texto_Formas h2 {
+        font-size: 2rem;
+    }
+
+    .selectFormasPgto {
+        padding: 10px 5px;
+        margin-right: 10px;
+        font-size: 1.4rem;
+        width: 130px;
+    }
+
+
     .texto_Quantidade h2 {
         font-size: 2rem;
     }
@@ -943,9 +916,185 @@ input::-webkit-calendar-picker-indicator {
         font-family: OswaldBold;
     }
 
+    .board {
+        margin-top: 40px;
+    }
+
+    .board_htm.description p {
+        margin: 0.9em 0;
+        font-size: 2rem;
+    }
+
+    #comentario_cliente {
+        font-size: 2rem;
+    }
+
+    .product_RelatedArea {
+        width: 100%;
+        height: 150px;
+        background: #000; 
+        margin-top: -2px;
+        text-align: center;
+    }
+
+    .product_RelatedTitle h3 {
+        color: #fff;
+        font-size: 40pt;
+        font-family: OswaldRegular;
+        line-height: 150px;
+        margin: auto;
+        float: inherit;
+    }
+
+    .product .product-image img {
+        max-width: 100%;
+    }
+
+    .product .product-name {
+        font-family: OswaldBold;
+        font-size: 2.4rem;
+        color: #3d4445;
+        display: block;
+        height: 55px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        line-height: 1.8rem;
+    }
+
+    .prd_AreaInfo span {
+        color: #0099cc;
+        font-size: 3rem;
+        font-family: OswaldBold;
+    }
+
+
+    .product .product-price {
+        color: #000;
+        display: block; 
+        height: 36px;
+        overflow: hidden;
+        font-family: Roboto,sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+    }
+
+    .product .product-payment {
+        color: #000;
+        display: block;
+        height: auto;
+        overflow: hidden;
+        font-family: Roboto,sans-serif;
+        font-size: 14pt;
+        font-weight: 400;
+        line-height: 2.4rem;
+    }
+
+    .prd_AreaInfo .product-payment span, .product-payment {
+        font-family: OswaldRegular;
+        font-size: 14pt;
+        color: #999999;
+        margin-bottom: 5px;
+        line-height: 8px;
+    }
+
+    .product .product-payment span, .product .product-payment strong {
+        font-size: 13pt;
+    }
+
+    .product .product-image:before {
+        width: 0%!important;
+    }
+
+    .product-name {
+        font-family: OswaldBold;
+        font-size: 12pt; 
+        margin-bottom: 5px;
+        color: #000;
+        text-transform: uppercase;
+        height: 40px; 
+    }
+
+    .price-before-catalog {
+        font-family: OswaldRegular;
+        color: #999999;
+        font-size: 10pt;
+        text-decoration: line-through;
+        line-height: 15px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1400px) {
+
+    .product-name {
+        font-family: OswaldBold;
+        font-size: 12pt; 
+        margin-bottom: 5px;
+        color: #000;
+        text-transform: uppercase;
+        height: 35px; 
+    }
+
+    .prd_AreaInfo .product-payment span, .product-payment {
+        font-family: OswaldRegular;
+        font-size: 10pt;
+        color: #999999;
+        margin-bottom: 5px;
+        line-height: 8px;
+    }
+
+    .prd_AreaInfo span {
+        color: #0099cc;
+        font-size: 15pt;
+        font-family: OswaldBold;
+    }
+
+    .product .product-name {
+        font-family: OswaldBold;
+        font-size: 14pt;
+        height: 30px;
+    }
+
+    .product-image {
+        margin-left: -3px;
+    }
+
+    .product_Title h5 {
+        line-height: 60px;
+        font-size: 14pt;
+        color: #666666;
+        font-family: OswaldBold;
+    }
+
+    .product_RelatedTitle h3 {
+        color: #fff;
+        font-size: 28pt;
+        font-family: OswaldRegular;
+        line-height: 117px;
+        margin: auto;
+        float: inherit;
+    }
+
+    .board_htm.description p {
+        margin: 0.8em 0;
+        font-size: 12pt;
+    }
+
+    .board {
+        font-size: 12pt;
+    }
+
+    .board h2 {
+        font-size: 12pt;
+    }
+
+    .product_RelatedArea {
+        width: 100%;
+        height: 120px;
+        background: #000;
+        margin-top: -2px;
+        text-align: center;
+    }
 
      .page-product .product-quantity>div>span:nth-child(1):before {
         background: #666;
@@ -968,13 +1117,13 @@ input::-webkit-calendar-picker-indicator {
         margin-top: -6px;
         position: absolute;
         top: 50%;
-        width: 3px;
+        width: 2px;
     }
 
     #plus {
         position: absolute;
         margin: 4px 0 0 -7px;
-        width: 30px;
+        width: 20px;
         height: 30px;
         background-color: transparent;
         border: none;
@@ -985,9 +1134,9 @@ input::-webkit-calendar-picker-indicator {
  
     #minus {
         position: absolute;
-        left: 92px;
+        left: 90px;
         height: 30px;
-        width: 30px;
+        width: 20px;
         margin: 4px 0 0 0;
         line-height: 0;
         background-color: transparent;
@@ -995,19 +1144,32 @@ input::-webkit-calendar-picker-indicator {
         color: #666;
     }
 
+    .page-product .product-quantity>div>span:nth-child(2):before {
+        background: #666;
+        content: '';
+        height: 2px;
+        left: 50%;
+        margin-left: -4px;
+        margin-top: -1px;
+        position: absolute;
+        top: 50%;
+        width: 11px;
+    }
+
     .page-product #quant {
-        height: 41px;
-        margin: 0px 0 0 0px;
+        height: 37px;
+        margin: 0px 0 0 0px;        
+        padding: 19px 0;
         border: none;
         color: #232323;
         background: transparent;
         width: 100%;
-        font-size: 13pt;
+        font-size: 11pt;
     }
 
     .page-product #quantidade {
-        margin-top: 77px;
-        max-width: 130px;
+        margin-top: 7px;
+        max-width: 120px;
     }
 
     div.tab span {
@@ -1021,6 +1183,7 @@ input::-webkit-calendar-picker-indicator {
         margin: auto;
         text-align: center;
         width: 100%;
+        font-size: 11pt;
     }
 
     .tablinks {
@@ -1048,31 +1211,32 @@ input::-webkit-calendar-picker-indicator {
     }
 
     #button-buy {
-        min-width: 387px;
-        height: 60px;
+        min-width: 350px;
+        height: 55px;
         background: #ffff33;
         color: #000;
         font-family: OswaldBold;
         letter-spacing: 0px;
-        border-bottom: 3px solid #cc9900;
+        border-bottom: 2px solid #cc9900;
+        margin-left: 40px;
     }
 
     .product_BuyArea {
-        margin-top: 30px;
+        margin-top: 15px;
     }
 
     .page-product .lista_cor_variacao li div, .page-product .lista_cor_variacao2 li div {
-        height: 38px;
-        width: 50px;
+        height: 34px;
+        width: 40px;
         color: #121212;
         font-family: OxygenRegular;
-        font-size: 11pt;
+        font-size: 10pt;
     }
 
     .page-product .lista_cor_variacao li, .page-product .lista_cor_variacao2 li {
         border: 1px solid #666;
-        height: 40px;
-        width: 50px;
+        height: 35px;
+        width: 45px;
         text-align: center;
     }
 
@@ -1082,30 +1246,30 @@ input::-webkit-calendar-picker-indicator {
 
     .product-PaymentForm {
         line-height: 6px; 
-        font-size: 13pt; 
+        font-size: 11pt; 
         font-family: OswaldRegular;
     }
 
     .product_PriceValue, .price-promotion { 
         font-family: OswaldRegular;
         color: #3399ff;
-        font-size: 32pt;
+        font-size: 24pt;
     }
 
     .price-before { 
         font-family: OswaldRegular;
         color: #999999;
-        font-size: 16pt;
+        font-size: 12pt;
         text-decoration: line-through;
     }
 
     .product_Price {
-        margin: 30px 25px;
+        margin: 30px 20px;
     }
 
     .product_Title h1 {
            text-transform: uppercase;
-           font-size: 25pt;
+           font-size: 20pt;
            line-height: 28px;
            font-family: OswaldBold;
            letter-spacing: -1px;
@@ -1114,7 +1278,7 @@ input::-webkit-calendar-picker-indicator {
     .product_Title h3 { 
         font-family: OxygenRegular;
         text-transform: uppercase;
-        font-size: 11pt;
+        font-size: 10pt;
         line-height: 30px;
         float: left;
     }
@@ -1122,7 +1286,7 @@ input::-webkit-calendar-picker-indicator {
     .product_Share {
         background-color: #333333;
         width: 100%;
-        height: 50px;
+        height: 40px;
     }
 
     .product_ShareArea {
@@ -1130,26 +1294,27 @@ input::-webkit-calendar-picker-indicator {
     }
 
     .at-icon-wrapper {
-        height: 50px!important;
-        width: 50px!important;
+        height: 40px!important;
+        width: 40px!important;
     }
 
     .at-icon {
-        height: 50px!important;
-        width: 50px!important;
+        height: 40px!important;
+        width: 40px!important;
     }
     .product_ShareText {
-            color: gray;
+        color: #666;
         font-family: OswaldBold;
-        line-height: 45px;
+        line-height: 40px;
         font-size: 11pt;
         margin: auto;
         right: 0px;
         text-align: right;
         float: left;
+        margin-left: 50px;
     }
     .product_Info {
-        margin: 40px 50px;
+        margin: 30px 40px;
     }
 
     .product_WishList {
@@ -1157,9 +1322,47 @@ input::-webkit-calendar-picker-indicator {
                                              font-size: 12pt;
                                              text-decoration: underline;
                                              font-family: OswaldRegular;
-                                             margin: 40px 30px;
+                                             margin: 40px 15px;
     }
+
+    .texto_Formas {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .texto_Formas h2 {
+        font-size: 1.7rem;
+    }
+
+    .selectFormasPgto {
+        padding: 7px 4px;
+        margin-right: 10px;
+        font-size: 1.2rem;
+        width: 125px;
+    }
+
+    .texto_Quantidade {
+        margin-top: 50px;
+    }
+
+    .texto_Quantidade h2 {
+        font-size: 1.6rem;
+    }
+
     
+    .product-payment-catalog, .product-payment-catalog span {
+        font-family: OswaldRegular;
+        font-size: 11pt;
+        color: #999999;
+        margin-bottom: 5px;
+        line-height: 8px;
+    }
+
+    .product-price-catalog span, .price-promotion-catalog  {
+        color: #0099cc;
+        font-size: 2rem;
+        font-family: OswaldBold;
+    }
 }
 
 
