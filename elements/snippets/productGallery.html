@@ -1,35 +1,142 @@
-<div class="product_Price">
-    <div class="product_PriceArea" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        {% if product.available %}
-
-        {% if product.stock > 0 %}
-
-        {% if product.upon_request %}
-        <p>Produto Sob Consulta</p>
-        {% else %}
-
-
-        {% if product.price_offer > 0 and product.show_price %}
-        <div class="price-before">
-            <div itemprop="priceCurrency" content="BRL"><abbr class="currency" title="BRL">de: {{ settings.currency }}</abbr> {{ product.price|currency }}</div>
-        </div>
-        <div class="price-promotion">
-            <div itemprop="offers" class="price-off" itemscope itemtype="http://schema.org/Offer">por R$ {{ product.price_offer|currency  }}</div>
-        </div>
-        {% else %}
-        <h4>por</h4>
-        <h2 itemprop="priceCurrency" content="BRL"><strong class="product_PriceValue">R$ {{ product.price|currency }}</strong></h2>
-        {% endif %}
-        {% endif %}
-
-        {% else %}  
-        <p>Esgotado!</p>
-        {% endif %} 
-        {% endif %}
-
+<div class="noSpacing row" style="margin-left: 0px; margin-right: 0px; min-height: 500px; ">
+  <div class="prd_loading">
+    <span>CARREGANDO ...</span>
+  </div>
+  <div id="home_prd_0" class="noSpacing col-md-3">
+    <div class="prd_AreaImage">
+      <img class="img-responsive" />
     </div>
-
-    {% if product.payment %} 
-    <h4 class="product-PaymentForm">{{ product.payment }}</h4>
-    {% endif %}
+    <div class="prd_AreaInfo">
+      <h4></h4>
+      <h5></h5>
+      <span></span>
+      <h6></h6>
+    </div>
+  </div>
+  <div id="home_prd_1" class="noSpacing col-md-3">
+    <div class="prd_AreaImage">
+      <img class="img-responsive" />
+    </div>
+    <div class="prd_AreaInfo">
+      <h4></h4>
+      <h5></h5>
+      <span></span>
+      <h6></h6>
+    </div>
+  </div>
+  <div id="home_prd_2" class="noSpacing col-md-3">
+    <div class="prd_AreaImage">
+      <img class="img-responsive" />
+    </div>
+    <div class="prd_AreaInfo">
+      <h4></h4>
+      <h5></h5>
+      <span></span>
+      <h6></h6>
+    </div>
+  </div>
+  <div id="home_prd_3" class="noSpacing col-md-3">
+    <div class="prd_AreaImage">
+      <img class="img-responsive" />
+    </div>
+    <div class="prd_AreaInfo">
+      <h4></h4>
+      <h5></h5>
+      <span></span>
+      <h6></h6>
+    </div>
+  </div>
 </div>
+
+<script type="text/javascript">
+    console.log('Chegou aqui');
+  $(".prd_loading").fadeOut(200);
+
+  function trocarCategoria(acao) {
+
+    var option;
+    
+    if (acao === "aumentar")
+    {
+      option = jQuery(".optionDisplay").next();
+    }
+    else
+    {
+      option = jQuery(".optionDisplay").prev();
+    }
+
+    if (typeof option.attr("id") !== "undefined")
+    {
+      jQuery(".optionDisplay").addClass("notDisplay");
+      jQuery(".optionDisplay").removeClass("optionDisplay");
+      jQuery(option).addClass("optionDisplay");
+      jQuery(option).removeClass("notDisplay");
+
+      var optionId = option.attr("id"); 
+      var ordem = optionId.split("_")[1];
+      var id = optionId.split("_")[2];
+
+      carregarProdutos(id);
+    }
+    
+  }
+
+  var optionId = jQuery(".optionDisplay").attr("id"); 
+  var ordem = optionId.split("_")[1];
+  var id = optionId.split("_")[2];
+
+  carregarProdutos(id);
+
+  function carregarProdutos(categoriaId) {
+                    var params = {};
+
+                    $(".prd_loading").fadeIn();
+
+                    params["category_id"] = categoriaId;
+                    params["page"] = "1";
+                    params["limit"] = "4";
+                    params["store_id"] = {{ store.id }}
+
+                    LimparProdutos();
+
+                    $.ajax({
+                      method: "GET",
+                      url: "/web_api/products/",
+                      data: params
+                    }).done(function (response, textStatus, jqXHR) {
+
+                      var products = response.Products;
+                      var i = 0;
+
+                      
+                    
+                      products.forEach(function(prod) {
+
+                          $("#home_prd_" + i + " img").attr({ src:  prod.Product.ProductImage[0].http })
+                          $("#home_prd_" + i + " h4").text(prod.Product.name)
+                          $("#home_prd_" + i + " h5").text("de: " + prod.Product.price)
+                          $("#home_prd_" + i + " span").text("A partir de: " + prod.Product.price)
+                          $("#home_prd_" + i + " h6").text("Ou 3x sem juros de R$ " + prod.Product.price)
+
+                          i++;
+                      });
+
+                      $(".prd_loading").fadeOut(400);
+
+
+                    }).fail(function (jqXHR, status, errorThrown) {
+                        $(".prd_loading").fadeOut(400);
+                    })
+  }
+
+  function LimparProdutos() {
+      for (i = 0; i < 4; i++) { 
+        $("#home_prd_" + i + " img").attr({ src:  "" })
+                          $("#home_prd_" + i + " h4").text("")
+                          $("#home_prd_" + i + " h5").text("")
+                          $("#home_prd_" + i + " span").text("")
+                          $("#home_prd_" + i + " h6").text("")
+    }
+  }
+
+</script>
