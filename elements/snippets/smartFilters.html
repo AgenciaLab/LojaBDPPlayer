@@ -1,0 +1,103 @@
+
+<div class="catalog_ContentFiltros">
+    <div class="col-md-1">
+        <div class="catalog_Close">
+            <a href="{{ category.link }}">
+                <h3>X</h3>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="catalog_Apply">
+            <a>
+                <h3>APLICAR FILTROS</h3>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-8">
+
+        {% if filters %}
+            <form name="form-filter" method="get" class="smart-filter">
+            <input type="hidden" name="loja" value="{{ store.id }}">
+
+            {% if category.id %}
+                <input type="hidden" name="categoria" value="{{ category.id }}">
+            {% endif %}
+
+            {% for myFilter in filters %}
+                
+                {% if myFilter.items %}
+
+                {% if myFilter.title == 'Filtrar por Marca' %}
+                    <select class="selectFormasPgto" onchange="filtroAlterado(this)" >
+                        <option value="NonSelected">Marca</option>
+                        {% for item in myFilter.items %}
+                            <option value="{{ item.url }}">
+                                {{ item.title }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+                {% if 'Faixa de Pre' in  myFilter.title %}
+                    <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                        <option value="NonSelected">Faixa de Preço</option>
+                        {% for item in myFilter.items %}
+                            <option value="{{ item.url }}">
+                                {{ item.title }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+
+                {% elseif myFilter|length %}
+                    {% for var in myFilter %}   
+                        
+                        {% if var.title == 'Tamanho' %}
+                            <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                                <option value="NonSelected">Tamanho</option>
+                                {% for item in var.items %}
+                                    <option value="{{ item.url }}">
+                                        {{ item.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        {% elseif var.title == 'Cor' %}
+                            <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                                <option value="NonSelected">Modelo</option>
+                                {% for item in var.items %}
+                                    <option value="{{ item.url }}">
+                                        {{ item.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        {% endif %}
+                        
+                    {% endfor %}
+
+                {% endif %}
+            </form>        
+        {% endfor %}
+        
+    </div>
+    
+    <div class="col-md-1">
+        <div class="catalog_Search">
+            {% if search.word %}
+                <input name="palavra_busca" type="hidden" value="{{ search.word }}">
+                <a><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+            {% endif %}    
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+<script>
+    function filtroAlterado(valor) {
+
+        if (valor.value !== "NonSelected")
+        {
+            window.location.replace(valor.value);
+        }        
+    }
+</script>

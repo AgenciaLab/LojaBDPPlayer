@@ -62,6 +62,7 @@
         </div>
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
             <div class="catalog_AreaFiltros">
+
                 <div class="catalog_ContentFiltros">
                     <div class="col-md-1">
                         <div class="catalog_Close">
@@ -87,14 +88,11 @@
                         </div>
                     </div>
                 </div>
+                {% element('snippets/smartFilters') %}
             </div>
 
         </div>
     </div>
-</div>
-
-<div class="row">
-    {% element 'snippets/smart_filter' %}
 </div>
 
 {% if products|length > 0 %}
