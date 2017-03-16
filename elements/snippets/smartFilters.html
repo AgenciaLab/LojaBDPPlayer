@@ -14,8 +14,9 @@
             </a>
         </div>
     </div>
-    <div class="col-md-8">
-
+    <div class="col-md-7" id="uniqueFilters">
+        <div class="uniqueFilters">
+            
         {% if filters %}
             <form name="form-filter" method="get" class="smart-filter">
             <input type="hidden" name="loja" value="{{ store.id }}">
@@ -53,43 +54,32 @@
                 {% else %}
 
                     {% if myFilter.title == 'Filtrar por Marca' %}
-                        <select class="selectFormasPgto" >
-                            {% if myFilter.items |length == 1 %}
-                                {% for item in myFilter.items %}
-                                    <option value="{{ item.url }}">
-                                        {{ item.title }}
-                                    </option>
-                                {% endfor %}
-                            {% else %}
-                                <option value="NonSelected">Marca</option>
-                            {% endif %}
+                        <select class="selectFormasPgto" onchange="filtroAlterado(this)" data-form="filter">
+                            <option value="NonSelected"> {{ myFilter.items[0]['title'] }} </option>
+                            {% for item in myFilter.items %}
+                                <option value="{{ item.url }}">
+                                    {{ item.title }}
+                                </option>
+                            {% endfor %}
                         </select>
                     {% endif %}
-                    {% if 'Faixa de Pre' in  myFilter.title %}
+                    {% if ('Faixa de Pre' in  myFilter.title and myFilter.items[0] != null) %}
                         <select class="selectFormasPgto">
-                            {% if myFilter.items |length == 1 %}
-                                {% for item in myFilter.items %}
-                                    <option value="{{ item.url }}">
-                                        {{ item.title }}
-                                    </option>
-                                {% endfor %}
-                            {% else %}
-                                <option value="NonSelected">Faixa de Preço</option>
-                            {% endif %}
+                            <option value="NonSelected"> {{ myFilter.items[0]['title'] }}</option>
+                            {% for item in myFilter.items %}
+                                <option value="{{ item.url }}">
+                                    {{ item.title }}
+                                </option>
+                            {% endfor %}
                         </select>
                     {% endif %}
                     
                 {% endif %}
-                <PRE>
-                {{ dump(myFilter) }}
-                </PRE>
+               
                 {% if myFilter|length %}
                     
                     {% for var in myFilter %}  
-                        <PRE>
-                            {{ dump("TESTE") }}
-                        {{ dump(myFilter) }}
-                        </PRE>
+                        
                         {% if var.items |length > 1 %}
 
                             {% if var.title == 'Tamanho' %}
@@ -114,7 +104,7 @@
 
                         {% else %}
 
-                            {% if var.title == 'Tamanho' %}
+                            {% if (var.title == 'Tamanho' and var.items[0] != null) %}
                                 <select class="selectFormasPgto" >
                                     {% if var.items |length == 1 %}
                                         {% for item in var.items %}
@@ -126,7 +116,7 @@
                                         <option value="NonSelected">Tamanho</option>
                                     {% endif %}
                                 </select>
-                            {% elseif var.title == 'Cor' %}
+                            {% elseif (var.title == 'Cor' and var.items[0] != null) %}
                                 <select class="selectFormasPgto" >
                                     {% if var.items |length == 1 %}
                                         {% for item in var.items %}
@@ -157,6 +147,7 @@
             </form>        
         {% endfor %}
         
+        </div>
     </div>
     
     <div class="col-md-1">
