@@ -337,6 +337,13 @@ and open the template in the editor.
         margin-right: 3px;
         font-size: 0.9rem;
         width: 75px;
+        background-color: #ffff33;
+        padding: 10px 15px;
+        font-family: OxygenRegular;
+        font-weight: bold;
+        font-size: 9pt;
+        margin-top: 11px;
+        border: 1px solid #666;
     }
 
     .texto_Quantidade {
@@ -717,6 +724,14 @@ and open the template in the editor.
         margin-right: 25px;
         font-size: 1.2rem;
         width: 125px;
+        float: left;
+        background-color: #ffff33;
+        padding: 10px 15px;
+        font-family: OxygenRegular;
+        font-weight: bold;
+        font-size: 9pt;
+        margin-top: 11px;
+        border: 1px solid #666;
     }
 
     .texto_Quantidade {
@@ -957,6 +972,14 @@ and open the template in the editor.
         margin-right: 10px;
         font-size: 1.4rem;
         width: 130px;
+        float: left;
+        background-color: #ffff33;
+        padding: 10px 15px;
+        font-family: OxygenRegular;
+        font-weight: bold;
+        font-size: 9pt;
+        margin-top: 11px;
+        border: 1px solid #666;
     }
 
 

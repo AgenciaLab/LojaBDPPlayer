@@ -71,9 +71,10 @@
 
 {% if products|length > 0 %}
 
-<div class="catalog-content row" style="margin-left: 0px; margin-right: 0px">
+<div class="catalog-content row" style="margin-left: 0px; margin-right: 0px">    
     {% element 'showcase-catalog' { "products": products } %}
 </div>
+
 
 
 {% else %}
@@ -95,7 +96,7 @@
 </div>
 {% endif %}
 
-<script>
+<script> 
 
     function filtersClick() {
 

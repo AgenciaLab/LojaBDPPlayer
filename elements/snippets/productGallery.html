@@ -1,4 +1,4 @@
-<div class="noSpacing row" style="margin-left: 0px; margin-right: 0px; min-height: 500px; ">
+<div class="noSpacing row hidden-xs" style="margin-left: 0px; margin-right: 0px; min-height: 500px; ">
   <div class="prd_loading">
     <span>CARREGANDO ...</span>
   </div>
@@ -111,7 +111,7 @@
                     
                       products.forEach(function(prod) {
 
-                          $("#home_prd_" + i + " img").attr({ src:  prod.Product.ProductImage[0].http })
+                          $("#home_prd_" + i + " img").attr({ src:  prod.Product.ProductImage[0].https })
                           $("#home_prd_" + i + " h4").text(prod.Product.name)
                           $("#home_prd_" + i + " h5").text("de: " + prod.Product.price)
                           $("#home_prd_" + i + " span").text("A partir de: " + prod.Product.price)

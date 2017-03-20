@@ -1,3 +1,123 @@
+@media (max-width: 768px)
+{
+    .areaTroca {
+        height: 35px;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+    }
+
+    .areaLinkBannerA {
+        background: rgba(0, 0, 0, 0.5);
+        height: 25px;
+        width: 100%;
+    }
+
+    .areaLinkBannerB {
+        background: rgba(0, 0, 0, 0.5);
+        height: 25px;
+        width: 100%;
+    }
+
+    .areaTrocaLinks {
+        padding: 10px 15px;
+    }
+
+    .areaBannerBackButton {
+        height: 400px;
+        width: 25px;
+        float: left;
+        position: absolute;
+        z-index: 999;
+        margin-top: 80px;
+    }
+
+    .areaBannerBackButton img {
+        margin: 200px 10px;
+    }
+
+    .areaBannerFrontButton {
+        height: 400px;
+        width: 25px;
+        float: left;
+        position: absolute;
+        z-index: 999;
+        margin-top: 80px;
+        right: 10px;
+    }
+
+    .areaBannerFrontButton img {
+        margin: 200px 10px;
+    }
+
+    .areaBannerCategoryContent {
+        padding: 20px;
+        height: 80px;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        background: #fff02a;  
+    }
+
+    .areaBannerCategoryContent span {
+        font-family: OswaldRegular;
+        text-transform: uppercase;
+        font-size: 23pt;
+        margin: auto;
+        text-align: center;
+    }
+
+    .areaBannerHasProduct {
+        display: none;
+    }
+
+    .areaBannerActive {
+        display: block!important;
+    }
+
+}
+
+@media (min-width: 768px)
+{
+    .areaTroca {
+        height: 25px;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+    }
+
+    .areaLinkBannerA {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+    }
+
+    .areaLinkBannerB {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+    }
+
+    .areaBannerCategoryContent {
+        padding: 20px;
+        height: 80px;
+        width: 90%;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%)
+
+    }
+
+    .areaBannerCategoryContent span {
+        font-family: OswaldRegular;
+        text-transform: uppercase;
+        font-size: 23pt;
+        margin: auto;
+        text-align: center;
+    }
+}
+
 #bannerHome {
     text-align: center;
     background: #000;
@@ -17,24 +137,9 @@ body {
     overflow-x: hidden;
 }
 
-.areaTroca {
-    height: 25px;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-}
 
-.areaLinkBannerA {
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
 
-.areaLinkBannerB {
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
+
 
 .bannerActive {
     background: #fff02a!important;    
@@ -60,24 +165,7 @@ body {
     background: #fff02a;
 }
 
-.areaBannerCategoryContent {
-    padding: 20px;
-    height: 80px;
-    width: 90%;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%)
 
-}
-
-.areaBannerCategoryContent span {
-    font-family: OswaldRegular;
-    text-transform: uppercase;
-    font-size: 23pt;
-    margin: auto;
-    text-align: center;
-}
 
 .roteTab {
     text-align: center; 

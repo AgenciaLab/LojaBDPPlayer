@@ -14,9 +14,10 @@
             </a>
         </div>
     </div>
-    <div class="col-md-7" id="uniqueFilters">
-        <div class="uniqueFilters">
-            
+    <div class="col-md-8">
+
+        
+
         {% if filters %}
             <form name="form-filter" method="get" class="smart-filter">
             <input type="hidden" name="loja" value="{{ store.id }}">
@@ -25,9 +26,27 @@
                 <input type="hidden" name="categoria" value="{{ category.id }}">
             {% endif %}
 
-            {% for myFilter in filters %}
+                {% set prdSelect = Products() %}
+
+                {% set prdSelect = Products({
+                    'categories': category.id 
+                }) %}
+
+                <select id="marcasSelected" class="selectFormasPgto" onchange="filtroAlteradoMarca(this)" >
+                    <option value="NonSelected">Marca</option>
+                    {% for p in prdSelect %} 
+                        {% set brandTray = Brands( { "brand": p.brand } ) %}    
+                            {% for brand in brandTray %}                     
+                                <option value="{{ brand.slug }}">  
+                                        {{ brand.name }}
+                                </option>                            
+                            {% endfor %}                 
+                    {% endfor %}        
+                </select>  
+
+            {% for myFilter in filters %} 
                 
-                {% if myFilter.items |length > 1 %}
+                <!--{% if myFilter.items |length > 1 %}
 
                     {% if myFilter.title == 'Filtrar por Marca' %}
                         <select class="selectFormasPgto" onchange="filtroAlterado(this)" >
@@ -38,7 +57,7 @@
                                 </option>
                             {% endfor %}
                         </select>
-                    {% endif %}
+                    {% endif %}-->
                     {% if 'Faixa de Pre' in  myFilter.title %}
                         <select class="selectFormasPgto" onchange="filtroAlterado(this)">
                             <option value="NonSelected">Faixa de Preço</option>
@@ -53,33 +72,39 @@
 
                 {% else %}
 
-                    {% if myFilter.title == 'Filtrar por Marca' %}
-                        <select class="selectFormasPgto" onchange="filtroAlterado(this)" data-form="filter">
-                            <option value="NonSelected"> {{ myFilter.items[0]['title'] }} </option>
-                            {% for item in myFilter.items %}
-                                <option value="{{ item.url }}">
-                                    {{ item.title }}
-                                </option>
-                            {% endfor %}
+                    <!--{% if myFilter.title == 'Filtrar por Marca' %}
+                        <select class="selectFormasPgto" >
+                            {% if myFilter.items |length == 1 %}
+                                {% for item in myFilter.items %}
+                                    <option value="{{ item.url }}">
+                                        {{ item.title }}
+                                    </option>
+                                {% endfor %}
+                            {% else %}
+                                <option value="NonSelected">Marca</option>
+                            {% endif %}
                         </select>
-                    {% endif %}
-                    {% if ('Faixa de Pre' in  myFilter.title and myFilter.items[0] != null) %}
+                    {% endif %}-->
+                    {% if 'Faixa de Pre' in  myFilter.title %}
                         <select class="selectFormasPgto">
-                            <option value="NonSelected"> {{ myFilter.items[0]['title'] }}</option>
-                            {% for item in myFilter.items %}
-                                <option value="{{ item.url }}">
-                                    {{ item.title }}
-                                </option>
-                            {% endfor %}
+                            {% if myFilter.items |length == 1 %}
+                                {% for item in myFilter.items %}
+                                    <option value="{{ item.url }}">
+                                        {{ item.title }}
+                                    </option>
+                                {% endfor %}
+                            {% else %}
+                                <option value="NonSelected">Faixa de Preço</option>
+                            {% endif %}
                         </select>
                     {% endif %}
                     
                 {% endif %}
-               
+                
                 {% if myFilter|length %}
                     
                     {% for var in myFilter %}  
-                        
+
                         {% if var.items |length > 1 %}
 
                             {% if var.title == 'Tamanho' %}
@@ -92,9 +117,9 @@
                                         {% endfor %}                                    
                                 </select>
                             {% elseif var.title == 'Cor' %}
-                                <select class="selectFormasPgto" >  
-                                        {% for item in var.items %}
+                                <select class="selectFormasPgto" onchange="filtroAlterado(this)" >  
                                         <option value="NonSelected">Cor</option>
+                                        {% for item in var.items %}                                        
                                             <option value="{{ item.url }}">
                                                 {{ item.title }}
                                             </option>
@@ -104,7 +129,7 @@
 
                         {% else %}
 
-                            {% if (var.title == 'Tamanho' and var.items[0] != null) %}
+                            {% if var.title == 'Tamanho' %}
                                 <select class="selectFormasPgto" >
                                     {% if var.items |length == 1 %}
                                         {% for item in var.items %}
@@ -116,7 +141,7 @@
                                         <option value="NonSelected">Tamanho</option>
                                     {% endif %}
                                 </select>
-                            {% elseif (var.title == 'Cor' and var.items[0] != null) %}
+                            {% elseif var.title == 'Cor' %}
                                 <select class="selectFormasPgto" >
                                     {% if var.items |length == 1 %}
                                         {% for item in var.items %}
@@ -147,7 +172,6 @@
             </form>        
         {% endfor %}
         
-        </div>
     </div>
     
     <div class="col-md-1">
@@ -163,11 +187,82 @@
 {% endif %}
 
 <script>
-    function filtroAlterado(valor) {
+    var url = window.location.href;
 
+    if (url.indexOf("marca") > 0)
+    {
+        marca = url.substring(url.indexOf("marca"), url.length).replace("marca=marca_", "");
+
+        if (
+            marca.indexOf("&") > 0 || marca.indexOf("?") > 0
+        )
+        {
+            var posicao = marca.length;
+
+            if (marca.indexOf("&") > 0)
+                posicao = marca.indexOf("&");
+
+            if (marca.indexOf("?") && marca.indexOf("?") < posicao)
+                posicao = marca.indexOf("?");
+
+            marca = marca.substring(0, posicao);
+        }
+
+        jQuery("#marcasSelected").val(marca);
+    }
+
+    function filtroAlterado(valor) {
+        
         if (valor.value !== "NonSelected")
         {
             window.location.replace(valor.value);
-        }        
+        }      
+
+    }
+
+    function filtroAlteradoMarca(valor) {
+
+        var url = window.location.href;
+        var urlFinal = "";
+
+        if (url.indexOf("marca") < 0)
+        {
+            urlFinal = url + "&marca=marca_" + valor.value;
+            window.location.replace(urlFinal);
+        }
+        else
+        {
+            
+            if (valor.value == "NonSelected")
+            {
+                urlFinal = url.replace(url.substring(url.indexOf("marca") -1, url.length), "");
+            }
+            else
+            {
+                var marca = url.substring(url.indexOf("marca"), url.length).replace("marca=marca_", "");
+
+                if (
+                    marca.indexOf("&") > 0 || marca.indexOf("?") > 0
+                )
+                {
+                    var posicao = marca.length;
+
+                    if (marca.indexOf("&") > 0)
+                        posicao = marca.indexOf("&");
+
+                    if (marca.indexOf("?") && marca.indexOf("?") < posicao)
+                        posicao = marca.indexOf("?");
+
+                    marca = marca.substring(0, posicao);
+                }
+
+                urlFinal = url.replace(marca, valor.value);
+
+                //urlFinal = url.replace(url.substring(url.indexOf("marca") -1, url.length), "") + "&marca=marca_" + valor.value;
+            }
+            
+        }
+
+        window.location.replace(urlFinal);
     }
 </script>

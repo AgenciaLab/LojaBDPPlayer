@@ -1,20 +1,10 @@
-
-<!--<div id="mrc_Marcas" class="areaBusca areaPesquisa" data-bind="event: { mouseout: funcoes.sairMenuMarcas">
-    <div class="mrc_Container" data-bind="foreach: variables.marcas">
-        <div class="mrc_Area noSpacing col-md-4"  data-bind="event: { mouseover: $parent.funcoes.mouseOver.bind($data, $index()), mouseout: $parent.funcoes.mouseLeave.bind($data, $index()) }, attr: {'id': 'minhaBox' + $index() }">
-            <div class="mrc_AreaImage">
-                <img class="img-responsive" data-bind="attr: { src: $data }"/>
-            </div>
-        </div>        
-    </div>
-</div>-->
 {% set marcas = [11,13,15,17,19,21,23,25,27,29,31,33] %} 
 {% set brands = Brands() %}
 <div id="mrc_Marcas" class="areaBusca areaPesquisa">
     <div class="mrc_Container areaDoMenu">
         {% for level1 in brands %}
             {% if level1.id in marcas %}
-                <div class="mrc_Area noSpacing col-sm-4">
+                <div class="mrc_Area noSpacing col-sm-4 col-xs-6">
                     <div class="mrc_AreaImage">
                         <a href="{{ level1.slug }}">
                             {% if level1.slug == "bdp-player" %}
@@ -60,3 +50,55 @@
         {% endfor %}
     </div>
 </div>
+
+<div class="areaBusca areaPesquisa visible-xs">
+    <div class="mrc_Container areaDoMenu">
+        {% for level1 in brands %}
+            {% if level1.id in marcas %}
+                <div class="mrc_Area noSpacing col-sm-4 col-xs-6">
+                    <div class="mrc_AreaImage">
+                        <a href="{{ level1.slug }}">
+                            {% if level1.slug == "bdp-player" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca1.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "overwatch" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca2.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "warcraft" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca3.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "starcraft" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca4.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "hearthstone" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca5.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "heroes" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca6.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "diablo" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca7.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "halo" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca8.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "resident-evil" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca9.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "space-invaders" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca10.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "just-dance" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca11.png') }}"/>
+                            {% endif %}
+                            {% if level1.slug == "assasins-creed" %}
+                                <img class="img-responsive" src="{{ asset('img/assets/marcas/marca12.png') }}"/>
+                            {% endif %}     
+                        </a>
+                    </div>
+                </div>                   
+            {% endif %} 
+        {% endfor %}
+    </div>
+</div>
+

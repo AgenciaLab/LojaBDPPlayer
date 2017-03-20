@@ -18,17 +18,6 @@
     text-align: left;
 }
 
-
-
-
-
-
-
-
-
-.hdr_AreaButton img {
-}
-
 .hdr_AreaButton input {
     position: absolute;
     top: 52px;
@@ -46,48 +35,171 @@
 }
 
 
-
-#imgSearch {
-    float: left;
-    margin-left: 20px;
-}
-
 ::-webkit-input-placeholder { /* WebKit browsers */
     opacity: 1 !important;
     color: #000;
 }
 
-.owl-pagination {
-        position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-
-
-
-
-.active {
-    background: #fff02a!important;
-}
-
-.owl-theme .owl-controls .owl-page span {
-    display: none!important;
-}
 
 @media (max-width: 768px)
 {
+    
+    .areaPesquisa {
+        margin-top: 65px;
+    }
+
+    .alignCenter {
+        text-align: center;
+    }
+
+    .borderBottom {
+        border-bottom: 1px solid #333300;
+    }
+
+    .borderRight {
+        border-right: 1px solid #333300;
+    }
+
+    #imgMoreCategory {
+        max-width: 25px;
+        margin-top: 30px;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+
+    .mnuMob_btnClose {
+        color: #fff02a;
+        font-size: 24pt;
+        margin-top: 23px;
+    }
+
+    .mnuMob_AreaItem {
+        background: #070003;
+        height: 75px;
+    }
+
+    .mnuMob_AreaItem h5 {
+        font-size: 14pt;
+        font-family: OswaldRegular;
+        color: #fff;
+        margin-top: 30px;
+        margin-left: 10px;
+        text-transform: uppercase;
+    }
+
+    .mnuMob_AreaItem img {        
+        margin-top: 25px;
+    }
+
+    .searchMobileArea {
+        position: absolute;
+        z-index: 999;
+        top: 120px;
+        width: 100%;
+        height: 200px;
+        display: none;
+    }
+
+    .menuMobileArea {
+        position: absolute;
+        z-index: 999;
+        top: 120px;
+        width: 100%;
+        height: 200px;
+        display: none;
+    }
+
+    .owl-pagination {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .active {
+        background: #fff02a!important;
+    }
+
+    .owl-theme .owl-controls .owl-page span {
+        display: none!important;
+    }
+
+    .hdr_AreaImagem {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .hdr_mobileMenu {
+        background-color: #070003;
+        height: 80px;
+        width: 100%;
+    }
+
+    .hdr_InfoLeft {
+        text-align: left;
+        padding-right: 0px;
+        padding-left: 5px;
+    }
+
+    .hdr_InfoRight {
+        text-align: right;
+        padding-left: 0px;
+        padding-right: 5px;
+    }
+
+    .hdr_Info span {
+        font-size: 7pt;
+        line-height: 28px;
+        letter-spacing: 1px;
+    }
+
+    .hdr_AreaImagemLogo {
+        padding: 20px 0px;
+        background-color: #070003;
+        border-bottom: 1px solid #a49919;
+    }
+
+    .hdr_AreaImagemLogo img {
+        margin: auto;
+        max-width: 260px;
+    }
+
     .owl-theme .owl-controls .owl-page {
         background:rgba(0, 0, 0, 0.5);
-        width: 60px;
+        width: 80px;
+        margin-left: 10px;
+        height: 20px;
+    }
+}
+
+
+@media (min-width: 768px)
+{
+    #imgSearch {
+        float: left;
         margin-left: 20px;
-        height: 10px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 992px)
 {
+    .owl-pagination {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .active {
+        background: #fff02a!important;
+    }
+
+    .owl-theme .owl-controls .owl-page span {
+        display: none!important;
+    }
     
     #areaMenu {
         position: absolute;
@@ -152,6 +264,20 @@
 
 @media (min-width: 992px) and (max-width: 1400px)
 {
+    .owl-pagination {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .active {
+        background: #fff02a!important;
+    }
+
+    .owl-theme .owl-controls .owl-page span {
+        display: none!important;
+    }
 
     #areaMenu {
         position: absolute;
@@ -201,6 +327,21 @@
 }
 
 @media (min-width: 1400px) {
+    
+    .owl-pagination {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .active {
+        background: #fff02a!important;
+    }
+
+    .owl-theme .owl-controls .owl-page span {
+        display: none!important;
+    }
 
     .owl-theme .owl-controls .owl-page {
         background:rgba(0, 0, 0, 0.5); 

@@ -80,7 +80,7 @@
                                 <h2>Formas Pagamento</h2>
                             </div>
 
-                            <select class="selectFormasPgto">
+                            <select class="selectFormasPgto" style="background-color:#fff">
                                 <option value="Vista">Á vista</option>
                                  {% for payment in paymentMethods.order %}
                                     <option value="{{ payment.display_name }}">
@@ -88,8 +88,8 @@
                                     </option>
                                 {% endfor %}
                             </select>
-
-                            <select class="selectFormasPgto">
+ 
+                            <select class="selectFormasPgto" style="background-color:#fff">
                                 <option value="Parcelado">Parcelado</option>
                                 {% for payment in paymentMethods.credit %}
                                     <option value="{{ payment.display_name }}">

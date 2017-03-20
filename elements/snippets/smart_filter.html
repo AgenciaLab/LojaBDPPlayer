@@ -15,7 +15,7 @@
             <h2>{{ myFilter.title }}</h2>
             {% if myFilter.title == 'Filtrar por Marca' %}
 
-                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                <select class="selectFormasPgto" onchange="filtroAlterad o(this)">
                                 <option value="NonSelected">Marca</option>
                                  {% for item in myFilter.items %}
                                     <option value="{{ item.url }}">

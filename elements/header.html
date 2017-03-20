@@ -1,83 +1,118 @@
 <header>
-    <div class="hdr_Info">
-        <div class="hdr_InfoLeft col-sm-6">
+    <div class="hdr_Info hidden-xs">
+        <div class="hdr_InfoLeft col-xs-6">
             <span>OFFICIAL PRODUCTS LICENSED</span>
         </div>
-        <div class="hdr_InfoRight col-sm-6">
+        <div class="hdr_InfoRight col-xs-6">
             <span>@Bdpplayer All Rights Reserved</span>
         </div>
     </div>
 
-    <div class="hdr_AreaLogo">
-    <div class="noSpacing col-sm-3">
-        <div class="noSpacing col-sm-8" id="hdr_AreaMenu">
-            <a onclick="openMenu()">
-                <div class="hdr_AreaButton hidden-sm">
-                    <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
-                    <span>MENU</span>
-                </div>            
-                <div class="hdr_AreaButton visible-sm">
-                    <div class="hdr_AreaImagem">
-                        <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
-                    </div>
-                    <span>MENU</span>
-                </div>            
-            </a>
-
-            <div class="areaDoMenu">
-                {% element 'snippets/menu' %}
-                {% element 'snippets/brands' %}
-            </div>
-                        
+    <div class="hdr_Info visible-xs">
+        <div class="hdr_InfoLeft col-xs-6">
+            <span>@Bdpplayer All Rights Reserved</span>
         </div>
-        <div class="areaBusca col-sm-4">
-            <div id="areaMenu" class="areaPesquisa">
-                <a onclick="openSearch()" id="btnAbrirMarcas">
-                    <div class="hdr_AreaButton">      
-                        <div class="hdr_AreaImagem">             
-                            <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
-                        </div>
-                    </div>            
+        <div class="hdr_InfoRight col-xs-6">
+            <span>OFFICIAL PRODUCTS LICENSED</span>
+        </div>
+    </div>
+
+    <div class="hdr_AreaLogo">
+        <div class="noSpacing col-sm-3 hidden-xs">
+            <div class="noSpacing col-sm-8" id="hdr_AreaMenu">
+                <a onclick="openMenu()">
+                    <div class="hdr_AreaButton hidden-sm">
+                        <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
+                        <span>MENU</span>
+                    </div>        
                 </a>
-                <div id="btnOpenSearch">
-                    {% element 'snippets/search' %}
+
+                <div class="areaDoMenu">
+                    {% element 'snippets/menu' %}
+                    {% element 'snippets/brands' %}
+                </div>
+                            
+            </div>
+            <div class="areaBusca col-sm-4">
+                <div id="areaMenu" class="areaPesquisa">
+                    <a onclick="openSearch()" id="btnAbrirMarcas">
+                        <div class="hdr_AreaButton">      
+                            <div class="hdr_AreaImagem">             
+                                <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
+                            </div>
+                        </div>            
+                    </a>
+                    <div id="btnOpenSearch">
+                        {% element 'snippets/search' %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-6">
-        <img class="img-responsive" src="{{ asset('img/assets/logo.png') }}'" alt=""/>
-    </div>
-    <div class="col-sm-3">
-        <div class="AreaBotaoLogin col-sm-6">
-            <a onclick="showLogin()">
-                <div class="hdr_AreaButton hidden-sm">
-                    <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
-                    <span>LOGIN</span>
-                </div>            
-                <div class="hdr_AreaButton visible-sm">
-                    <div class="hdr_AreaImagem">
+        <div class="hdr_AreaImagemLogo col-sm-6">
+            <img class="img-responsive" src="{{ asset('img/assets/logo.png') }}'" alt=""/>
+        </div>
+        <div class="col-sm-3 hidden-xs">
+            <div class="AreaBotaoLogin col-sm-6">
+                <a onclick="showLogin()">
+                    <div class="hdr_AreaButton hidden-sm">
                         <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
-                    </div>
-                    <span>LOGIN</span>
-                </div>            
-            </a>
+                        <span>LOGIN</span>
+                    </div>      
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <a>
+                    <div class="hdr_AreaButton visible-sm">    
+                        <div class="hdr_AreaImagem">            
+                            <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
+                        </div>
+                        <span>CARRINHO</span>
+                    </div>        
+                </a>
+            </div>
+            {% element 'snippets/flyoutCart' %}
         </div>
-        <div class="col-sm-6">
-            <a>
-                <div class="hdr_AreaButton visible-sm">    
-                    <div class="hdr_AreaImagem">            
-                        <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
-                    </div>
-                    <span>CARRINHO</span>
-                </div>      
-                <div class="hdr_AreaButton hidden-sm">    
-                    <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
-                    <span>CARRINHO</span>
-                </div>            
-            </a>
+        <div class="hdr_mobileMenu visible-xs">
+            <div class="col-xs-3">
+                <div class="hdr_AreaButton">
+                    <a onclick="openMenuMobile()">
+                        <div class="hdr_AreaImagem">
+                            <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
+                        </div>
+                    </a>
+                </div>                
+            </div>
+            <div class="col-xs-3">
+                <div class="hdr_AreaButton">
+                    <a onclick="openMarcasMobile()">
+                        <div class="hdr_AreaImagem">
+                            <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
+                        </div>
+                    </a>
+                </div>                
+            </div>
+            <div class="col-xs-3">
+                <div class="hdr_AreaButton">
+                    <a onclick="showLogin()">
+                        <div class="hdr_AreaImagem">
+                            <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="hdr_AreaButton">
+                    <a onclick="showLogin()">
+                        <div class="hdr_AreaImagem">
+                            <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="areaDoMenu">
+                {% element 'snippets/menu-mobile' %}
+                {% element 'snippets/search-mobile' %}
+            </div>
         </div>
-        {% element 'snippets/flyoutCart' %}
     </div>
-</div>
 </header>

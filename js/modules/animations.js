@@ -8,6 +8,13 @@
             stopOnHover: false
         });
 
+        jQuery("#owl-demoMob").owlCarousel({
+            items: 1,
+            loop: true,
+            autoPlay: 5000,
+            stopOnHover: false
+        });
+
         jQuery(".areaDoMenu").on("mouseleave", function (e) {
 
             if (e.toElement === null)
@@ -123,6 +130,23 @@ function openMenu() {
         , 0);
 }
 ;
+
+function openMenuMobile() {
+    jQuery(".menuMobileArea").css("display", "block");
+}
+
+function closeMenuMobile() {
+    jQuery(".menuMobileArea").css("display", "none");
+}
+
+function openMarcasMobile() {
+    jQuery(".searchMobileArea").css("display", "block");
+}
+
+function closeMarcasMobile() {
+    jQuery(".searchMobileArea").css("display", "none");
+}
+
 
 function openMenuFast() {
 
