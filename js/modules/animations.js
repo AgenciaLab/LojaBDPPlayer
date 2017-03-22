@@ -132,6 +132,7 @@ function openMenu() {
 ;
 
 function openMenuMobile() {
+    fechaMenus();
     jQuery(".menuMobileArea").css("display", "block");
 }
 
@@ -140,6 +141,7 @@ function closeMenuMobile() {
 }
 
 function openMarcasMobile() {
+    fechaMenus();
     jQuery(".searchMobileArea").css("display", "block");
 }
 
@@ -307,6 +309,32 @@ function showLogin() {
         jQuery(".fly_Area").animate({ right: "-400px" }, 200);
     }
 
+}
+
+function showLoginMobile() {
+    if (jQuery(".fly_AreaMobile").css('display') === 'none') {
+        fechaMenus();
+        jQuery(".fly_AreaMobile").css('display', 'block');
+    } else {
+        jQuery(".fly_AreaMobile").css('display', 'none');
+    }
+}
+
+function showCartMobile()
+{    
+    if (jQuery(".cart_AreaMobile").css('display') === 'none') {
+        fechaMenus();
+        jQuery(".cart_AreaMobile").css('display', 'block');
+    } else {
+        jQuery(".cart_AreaMobile").css('display', 'none');
+    }
+}
+
+function fechaMenus()
+{
+    jQuery(".menuMobileArea").css("display", "none");
+    jQuery(".fly_AreaMobile").css('display', 'none');
+    jQuery(".cart_AreaMobile").css('display', 'none');
 }
 
 function hideLogin() {

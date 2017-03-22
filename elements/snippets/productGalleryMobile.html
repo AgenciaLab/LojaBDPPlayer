@@ -192,12 +192,13 @@
                       var products = response.Products;
                       var i = 0;
 
+                      console.log(products);
                       
                     
                       products.forEach(function(prod) {
 
                           $("#home_prdM_" + i).addClass("areaBannerHasProduct")
-                          $("#home_prdM_" + i + " img").attr({ src:  prod.Product.ProductImage[0].https })
+                          $("#home_prdM_" + i + " img").attr({ src:  prod.Product.ProductImage[0].thumbs["180"].https })
                           $("#home_prdM_" + i + " h4").text(prod.Product.name)
                           $("#home_prdM_" + i + " h5").text("de: " + prod.Product.price)
                           $("#home_prdM_" + i + " span").text("A partir de: " + prod.Product.price)

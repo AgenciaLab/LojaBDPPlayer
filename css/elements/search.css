@@ -88,6 +88,29 @@
         color: #fff;
     }
 
+    .search .search-key::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #fff;
+        font-family: OswaldRegular;
+        text-transform: uppercase;
+    }
+    .search .search-key:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #fff;
+        opacity:  1;
+        font-family: OswaldRegular;
+        text-transform: uppercase;
+    }
+    .search .search-key::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #fff;
+        opacity:  1;
+        font-family: OswaldRegular;
+        text-transform: uppercase;
+    }
+    .search .search-key:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:    #fff;
+        font-family: OswaldRegular;
+        text-transform: uppercase;
+    }
+
     .search .search-button {
         color: #fff;
     }

@@ -1,15 +1,17 @@
-<div class="searchMobileArea">
-    <div class="">
-        <div class="mnuMob_AreaItem borderBottom underline  col-xs-9">
-            {% element 'snippets/search' %}
+<div class=" visible-xs">
+    <div class="searchMobileArea">
+        <div class="">
+            <div class="mnuMob_AreaItem borderBottom underline  col-xs-9">
+                {% element 'snippets/search' %}
+            </div>
+            <div class="mnuMob_AreaItem borderBottom alignCenter col-xs-3">
+                <a onclick="closeMarcasMobile()">
+                    <h4 class="mnuMob_btnClose">X</h4>
+                </a>
+            </div>               
         </div>
-        <div class="mnuMob_AreaItem borderBottom alignCenter col-xs-3">
-            <a onclick="closeMarcasMobile()">
-                <h4 class="mnuMob_btnClose">X</h4>
-            </a>
-        </div>               
+        <div>
+            {% element 'snippets/brands' %}        
+        </div>
     </div>
-    <div>
-        {% element 'snippets/brands' %}        
-    </div>
-</div>
+</div>    

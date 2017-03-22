@@ -8,8 +8,92 @@ and open the template in the editor.
     Author     : MarceloMacedo
 */
 
+@media (max-width: 768px)
+{
+    .fly_AreaMobile {
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        min-width: 370px;
+        height: 360px;
+        background: #252525;
+        top: 195px;
+        right: 0px;
+        font-family: OswaldBold;
+        display: none;
+    }
+
+    .fly_header {
+        height: 85px;
+        padding-top: 10px;
+        border-bottom: 1px solid gray;
+    }
+
+    .fly_body {
+        height: 150px;
+        padding-top: 10px;
+        border-bottom: 1px solid gray;
+    }
+
+    .fly_body img {
+        margin-top: 10px;
+    }
+
+    .fly_body h5 {
+        font-size: 14pt;
+        color: #fff;
+        font-family: OswaldRegular;
+        margin-top: 15px;
+    }
+
+    .fly_body h4 {
+        font-size: 16pt;
+        color: #fff;
+        font-family: OswaldRegular;
+        margin-top: 15px;
+    }
+
+    .flyMenu span {
+        padding-top: 15px;
+        line-height: 80px;    
+        font-size: 10pt;   
+    }
+
+    .fly_Body {
+        margin: 20px;
+    }
+
+    .fly_AreaInput button {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        background-color: #fff02a;
+        color: #070003;
+        border: none;
+        font-size: 11pt;  
+    }
+
+    .checkbox label {
+        color: #fff;        
+        font-size: 10pt;
+        line-height: 20px;
+    }
+
+    .flyMenu {
+        height: 15px;
+        width: 100%;
+        text-align: center;    
+    }
+}
+
 @media (min-width: 768px) and (max-width: 992px)
 {
+    .flyMenu {
+        height: 10px;
+        width: 100%;
+        text-align: center;    
+    }
+
     .fly_Area {
         position: absolute;
         z-index: 999;
@@ -56,6 +140,13 @@ and open the template in the editor.
 
 @media (min-width: 992px) and (max-width: 1400px)
 {
+
+    .flyMenu {
+        height: 10px;
+        width: 100%;
+        text-align: center;    
+    }
+
     .fly_Area {
         position: absolute;
         z-index: 999;
@@ -100,6 +191,11 @@ and open the template in the editor.
 }
 
 @media (min-width: 1400px) {
+    .flyMenu {
+        height: 10px;
+        width: 100%;
+        text-align: center;    
+    }
 
     .fly_Area {
         position: absolute;
@@ -150,11 +246,7 @@ and open the template in the editor.
 
 
 
-.flyMenu {
-    height: 10px;
-    width: 100%;
-    text-align: center;    
-}
+
 
 
 .Selected {
