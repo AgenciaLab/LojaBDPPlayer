@@ -1,10 +1,12 @@
 <header>
     <div class="hdr_Info hidden-xs">
-        <div class="hdr_InfoLeft col-xs-6">
-            <span>OFFICIAL PRODUCTS LICENSED</span>
-        </div>
-        <div class="hdr_InfoRight col-xs-6">
-            <span>@Bdpplayer All Rights Reserved</span>
+        <div>
+            <div class="hdr_InfoLeft col-sm-6">
+                <span>OFFICIAL PRODUCTS LICENSED</span>
+            </div>
+            <div class="hdr_InfoRight col-sm-6">
+                <span>@Bdpplayer All Rights Reserved</span>
+            </div>
         </div>
     </div>
 
@@ -93,7 +95,7 @@
             </div>
             <div class="col-xs-3">
                 <div class="hdr_AreaButton">
-                    <a onclick="showLogin()">
+                    <a onclick="showLoginMobile()">
                         <div class="hdr_AreaImagem">
                             <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
                         </div>
@@ -102,7 +104,7 @@
             </div>
             <div class="col-xs-3">
                 <div class="hdr_AreaButton">
-                    <a onclick="showLogin()">
+                    <a onclick="showCartMobile()">
                         <div class="hdr_AreaImagem">
                             <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
                         </div>
@@ -112,6 +114,8 @@
             <div class="areaDoMenu">
                 {% element 'snippets/menu-mobile' %}
                 {% element 'snippets/search-mobile' %}
+                {% element 'snippets/login-mobile' %}
+                {% element 'snippets/cart-mobile' %}
             </div>
         </div>
     </div>
