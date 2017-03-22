@@ -46,6 +46,9 @@
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </div>
 
+                <div class="cart_LoadingArea">
+                    <span>Carregando...</span>
+                </div>
 
                 <div class="col-xs-8">
                     <div class="row">
@@ -99,21 +102,25 @@
                                                   
 
                                                   // cart products
-                                                  $.getJSON("/mvc/store/cart/count?loja=365499", function (data) {
+                                                  jQuery.getJSON("/mvc/store/cart/count?loja=365499", function (data) {
                                                       var subtotal = data.cart.price;
                                                       var products = data.cart.Products;
                                                       var id = 0;
 
-                                                      $("#cartMob_Value").text(data.cart.price);
+                                                      console.log(data);
+
+                                                      jQuery("#cartMob_Value").text(data.cart.price);
 
                                                       if (products.length > 0)
                                                       {
-                                                          $(".cart_AreaMobile").css("height", "450px");
+                                                          jQuery(".cart_HasProduct").css("display", "block");
+                                                          jQuery(".cart_HasNoProduct").css("display", "none");
+                                                          jQuery(".cart_AreaMobile").css("height", "450px");
                                                           
                                                         products.forEach(function (d) {
                                                             var image = d.ProductImage[0].thumbs["90"].https;
 
-                                                            $("#cartMobileItem").append(
+                                                            jQuery("#cartMobileItem").append(
                                                                 "<li class='crt_" + id + "'>" +
                                                                 "<p class='crt_image'>" + image + "</p>" +
                                                                 "<p class='crt_name'>" + d.name + "</p>" +
@@ -125,18 +132,20 @@
                                                             id++;
                                                         }, this);
 
-                                                        $("#cartMobileQtde").text(id);
+                                                        jQuery("#cartMobileQtde").text(id);
 
                                                         carregaProduct(0);
                                                       }
                                                       else {
-                                                          $(".cart_AreaMobile").css("height", "235px");
+                                                          jQuery(".cart_HasProduct").css("display", "none");
+                                                          jQuery(".cart_HasNoProduct").css("display", "block");
+                                                          jQuery(".cart_AreaMobile").css("height", "235px");
                                                       }
 
                                                   });
 
                                                   function irParaCarrinho() {
-                                                      var cupom = $("#cupom").val();
+                                                      var cupom = jQuery("#cupom").val();
                                                       var url = "/loja/carrinho.php?loja=365499";
 
                                                       if (cupom.length > 0) {
@@ -147,23 +156,26 @@
                                                   }
 
                                                   function carregaProduct(id) {
-                                                      var image = $(".crt_" + id + " .crt_image").text();
+                                                      var image = jQuery(".crt_" + id + " .crt_image").text();
 
-                                                      $("#cartMob_Id").text(id);
-                                                      $("#cartMob_Image").attr("src", image);
-                                                      $("#cartMob_Product").text($(".crt_" + id + " .crt_name").text());
-                                                      $("#cartMob_Price").text($(".crt_" + id + " .crt_price").text());
-                                                      $("#cartMob_Qtde").text($(".crt_" + id + " .crt_quantity").text());
+                                                      jQuery("#cartMob_Id").text(id);
+                                                      jQuery("#cartMob_Image").attr("src", image);
+                                                      jQuery("#cartMob_Product").text($(".crt_" + id + " .crt_name").text());
+                                                      jQuery("#cartMob_Price").text($(".crt_" + id + " .crt_price").text());
+                                                      jQuery("#cartMob_Qtde").text($(".crt_" + id + " .crt_quantity").text());
 
                                                   }
 
                                                   function nextProductItem() {
 
-                                                      var actualId = $("#cartMob_Id").text();
-                                                      var itens = $("#cartMobileQtde").text();
+                                                      var actualId = jQuery("#cartMob_Id").text();
+                                                      var itens = jQuery("#cartMobileQtde").text();
                                                       var nextId = Number(actualId) + 1;
 
                                                       if (nextId < Number(itens)) {
+                                                          jQuery(".cart_LoadingArea").fadeIn();
+                                                          jQuery(".cart_LoadingArea").fadeOut(200);
+
                                                           carregaProduct(nextId)
                                                       }
 
@@ -171,12 +183,14 @@
 
                                                   function backProductItem() {
 
-                                                      var actualId = $("#cartMob_Id").text();
-                                                      var itens = $("#cartMobileQtde").text();
+                                                      var actualId = jQuery("#cartMob_Id").text();
+                                                      var itens = jQuery("#cartMobileQtde").text();
                                                       var nextId = Number(actualId) - 1;
 
 
                                                       if (nextId >= 0) {
+                                                          jQuery(".cart_LoadingArea").fadeIn();
+                                                          jQuery(".cart_LoadingArea").fadeOut(200);
                                                           carregaProduct(nextId)
                                                       }
 

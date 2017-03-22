@@ -134,6 +134,7 @@ function openMenu() {
 function openMenuMobile() {
     fechaMenus();
     jQuery(".menuMobileArea").css("display", "block");
+    getDownAnimation(".menuMobileArea", "height");
 }
 
 function closeMenuMobile() {
@@ -143,6 +144,13 @@ function closeMenuMobile() {
 function openMarcasMobile() {
     fechaMenus();
     jQuery(".searchMobileArea").css("display", "block");
+    getDownAnimation(".mrc_Container", "height"); 
+
+    jQuery(".mrc_Area").addClass("mrc_Efeito");    
+
+    setTimeout(function() {
+        jQuery(".mrc_Area").removeClass("mrc_Efeito");    
+    }, (500));
 }
 
 function closeMarcasMobile() {
@@ -315,6 +323,9 @@ function showLoginMobile() {
     if (jQuery(".fly_AreaMobile").css('display') === 'none') {
         fechaMenus();
         jQuery(".fly_AreaMobile").css('display', 'block');
+
+        getDownAnimation(".fly_AreaMobile", "height");
+
     } else {
         jQuery(".fly_AreaMobile").css('display', 'none');
     }
@@ -325,9 +336,27 @@ function showCartMobile()
     if (jQuery(".cart_AreaMobile").css('display') === 'none') {
         fechaMenus();
         jQuery(".cart_AreaMobile").css('display', 'block');
+
+        getDownAnimation(".cart_AreaMobile", "height");
+
     } else {
         jQuery(".cart_AreaMobile").css('display', 'none');
     }
+}
+
+function getDownAnimation(classe, prop)
+{
+    var areaHeight = jQuery(classe).css(prop);
+        jQuery(classe).css(prop, "0px");
+
+        jQuery(classe).animate({
+            height: areaHeight
+        }, {
+                duration: 400,
+                specialEasing: {
+                    width: 'linear'
+                }
+        });
 }
 
 function fechaMenus()
