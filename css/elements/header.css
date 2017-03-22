@@ -61,6 +61,10 @@
         border-right: 1px solid #333300;
     }
 
+    .borderLeft {
+        border-left: 10px solid #fff02a;
+    }
+
     #imgMoreCategory {
         max-width: 25px;
         margin-top: 30px;
@@ -79,6 +83,12 @@
     .mnuMob_AreaItem {
         background: #070003;
         height: 75px;
+    }
+
+    .bkg_AreaItem {
+        width: 100%;
+        padding-left: 15px;
+        background-color: #fff02a;
     }
 
     .mnuMob_AreaItem h5 {

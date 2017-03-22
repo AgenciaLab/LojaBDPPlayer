@@ -16,18 +16,17 @@
         {% set categorias = [41,43,17,19,45,47,49,51] %} 
         {% for level1 in categories %} 
             {% if level1.id in categorias %}
-            <div class="mnuMob_AreaItem borderBottom col-xs-6" onclick="mnu_AreaOpenTab({{level1.id}})" >
-                <h5>{{ level1.name }} 1</h5> 
-            </div>
-            <div class="mnuMob_AreaItem borderBottom borderRight alignCenter col-xs-3" onclick="mnu_AreaOpenTab({{level1.id}})">
-                <img id="imgMoreCategory" src="{{ asset('img/assets/btnMoreCategory.png') }}'" alt=""/> 
-            </div>
-            <div class="mnuMob_AreaItem col-xs-3">
-            </div>
+                <div class="mnuMob_AreaItem borderBottom col-xs-6" id="clk_{{level1.id}}" onclick="mnu_AreaOpenTab({{level1.id}})" >
+                    <h5 id="h5{{level1.id}}">{{ level1.name }} </h5> 
+                </div>
+                <div class="mnuMob_AreaItem borderBottom borderRight alignCenter col-xs-3" id="clk{{level1.id}}" onclick="mnu_AreaOpenTab({{level1.id}})" >
+                    <img class="img{{level1.id}}" id="imgMoreCategory" src="{{ asset('img/assets/btnMoreCategory.png') }}'" alt=""/> 
+                </div>
+                <div class="mnuMob_AreaItem col-xs-3"></div>
 
                 {% if level1.children %}
                     {% for level2 in level1.children %}
-                        <div class="mnuMob_AreaItem borderBottom col-xs-9 level2" id="{{level1.id}}">
+                        <div class="mnuMob_AreaItem borderLeft borderBottom col-xs-9 level2" id="{{level1.id}}">
                             <h5> {{ level2.name }} </h5>
                         </div>
                         <div class="mnuMob_AreaItem col-xs-3 level2" id="{{level1.id}}"></div>
@@ -41,13 +40,35 @@
 </div>
 
 <script type="text/javascript">
+    var open = 0;
+
     jQuery(document).ready(function(){
         $(".level2").hide();
     });
     function mnu_AreaOpenTab(id) {
         var div = document.getElementById(id);
-        if(div != null){
-            $("#"+id).show();
+
+        if(open == 0) {
+            if(div != null) {
+                $("#"+id).show();
+
+                jQuery(".img"+id).attr("src", "{{ asset('img/assets/btnMoreCategoryClose.png') }}");
+
+                $("#clk_"+id).css("background-color", "#fff02a");
+                $("#h5"+id).css("color", "#000");
+                $("#clk"+id).css("background-color", "#fff02a");
+            }
+            open = 1;
+        } else {
+            $("#"+id).hide();
+
+            jQuery(".img"+id).attr("src", "{{ asset('img/assets/btnMoreCategory.png') }}");
+
+            $("#clk_"+id).css("background-color", "#070003");
+            $("#h5"+id).css("color", "#fff");
+            $("#clk"+id).css("background-color", "#070003");
+
+            open = 0;
         }
         
     }
