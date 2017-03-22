@@ -27,12 +27,12 @@
 
     .cart_AreaMobile {
         position: absolute;
-        z-index: 999;
+        z-index: 10;
         width: 100%;
-        min-width: 370px;
         height: 450px;
         background: #252525;
         top: 195px;
+        left: 0px;
         right: 0px;
         font-family: OswaldBold;
         display: none;
@@ -103,10 +103,10 @@
     .cart_Checkout button {
         margin-top: 20px;
         width: 100%;
-        height: 43px;
+        height: 50px;
         background: yellow;
         border: none;
-        border-bottom: 2px solid lightyellow;
+        border-bottom: 3px solid #cc9900;
         font-size: 10pt;
     }
 }

@@ -26,8 +26,10 @@
                             <h4>SUBTOTAL</h4>
                         </div>
                     </div>
-                    <div class="col-xs-4">
-                        <h4 id="cartMob_Value"></h4>
+                    <div class="col-xs-4" style="padding-left: 0px">
+                        <div class="col-xs-12" style="padding-left: 0px">
+                            <h4 style="text-align: right">R$ 0,00</h4>
+                        </div>
                     </div>
                     <div class="cart_Checkout">
                         <button onclick="irParaCarrinho()">CHECKOUT</button>                
@@ -61,8 +63,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-4">
-                    <div class="col-xs-12" style="text-align: right">
+                <div class="col-xs-4" style="padding-left: 0px">
+                    <div class="col-xs-12" style="text-align: right; padding-left: 0px;">
                         <h5 id="cartMob_Price"></h5>
 
                         <h5 id="cartMob_Qtde"></h5>
@@ -70,13 +72,15 @@
                 </div>
             </div>
             <div class="fly_body" style="border-bottom: none">
-                <div class="col-xs-8">
+                <div class="col-xs-4">
                     <div class="col-xs-12">
                         <h4>SUBTOTAL</h4>
                     </div>
                 </div>
-                <div class="col-xs-4">
-                    <h4 id="cartMob_Value"></h4>
+                <div class="col-xs-8">
+                    <div class="col-xs-12">
+                        <h4 id="cartMob_Value" style="text-align: right">R$ 0,00</h4>
+                    </div>
                 </div>
                 <div class="cart_Cupom">
                     <label for="cupom">Cupom</label>
@@ -106,10 +110,10 @@
                                                       var subtotal = data.cart.price;
                                                       var products = data.cart.Products;
                                                       var id = 0;
+                                                      var valorSubTotal = "R$ " + data.cart.price;
 
-                                                      console.log(data);
-
-                                                      jQuery("#cartMob_Value").text(data.cart.price);
+                                                      console.log(jQuery("#cartMob_Value").text());
+                                                      jQuery("#cartMob_Value").text(valorSubTotal);
 
                                                       if (products.length > 0)
                                                       {
@@ -124,7 +128,7 @@
                                                                 "<li class='crt_" + id + "'>" +
                                                                 "<p class='crt_image'>" + image + "</p>" +
                                                                 "<p class='crt_name'>" + d.name + "</p>" +
-                                                                "<p class='crt_price'>" + d.price + "</p>" +
+                                                                "<p class='crt_price'>" + "R$ " + d.price + "</p>" +
                                                                 "<p class='crt_quantity'>" + d.quantity + "</p>" +
                                                                 "</li>"
                                                             );

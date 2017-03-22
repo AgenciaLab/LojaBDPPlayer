@@ -1,54 +1,118 @@
 <div class="visible-xs">
     <div class="menuMobileArea">
         <div class="">
-            <div class="mnuMob_AreaItem borderBottom underline  col-xs-6">
+            <div class="mnuMob_AreaItem borderBottom underline noSpacing col-xs-6">
                 <h5>Marcas</h5> 
             </div>
-            <div class="mnuMob_AreaItem borderBottom alignCenter borderRight col-xs-3" onclick="openMarcasMobile()">
-                <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>  
+            <div class="mnuMob_AreaItem borderBottom alignCenter borderRight col-xs-3">
+                <a onclick="openMarcasMobile()">
+                    <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>  
+                </a>
             </div>
-            <div class="mnuMob_AreaItem borderBottom alignCenter col-xs-3">
+            <div class="mnuMob_AreaItem borderBottom alignCenter noSpacing col-xs-3">
                 <a onclick="closeMenuMobile()">
                     <h4 class="mnuMob_btnClose">X</h4>
                 </a>
-            </div>               
+            </div>                           
         </div>
         <div>
             {% set categorias = [41,43,17,19,45,47,49,51] %} 
             {% for level1 in categories %} 
                 {% if level1.id in categorias %}
-                <div class="mnuMob_AreaItem borderBottom col-xs-6" onclick="mnu_AreaOpenTab({{level1.id}})" >
-                    <h5>{{ level1.name }} 1</h5> 
-                </div>
-                <div class="mnuMob_AreaItem borderBottom borderRight alignCenter col-xs-3" onclick="mnu_AreaOpenTab({{level1.id}})">
-                    <img id="imgMoreCategory" src="{{ asset('img/assets/btnMoreCategory.png') }}'" alt=""/> 
-                </div>
-                <div class="mnuMob_AreaItem col-xs-3">
-                </div>
+                    <a href="{{level1.link}}">
+                        <div id="item_{{level1.id}}" class="mnuMob_AreaItem borderBottom col-xs-6 noSpacing">
+                            <h5>{{ level1.name }} </h5> 
+                        </div>
+                    </a>
+
+                    <div id="icon_{{level1.id}}" class="col-xs-3 noSpacing mnuMob_AreaItem borderBottom borderRight">
+                        {% if level1.children %}
+                            <a id="menu_{{level1.id}}" onclick="mnu_AreaOpenTab(this)">
+                                <div class="mnuMob_AreaItem borderBottom alignCenter">
+                                    <img src="{{ asset('img/assets/btnMoreCategory.png') }}'" alt=""/> 
+                                </div>
+                            </a>
+                        {% endif %}   
+                    </div>
+
+                    <div class="mnuMob_AreaItem col-xs-3 noSpacing">
+                    </div>
 
                     {% if level1.children %}
-                        {% for level2 in level1.children %}
-                            <div class="mnuMob_AreaItem borderBottom col-xs-9 level2" id="{{level1.id}}">
-                                <h5> {{ level2.name }} </h5>
-                            </div>
-                            <div class="mnuMob_AreaItem col-xs-3 level2" id="{{level1.id}}"></div>
-                        {% endfor %}
+                        <div class="mnuMob_AreaSubItens col-xs-12 noSpacing" id="areaItens_{{level1.id}}">
+                            {% for level2 in level1.children %}
+                                <div class="mnuMob_AreaItem col-xs-12">
+                                    <h5> {{ level2.name }} </h5>      
+                                </div>                  
+                            {% endfor %}
+                            
+                        </div>
                     {% endif %}
                     
                 {% endif %} 
-
             {% endfor %}
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
-  
-    function mnu_AreaOpenTab(id) {
-        var div = document.getElementById(id);
-        if(div != null){
-            $("#"+id).show();
+
+    var open = 0;
+
+    jQuery(document).ready(function(){
+        $(".level2").hide();
+    });
+
+    function mnu_AreaOpenTab(dados) {
+        
+        var idMenu = (dados.id).replace("menu_", ""); 
+        var idAreaItens = "#areaItens_" + idMenu;
+        var idItem = "#item_" + idMenu;
+        var menuImage = "#menu_" + idMenu + " img";        
+        var menuIcon = "#menu_" + idMenu + " .mnuMob_AreaItem";   
+
+        if ( jQuery(idAreaItens).css("display") === "none" )
+        {
+            jQuery(idAreaItens).css("display", "block");       
+            jQuery(menuImage).attr("src", "{{ asset('img/assets/btnMoreCategoryClose.png') }}");   
+            jQuery(idItem).css("background-color", "#fff02a"); 
+            jQuery(idItem + " h5").css("color", "#000");
+            jQuery(menuIcon).css("background-color", "#fff02a");             
         }
+        else
+        {
+            $(idAreaItens).css("display", "none");
+            jQuery(menuImage).attr("src", "{{ asset('img/assets/btnMoreCategory.png') }}");     
+            jQuery(idItem).css("background-color", "#070003"); 
+            jQuery(idItem + " h5").css("color", "#fff");
+            jQuery(menuIcon).css("background-color", "#070003");             
+        }
+
+
+
+/*
+        if(open == 0) {
+            if(div != null) {
+                $("#"+id).show();
+
+                jQuery(".img"+id).attr("src", "{{ asset('img/assets/btnMoreCategoryClose.png') }}");
+
+                $("#clk_"+id).css("background-color", "#fff02a");
+                $("#h5"+id).css("color", "#000");
+                $("#clk"+id).css("background-color", "#fff02a");
+            }
+            open = 1;
+        } else {
+            $("#"+id).hide();
+
+            jQuery(".img"+id).attr("src", "{{ asset('img/assets/btnMoreCategory.png') }}");
+
+            $("#clk_"+id).css("background-color", "#070003");
+            $("#h5"+id).css("color", "#fff");
+            $("#clk"+id).css("background-color", "#070003");
+
+            open = 0;
+        }*/
         
     }
 </script>

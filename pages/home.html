@@ -8,6 +8,7 @@ endif %} {% if settings.showcase == "featured" %} {% set showcaseText = "Destaqu
 {% set products = Products({ 'filter': 'available', 'limit': limitProducts, 'order': {'quantity_sold': 'desc'} }) %} {% else
 %} {% set products = Products({ 'filter': settings.showcase, 'limit': limitProducts, 'order': 'rand' }) %} {% endif %} 
 
+
 {%
 if banner.extra7 %}
 <div id="bannerHome" class="hidden-xs">
@@ -37,6 +38,7 @@ if banner.extra14 %}
   </div>
 </div>
 {% endif %}
+
 
 <div class="areaBanners row" style="margin-left: 0px; margin-right: 0px">
   <div class="noSpacing col-sm-6">

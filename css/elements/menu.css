@@ -8,6 +8,14 @@ and open the template in the editor.
     Author     : MarceloMacedo
 */
 
+@media (max-width: 768px) {
+    .mnuMob_AreaSubItens {
+        border-bottom: 1px solid #333300;
+        border-top: 1px solid #333300;
+        display: none;
+        border-left: 5px solid #fff02a;
+    }
+}
 
 @media (min-width: 768px) and (max-width: 992px)
 {

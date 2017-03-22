@@ -14,11 +14,11 @@ and open the template in the editor.
         position: absolute;
         z-index: 999;
         width: 100%;
-        min-width: 370px;
         height: 360px;
         background: #252525;
         top: 195px;
         right: 0px;
+        left: 0px;
         font-family: OswaldBold;
         display: none;
     }

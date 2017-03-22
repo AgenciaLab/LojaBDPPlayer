@@ -54,11 +54,15 @@
     }
 
     .borderBottom {
-        border-bottom: 1px solid #333300;
+        border-bottom: 3px solid #333300;
     }
 
     .borderRight {
-        border-right: 1px solid #333300;
+        border-right: 3px solid #333300;
+    }
+
+    .borderLeft {
+        border-left: 10px solid #fff02a;
     }
 
     #imgMoreCategory {
@@ -79,6 +83,12 @@
     .mnuMob_AreaItem {
         background: #070003;
         height: 75px;
+    }
+
+    .bkg_AreaItem {
+        width: 100%;
+        padding-left: 15px;
+        background-color: #fff02a;
     }
 
     .mnuMob_AreaItem h5 {
@@ -105,10 +115,10 @@
 
     .menuMobileArea {
         position: absolute;
-        z-index: 999;
+        z-index: 10;
         top: 120px;
         width: 100%;
-        height: 200px;
+        height: 100%;
         display: none;
     }
 
@@ -169,7 +179,7 @@
 
     .owl-theme .owl-controls .owl-page {
         background:rgba(0, 0, 0, 0.5);
-        width: 80px;
+        width: 65px;
         margin-left: 10px;
         height: 20px;
     }
