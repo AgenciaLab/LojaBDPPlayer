@@ -32,9 +32,9 @@
                         </div>
                     </div>
                     <div class="cart_Checkout">
-                        <button onclick="irParaCarrinho()">CHECKOUT</button>                
+                        <button onclick="irParaCarrinho()">CHECKOUT</button>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
         <div class="cart_HasProduct">
@@ -87,7 +87,7 @@
                     <input name="cupom" id="cupom" type="text" class="form-control" placeholder="Digite seu cupom de Desconto">
                 </div>
                 <div class="cart_Checkout">
-                    <button onclick="irParaCarrinho()">CHECKOUT</button>                
+                    <button onclick="irParaCarrinho()">CHECKOUT</button>
                 </div>
             </div>
 
@@ -103,8 +103,7 @@
 
 
 <script>
-                                                  
-
+-
                                                   // cart products
                                                   jQuery.getJSON("/mvc/store/cart/count?loja=365499", function (data) {
                                                       var subtotal = data.cart.price;
@@ -120,7 +119,7 @@
                                                           jQuery(".cart_HasProduct").css("display", "block");
                                                           jQuery(".cart_HasNoProduct").css("display", "none");
                                                           jQuery(".cart_AreaMobile").css("height", "450px");
-                                                          
+
                                                         products.forEach(function (d) {
                                                             var image = d.ProductImage[0].thumbs["90"].https;
 
@@ -153,10 +152,10 @@
                                                       var url = "/loja/carrinho.php?loja=365499";
 
                                                       if (cupom.length > 0) {
-                                                          url = url + "&cupom=" + cupom                                                                                                                
-                                                      }                                
-                                                      
-                                                      window.location.href = location.origin + url;                  
+                                                          url = url + "&cupom=" + cupom
+                                                      }
+
+                                                      window.location.href = location.origin + url;
                                                   }
 
                                                   function carregaProduct(id) {
@@ -199,6 +198,6 @@
                                                       }
 
                                                   }
-                                                  
+
 
 </script>
