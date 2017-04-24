@@ -3,53 +3,75 @@
     <span>CARREGANDO ...</span>
   </div>
   <div id="home_prd_0" class="noSpacing col-sm-3">
-    <div class="prd_AreaImage">
-      <img class="img-responsive" />
-    </div>
-    <div class="prd_AreaInfo">
-      <h4></h4>
-      <h5></h5>
-      <span></span>
-      <h6></h6>
-    </div>
+    <a>
+      <div class="prd_AreaImage">
+        <img class="img-responsive" />
+      </div>
+      <div class="prd_AreaInfo">
+        <h4></h4>
+        <h5></h5>
+        <span></span>
+        <h6></h6>
+      </div>
+    </a>
   </div>
   <div id="home_prd_1" class="noSpacing col-sm-3">
-    <div class="prd_AreaImage">
-      <img class="img-responsive" />
-    </div>
-    <div class="prd_AreaInfo">
-      <h4></h4>
-      <h5></h5>
-      <span></span>
-      <h6></h6>
-    </div>
+    <a>
+      <div class="prd_AreaImage">
+        <img class="img-responsive" />
+      </div>
+      <div class="prd_AreaInfo">
+        <h4></h4>
+        <h5></h5>
+        <span></span>
+        <h6></h6>
+      </div>
+    </a>
   </div>
   <div id="home_prd_2" class="noSpacing col-sm-3">
-    <div class="prd_AreaImage">
-      <img class="img-responsive" />
-    </div>
-    <div class="prd_AreaInfo">
-      <h4></h4>
-      <h5></h5>
-      <span></span>
-      <h6></h6>
-    </div>
+    <a>
+      <div class="prd_AreaImage">
+        <img class="img-responsive" />
+      </div>
+      <div class="prd_AreaInfo">
+        <h4></h4>
+        <h5></h5>
+        <span></span>
+        <h6></h6>
+      </div>
+    </a>
   </div>
   <div id="home_prd_3" class="noSpacing col-sm-3">
-    <div class="prd_AreaImage">
-      <img class="img-responsive" />
+    <a>
+      <div class="prd_AreaImage">
+        <img class="img-responsive" />
+      </div>
+      <div class="prd_AreaInfo">
+        <h4></h4>
+        <h5></h5>
+        <span></span>
+        <h6></h6>
+      </div>
     </div>
-    <div class="prd_AreaInfo">
-      <h4></h4>
-      <h5></h5>
-      <span></span>
-      <h6></h6>
-    </div>
-  </div>
+  </a>
 </div>
 
 <script type="text/javascript">
-  $(".prd_loading").fadeOut(200);
+
+  (function (jQuery) {
+    jQuery(".prd_loading").fadeOut(200);
+
+    var optionId = jQuery(".optionDisplay").attr("id"); 
+
+    if (typeof optionId !== "undefined")
+    {
+      var ordem = optionId.split("_")[1];
+      var id = optionId.split("_")[2];
+
+      carregarProdutos(id);
+    }
+    
+  })(jQuery);
 
   function trocarCategoria(acao) {
 
@@ -80,16 +102,11 @@
     
   }
 
-  var optionId = jQuery(".optionDisplay").attr("id"); 
-  var ordem = optionId.split("_")[1];
-  var id = optionId.split("_")[2];
-
-  carregarProdutos(id);
 
   function carregarProdutos(categoriaId) {
                     var params = {};
 
-                    $(".prd_loading").fadeIn();
+                    jQuery(".prd_loading").fadeIn();
 
                     params["category_id"] = categoriaId;
                     params["page"] = "1";
@@ -98,7 +115,7 @@
 
                     LimparProdutos();
 
-                    $.ajax({
+                    jQuery.ajax({
                       method: "GET",
                       url: "/web_api/products/",
                       data: params
@@ -106,35 +123,34 @@
 
                       var products = response.Products;
                       var i = 0;
-
-                      
                     
                       products.forEach(function(prod) {
 
-                          $("#home_prd_" + i + " img").attr({ src:  prod.Product.ProductImage[0].https })
-                          $("#home_prd_" + i + " h4").text(prod.Product.name)
-                          $("#home_prd_" + i + " h5").text("de: " + prod.Product.price)
-                          $("#home_prd_" + i + " span").text("A partir de: " + prod.Product.price)
-                          $("#home_prd_" + i + " h6").text("Ou 3x sem juros de R$ " + prod.Product.price)
+                          jQuery("#home_prd_" + i + " img").attr({ src:  prod.Product.ProductImage[0].https })
+                          jQuery("#home_prd_" + i + " h4").text(prod.Product.name)
+                          jQuery("#home_prd_" + i + " h5").text("de: " + prod.Product.price)
+                          jQuery("#home_prd_" + i + " span").text("A partir de: " + prod.Product.price)
+                          jQuery("#home_prd_" + i + " h6").text("Ou 3x sem juros de R$ " + prod.Product.price)
+                          jQuery("#home_prd_" + i + " a").attr({ href:  prod.Product.url.https })
 
                           i++;
                       });
 
-                      $(".prd_loading").fadeOut(400);
+                      jQuery(".prd_loading").fadeOut(400);
 
 
                     }).fail(function (jqXHR, status, errorThrown) {
-                        $(".prd_loading").fadeOut(400);
+                        jQuery(".prd_loading").fadeOut(400);
                     })
   }
 
   function LimparProdutos() {
       for (i = 0; i < 4; i++) { 
-        $("#home_prd_" + i + " img").attr({ src:  "" })
-                          $("#home_prd_" + i + " h4").text("")
-                          $("#home_prd_" + i + " h5").text("")
-                          $("#home_prd_" + i + " span").text("")
-                          $("#home_prd_" + i + " h6").text("")
+        jQuery("#home_prd_" + i + " img").attr({ src:  "" })
+                          jQuery("#home_prd_" + i + " h4").text("")
+                          jQuery("#home_prd_" + i + " h5").text("")
+                          jQuery("#home_prd_" + i + " span").text("")
+                          jQuery("#home_prd_" + i + " h6").text("")
     }
   }
 

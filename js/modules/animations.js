@@ -15,7 +15,7 @@
             stopOnHover: false
         });
 
-        jQuery(".areaDoMenu").on("mouseleave", function (e) {
+        /*jQuery(".areaDoMenu").on("mouseleave", function (e) {
 
             if (e.toElement === null)
             {
@@ -38,9 +38,16 @@
                 }
             }
             
-        });
+        });*/
+
+        
     })
+
+   
 })(jQuery);
+
+
+
 
 
 function escureATela() {
@@ -303,6 +310,8 @@ function closeMenu() {
 }
 ;
 function showLogin() {
+    hideCart();
+    
     if (jQuery(".fly_Area").css('display') === 'none') {
         escureATela();
         jQuery(".AreaBotaoLogin").css("z-index", "25");
@@ -316,7 +325,48 @@ function showLogin() {
         jQuery(".fly_Area").css('display', 'none');
         jQuery(".fly_Area").animate({ right: "-400px" }, 200);
     }
+}
 
+function showCart() {
+    hideLogin()
+
+    if (jQuery(".cartArea").css('display') === 'none') {
+        escureATela();
+        jQuery(".cartArea").css("display", "block");
+        jQuery(".cartArea").animate({ right: "0px" }, 200);
+        jQuery(".AreaBotaoCart").css("z-index", "25");
+        jQuery(".AreaBotaoCart").css('background', '#252525');        
+    } else {
+        clareiaATela();
+        jQuery(".AreaBotaoCart").css("z-index", "0");
+        jQuery(".AreaBotaoCart").css('background', 'none');       
+        jQuery(".cartArea").css("display", "none");
+        jQuery(".cartArea").css("right", "-400px");
+    }    
+}
+
+function hideCart() {
+    clareiaATela();
+        jQuery(".AreaBotaoCart").css("z-index", "0");
+        jQuery(".AreaBotaoCart").css('background', 'none');       
+        jQuery(".cartArea").css("display", "none");
+        jQuery(".cartArea").css("right", "-400px");
+}
+
+function showUserArea() {
+    if (jQuery(".user_Area").css('display') === 'none') {
+        escureATela();
+        jQuery(".AreaBotaoLogin").css("z-index", "25");
+        jQuery(".AreaBotaoLogin").css('background', '#252525');
+        jQuery(".user_Area").css('display', 'block');
+        jQuery(".user_Area").animate({ right: "0px" }, 200);
+    } else {
+        clareiaATela();
+        jQuery(".AreaBotaoLogin").css("z-index", "0");
+        jQuery(".AreaBotaoLogin").css('background', 'none');
+        jQuery(".user_Area").css('display', 'none');
+        jQuery(".user_Area").animate({ right: "-400px" }, 200);
+    }
 }
 
 function showLoginMobile() {
@@ -501,4 +551,42 @@ function trocaBannerHome() {
         jQuery(".areaBannerB").css("display", "none");
     }
 
+}
+
+function openSubMenu(id)
+{
+    if (jQuery("#subMenu_" + id).css("display") == "none")
+    {
+        fecharMenuMarcas();
+        jQuery("#subMenu_" + id).css("display", "block");        
+        jQuery("#subMenu_" + id).css("marginLeft", jQuery(".mnu_AreaLinks").width());
+        jQuery("#btnOpenSearch").css('display', 'block');
+        jQuery("#btnAbrirMarcas").css('display', 'none');        
+        jQuery("#areaMenu").css('background', '#fff02a');
+        jQuery("#menuArea_" + id).css('background', 'rgb(255, 240, 42)');
+        jQuery("#menuArea_" + id + " span").css('color', '#000');
+    }
+    /*else
+    {
+        jQuery("#subMenu_" + id).css("display", "none");
+        jQuery("#btnOpenSearch").css('display', 'none');
+        jQuery("#btnAbrirMarcas").css('display', 'block');
+        jQuery("#areaMenu").css('background', '#000');
+        jQuery("#menuArea_" + id).css('background', '#000');
+        jQuery("#menuArea_" + id + " span").css('color', '#fff');
+    }*/
+    
+}
+
+function fechaSubMenu(id)
+{
+    console.log(this.event.target.className);
+    if( this.event.target.className !== "mnu_Link") {
+        jQuery("#subMenu_" + id).css("display", "none");
+        jQuery("#btnOpenSearch").css('display', 'none');
+        jQuery("#btnAbrirMarcas").css('display', 'block');
+        jQuery("#areaMenu").css('background', '#000');
+        jQuery("#menuArea_" + id).css('background', '#000');
+        jQuery("#menuArea_" + id + " span").css('color', '#fff');
+    }
 }

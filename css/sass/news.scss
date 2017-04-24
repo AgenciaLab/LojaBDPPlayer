@@ -1,0 +1,79 @@
+/**
+ * Newsletter
+ */
+
+.wrap-newsletter{
+    margin-top: 35px;
+}
+
+    .newsletter{
+        background-color: #2a7cbc;
+    }
+    
+        .newsletter-form{
+            min-height: 177px;
+            overflow: hidden;
+            text-align: center;
+            
+            h3{
+                color: #fff;
+                font: 300 18px/25px $lato;
+                letter-spacing: 1.3px;
+                margin: 25px 0 20px;
+                text-transform: uppercase;
+            }
+            
+            p{
+                color: #fff;
+                font: 300 11px/11px $lato;
+                letter-spacing: 1.3px;
+            }
+            
+            .input-group{
+                border: 1px solid #fff;
+                margin-top: 15px;
+                
+                ::-webkit-input-placeholder {
+                   color: #fff;
+                   font: 400 11px/1.8 $lato;
+                   letter-spacing: 1.6px;
+                }
+                
+                :-moz-placeholder { /* Firefox 18- */
+                   color: #fff;
+                   font: 400 11px/1.8 $lato; 
+                   letter-spacing: 1.6px;
+                }
+                
+                ::-moz-placeholder {  /* Firefox 19+ */
+                   color: #fff;
+                   font: 400 11px/1.8 $lato;
+                   letter-spacing: 1.6px;
+                }
+                
+                :-ms-input-placeholder {  
+                   color: #fff;
+                   font: 400 11px/1.8 $lato;
+                   letter-spacing: 1.6px;
+                }
+            }
+            
+            .form-control{
+                background: none;
+                border-radius: 0;
+                border: none;
+                color: #fff;
+                font: 400 11px/1.8 $lato;
+                letter-spacing: 1.6px;
+            }
+            
+            .btn{
+                background: #17598d;
+                border: none;
+                border-radius: 0;
+                color: #fff;
+                font-family: $lato;
+                font-size: 11px;
+                height: 34px;
+            }
+        }

@@ -1,44 +1,27 @@
 // base
 @import "reset";
-@import "reset-tray";
+@import "normalize";
 @import "base";
-@import "typo";
-@import "styleguide";
+@import "responsive";
 
-//pages
-@import "page-cart"; 
+// pages
 @import "page-catalog";
-@import "page-central_cliente";
-@import "page-comparador";
-@import "page-contact"; 
-@import "page-depoimentos";
-@import "page-extra";
-@import "page-implantacao";
-@import "page-listas";
-@import "page-login";
-@import "page-newsletter"; 
-@import "page-noticia";
-@import "page-payment";
+@import "page-search";
 @import "page-product";
-@import "page-register";
-@import "page-visitados";
+@import "page-cart";
+@import "page-login";
 
 // organisms
 @import "header";
 @import "footer";
 
 // molecules
-@import "address";
-@import "breadcrumb";
-@import "customer";
-@import "cart";
-@import "sidebar"; 
-@import "menu-mobile";
-@import "slick";
-@import "banners"; 
-@import "newsletter";
+@import "banners";
+@import "brands";
+@import "news";
 @import "product";
-@import "store-rating";
 @import "search";
-@import "showcase"; 
-@import "tagcloud";
+@import "showcase";
+@import "social";
+@import "payment";
+@import "menu";

@@ -761,6 +761,20 @@ and open the template in the editor.
 
 @media (min-width: 1400px) {
 
+    .product-payment-catalog .txt-corparcelas, .product-payment-catalog .color,
+    .product-payment-catalog .preco-parc2,
+    .product-payment-catalog .txt-comjurosde,
+    .product-payment-catalog .preco-parc2 span {
+        color: #999;
+        font-size: 2rem;
+        font-family: OswaldRegular;
+        line-height: 0px;
+        font-weight: normal!important;
+    }
+
+    .product-payment-catalog {
+        line-height: 10px;
+    }
         
     div.tab p {
         width: 25%;
@@ -832,7 +846,12 @@ and open the template in the editor.
     }
 
     .product_Price {
-        margin: 40px 30px;
+        margin: 40px 60px;
+    }
+
+    .prd_AreaPrice {
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
 
     .product_Title h1 {
@@ -873,7 +892,9 @@ and open the template in the editor.
     }
 
     .page-product .texto_variacao h2 {
-        font-size: 2rem;  
+        font-size: 2rem;
+        color: #333;
+        text-transform: capitalize;
     }
 
     .product_Variants {
@@ -881,26 +902,30 @@ and open the template in the editor.
     }
 
     .page-product .lista_cor_variacao, .page-product .lista_cor_variacao2 {
-        padding: 20px 2px 0;
+        padding: 12px 2px 0;
     }
 
     .page-product .lista_cor_variacao li, .page-product .lista_cor_variacao2 li {
         border: 1px solid #666;
-        height: 45px;
         width: 60px;
         text-align: center;
+        display: inline-block;
+        margin-bottom: 10px;
     }
 
     .page-product .lista_cor_variacao li div, .page-product .lista_cor_variacao2 li div {
         height: 43px;
         width: 60px;
-        color: #121212;
+        color: #666;
         font-family: OxygenRegular;
         font-size: 13pt;
+        border: none;
+        line-height: 43px;
+        margin-left: -2px;
     }
 
     .product_BuyArea {
-        margin-top: 100px;
+        margin-top: 40px;
     }
 
     #button-buy {
@@ -959,7 +984,7 @@ and open the template in the editor.
     }
 
     .texto_Formas {
-        margin-top: 40px;
+        margin-top: 25px;
         margin-bottom: 10px;
     }
 
@@ -1016,6 +1041,7 @@ and open the template in the editor.
         color: #666;
         line-height: 0;
         left: 11px;  
+        top: 90px;
     }
  
     #minus {
@@ -1028,6 +1054,7 @@ and open the template in the editor.
         background-color: transparent;
         border: none;
         color: #666;
+        top: 90px;
     }
 
      .page-product .product-quantity>div>span:nth-child(1):before {
@@ -1104,12 +1131,14 @@ and open the template in the editor.
         margin-bottom: 5px;
         overflow: hidden;
         line-height: 2.8rem;
+        margin: 0px;    
     }
 
     .prd_AreaInfo span {
         color: #0099cc;
         font-size: 3rem;
         font-family: OswaldBold;
+        line-height: 25px;
     }
 
 
@@ -1163,9 +1192,9 @@ and open the template in the editor.
     .price-before-catalog {
         font-family: OswaldRegular;
         color: #999999;
-        font-size: 10pt;
+        font-size: 12pt;
         text-decoration: line-through;
-        line-height: 15px;
+        line-height: 35px;
     }
 }
 
@@ -1287,7 +1316,10 @@ and open the template in the editor.
     }
     
     .texto_variacao {
-        margin-top: 50px;
+        margin-top: 45px;
+        color: #333;
+        background: none;
+        padding: 10px 0px 10px 0px;
     }
      
     .produto-formas-pagamento {
@@ -1566,6 +1598,8 @@ input::-webkit-calendar-picker-indicator {
 .page-product .lista_cor_variacao li div.cor_selecionada {
     background-color: #232323;
     color: #fff;
+    border: none!important;
+    height: 100%;
 }
 
 #foto_a {

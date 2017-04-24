@@ -1,0 +1,98 @@
+<footer class="footer">
+        <span class="backtop" title="Subir!"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12 contact-us">
+                <h4>Fale com a gente</h4>
+                <h3>{{ Translation('ag_telefone_1') }}</h3>
+                <a href="mailto:{{ Translation('ag_email_1') }}">{{ Translation('ag_email_1') }}</a>
+            </div>
+
+            <div class="col-sm-2 col-xs-12 institutional">
+                <h3>Institucional</h3>
+                <ul>
+                    <li>
+                        <a href="{{ links.company }}">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="{{ links.register }}">Cadastre-se</a>
+                    </li>
+                    <li>
+                        <a href="{{ links.orders }}">Pedidos</a>
+                    </li>
+                    <li>
+                        <a href="{{ links.contact }}">Contato</a>
+                    </li>
+                    <li>
+                        <a href="{{ links.security }}">Política de Privacidade</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-2 col-xs-12 help">
+                <h3>Dúvidas</h3>
+                <ul>
+                    <li>
+                        <a href="{{ links.send }}">Entregas</a>
+                    </li>
+                    <li>
+                        <a href="{{ links.payment }}">Pagamentos</a>
+                    </li>
+                    <li>
+                        <a href="{{ links.warranty }}">Trocas e Devoluções</a>
+                    </li>
+                    <li>
+                        <a href="{{ links.warranty }}">Segurança e Garantia</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-2 col-xs-12 sales">
+                <h3>Vendas para<br>Atacado</h3>
+                <ul>
+                    <li>
+                        {{ Translation('ag_telefone_2') }}
+                    </li>
+                    <li>
+                        <a href="mailto:{{ Translation('ag_email_2') }}">{{ Translation('ag_email_2') }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                {% element 'snippets/social' %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+            </div>
+
+            <div class="col-sm-2 col-xs-12">
+                <h3>Formas de Pagamento</h3>
+                {% element 'snippets/payment' %}
+            </div>
+
+            <div class="col-sm-2 col-xs-12">
+                <h3>Compre com Segurança</h3>
+                <div class="lojaProtegida">
+                    {{ seals.hackersafe }}
+                </div>
+                <p>Site 100% Seguro</p>
+            </div>
+
+            <div class="col-sm-2 col-xs-12">
+                <p>Esta loja e seus produtos<br>são desenvolvidos por:</p>
+                <a href="http://www.bandup.com.br/" target="_blank">
+                    <img src="{{ themePath }}img/bandup.png?{{ utils.assets_version }}" alt="BandUP" class="logo-bandup">
+                </a>
+            </div>
+            <div class="col-sm-3 col-xs-12 ebit">
+                {{ seals.ebit }}
+            </div>
+        </div>
+    </div>
+    <p class="store-message">
+        {{ Translation('ag_mensagem_rodape') }}
+    </p>
+</footer>

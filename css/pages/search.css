@@ -1,0 +1,238 @@
+.product-payment-catalog .txt-corparcelas, .product-payment-catalog .color,
+    .product-payment-catalog .preco-parc2,
+    .product-payment-catalog .txt-comjurosde,
+    .product-payment-catalog .preco-parc2 span {
+        color: #999;
+        font-size: 1.5rem;
+        font-family: OswaldRegular;
+        line-height: 0px;
+        font-weight: normal!important;
+    }
+.search_Filter {
+    background-color: #000;
+}
+
+.product-name {
+    min-height: 40px;
+}
+
+.search-empty {
+    margin: 40px 0px 80px 0px;
+    text-align: center;
+}
+
+.search_Filter_Item {
+    height: 65px;
+    width: 100%;
+    text-align: center;
+}
+
+.search_Filter_Item .filtro_marca {
+    display:  none;
+}
+
+
+
+.search_Filter_Item select {
+        position: absolute;
+    right: 0px;
+    top: 25px;
+    color: #fff;
+    border: none;
+    background: transparent;
+    font-size: 8pt;
+}
+
+.search_Filter_Area {
+    width: 100px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.search_Filter_Area img {
+    float: left;
+}
+
+
+
+.filter {
+    background-color: #ffff33;
+}
+
+.category { 
+    color: #ffffff;
+}
+
+.search_AreaFiltros {
+    background-color: #ffff33;
+    height: 0px;
+    width: 100%;
+    border-top: 1px solid #000;
+    text-align: left;
+    display: none;
+}
+
+.search_ContentFiltros {
+    width: 80%;
+    margin: auto;
+    height: 60px;
+    margin-top:20px;
+}
+
+.search_Close {
+    border: 1px solid #666600;
+    height: 42px;
+    text-align: center;
+    width: 49px;
+    margin: 10px auto;
+}
+
+.search_Close h3 {
+        width: 100%;
+    height: 100%;
+    line-height: 40px;
+    color: #330000;
+    font-size: 18pt;
+}
+
+.search_Search {
+    border: 1px solid #666600;
+    height: 42px;
+    text-align: center;
+    width: 49px;
+    margin: 10px auto;
+}
+
+.search_Search span {
+        width: 100%;
+    height: 100%;
+    line-height: 36px;
+    color: #330000;
+    font-size: 15pt;
+}
+
+.search_Apply {
+    background-color: #000;
+    height: 44px;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    max-width: 200px;
+    margin: 9px auto;
+}
+
+.search_Apply h3 {
+        color: #fff;
+    font-size: 17px;
+    width: 100%;
+    line-height: 44px;
+    font-family: OswaldRegular;
+}
+
+.uniqueFilters {
+    height: 44px;
+    margin: 9px auto;
+    text-align: center;
+    float: left;
+}
+
+.uniqueFilters .selectFormasPgto{
+    min-height:44px; 
+    background-color: #ffff33;
+    color: #000;
+}
+
+#el01 {color:#00f;}
+select.inpSelect {
+    -webkit-appearance: none; 
+    color: red;
+    background-color: red;
+}
+
+@media (max-width: 1400px) { 
+    .search_Filter_Area span {
+        float: left;
+        font-size: 11pt;
+        font-family: OswaldRegular;
+        margin-left: 12px;
+        line-height: 22px;
+        text-transform: uppercase;
+    }
+
+    .filtro-ordem {
+        float: left;
+        color: #fff;
+        margin-top: 28px;
+        font-size: 8pt;
+        margin-left: 10px;
+    }
+
+    #select_ordem {
+        margin-left: 5px;
+        border-radius: 0;
+        display: inline-block;
+        font: 600 13px 'OxygenRegular',sans-serif;
+        margin: 0;
+        width: auto;
+        height: 34px;
+        padding: 6px 12px;
+        background-color: #000;
+        border: none;
+        color: #fff;
+        margin-top: -9px;
+        margin-right: -50px;
+    }
+
+}
+
+@media (min-width: 1400px) {
+
+    .product-payment-search, .product-payment-search span {
+        font-family: OswaldRegular;
+        font-size: 11pt;
+        color: #999999;
+        margin-bottom: 5px;
+        line-height: 8px;
+    }
+
+    .product-price-search span, .price-promotion-search  {
+        color: #0099cc;
+        font-size: 2rem;
+        font-family: OswaldBold;
+    }
+
+    .search_Filter_Area span {
+        float: left;
+        font-size: 12pt;
+        font-family: OswaldRegular;
+        margin-left: 12px;
+        line-height: 26px;
+        text-transform: uppercase;
+    }
+
+    .filtro-ordem {
+        float: left;
+        color: #fff;
+        margin-top: 28px;
+        font-size: 8pt;
+        margin-left: 30px;
+        font-family: OswaldRegular;
+        letter-spacing: 1px;
+    }
+
+    #select_ordem {
+        margin-left: 5px;
+        border-radius: 0;
+        display: inline-block;
+        font: 600 12px 'OxygenRegular',sans-serif;
+        margin: 0;
+        width: auto;
+        height: 34px;
+        padding: 6px 13px;
+        background-color: #000;
+        border: none;
+        color: #fff;
+        margin-top: -9px;
+    }
+    
+}

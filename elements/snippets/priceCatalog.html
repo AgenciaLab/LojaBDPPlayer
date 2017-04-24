@@ -9,13 +9,13 @@
                                 
                 {% if product.price_offer > 0 and product.show_price %}
                     <div class="price-before-catalog">
-                        <div itemprop="priceCurrency" content="BRL"><abbr class="currency" title="BRL">de: {{ settings.currency }}</abbr> {{ product.price|currency }}</div>
+                        <div itemprop="priceCurrency" content="BRL"><abbr class="currency" title="BRL"><h5>de: {{ settings.currency }}</abbr> {{ product.price|currency }}</h5></div>
                     </div>
                     <div class="price-promotion-catalog">
-                        <div itemprop="offers" class="price-off" itemscope itemtype="http://schema.org/Offer">por R$ {{ product.price_offer|currency  }}</div>
+                        <span itemprop="offers" class="price-off" itemscope itemtype="http://schema.org/Offer">por R$ {{ product.price_offer|currency  }}</span>
                     </div>
                 {% else %}
-                <span itemprop="priceCurrency-catalog" content="BRL"><strong>A partir de R$ {{ product.price|currency }}</strong></span>
+                <span itemprop="priceCurrency-catalog" content="BRL">A partir de R$ {{ product.price|currency }}</span>
                 {% endif %}
             {% endif %}
             

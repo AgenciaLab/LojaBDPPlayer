@@ -18,12 +18,18 @@
         font-size: 1.5rem;
         height: 55px;
         padding: 19px 10px;
-        width: 100%;
+        width: 80%;
+    }
+
+    .search .search-key:focus {
+        border: none;
     }
 
     .search .search-button {
         background: #fff02a;
         color: #000;
+        border: none;
+        line-height: 65px;
     }
 
     .search-button svg {
@@ -51,12 +57,14 @@
         font-size: 1.5rem;
         height: 55px;
         padding: 19px 10px;
-        width: 100%;
+        width: 80%;
     }
 
     .search .search-button {
         background: #fff02a;
         color: #000;
+        border: none;
+        line-height: 65px;
     }
 
     .search-button svg {
@@ -83,7 +91,7 @@
         font-size: 1.5rem;
         height: 55px;
         padding: 19px 10px;
-        width: 100%;        
+        width: 80%;        
         background: black;
         color: #fff;
     }
@@ -113,6 +121,8 @@
 
     .search .search-button {
         color: #fff;
+        border: none;
+        line-height: 65px;
     }
 
     .search-button svg {

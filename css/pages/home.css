@@ -83,6 +83,13 @@
 
 @media (min-width: 768px)
 {
+    .prd_AreaInfo span {
+        font-size: 16pt;
+        font-family: OswaldBOld;
+        color: #0099cc;
+        line-height: 22px;
+    }
+
     .areaTroca {
         height: 25px;
         width: 100%;
@@ -125,6 +132,7 @@
 #bannerHome {
     text-align: center;
     background: #000;
+    margin-top: -34px;
 }
 
 .banner_teste {
@@ -188,6 +196,7 @@ body {
     font-family: OswaldBold;
     font-size: 12pt; 
     margin-bottom: 5px;
+    color: #333;
 } 
  
 .prd_AreaInfo h5 {

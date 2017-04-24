@@ -1,0 +1,61 @@
+<nav class="main-menu">
+    <div class="container">
+
+            <ul class="level1">
+            {% set limiteCategorias = 0 %}
+            {% for level1 in categories %}
+
+                {% if limiteCategorias < 6 %}
+                    {% set children = level1.children %}
+                        <li class="item-level1 cat-{{ level1.id }}">
+                            <h3>
+                                <a class="link-level1" href="{{ level1.link }}">{{ level1.name }}</a>
+                            </h3>
+
+                            {% if level1.children > 0 %}
+                            <div class="level2">
+                            <ul>
+                                {% if level1.images %}
+                                    <img src="{{ level1.images[0] }}" alt="{{ level1.name }}">
+                                {% endif %}
+                                <div>
+                                {% for level2 in level1.children %}
+                                    <li class="item-level2">
+                                        <h4>
+                                            <a href="{{ level2.link }}" class="link-level2">{{ level2.name }}</a>
+                                        </h4>
+                                        {% if level2.children > 0 %}
+                                            <ul class="level3">
+                                                {% for level3 in level2.children %}
+                                                    <li class="item-level3">
+                                                        <h5>
+                                                            <a href="{{ level3.link }}" class="link-level3">{{ level3.name }}</a>
+                                                        </h5>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                                </div>
+                                <div class="clearboth"></div>
+                            </ul>
+                            </div>
+                            {% endif %}
+
+                        </li>
+                    {% set limiteCategorias = limiteCategorias + 1 %}
+                {% endif %}
+
+            {% endfor %}
+                        <li class="item-level1 link-novidades">
+                            <h3>Novidades</h3>
+                            <ul>
+                                {{ banner.extra14 }}
+                            </ul>
+                        </li>
+
+            </ul>
+
+    </div>
+</nav>

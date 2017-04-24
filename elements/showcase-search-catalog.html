@@ -1,0 +1,9 @@
+{% if products|length > 0 %}
+     <div>
+        {% for product in products %}
+            <div class="noSpacing col-md-2">
+                {% element 'snippets/product' {"product": product} %}
+            </div>
+        {% endfor %}
+     </div>
+{% endif %}

@@ -1,0 +1,335 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/02/2017, 15:21:34
+    Author     : MarceloMacedo
+*/
+
+@media (max-width: 768px)
+{
+    .fly_AreaMobile {
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        height: 360px;
+        background: #252525;
+        top: 195px;
+        right: 0px;
+        left: 0px;
+        font-family: OswaldBold;
+        display: none;
+    }
+
+    .fly_header {
+        height: 85px;
+        padding-top: 10px;
+        border-bottom: 1px solid gray;
+    }
+
+    .fly_body {
+        height: 150px;
+        padding-top: 10px;
+        border-bottom: 1px solid gray;
+    }
+
+    .fly_body img {
+        margin-top: 10px;
+    }
+
+    .fly_body h5 {
+        font-size: 14pt;
+        color: #fff;
+        font-family: OswaldRegular;
+        margin-top: 15px;
+    }
+
+    .fly_body h4 {
+        font-size: 16pt;
+        color: #fff;
+        font-family: OswaldRegular;
+        margin-top: 15px;
+    }
+
+    .flyMenu span {
+        padding-top: 15px;
+        line-height: 80px;    
+        font-size: 10pt;   
+    }
+
+    .fly_Body {
+        margin: 20px;
+    }
+
+    .fly_AreaInput button {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        background-color: #fff02a;
+        color: #070003;
+        border: none;
+        font-size: 11pt;  
+    }
+
+    .checkbox label {
+        color: #fff;        
+        font-size: 10pt;
+        line-height: 20px;
+    }
+
+    .flyMenu {
+        height: 15px;
+        width: 100%;
+        text-align: center;    
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px)
+{
+    .flyMenu {
+        height: 10px;
+        width: 100%;
+        text-align: center;    
+    }
+
+    .fly_Area {
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        min-width: 370px;
+        height: 360px;
+        background: #252525;
+        top: 100px;
+        right: -400px;
+        font-family: OswaldBold;
+        display: none;
+    }
+
+    .fly_header {
+        height: 80px;
+    }
+
+    .flyMenu span {
+        padding-top: 15px;
+        line-height: 80px;    
+        font-size: 10pt;   
+    }
+
+    .fly_Body {
+        margin: 20px;
+    }
+
+    .fly_AreaInput button {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        background-color: #fff02a;
+        color: #070003;
+        border: none;
+        font-size: 11pt;  
+    }
+
+    .checkbox label {
+        color: #fff;        
+        font-size: 10pt;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1400px)
+{
+    .usr_Logado {
+        margin-left: -100px;
+    }
+    .flyMenu {
+        height: 10px;
+        width: 100%;
+        text-align: center;    
+    }
+
+    .fly_Area {
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        min-width: 420px;
+        height: 420px;
+        background: #252525;
+        top: 150px;
+        right: 0px;
+        font-family: OswaldBold;
+        display: none;
+        right: -400px;
+    }
+
+    .fly_header {
+        height: 100px;
+        margin-top: 15px;
+    }
+
+    .flyMenu span {
+        padding-top: 15px;
+        line-height: 100px;
+        font-size: 11pt;    
+    }
+
+
+    .fly_AreaInput button {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        background-color: #fff02a;
+        color: #070003;
+        border: none;
+        font-size: 11pt;  
+    }
+
+    .checkbox label {
+        color: #fff;        
+        font-size: 10pt;
+        line-height: 20px;
+    }
+
+    
+}
+
+@media (min-width: 1400px) {
+    .usr_Logado {
+    }
+
+    .flyMenu {
+        height: 10px;
+        width: 100%;
+        text-align: center;    
+    }
+
+    .fly_Area {
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        min-width: 420px;
+        height: 380px;
+        background: #252525;
+        top: 150px;
+        right: 0px;
+        font-family: OswaldBold;
+        display: none;
+    }
+
+    .fly_header {
+        height: 100px;
+        margin-top: 15px;
+    }
+
+    .flyMenu span {
+        padding-top: 15px;
+        line-height: 100px;
+        font-size: 11pt;    
+    }
+    
+    .fly_AreaInput button {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        background-color: #fff02a;
+        color: #070003;
+        border: none;
+        font-size: 11pt;  
+    }
+
+    .checkbox label {
+        color: #fff;        
+        font-size: 10pt;
+        line-height: 20px;
+    }
+}
+
+
+
+
+.fly_header a {
+    color: #fff;
+}
+
+
+
+
+
+
+.Selected {
+    background-color: #fff02a;
+    
+}
+
+.Selected span {
+    color: #fff;
+}
+
+.UnSelected span {
+    color: #5c5c5c;
+}
+
+.UnSelected {
+    background-color: #5c5c5c;
+}
+
+.fly_AreaInput {
+    max-width: 380px;
+    margin: 5px auto;
+}
+
+.fly_AreaInput input[type="email"],
+.fly_AreaInput input[type="text"],
+.fly_AreaInput input[type="password"] {
+    margin-bottom: 10px;
+    height: 40px;
+    border-radius: 0px;
+}
+
+
+
+.fly_AreaInput .buttonFb { 
+    width: 100%;
+    height: 45px;
+    margin-top: 15px;
+    background-color: #3b5b95;
+    color: #fff;
+    border: none;
+}
+
+.fly_AreaInput span {
+    line-height: 40px;   
+}
+
+.fly_AreaInput a {
+    text-decoration: underline;
+    color: #fff02a;  
+    font-family: OxygenRegular;
+    font-size: 10pt;
+}
+
+
+
+
+/*
+@media (max-width: 1400px) {
+    .flyMenu span {
+        padding-top: 15px;
+        line-height: 100px;
+        font-size: 10pt;    
+    }
+
+    .fly_AreaInput button {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        background-color: #fff02a;
+        color: #070003;
+        border: none;
+    }
+
+    .checkbox label {
+        color: #fff;
+    }
+}*/

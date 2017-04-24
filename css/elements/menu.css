@@ -9,6 +9,20 @@ and open the template in the editor.
 */
 
 @media (max-width: 768px) {
+    .subMenu_Area {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: none;
+    }
+
+    .subMenu_Container {
+        position: absolute;
+        z-index: 10;
+        margin-top: 10px;
+        width: 450px;
+        padding-bottom: 2px;
+    }
+
     .mnuMob_AreaSubItens {
         border-bottom: 1px solid #333300;
         border-top: 1px solid #333300;
@@ -19,6 +33,20 @@ and open the template in the editor.
 
 @media (min-width: 768px) and (max-width: 992px)
 {
+    .subMenu_Area {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: none;
+        background: #ff0;
+    }
+    .subMenu_Container {
+        position: absolute;
+        z-index: 10;
+        margin-top: 10px;
+        width: 450px;
+        padding-bottom: 2px;
+    }
+
     .mnu_AreaLinks img {
         margin-top: 10px;
     }
@@ -31,6 +59,27 @@ and open the template in the editor.
 }
 
 @media (min-width: 992px) and (max-width: 1400px) {
+    .subMenu_Area {
+        height: 60px;
+        line-height: 60px;
+        border-bottom: none;
+        background: rgb(255, 240, 42);
+    }
+
+    .subMenu_Area span {
+        padding: 0px 40px;
+        color: #000;
+        font-family: OswaldRegular;
+        font-size: 11pt;
+    }
+
+    .subMenu_Container {
+        position: absolute;
+        z-index: 10;
+        width: 261px;
+        padding-bottom: 2px;
+    }
+
     .mnu_AreaLinks img {
         margin-top: 37px;
     }
@@ -47,6 +96,26 @@ and open the template in the editor.
 }
 
 @media (min-width: 1400px) {
+    .subMenu_Area {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: none;
+        background: #ff0;
+    }
+
+    .subMenu_Area span {
+        padding: 0px 20px;
+        color: #333;
+    }
+
+    .subMenu_Container {
+        position: absolute;
+        z-index: 10;
+        margin-top: 10px;
+        width: 450px;
+        padding-bottom: 2px;
+    }
+
     .mnu_AreaLinks img {
         margin-top: 37px;
     }

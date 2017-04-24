@@ -1,0 +1,64 @@
+<div class="fly_Area"> <!--onmouseleave="hideLogin()"-->
+    <form action="/loja/login_layout.php?loja={{ store.id }}&login=1&origem=central" method="post" name="form_login">
+        <div class="fly_header">
+            <div class="col-sm-6">
+                <div class="flyMenu Selected" id="tabLogin">
+                    <div class="flyMenuOption" onclick="showTab('tabLogin', 'tabCreateAccount', 'areaLogin', 'areaCreateAccount')">
+                        <span>LOGIN</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                    <div class="flyMenu UnSelected" id="tabCreateAccount">
+                        <a href="{{ links.register }}">
+                            <div class="flyMenuOption">
+                                <span>CRIAR CONTA</span>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+        </div>
+        <div class="fly_Body" id="areaLogin">
+            <div id="flyOut_LoginArea" class="fly_AreaInput">
+                <form action="#" method="post" name="form_login">
+                    <input name="email_login" type="email" class="form-control" placeholder="Email">
+                    <input name="senha_login" type="password" class="form-control" placeholder="Senha">
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Lembrar ?
+                        </label>
+                    </div>
+
+                    <button type="submit">LOGIN</button>
+
+                    <a><span>Esqueceu sua senha?</span></a>
+                </form>
+            </div>
+        </div>
+
+        <div class="fly_Body" id="areaCreateAccount" style="display: none;">
+            <div id="flyOut_LoginArea" class="fly_AreaInput">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Senha">
+                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Confirme Senha">
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Receber novidades por e-mail
+                    </label>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <button class="buttonFb"> ENTRAR COM FACEBOOK </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button> Criar Conta </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

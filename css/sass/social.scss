@@ -1,0 +1,46 @@
+/**
+ * Social
+ */
+ 
+.social{
+    font-size: 0;
+    text-align: center;
+    
+    &:after{
+        clear: both;
+        content: '';
+        display: block;
+    }
+    
+    li{
+        display: inline-block;
+        font-size: 0;
+        margin-right: 10px;
+        vertical-align: top;
+        
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    
+    a{
+        background-image: url('../img/social.png?1');
+        background-repeat: no-repeat;
+        display: block;
+        font-size: 0;
+        height: 32px;
+        width: 32px;
+    }
+    
+    .facebook{
+        background-position: 0 0;
+    }
+    
+    .instagram{
+        background-position: -44px 0;
+    }
+    
+    .twitter{
+        background-position: -88px 0;
+    }
+}

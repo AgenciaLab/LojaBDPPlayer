@@ -1,0 +1,42 @@
+<ul class="payment">
+    {% if( settings.visa ) %}
+    <li>
+        <img src="{{ themePath }}img/payment/visa.png?{{ utils.assets_version }}" alt="Visa">
+    </li>
+    {% endif %}
+    {% if( settings.master ) %}
+    <li>
+        <img src="{{ themePath }}img/payment/master.png?{{ utils.assets_version }}" alt="Master Card">
+    </li>
+    {% endif %}
+    {% if( settings.amex ) %}
+    <li>
+        <img src="{{ themePath }}img/payment/amex.png?{{ utils.assets_version }}" alt="American Express">
+    </li>
+    {% endif %}
+    {% if( settings.boleto ) %}
+    <li>
+        <img src="{{ themePath }}img/payment/boleto.png?{{ utils.assets_version }}" alt="Boleto">
+    </li>
+    {% endif %}
+    {% if( settings.diners ) %}
+    <li>
+        <img src="{{ themePath }}img/payment/diners.png?{{ utils.assets_version }}" alt="Diners Club International">
+    </li>
+    {% endif %}
+    {% if( settings.aura ) %}
+    <li>
+        <img src="{{ themePath }}img/payment/aura.png?{{ utils.assets_version }}" alt="Aura">
+    </li>
+    {% endif %}
+    {% if( settings.elo ) %}
+    <li>
+        <img src="{{ themePath }}img/payment/elo.png?{{ utils.assets_version }}" alt="Elo">
+    </li>
+    {% endif %}
+    {% if( settings.hiper ) %}
+    <li>
+        <img src="{{ themePath }}img/payment/hipercard.png?{{ utils.assets_version }}" alt="Hipercard">
+    </li>
+    {% endif %}
+</ul>

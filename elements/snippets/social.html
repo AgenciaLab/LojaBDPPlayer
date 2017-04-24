@@ -1,0 +1,20 @@
+<ul class="social">
+    {% if( settings.facebook ) %}
+    <li>
+        <a href="{{ Translation('ag_facebook') }}" rel="external" target="_blank" class="facebook">Facebook</a>
+    </li>
+    {% endif %}
+    {% if( settings.instagram ) %}
+    <li>
+        <a href="{{ Translation('ag_instagram') }}" rel="external" target="_blank" class="instagram">Instagram</a>
+        <!--
+        <a href="https://www.instagram.com/luansantanashop" rel="external" target="_blank" class="instagram">Instagram</a>
+        -->
+    </li>
+    {% endif %}
+    {% if( settings.twitter ) %}
+    <li>
+        <a href="{{ Translation('ag_twitter') }}" rel="external" target="_blank" class="twitter">Twitter</a>
+    </li>
+    {% endif %}
+</ul>

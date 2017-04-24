@@ -24,21 +24,22 @@
             <div class="noSpacing col-sm-8" id="hdr_AreaMenu">
                 <a onclick="openMenu()">
                     <div class="hdr_AreaButton hidden-sm">
-                        <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
-                        <span>MENU</span>
+                        <img  class="unselectable" src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
+                        <span class="unselectable">MENU</span>
                     </div>        
                 </a>
 
                 <div class="areaDoMenu">
                     {% element 'snippets/menu' %}
                     {% element 'snippets/brands' %}
+                    {% element 'snippets/submenu' %}
                 </div>
                             
             </div>
             <div class="areaBusca col-sm-4">
                 <div id="areaMenu" class="areaPesquisa">
                     <a onclick="openSearch()" id="btnAbrirMarcas">
-                        <div class="hdr_AreaButton">      
+                        <div class="hdr_AreaButton">       
                             <div class="hdr_AreaImagem">             
                                 <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
                             </div>
@@ -51,28 +52,44 @@
             </div>
         </div>
         <div class="hdr_AreaImagemLogo col-sm-6">
-            <img class="img-responsive" src="{{ asset('img/assets/logo.png') }}'" alt=""/>
+            <a class="logo-brand" href="{{ links.home }}" title="{{ store.name }}">               
+               <img class="img-responsive unselectable" src="{{ asset('img/assets/logo.png') }}'" alt=""/>
+            </a>            
         </div>
         <div class="col-sm-3 hidden-xs">
-            <div class="AreaBotaoLogin col-sm-6">
-                <a onclick="showLogin()">
-                    <div class="hdr_AreaButton hidden-sm">
-                        <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
-                        <span>LOGIN</span>
-                    </div>      
-                </a>
+            <div class="AreaBotaoLogin col-sm-6" style="padding-bottom: 3px;">
+                
+                <div class="login tray-hide" data-logged-user="false">
+                    <a onclick="showLogin()">
+                        <div class="hdr_AreaButton hidden-sm">
+                            <img  class="unselectable" src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                            <span class="unselectable">LOGIN</span>
+                        </div>      
+                    </a>
+                </div>
+
+                <div class="login tray-hide usr_Logado" data-logged-user="true">
+                    <a onclick="showUserArea()">
+                        <div class="areaUsuarioLogin hdr_AreaButton hidden-sm">
+                            <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                            <span id="nomeUsuarioValue" data-customer="name">{{ customer.name }}</span>
+                            <span id="nomeUsuarioText"></span>
+                        </div>      
+                    </a>
+                </div>
+
+                {% element 'snippets/areaUsuario' %}
             </div>
-            <div class="col-sm-6">
-                <a>
-                    <div class="hdr_AreaButton visible-sm">    
-                        <div class="hdr_AreaImagem">            
-                            <img src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
-                        </div>
-                        <span>CARRINHO</span>
+            <div class="AreaBotaoCart col-sm-6">
+                <a onclick="showCart()">
+                    <div class="hdr_AreaButton hidden-sm">     
+                        <img  class="unselectable" src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
+                        <span class="unselectable">CARRINHO</span>
                     </div>        
                 </a>
             </div>
-            {% element 'snippets/flyoutCart' %}
+            {% element 'snippets/login' %}        
+            {% element 'snippets/cart' %}    
         </div>
         <div class="hdr_mobileMenu visible-xs">
             <div class="col-xs-3">
@@ -112,11 +129,42 @@
                 </div>
             </div>
             <div class="areaDoMenu">
-                {% element 'snippets/menu-mobile' %}
+                <!--{% element 'snippets/menu-mobile' %}
                 {% element 'snippets/search-mobile' %}
                 {% element 'snippets/login-mobile' %}
-                {% element 'snippets/cart-mobile' %}
+                {% element 'snippets/cart-mobile' %}-->
             </div>
         </div>
     </div>
 </header>
+
+<script>
+    (function (jQuery) {
+
+        var nome = jQuery("#nomeUsuarioValue").text();
+
+        if (typeof nome !== "undefined")
+        {
+            nome = getFirstName(nome);
+
+            nome = "Olá, " + nome + " !";
+
+            jQuery("#nomeUsuarioValue").css("display", "none");
+            jQuery("#nomeUsuarioText").html(nome);
+        }
+    })(jQuery)
+
+    function getFirstName(word) {
+
+        if (word.length > 0)
+        {
+            var firstWord = word.substr(0, word.indexOf(" "));
+            return capitalizeFirstLetter(firstWord.toLowerCase());
+        }
+
+    }
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+</script>

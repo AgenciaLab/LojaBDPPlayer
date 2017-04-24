@@ -1,7 +1,26 @@
-<ul>
-    {% for category in categories %}
-        {% if loop.index <= limit or not limit %}
-            <li><a href="{{ category.link }}">{{ category.name }}</a></li>
-        {% endif %}
-    {% endfor %}
-</ul>
+
+	<ul class="menuCatList">
+
+	    {% for level1 in categories %}
+	        {% if loop.index <= limit or not limit %}
+	            <li class="item-level1">
+	                <h3>
+	            		<a href="{{ level1.link }}" class="link-level1">{{ level1.name }}</a>
+	            	</h3>
+	                {% if level1.children > 0 %}
+	                <ul class="level2">
+	                    <div>
+	                    {% for level2 in level1.children %}
+	                        <li class="item-level2">
+	                            <h4>
+	                                <a href="{{ level2.link }}" class="link-level2">{{ level2.name }}</a>
+	                            </h4>
+	                        </li>
+	                    {% endfor %}
+	                    </div>
+	                </ul>
+	                {% endif %}
+	            </li>
+	        {% endif %}
+		{% endfor %}
+	</ul>

@@ -22,8 +22,8 @@
                         {% for key,product_image in product.variants.sku.Tamanho %}
                         <div class="carousel-gallery carousel-trigger-{{ product_image.id }}" style="display: none;">
                             {% for key2,product_img in product_image.images %}
-                            <a href="#" data-image="{{ product_image.small }}" class="itrigger-{{ product.id }}" data-zoom-image="{{ product_image.full }}" alt="{{ product.name }}" title="{{ product.name }}">
-                                <img src="{{ product_image.small }}" alt="{{ product.name }}">
+                            <a href="#" data-image="{{ product_image.large }}" class="itrigger-{{ product.id }}" data-zoom-image="{{ product_image.full }}" alt="{{ product.name }}" title="{{ product.name }}">
+                                <img src="{{ product_image.medium }}" alt="{{ product.name }}">
                             </a>
                             {% endfor %}
                         </div>
@@ -37,7 +37,7 @@
 
                     <div class="container-imagem">
                         <figure>
-                            <img src="{{ product.images[0].large }}" data-zoom-image="{{ product.images[0].full }}" class="zoom" alt="{{ product.name }}">
+                            <img src="{{ product.images[0].full }}" data-zoom-image="{{ product.images[0].full }}" class="zoom" alt="{{ product.name }}">
                         </figure>
                     </div>
 
@@ -48,6 +48,7 @@
         </div>
 
         <div class="col-md-7 col-sm-6 noSpacing">
+
             <div class="product_Share">
                 <div class="col-sm-6"></div>
                 <div class="col-sm-6 noSpacing product_ShareTextArea">                                            
@@ -56,11 +57,7 @@
                         {{ productHelper.social() }}
                     </div>
                 </div>                
-            </div>            
-
-            <div>
-
-            
+            </div>      
 
             <div id="Comprar" class="tabcontent">
 
@@ -73,10 +70,11 @@
                         </div>
                     </div>
                     <div class="product_Price">
-                        <div class="row">                        
+                        <div class="row">   
+                            <div class="col-sm-12 noSpacing">                     
 
                                 <div class="col-sm-6 noSpacing">
-                                    {% element 'snippets/productPrice' {"product": product} %}    
+                                    {% element 'snippets/productPrice' {"product": product} %} 
                                 </div>
                                 <div class="col-sm-6 noSpacing"> 
 
@@ -103,7 +101,7 @@
                                     </select>
                                 
                                 </div>
-
+                            </div>
                         </div>
                     </div>
                     <div class="product_Cart">
@@ -210,8 +208,9 @@
                     </div>
                 </a>
             </div>
+
         </div>
-    </div>
+        
     </div>
 
     {% if product.related_products %}
@@ -224,18 +223,17 @@
         </div>
     </div>
     <div class="row product-list">
-    {% for related in product.related_products %}
-          <div class="col-sm-3 product">
-              {% element 'snippets/product' {"product": related} %}
-          </div>
-    {% endfor %}
+        {% for related in product.related_products %}
+            <div class="col-sm-3 product">
+                {% element 'snippets/product' {"product": related} %}
+            </div>
+        {% endfor %}
     </div>
 
 
     {% endif %}
 
-
-    
+</section>
 
 <script>    
     jQuery(window).resize(function () {

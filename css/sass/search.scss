@@ -1,45 +1,51 @@
 /**
  * Search
  */
-
+ 
 .search{
     
-    @media screen and (max-width: $sm){
-        padding: 10px 0;
+    .search-key{
+        border-bottom: 1px solid #b8b8b8;
+        border-left: 1px solid #b8b8b8;
+        border-top: 1px solid #b8b8b8;
+        border-radius: 0;
+        height: 34px;
+        
     }
     
-    form{
-        background: #fff;
-        height: 55px;
-        
-        > div{
-            overflow: hidden;
-        }
+    ::-webkit-input-placeholder {
+       color: #433f3f;
+       font: 400 11px/1.8 $lato;
+    }
+    
+    :-moz-placeholder { /* Firefox 18- */
+       color: #433f3f;
+       font: 400 11px/1.8 $lato;  
+    }
+    
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #433f3f;
+       font: 400 11px/1.8 $lato;
+    }
+    
+    :-ms-input-placeholder {  
+       color: #433f3f;
+       font: 400 11px/1.8 $lato;
     }
     
     .search-button{
-        background: #a2a2a2;
-        border: none;
-        border-right: none;
-        height: 55px;
-        padding: 0 11px;
-    }
-    
-    .search-key{
-        background: none;
-        border: 1px solid #e2e2e2;
-        border-right: none;
-        font-size: 1.3rem;
-        height: 55px;
-        padding: 19px 25px;
-        width: 100%;
-        
-        @media screen and (max-width: $sm){
-            border: 1px solid #a2a2a2;
-            border-right: none;
-            font-size: 1.6rem;
-            height: 55px;
-            padding: 17px 25px;
-        }
+        background: #057ca5;
+        border-bottom: 1px solid #b8b8b8;
+        border-top: 1px solid #b8b8b8;
+        border-right: 1px solid #b8b8b8;
+        border-radius: 0;
+        color: #fff;
+        font-size: 18px;
+        height: 34px;
+        line-height: 32px;
+        margin-top: -1px;
+        padding: 0;
+        text-align: center;
+        width: 32px;
     }
 }

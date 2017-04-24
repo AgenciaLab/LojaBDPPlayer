@@ -1,38 +1,30 @@
-
 <div class="catalog_ContentFiltros">
-    <div class="col-md-1">
-        <div class="catalog_Close">
-            <a href="{{ category.link }}">
-                <h3>X</h3>
-            </a>
+    <div class="row">
+        <div class="col-md-1">
+            <div class="catalog_Close">
+                <a href="{{ category.link }}">
+                    <h3>X</h3>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="col-md-2">
-        <div class="catalog_Apply">
-            <a>
-                <h3>APLICAR FILTROS</h3>
-            </a>
+        <div class="col-md-2">
+            <div class="catalog_Apply">
+                <a>
+                    <h3>APLICAR FILTROS</h3>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="col-md-8">
+        <div class="col-md-8">
 
-        
 
-        {% if filters %}
+
+            {% if filters %}
             <form name="form-filter" method="get" class="smart-filter">
-            <input type="hidden" name="loja" value="{{ store.id }}">
+                <input type="hidden" name="loja" value="{{ store.id }}"> {% if category.id %}
+                <input type="hidden" name="categoria" value="{{ category.id }}"> {% endif %} {% set prdSelect = Products()
+                %} {% set prdSelect = Products({ 'categories': category.id }) %}
 
-            {% if category.id %}
-                <input type="hidden" name="categoria" value="{{ category.id }}">
-            {% endif %}
-
-                {% set prdSelect = Products() %}
-
-                {% set prdSelect = Products({
-                    'categories': category.id 
-                }) %}
-
-                <select id="marcasSelected" class="selectFormasPgto" onchange="filtroAlteradoMarca(this)" >
+                <select id="marcasSelected" class="selectFormasPgto" onchange="filtroAlteradoMarca(this)">
                     <option value="NonSelected">Marca</option>
                     {% for p in prdSelect %} 
                         {% set brandTray = Brands( { "brand": p.brand } ) %}    
@@ -42,10 +34,8 @@
                                 </option>                            
                             {% endfor %}                 
                     {% endfor %}        
-                </select>  
+                </select> {% for myFilter in filters %}
 
-            {% for myFilter in filters %} 
-                
                 <!--{% if myFilter.items |length > 1 %}
 
                     {% if myFilter.title == 'Filtrar por Marca' %}
@@ -58,21 +48,17 @@
                             {% endfor %}
                         </select>
                     {% endif %}-->
-                    {% if 'Faixa de Pre' in  myFilter.title %}
-                        <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                {% if 'Faixa de Pre' in myFilter.title %}
+                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
                             <option value="NonSelected">Faixa de Preço</option>
                             {% for item in myFilter.items %}
                                 <option value="{{ item.url }}">
                                     {{ item.title }}
                                 </option>
                             {% endfor %}
-                        </select>
-                    {% endif %}
+                        </select> {% endif %} {% else %}
 
-
-                {% else %}
-
-                    <!--{% if myFilter.title == 'Filtrar por Marca' %}
+                <!--{% if myFilter.title == 'Filtrar por Marca' %}
                         <select class="selectFormasPgto" >
                             {% if myFilter.items |length == 1 %}
                                 {% for item in myFilter.items %}
@@ -85,8 +71,8 @@
                             {% endif %}
                         </select>
                     {% endif %}-->
-                    {% if 'Faixa de Pre' in  myFilter.title %}
-                        <select class="selectFormasPgto">
+                {% if 'Faixa de Pre' in myFilter.title %}
+                <select class="selectFormasPgto">
                             {% if myFilter.items |length == 1 %}
                                 {% for item in myFilter.items %}
                                     <option value="{{ item.url }}">
@@ -96,41 +82,25 @@
                             {% else %}
                                 <option value="NonSelected">Faixa de Preço</option>
                             {% endif %}
-                        </select>
-                    {% endif %}
-                    
-                {% endif %}
-                
-                {% if myFilter|length %}
-                    
-                    {% for var in myFilter %}  
-
-                        {% if var.items |length > 1 %}
-
-                            {% if var.title == 'Tamanho' %}
-                                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
+                        </select> {% endif %} {% endif %} {% if myFilter|length %} {% for var in myFilter
+                %} {% if var.items |length > 1 %} {% if var.title == 'Tamanho' %}
+                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
                                     <option value="NonSelected">Tamanho</option>
                                         {% for item in var.items %}
                                             <option value="{{ item.url }}">
                                                 {{ item.title }}
                                             </option>
                                         {% endfor %}                                    
-                                </select>
-                            {% elseif var.title == 'Cor' %}
-                                <select class="selectFormasPgto" onchange="filtroAlterado(this)" >  
+                                </select> {% elseif var.title == 'Cor' %}
+                <select class="selectFormasPgto" onchange="filtroAlterado(this)">  
                                         <option value="NonSelected">Cor</option>
                                         {% for item in var.items %}                                        
                                             <option value="{{ item.url }}">
                                                 {{ item.title }}
                                             </option>
                                         {% endfor %}                                    
-                                </select>
-                            {% endif %}
-
-                        {% else %}
-
-                            {% if var.title == 'Tamanho' %}
-                                <select class="selectFormasPgto" >
+                                </select> {% endif %} {% else %} {% if var.title == 'Tamanho' %}
+                <select class="selectFormasPgto">
                                     {% if var.items |length == 1 %}
                                         {% for item in var.items %}
                                             <option value="{{ item.url }}">
@@ -140,9 +110,8 @@
                                     {% else %}
                                         <option value="NonSelected">Tamanho</option>
                                     {% endif %}
-                                </select>
-                            {% elseif var.title == 'Cor' %}
-                                <select class="selectFormasPgto" >
+                                </select> {% elseif var.title == 'Cor' %}
+                <select class="selectFormasPgto">
                                     {% if var.items |length == 1 %}
                                         {% for item in var.items %}
                                             <option value="{{ item.url }}">
@@ -152,51 +121,35 @@
                                     {% else %}
                                         <option value="NonSelected">Cor</option>
                                     {% endif %}
-                                </select>
-                            {% endif %}
+                                </select> {% endif %} {% endif %} {% endfor %} {% endif %}
 
 
-                        {% endif %}
+            </form>
+            {% endfor %} {% endif %}
 
 
+        </div>
 
-
-
-                        
-                        
-                    {% endfor %}
-
-                {% endif %}
-
-
-            </form>        
-        {% endfor %}
-        
-    </div>
-    
-    <div class="col-md-1">
-        <div class="catalog_Search">
-            {% if search.word %}
+        <div class="col-md-1">
+            <div class="catalog_Search">
+                {% if search.word %}
                 <input name="palavra_busca" type="hidden" value="{{ search.word }}">
-                <a><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-            {% endif %}    
+                <a><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a> {% endif %}
+            </div>
         </div>
     </div>
 </div>
 
-{% endif %}
 
 <script>
     var url = window.location.href;
 
-    if (url.indexOf("marca") > 0)
-    {
+    if (url.indexOf("marca") > 0) {
         marca = url.substring(url.indexOf("marca"), url.length).replace("marca=marca_", "");
 
         if (
             marca.indexOf("&") > 0 || marca.indexOf("?") > 0
-        )
-        {
+        ) {
             var posicao = marca.length;
 
             if (marca.indexOf("&") > 0)
@@ -212,11 +165,10 @@
     }
 
     function filtroAlterado(valor) {
-        
-        if (valor.value !== "NonSelected")
-        {
+
+        if (valor.value !== "NonSelected") {
             window.location.replace(valor.value);
-        }      
+        }
 
     }
 
@@ -225,26 +177,19 @@
         var url = window.location.href;
         var urlFinal = "";
 
-        if (url.indexOf("marca") < 0)
-        {
+        if (url.indexOf("marca") < 0) {
             urlFinal = url + "&marca=marca_" + valor.value;
             window.location.replace(urlFinal);
-        }
-        else
-        {
-            
-            if (valor.value == "NonSelected")
-            {
-                urlFinal = url.replace(url.substring(url.indexOf("marca") -1, url.length), "");
-            }
-            else
-            {
+        } else {
+
+            if (valor.value == "NonSelected") {
+                urlFinal = url.replace(url.substring(url.indexOf("marca") - 1, url.length), "");
+            } else {
                 var marca = url.substring(url.indexOf("marca"), url.length).replace("marca=marca_", "");
 
                 if (
                     marca.indexOf("&") > 0 || marca.indexOf("?") > 0
-                )
-                {
+                ) {
                     var posicao = marca.length;
 
                     if (marca.indexOf("&") > 0)
@@ -260,7 +205,7 @@
 
                 //urlFinal = url.replace(url.substring(url.indexOf("marca") -1, url.length), "") + "&marca=marca_" + valor.value;
             }
-            
+
         }
 
         window.location.replace(urlFinal);
