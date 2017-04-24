@@ -140,10 +140,12 @@ and open the template in the editor.
 
 @media (min-width: 992px) and (max-width: 1400px)
 {
-
+    .usr_Logado {
+        margin-left: -100px;
+    }
     .flyMenu {
         height: 10px;
-        width: 100%;
+        width: 100%; 
         text-align: center;    
     }
 
@@ -191,6 +193,11 @@ and open the template in the editor.
 }
 
 @media (min-width: 1400px) {
+    
+    .usr_Logado {
+        margin-left: -150px;
+    }
+
     .flyMenu {
         height: 10px;
         width: 100%;

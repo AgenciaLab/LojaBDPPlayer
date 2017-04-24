@@ -17,7 +17,7 @@ and open the template in the editor.
 }
 
 .rdp_Area {
-    background-color: #070003;
+    background-color: #070003; 
     margin-bottom: -12px;
 }
 
@@ -27,7 +27,10 @@ and open the template in the editor.
 }
 
 
-
+.rdp_ConteudoTexto, .rdp_ConteudoPrimary h4, .rdp_ConteudoPrimary h5,
+.rdp_ConteudoTexto h5, .rdp_ConteudoTexto h6, .rdp_ConteudoTextoB h6 {
+    color: #fff;
+}
 
 .rdp_ConteudoTexto h5 {
     line-height: 25px;

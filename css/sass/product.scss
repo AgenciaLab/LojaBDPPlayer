@@ -1,114 +1,135 @@
-.product{
-    background: #fff;
-    border: 1px solid #e2e2e2;
-    display: block;
-    margin: 15px 0;
-    padding: 15px;
-        
-    a,
-    a:hover
-    a:focus,
-    a:active{
-        outline: none;
-        text-decoration: none;
+/**
+ * Product
+ */
+
+.product-list{
+    
+    .jcarousel-clip{
+        margin: 0 auto;
+        overflow: hidden;
+        width: 925px;
     }
     
-    .product-image{
-        border-bottom: 1px solid #eee;
-        font-size: 0;
-        height: 200px;
-        margin-bottom: 15px;
-        text-align: center;
+    .jcarousel-item,
+    .product{
+        &:hover a{
+            text-decoration: none;
+        }
+        
+        a{
+            display: block;
+            text-decoration: none;
+        }
+    }
+        
+    .jcarousel-next{
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 150px;
         
         &:before{
-            content: '';
-            display: inline-block;
-            height: 200px;
-            vertical-align: middle;
-            width: 1%;
-        }
-        
-        img{
-            display: inline-block;
-            max-height: 100%;
-            max-width: 99%;
-            vertical-align: middle;
+        	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAiCAMAAABhn6n1AAAAmVBMVEW+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr4dDk3qAAAAMnRSTlMAAQQICQ8QGBkaGyUxMkBBUFJhYmNlZnd4iImKmZqbqqyvsL/Awc7P2tvl7e7w9vf7/mcKx0wAAACtSURBVHjaddLZEoIwDEBRQBQVF9xwxQUVFUHA//84k6fccYa+9UzSpkmd9Ctr7tgalgLvABJryAng3lUiSFgJ5F3IRkMOAO8h0Ewg41rk2YHsNWkL8F8C9QgybUQyD3LUpDWglwt8QshMQ64u5KyyAvQLgXIAWWrIBbBQSG0fWAoOjW0f2bVWWIXCEpSOx7U/f2cNQgt9a3JmTbYxJO2Dcm8cJYfN71AEBv8f5gcNjSGyR2VnGwAAAABJRU5ErkJggg==);
         }
     }
     
-    .product-name{
-        color: #3d4445;
-        display: block;
-        height: 55px;
-        margin-bottom: 15px;
-        overflow: hidden;
-        @include typo(1.5rem, 400, $font, 1.8rem);
+    .jcarousel-prev{
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        top: 150px;
         
-        @media screen and (max-width: $sm){
-            margin-bottom: 7px;
-            @include typo(1.2rem, 400, $font, 1.3rem);
-            text-align: center;
+        &:before{
+            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAiCAMAAABhn6n1AAAAnFBMVEW+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr5gBF6RAAAAM3RSTlMAAQQICQ8QGBkaGyQlMTJAQVBRYWJlZmd3eIiJipmaqqusr7C/wc3Oz9rb5e7v8Pb3+/5pun/MAAAAsklEQVR42mXS6Q6CMBAE4FJRRFHEA2/EExVEwPd/N3cT0mnY/vsm0/RUGIsfjSvsFeRyhODEhTUcse+OcT8nVwEKRy5s4bAhP7Vx70WupyjseMIBntTkt2usH+RmhsKGJyTw+EvOB8bOjQtzFFbsM+x/yMUQwYULS1gGfslTPCuJuZK2wLKRlQRVuzGxdRwu48OFSh6/c0F7WLm4QvuSM20lCZ6h81DiKTFSTmIlvoP4MH/cIiJqNakPGQAAAABJRU5ErkJggg==);
         }
     }
     
-    .product-price{
-        color: #000;
-        display: block;
-        height: 35px;
-        overflow: hidden;
-        @include typo(1.5rem, 700, $font, 1.8rem);
-        
-        @media screen and (max-width: $sm){
-            @include typo(1.2rem, 700, $font, 1.3rem);
-            text-align: center;
-        }
-        
-        .price-offer{
-            margin-right: 15px;
-        }
-        
-        .price{
-            color: #000;
-            font-size: 1.2rem;
-            text-decoration: line-through;
-        }
-        
-        .price-various{
-            display: none;
-        }
-        
-        .price-before {
-            font-size: 1.2rem;
-            color: #a4a4a4;
-            text-decoration: line-through;
-            font-weight: 400;
-        }          
-    }
-    
-    .product-payment{
-        color: #000;
-        display: block;
-        height: auto;
-        overflow: hidden;
-        @include typo(1.2rem, 400, $font, 1.4rem);
-        
-        @media screen and (max-width: $sm){
-            margin-bottom: 7px;
-            text-align: center;
-        }
-        
-        > br:first-child{
-            display: none;
-        }
-        
-        span,
-        strong{
-            color: #000;
-            @include typo(1.2rem, 400, $font, 1.4rem);
-            
-            @media screen and (max-width: $sm){
-                @include typo(1rem, 400, $font, 1rem);
+            .product-image{
+                height: 330px;
+                margin-bottom: 10px;
+                position: relative;
+                
+                div{
+                    background-color: #f2f2f2;
+                    height: 330px;
+                    left: 0;
+                    opacity: 1;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    
+                    -webkit-transition: 150ms all linear 0s;
+                       -moz-transition: 150ms all linear 0s;
+                         -o-transition: 150ms all linear 0s;
+                            transition: 150ms all linear 0s;
+                    
+                    &:nth-child(2){
+                        opacity: 0;
+                        
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                }
+                
+                img{
+                    left: 50%;
+                    position: absolute;
+                    top: 50%;
+                    
+                    -webkit-transform: translate(-50%, -50%);
+                       -moz-transform: translate(-50%, -50%);
+                         -o-transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%);
+                }
             }
+            
+            .product-name{
+                margin-bottom: 5px;
+                min-height: 32px;
+                
+                h3{
+                    color: #555;
+                    font: 400 13px/15px $lato;
+                }
+            }
+            
+            .price-de{
+                color: #75A2D2;
+                text-decoration: line-through;
+                font: 700 13px/15px Lato,sans-serif;
+                margin-bottom: 5px;
+            }
+            
+            .product-price{
+                color: #4a6f99;
+                font: 900 13px/15px $lato;
+                margin-bottom: 5px;
+            }
+            
+            .product-payment{
+                color: #747474;
+                font: 13px/15px $lato;
+                
+                br{
+                    display: none;
+                }
+            }
+}
+
+.page-home{
+    .product-list{
+        .jcarousel-item,
+        .product{
+            margin-right: 15px;
+            padding: 0;
+            width: 220px;
+            
+            &:hover a{
+                text-decoration: none;
+            }
+            
         }
     }
 }

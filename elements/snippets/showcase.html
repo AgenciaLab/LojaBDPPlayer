@@ -1,0 +1,27 @@
+{% if products|length > 0 %}
+
+    {% if showcaseTitle %}
+        <h2 class="showcase-title">{{ showcaseTitle }}</h2>
+    {% endif %}
+
+    <div class="product-list {{ showcaseTitle }}">
+        {% if pages.current == 'catalog' or pages.current == 'search' %}
+            <ul class="row">
+        {% else %}
+            <ul class="produtoSlideHome slider">
+        {% endif %}
+            {% for product in products if product.category_id != 268 %}
+
+                {% if pages.current == 'catalog' or pages.current == 'search' %}
+                    <li class="product col-sm-4 col-xs-12">
+                {% else %}
+                    <li class="product">
+                {% endif %}
+                    {% element 'snippets/product' {"product": product} %}
+                </li>
+
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endif %}

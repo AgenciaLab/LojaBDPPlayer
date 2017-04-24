@@ -1,3 +1,87 @@
+.cartArea {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    min-width: 300px;
+    background: #252525;
+    top: 150px;
+    right: -400px;
+    font-family: OswaldBold;
+    display: none;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  pointer-events: none;
+}
+
+.AreaBotaoCart {
+    padding: 2px;
+}
+
+.cartButton {
+    text-align: center;
+    padding: 15px;
+    background: #ff0;
+    margin: 10px 50px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.cartButton h4 {
+    color: #333;
+    font-size: 12pt;
+}
+
+.cart {
+    display: none; 
+}
+
+.list {
+    padding: 10px 20px;
+}
+
+.noCart {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.noCart h4 {
+    color: #fff;
+}
+
+.areaItem {
+    border-bottom:  1px solid #fff;
+    padding: 10px 0px;
+}
+
+.areaContentItem {
+    height: 140px;
+    margin-top: 10px;
+}
+
+.areaContentItem img {
+    margin: 10px 0px!important;
+}
+
+.areaContentItem h4, .areaItem h4 {
+    color: #fff;
+    font-size: 12pt;
+    font-family: OswaldRegular;
+}
+
+
+ a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
 #btnOpenSearch {
     display: none;
 }
@@ -8,6 +92,11 @@
     height: 30px;
     font-family: ArialNarrow;
     border-bottom: 1px solid #a49919;
+}
+
+.AreaBotaoLogin a:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .hdr_InfoRight {
@@ -382,6 +471,10 @@
         font-family: OswaldBold;
     }
 
+    .areaUsuarioLogin {
+        margin-left: 140px;
+    }
+
     .hdr_AreaLogo img {
         margin: 40px auto;    
     }
@@ -393,6 +486,7 @@
 
     .hdr_AreaButton span {
         margin-left: 10px;
+        margin-right: 5px;
         color: #fff;
         font-size: 13pt;
         vertical-align: middle;

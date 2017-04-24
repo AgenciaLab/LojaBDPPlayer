@@ -1,15 +1,15 @@
 <div>
     <a href="{{ product.link }}">
-        <div class="product-image">
+        <div class="areaProdutoRelacionado">
             {% if product.images %}
-                <img data-original="{{ product.images[0].large }}" class="lazy" src="{{ asset('img/loading.svg') }}" alt="{{ product.name }}">
+                <img src="{{ product.images[0].full }}" alt="{{ product.name }}">
             {% else %}
                 <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100">
             {% endif %}
         </div>
         <div class="prd_AreaInfo">
             <div class="product-name" itemprop="name">
-                {{ product.name }}
+                <h4>{{ product.name }}</h4>
             </div>
             
             <div class="product-price-catalog">

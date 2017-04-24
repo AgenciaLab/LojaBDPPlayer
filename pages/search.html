@@ -1,68 +1,75 @@
-<div class="catalog-header">
-
-    {% if banner.title %}
-    <div class="banner banner-title">
-        {{ banner.title }}
+<div>
+    <div class="search_Banner">
+        <img class="img-responsive" src="{{ asset('img/assets/categories/vestuario.jpg') }}" />
     </div>
-    {% endif %}	
+    <div class="search_Filter">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="search_Filter_Item filter" onclick="filtersClick()" style="cursor: pointer">
+                    <div class="search_Filter_Area">
+                        <img src="{{ asset('img/assets/icons/iconFilter.png') }}" />
+                        <span>Filtros</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="search_Filter_Item">
+                    {% if products|length > 0 %} {% element 'snippets/filter' { 'brands': category.brands } %} {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
+            <div class="search_AreaFiltros">
+                {% element('snippets/smartFilters') %}
+            </div>
 
-    {% if search.word %}
-        <h2 class="catalog-name">Exibindo resultados para: {{ search.word }}</h2>
-    {% else %}
-        <h2 class="catalog-name">Exibindo todos os produtos</h2>
-    {% endif %}
-    
-    <h2 class="catalog-name">{{ category.name }}</h2>
-    
-    {% if products|length > 0 %}
-    
-        {% if breadcrumb %}
-            {% element 'snippets/breadcrumb' %}
-        {% endif %}
-        
-        <div class="system-filter">
-            {% element 'snippets/filter' {
-                'brands': category.brands
-            } %}
         </div>
-    
-        <div class="pagination">
-            {% element 'snippets/paginate' %}
-        </div>
-        
-    {% endif %}
-    
+    </div>
 </div>
-
 
 {% if products|length > 0 %}
 
-    <div class="catalog-content row">
-        {% element 'showcase-catalog' {
-            "products": products
-        } %}
-    </div>
-
-    <div class="catalog-footer pagination">
-        {% element 'snippets/paginate' %}
-    </div>
+<div class="search-content row" style="margin-left: 0px; margin-right: 0px">
+    {% element 'showcase-catalog' { "products": products } %}
+</div>
 
 {% else %}
 
+<div class="search-empty">
+    <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
     <p>Nenhum produto encontrado nessa categoria.</p>
+</div>
 
 {% endif %}
 
 <div style="display:none;">
-    {% element 'snippets/history' {
-        'store.id': store.id,
-        'pages.current': pages.current,
-        'category.id': category.id
-    } %}
+    {% element 'snippets/history' { 'store.id': store.id, 'pages.current': pages.current, 'category.id': category.id } %}
 </div>
 
 {% if banner.bottom %}
-    <div class="banner banner-bottom">
-        {{ banner.bottom }}
-    </div>
+<div class="banner banner-bottom">
+    {{ banner.bottom }}
+</div>
 {% endif %}
+
+<script>
+    function filtersClick() {
+
+        if (jQuery(".catalog_AreaFiltros").css("display") === "none") {
+            jQuery(".catalog_AreaFiltros").css("display", "block");
+
+            jQuery(".catalog_AreaFiltros").animate({
+                height: "100px"
+            }, {
+                duration: 300,
+                specialEasing: {
+                    width: 'linear'
+                }
+            });
+        } else {
+            jQuery(".catalog_AreaFiltros").css("display", "none");
+            jQuery(".catalog_AreaFiltros").css("height", "0px");
+        }
+
+    }
+</script>

@@ -1,0 +1,32 @@
+.container3, .board {
+    padding: 20px 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container3, .board {
+        width: 750px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .container3, .board {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container3, .board {
+        width: 1170px;
+    }
+
+    .paginaConteudo {
+        min-height: 500px;
+    }
+}
+
+#ProdBlock {
+    display:  none;
+}

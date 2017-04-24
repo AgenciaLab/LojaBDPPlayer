@@ -1,0 +1,36 @@
+<aside class="sidebar">
+
+    {% if 'central_' in pages.current %}
+        {% element 'snippets/menu_central' %}
+    {% else %}
+    <div class="menudefiltros">
+        {% if pages.current == 'search' %}
+
+            <div>
+                {% element 'snippets/categories_list' %}
+            </div>
+
+            {% if filters != '' %}
+
+                <div>
+                    {% element('snippets/smart_filter_search') %}
+                </div>
+            {% endif %}
+        {% endif %}
+
+
+        {% if pages.current == 'catalog' %}
+            {% if filters != '' %}
+                <div>
+                    {% element('snippets/smart_filter') %}
+                </div>
+            {% else %}
+                <div>
+                    {% element 'snippets/categories_list' %}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+    {% endif %}
+
+</aside>

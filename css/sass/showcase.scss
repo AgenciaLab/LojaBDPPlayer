@@ -2,83 +2,83 @@
  * Showcase
  */
 
-.showcase{
+.showcase-title{
+    color: #423e3f;
+    font: 900 18px/18px $lato;
+    letter-spacing: 1.75px;
+    margin: 35px 0;
+    text-align: center;
+    text-transform: uppercase;
     
-    > h2{
-        margin: 0;
-        text-transform: uppercase;
+    &:after{
+        background: #423e3f;
+        content: '';
+        display: block;
+        height: 5px;
+        margin: 7px auto 0;
+        width: 30px;
+    }
+    
+    &.yellow:after{
+        background: #fff02a;
+    }
+    
+    &.blue:after{
+        background: #28c1cf;
+    }
+    
+    &.red:after{
+        background: #cf1524;
+    }
+}
+
+.showcase-banners{
+    margin: 35px 0;
+}
+
+@media screen and (max-width: 768px){
+    
+    .brands{
+        display: none;
+    }
+    
+    .showcase-title{
+        display: block;
+    }
+    
+    .product-list.moda,
+    .product-list.casa-decor,
+    h2.showcase-title.blue,
+    h2.showcase-title.red,
+    .product-list .jcarousel-prev,
+    .product-list .jcarousel-next{
+        display: none !important;
+    }
+    
+    ul.jcarousel-list.jcarousel-list-horizontal{
+        width: auto !important;
+    }
+    
+    .product-list{
+        display: block;
+    }
+    
+    .product-list.new{
         
-        @media screen and (max-width: $sm){
-            padding: 0;
-        }
-        
-        strong{
-            color: #000;
+        .product{
             display: block;
-            @include typo(2.5rem, 400, $font, 2.5rem);
+            float: none !important;
+            margin: 25px auto;
         }
+        
     }
     
-    .slick-slide{
-        @media screen and (max-width: $sm){
-            padding: 0;
-        }
+    .product-list .jcarousel-clip {
+        width: auto;
     }
     
-    .slick-arrow{
-        background: none;
-        border: 1px solid #a0a0a0;
-        font-size: 0;
-        height: 38px;
-        position: absolute;
-        right: 30px;
-        text-align: center;
-        top: -77px;
-        width: 38px;
-        z-index: 10;
-        
-        &.slick-next{
-            right: 0;
-            
-            &:before{
-                content: '';
-                border-left: 10px solid #a0a0a0;
-                border-top: 6px solid rgba(0, 0, 0, 0);
-                border-bottom: 6px solid rgba(0, 0, 0, 0);
-            }
-        }
-        
-        &.slick-prev{
-            right: 45px;
-            
-            &:before{
-                content: '';
-                border-right: 10px solid #a0a0a0;
-                border-top: 6px solid rgba(0, 0, 0, 0);
-                border-bottom: 6px solid rgba(0, 0, 0, 0);
-            }
-        }
+    .wrap-newsletter{
+        display: none;
     }
-    
-    .slick-dots{
-        padding: 30px 0;
-        overflow: hidden;
-        text-align: center;
-        
-        li{
-            background: #a0a0a0;
-            display: inline-block;
-            height: 15px;
-            margin: 0 10px 10px;
-            width: 15px;
-            
-            &.slick-active{
-                background: #000;
-            }
-        }
-        
-        button{
-            display: none;
-        }
-    }
+
 }

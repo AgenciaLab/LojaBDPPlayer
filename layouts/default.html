@@ -1,74 +1,127 @@
+{% set showHeader = not getLayout or (getLayout and 'header' in elementsToLoad) %}
+{% set showFooter = not getLayout or (getLayout and 'footer' in elementsToLoad) %}
+{% set showLeft = not getLayout or (getLayout and 'left' in elementsToLoad) %}
+{% set showRight = not getLayout or (getLayout and 'right' in elementsToLoad) %}
+
 <!doctype html>
-<html lang="pt-br" data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}">
-
+<html lang="pt-br" data-store="{{ store.id }}" class="page-{{ pages.current }}">
 <head>
-
-    <!-- tray charset -->
     {{ html.charset() }}
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-
-    <!-- tray meta tags -->
     {{ tray.meta }}
+    <!-- [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="ZmAepr6OinR58dYXD-GN1LnCsyLDYtEZgJZjQrEDEAY" />
 
-    <!-- tray styles -->
-    {{ tray.styles }}
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ themePath }}css/theme.min.css?{{ utils.assets_version }}">
 
-    <!-- theme styles -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/custom.css', {dynamic: true}) }}" type="text/css">
+    {% if pages.current == 'home' %}
+        <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}">
+    {% endif %}
+    {% if pages.current == 'product' %}
+        <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('css/sistema.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/open-mobile.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/pages/product.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/pages/snippets/product.css') }}">
+    {% endif %}
+    {% if pages.current == 'catalog' %}
+        <link rel="stylesheet" href="{{ asset('css/elements/catalog.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/pages/catalog.css') }}">
+    {% endif %}
+    {% if pages.current == 'search' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/search.css') }}">
+    {% endif %}
 
-    <link href="{{ asset('css/pages/product.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/pages/snippets/product.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/search.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/header.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/footer.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/cart.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/fonts.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/pages/default.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/pages/home.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/pages/catalog.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/menu.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/flyoutCart.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/ban3.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/marcas.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/elements/BannerCarousel.css') }}" rel="stylesheet" type="text/css" />
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
-
+    <link rel="stylesheet" href="{{ asset('css/elements/search.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/elements/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/elements/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/elements/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/elements/menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/elements/marcas.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/elements/userArea.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
     
-    <style>
-        {
-            {
-                settings.custom_css
-            }
-        }
+    {{ tray.scripts }}
+    <script type="text/javascript" src="{{ asset('js/default.js') }}"></script>
 
-        .infobox.danger {
-            display: none;
+    {% if pages.current == 'product' %}
+        <script type="text/javascript" src="{{ asset('js/product.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.elevatezoom.js') }}"></script>
+    {% endif %}
+    {% if pages.current == 'login' %}
+        <script type="text/javascript" src="{{ asset('js/identify.js') }}"></script>
+    {% endif %}
+
+    {% if pages.current == 'login' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/login.css') }}">
+    {% endif %}
+
+    {% if pages.current == 'central_cliente' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/centralCliente.css') }}">
+    {% endif %}
+    {% if pages.current == 'central_anteriores' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/centralAnteriores.css') }}">
+    {% endif %}
+    {% if pages.current == 'central_confirmar_pagamento' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/centralConfirmarPagamento.css') }}">
+    {% endif %}
+    {% if pages.current == 'central_troca' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/central_troca.css') }}">
+    {% endif %}
+    {% if pages.current == 'central_rastrear' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/central_rastrear.css') }}">
+    {% endif %}
+    {% if pages.current == 'register' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/central_dados.css') }}">
+    {% endif %}
+    {% if pages.current == 'central_senha' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/central_senha.css') }}">
+    {% endif %}
+    {% if pages.current == 'central_comentarios' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/central_comentarios.css') }}">
+    {% endif %}
+    {% if pages.current == 'central_lista_espera' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/central_lista_espera.css') }}">
+    {% endif %}
+    {% if pages.current == 'navegacao_visitados' %}
+        <link rel="stylesheet" href="{{ asset('css/pages/navegacao_visitados.css') }}">
+    {% endif %}
+
+    {{ tray.analytics }}
+    {{ googleTagManager.header(pages.current, tagManagerData) }}
+
+
+    {% if utils.is_mobile %}
+        {% if pages.current == 'product' %}
+            <script type="text/javascript" src="{{ asset('js/open-mobilev2.js') }}"></script>
+            <link rel="stylesheet" href="{{ asset('css/open-mobile-v2.css') }}">
+        {% endif %}
+    {% endif %}
+
+    <style type="text/css">
+        .floating-box .window{
+            background-image: url("{{ themePath }}{{ settings.backgroundnewsletter }}");
+            background-repeat: no-repeat;
+            background-position: center;
         }
     </style>
 
-    <!-- tray scripts -->
-    {{ tray.scripts }}
-
-    <!-- tray analytics -->
-    {{ tray.analytics }}
-
-    <!-- google tag manager -->
-    {{ googleTagManager.header(pages.current, tagManagerData) }}
-
-    
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 </head>
-
 <body>
-    {% spaceless %} {{ googleTagManager.top(pages.current, tagManagerData) }} {% element 'snippets/messages' %} {% element 'snippets/menu-mobile'
+    {% spaceless %} {{ googleTagManager.top(pages.current, tagManagerData) }} {% element 'snippets/menu-mobile'
     %}
 
     <div class="application">
@@ -77,7 +130,11 @@
 
         {% element 'header' %}
 
-        {{ content_for_layout }}
+        <div class="paginaConteudo">
+
+            {{ content_for_layout }}
+
+        </div>
 
         {% element 'footer' %}
     </div>
@@ -99,6 +156,11 @@
         }
     </style>
     {% endif %} {% endspaceless %}
-</body>
 
+    <script src="{{ asset('js/modules/animations.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/modules/interations.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/slick.min.js') }}" type="text/javascript"></script>
+
+</body>
 </html>
+

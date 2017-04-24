@@ -1,14 +1,39 @@
-{% set categorias = [41,43,14,45,47,49,51] %} 
+{% set categorias = [1,3,5,7,9,11,13,15,17] %} 
 {% for level1 in categories %} 
     {% if level1.id in categorias %}
-    <li>
-        <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">
-            <div class="mnu_AreaCategoria">
-                <div class="mnu_Link">
-                    <span>{{ level1.name }}</span>
-                </div>
-            </div>
-        </a>
-    </li>
+        {% if level1.name == "MARCAS" %}
+        <li> 
+           <a onclick="openSearch()">           
+              <div class="mnu_AreaCategoria">
+                  <div class="mnu_Link">
+                     <span>{{ level1.name }}</span>
+                   </div>
+               </div>            
+            </a>
+        </li>
+        {% else %}
+            {% if level1.children > 0 %}
+                <li>
+                    <a class="link-level1" onmouseover="openSubMenu({{ level1.id }})" onmouseout="fechaSubMenu({{ level1.id }})">
+                        <div class="mnu_AreaCategoria" id="menuArea_{{ level1.id }}">
+                            <div class="mnu_Link">
+                                <span>{{ level1.name }}</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">
+                        <div class="mnu_AreaCategoria" id="menuArea_{{ level1.id }}">
+                            <div class="mnu_Link">
+                                <span>{{ level1.name }}</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% endif %} 
+        {% endif %} 
     {% endif %} 
 {% endfor %}
+

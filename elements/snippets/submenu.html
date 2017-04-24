@@ -1,0 +1,21 @@
+{% set categorias = [1,3,5,7,9,11,13,15,17] %} 
+        {% for level1 in categories %} 
+            {% if level1.id in categorias %}
+                {% if level1.children > 0 %}
+                    <div class="areaBusca areaPesquisa" id="subMenu_{{level1.id}}" style="display: none">
+                        <div class="subMenu_Container areaDoMenu">
+                            {% for level2 in level1.children %}
+                                <div class="subMenu_Area noSpacing col-xs-12">
+                                    <div class="mrc_AreaImage">
+                                        <a href="{{ level2.slug }}">
+                                            <span>{{ level2.name }}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %} 
+            {% endif %} 
+        {% endfor %}
+    
