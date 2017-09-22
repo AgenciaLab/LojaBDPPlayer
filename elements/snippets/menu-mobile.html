@@ -1,93 +1,85 @@
-<div class="visible-xs">
-    <div class="menuMobileArea">
-        <div class="">
-            <div class="mnuMob_AreaItem borderBottom underline noSpacing col-xs-6">
-                <h5>Marcas</h5> 
-            </div>
-            <div class="mnuMob_AreaItem borderBottom alignCenter borderRight col-xs-3">
-                <a onclick="openMarcasMobile()">
-                    <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>  
-                </a>
-            </div>
-            <div class="mnuMob_AreaItem borderBottom alignCenter noSpacing col-xs-3">
-                <a onclick="closeMenuMobile()">
-                    <h4 class="mnuMob_btnClose">X</h4>
-                </a>
-            </div>                           
-        </div>
-        <div>
-            {% set categorias = [41,43,17,19,45,47,49,51] %} 
-            {% for level1 in categories %} 
-                {% if level1.id in categorias %}
-                    <a href="{{level1.link}}">
-                        <div id="item_{{level1.id}}" class="mnuMob_AreaItem borderBottom col-xs-6 noSpacing">
-                            <h5>{{ level1.name }} </h5> 
+<div class="menuMobileArea" >
+    <!--<h5>{{ Translation('categorias') }}</h5>-->
+    <ul class="categories-mobile level1">
+        {% for level1 in categories %}
+            {% if loop.index <= limit or not limit %}
+                {% if level1.name == "MARCAS" %}
+                    <li class="item-level1">
+                        <div class="row" style="padding:10px 0 10px 0; margin:0; border-bottom: 0.5px solid #fff02a;">
+                            <div class="col-xs-1 item-level1-mnu-first noSpacing noMargin" ></div>
+                            <div class="col-xs-4 item-level1-mnu noSpacing noMargin" style="padding-top:10px;" onclick="openMarcasMobile()">
+                                <label class="link-level1" style="color: beige;" data-tray-tst="categoria_lvl_1">{{ level1.name }}</label>
+                            </div>
+                            <div class="col-xs-5 item-level1-mnu noSpacing noMargin" style="visibility: hidden;" onclick="openMarcasMobile()">
+                                <img id="imgSearch" style="margin-bottom:15px;" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
+                            </div>
+                            <div class="col-xs-2 item-level1-mnu noSpacing noMargin" onclick="fechaMenusMobile()" style="padding:5.5px 0 0 10px;" >
+                                <img src="{{ asset('img/close.png') }}" style=" width:30px;" alt="fechar">
+                            </div>
                         </div>
-                    </a>
+                    </li>
+                {% else %}
+                    <li class="item-level1">
 
-                    <div id="icon_{{level1.id}}" class="col-xs-3 noSpacing mnuMob_AreaItem borderBottom borderRight">
-                        {% if level1.children %}
-                            <a id="menu_{{level1.id}}" onclick="mnu_AreaOpenTab(this)">
-                                <div class="mnuMob_AreaItem borderBottom alignCenter">
-                                    <img src="{{ asset('img/assets/btnMoreCategory.png') }}'" alt=""/> 
+                        <div class="row" style="margin:0;">
+                            <div class="col-xs-10" id="FullWidhtSUbOpen_{{ level1.id }}">
+
+                                <div class="row item-level1-mnu-child-{{ level1.id}}" style="padding:10px 0 10px 0; border-bottom: 0.5px solid #fff02a; ">
+
+                                        {% if level1.children %}
+                                        <div class="col-xs-12 item-level1-mnu  noSpacing noMargin" style="padding:10px 0 10px 30px;" onclick="openSubMenuMobile( {{ level1.id }} )" >
+                                            <i class="pull-right arrow-menu-mobile_{{ level1.id }}" style="float:right;" >
+                                                <img id="ArrowBottom_{{ level1.id }}" src="{{ asset('img/arrow-bottom.png') }}" style="width:30px;" alt="Seta">
+                                                <img id="ArrowTop_{{ level1.id }}" style="display:none;" src="{{ asset('img/arrow-top.png') }}" width="30" alt="Seta">
+                                            </i>
+                                            <label style="color:beige;" id="txt-lvl1_{{ level1.id }}" class="link-level1" for="mobile-item-{{ level1.id }}" data-tray-tst="categoria_lvl_1">
+                                                {{ level1.name }}
+                                            </label>
+                                        {% else %}
+                                        <div class="col-xs-12 item-level1-mnu  noSpacing noMargin" style="padding:10px 0 10px 30px;">
+                                            <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
+                                        {% endif %}
+                                        
+                                        {% if level1.children %}
+                                            <div class="level2 SubMenuMobile_{{ level1.id }}" style="display: none;">
+                                                <ul>
+                                                    {% for level2 in level1.children %}
+                                                        <li class="item-level2">
+                                                            <a href="{{ level2.link }}" class="link-level2" data-tray-tst="categoria_lvl_2">
+                                                            <div class="row" style="padding:10px 0 10px 20px; border-bottom: 0.5px solid #fff02a; margin:0;">
+                                                                <div class="col-xs-12 item-level1-mnu  noSpacing noMargin" >
+                                                                    {{ level2.name }}
+                                                                    {% if level2.children %}
+                                                                        <div class="level3">
+                                                                            <ul>
+                                                                                {% for level3 in level2.children %}
+                                                                                    <li class="item-level3">
+                                                                                        <a href="{{ level3.link }}" class="link-level3" data-tray-tst="categoria_lvl_3">{{ level3.name }}</a>
+                                                                                        {% if level3.children %}
+                                                                                        {% endif %}
+                                                                                    </li>
+                                                                                {% endfor %}
+                                                                            </ul>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div></a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        {% endif %}
+                                    </div>
                                 </div>
-                            </a>
-                        {% endif %}   
-                    </div>
 
-                    <div class="mnuMob_AreaItem col-xs-3 noSpacing">
-                    </div>
+                            </div>
+                            <div class="col-xs-2"></div>
 
-                    {% if level1.children %}
-                        <div class="mnuMob_AreaSubItens col-xs-12 noSpacing" id="areaItens_{{level1.id}}">
-                            {% for level2 in level1.children %}
-                                <div class="mnuMob_AreaItem col-xs-12">
-                                    <a href="{{level2.link}}">
-                                        <h5> {{ level2.name }} </h5>      
-                                    </a>
-                                </div>                  
-                            {% endfor %}
-                            
                         </div>
-                    {% endif %}
-                    
-                {% endif %} 
-            {% endfor %}
-        </div>
-    </div>
+
+                    </li>
+                {% endif %}        
+            {% endif %}
+        {% endfor %}
+    </ul>
 </div>
-
-<script type="text/javascript">
-
-    var open = 0;
-
-    jQuery(document).ready(function(){
-        $(".level2").hide();
-    });
-
-    function mnu_AreaOpenTab(dados) {
-        
-        var idMenu = (dados.id).replace("menu_", ""); 
-        var idAreaItens = "#areaItens_" + idMenu;
-        var idItem = "#item_" + idMenu;
-        var menuImage = "#menu_" + idMenu + " img";        
-        var menuIcon = "#menu_" + idMenu + " .mnuMob_AreaItem";   
-
-        if ( jQuery(idAreaItens).css("display") === "none" )
-        {
-            jQuery(idAreaItens).css("display", "block");       
-            jQuery(menuImage).attr("src", "{{ asset('img/assets/btnMoreCategoryClose.png') }}");   
-            jQuery(idItem).css("background-color", "#fff02a"); 
-            jQuery(idItem + " h5").css("color", "#000");
-            jQuery(menuIcon).css("background-color", "#fff02a");             
-        }
-        else
-        {
-            $(idAreaItens).css("display", "none");
-            jQuery(menuImage).attr("src", "{{ asset('img/assets/btnMoreCategory.png') }}");     
-            jQuery(idItem).css("background-color", "#070003"); 
-            jQuery(idItem + " h5").css("color", "#fff");
-            jQuery(menuIcon).css("background-color", "#070003");             
-        }        
-    }
-</script>

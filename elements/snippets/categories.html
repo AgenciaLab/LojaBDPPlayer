@@ -1,39 +1,50 @@
-{% set categorias = [1,3,5,7,9,11,13,15,17] %} 
+
 {% for level1 in categories %} 
-    {% if level1.id in categorias %}
+    {% if loop.index <= limit or not limit %}
         {% if level1.name == "MARCAS" %}
-        <li> 
-           <a onclick="openSearch()">           
-              <div class="mnu_AreaCategoria">
+        <li onmouseover="openMenuMarcas()" onmouseout="fecharMenuMarcas()" >          
+           <a class="link-level1">
+                <div class="mnu_AreaCategoria" id="menuArea_{{ level1.id }}">
                   <div class="mnu_Link">
-                     <span>{{ level1.name }}</span>
-                   </div>
-               </div>            
-            </a>
+                    <span class="spanMarcas">{{ level1.name }}</span>
+                  </div>
+               </div>
+           </a>
         </li>
         {% else %}
-            {% if level1.children > 0 %}
-                <li>
-                    <a class="link-level1" onmouseover="openSubMenu({{ level1.id }})" onmouseout="fechaSubMenu({{ level1.id }})">
-                        <div class="mnu_AreaCategoria" id="menuArea_{{ level1.id }}">
-                            <div class="mnu_Link">
-                                <span>{{ level1.name }}</span>
+            {% if level1.name != "HOTSALE" %}
+                {% if level1.children %}
+                    <li onmouseover="openSubMenu({{ level1.id }})" onmouseleave="fechaSubMenu({{ level1.id }})">
+                        <a class="link-level1" >
+                            <div class="mnu_AreaCategoria" id="menuArea_{{ level1.id }}">
+                                <div class="mnu_Link">
+                                    <span>{{ level1.name }}</span>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </li>
+                        </a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">
+                            <div class="mnu_AreaCategoria" id="menuArea_{{ level1.id }}">
+                                <div class="mnu_Link">
+                                    <span>{{ level1.name }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                {% endif %}
             {% else %}
-                <li>
+                <li style="background:rgb(255, 240, 42); ">
                     <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">
                         <div class="mnu_AreaCategoria" id="menuArea_{{ level1.id }}">
-                            <div class="mnu_Link">
-                                <span>{{ level1.name }}</span>
+                            <div class="mnu_Link" >
+                                <span style="color:#000;">{{ level1.name }}</span>
                             </div>
                         </div>
                     </a>
                 </li>
-            {% endif %} 
+            {% endif %}
         {% endif %} 
     {% endif %} 
 {% endfor %}
-

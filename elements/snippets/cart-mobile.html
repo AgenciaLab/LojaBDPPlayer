@@ -1,14 +1,14 @@
-<div class="visible-xs">
-    <div class="cart_AreaMobile">
-        <div class="fly_header">
-            <div class="col-xs-6">
+<div class="visible-xs" >
+    <div class="cart_AreaMobile"  >
+        <div class="fly_header" >
+            <div class="col-xs-12" >
                 <div class="flyMenu Selected" id="tabLogin">
                     <div class="flyMenuOption" onclick="showTab('tabLogin', 'tabCreateAccount', 'areaLogin', 'areaCreateAccount')">
                         <span>CARRINHO DE COMPRAS</span>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6">
+            <!--<div class="col-xs-6">
                 <a href="/listas">
                     <div class="flyMenu UnSelected" id="tabCreateAccount">
                         <div class="flyMenuOption" onclick="showTab('tabCreateAccount', 'tabLogin', 'areaCreateAccount', 'areaLogin')">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div>-->
         </div>
         <div class="cart_HasNoProduct">
             <div class="fly_body">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="cart_Checkout">
-                        <button onclick="irParaCarrinho()">CHECKOUT</button>
+                        <button onclick="irParaCarrinho()">COMPRAR</button>
                     </div>
                 </div>
             </div>
@@ -40,16 +40,20 @@
         <div class="cart_HasProduct">
             <div class="fly_body">
 
-                <div class="cart_NextButton" onclick="nextProductItem()">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
+                <div class="cart_BackButton col-xs-6" onclick="backProductItem()">
+                    <span class="glyphicon glyphicon-chevron-left" style="color:white"></span>
                 </div>
 
-                <div class="cart_BackButton" onclick="backProductItem()">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
+
+
+                <div class="cart_NextButton col-xs-6" onclick="nextProductItem()">
+                    <span class="glyphicon glyphicon-chevron-right " style="color:white; float:right;"></span>
                 </div>
 
-                <div class="cart_LoadingArea">
-                    <span>Carregando...</span>
+                 <div class="cart_LoadingArea col-xs-12" style="display:none;">
+                  <center>
+                    <span style="color:white;">Carregando...</span>
+                  </center>
                 </div>
 
                 <div class="col-xs-8">
@@ -58,36 +62,40 @@
                             <img id="cartMob_Image" class="img-responsive" />
                         </div>
                         <div class="col-xs-6" style="padding-left: 10px;">
-                            <h5 id="cartMob_Product"></h5>
+                            <h5 id="cartMob_Product" style="color:white;"></h5>
                             <h5 id="cartMob_Id" style="display: none"></h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-4" style="padding-left: 0px">
+                <div class="col-xs-4" style="padding-left: 0px; padding-right:0;">
                     <div class="col-xs-12" style="text-align: right; padding-left: 0px;">
-                        <h5 id="cartMob_Price"></h5>
+                        <h5 id="cartMob_Price" style="color:white;"></h5>
 
-                        <h5 id="cartMob_Qtde"></h5>
+                        <h5 id="cartMob_Qtde" style="color:white;"></h5>
                     </div>
                 </div>
             </div>
             <div class="fly_body" style="border-bottom: none">
-                <div class="col-xs-4">
+                <div class="col-xs-4" style=" padding-left:0;">
                     <div class="col-xs-12">
                         <h4>SUBTOTAL</h4>
                     </div>
                 </div>
-                <div class="col-xs-8">
+                <div class="col-xs-8" style="padding-right:0;">
                     <div class="col-xs-12">
                         <h4 id="cartMob_Value" style="text-align: right">R$ 0,00</h4>
                     </div>
                 </div>
-                <div class="cart_Cupom">
-                    <label for="cupom">Cupom</label>
-                    <input name="cupom" id="cupom" type="text" class="form-control" placeholder="Digite seu cupom de Desconto">
+                <div class="cart_Cupom" style="display:none;">
+                <div class="col-xs-4" style="padding-top:5px; padding-left:0;">
+                    <div class="col-xs-12">
+                        <h4>CUPOM</h4>
+                    </div>
+                </div>
+                    <input name="cupom" id="cupom" type="text" class="form-control" style="width:93%;margin: 8px 14px;" placeholder="Digite seu cupom de Desconto">
                 </div>
                 <div class="cart_Checkout">
-                    <button onclick="irParaCarrinho()">CHECKOUT</button>
+                    <button onclick="irParaCarrinho()" style="float:right;">COMPRAR</button>
                 </div>
             </div>
 
@@ -103,101 +111,107 @@
 
 
 <script>
--
-                                                  // cart products
-                                                  jQuery.getJSON("/mvc/store/cart/count?loja=365499", function (data) {
-                                                      var subtotal = data.cart.price;
-                                                      var products = data.cart.Products;
-                                                      var id = 0;
-                                                      var valorSubTotal = "R$ " + data.cart.price;
 
-                                                      console.log(jQuery("#cartMob_Value").text());
-                                                      jQuery("#cartMob_Value").text(valorSubTotal);
+     (function (jQuery) {
+    // cart products
+    jQuery.getJSON("/mvc/store/cart/count?loja=549520", function (data) {
+        var subtotal = data.cart.price;
+        var products = data.cart.Products;
+        var id = 0;
+        var valorSubTotal = "R$ " + data.cart.price;
 
-                                                      if (products.length > 0)
-                                                      {
-                                                          jQuery(".cart_HasProduct").css("display", "block");
-                                                          jQuery(".cart_HasNoProduct").css("display", "none");
-                                                          jQuery(".cart_AreaMobile").css("height", "450px");
+       // console.log(jQuery("#cartMob_Value").text());
+        jQuery("#cartMob_Value").text(valorSubTotal);
 
-                                                        products.forEach(function (d) {
-                                                            var image = d.ProductImage[0].thumbs["90"].https;
+        if (products.length > 0) {
+            jQuery(".cart_HasProduct").css("display", "block");
+            jQuery(".cart_HasNoProduct").css("display", "none");
+            jQuery(".cart_AreaMobile").css("height", "400px");
 
-                                                            jQuery("#cartMobileItem").append(
-                                                                "<li class='crt_" + id + "'>" +
-                                                                "<p class='crt_image'>" + image + "</p>" +
-                                                                "<p class='crt_name'>" + d.name + "</p>" +
-                                                                "<p class='crt_price'>" + "R$ " + d.price + "</p>" +
-                                                                "<p class='crt_quantity'>" + d.quantity + "</p>" +
-                                                                "</li>"
-                                                            );
+            products.forEach(function (d) {
+                var image = d.ProductImage[0].thumbs["90"].https;
 
-                                                            id++;
-                                                        }, this);
+                jQuery("#cartMobileItem").append(
+                    "<li class='crt_" + id + "'>" +
+                    "<p class='crt_image'>" + image + "</p>" +
+                    "<p class='crt_name'>" + d.name + "</p>" +
+                    "<p class='crt_price'>" + "R$ " + d.price + "</p>" +
+                    "<p class='crt_quantity'>" + d.quantity + "</p>" +
+                    "</li>"
+                );
 
-                                                        jQuery("#cartMobileQtde").text(id);
+                id++;
+            }, this);
 
-                                                        carregaProduct(0);
-                                                      }
-                                                      else {
-                                                          jQuery(".cart_HasProduct").css("display", "none");
-                                                          jQuery(".cart_HasNoProduct").css("display", "block");
-                                                          jQuery(".cart_AreaMobile").css("height", "235px");
-                                                      }
+            jQuery("#cartMobileQtde").text(id);
 
-                                                  });
+            carregaProduct(0);
+        }
+        else {
+            jQuery(".cart_HasProduct").css("display", "none");
+            jQuery(".cart_HasNoProduct").css("display", "block");
+            jQuery(".cart_AreaMobile").css("height", "235px");
+        }
 
-                                                  function irParaCarrinho() {
-                                                      var cupom = jQuery("#cupom").val();
-                                                      var url = "/loja/carrinho.php?loja=365499";
+    })
+})(jQuery);
 
-                                                      if (cupom.length > 0) {
-                                                          url = url + "&cupom=" + cupom
-                                                      }
+    function irParaCarrinho() {
+        var cupom = jQuery("#cupom").val();
+        var url = "{{ links.cart }}";
 
-                                                      window.location.href = location.origin + url;
-                                                  }
+        if (cupom.length > 0) {
+            url = url + "&cupom=" + cupom
+        }
 
-                                                  function carregaProduct(id) {
-                                                      var image = jQuery(".crt_" + id + " .crt_image").text();
+        window.location.href = location.origin + url;
+    }
 
-                                                      jQuery("#cartMob_Id").text(id);
-                                                      jQuery("#cartMob_Image").attr("src", image);
-                                                      jQuery("#cartMob_Product").text($(".crt_" + id + " .crt_name").text());
-                                                      jQuery("#cartMob_Price").text($(".crt_" + id + " .crt_price").text());
-                                                      jQuery("#cartMob_Qtde").text($(".crt_" + id + " .crt_quantity").text());
+    function carregaProduct(id) {
+        var image = jQuery(".crt_" + id + " .crt_image").text();
 
-                                                  }
-
-                                                  function nextProductItem() {
-
-                                                      var actualId = jQuery("#cartMob_Id").text();
-                                                      var itens = jQuery("#cartMobileQtde").text();
-                                                      var nextId = Number(actualId) + 1;
-
-                                                      if (nextId < Number(itens)) {
-                                                          jQuery(".cart_LoadingArea").fadeIn();
-                                                          jQuery(".cart_LoadingArea").fadeOut(200);
-
-                                                          carregaProduct(nextId)
-                                                      }
-
-                                                  }
-
-                                                  function backProductItem() {
-
-                                                      var actualId = jQuery("#cartMob_Id").text();
-                                                      var itens = jQuery("#cartMobileQtde").text();
-                                                      var nextId = Number(actualId) - 1;
+        var name = jQuery(".crt_" + id + " .crt_name").text();
+        var price = jQuery(".crt_" + id + " .crt_price").text();
+        var quantity = jQuery(".crt_" + id + " .crt_quantity").text();
 
 
-                                                      if (nextId >= 0) {
-                                                          jQuery(".cart_LoadingArea").fadeIn();
-                                                          jQuery(".cart_LoadingArea").fadeOut(200);
-                                                          carregaProduct(nextId)
-                                                      }
 
-                                                  }
+        jQuery("#cartMob_Id").text(id);
+        jQuery("#cartMob_Image").attr("src", image);
+        jQuery("#cartMob_Product").text(name);
+        jQuery("#cartMob_Price").text(price);
+        jQuery("#cartMob_Qtde").text(quantity);
 
+    }
+
+    function nextProductItem() {
+
+        var actualId = jQuery("#cartMob_Id").text();
+        var itens = jQuery("#cartMobileQtde").text();
+        var nextId = Number(actualId) + 1;
+
+        if (nextId < Number(itens)) {
+            jQuery(".cart_LoadingArea").fadeIn();
+            jQuery(".cart_LoadingArea").fadeOut(200);
+
+            carregaProduct(nextId)
+        }
+
+    }
+
+    function backProductItem() {
+
+        var actualId = jQuery("#cartMob_Id").text();
+        var itens = jQuery("#cartMobileQtde").text();
+        var nextId = Number(actualId) - 1;
+
+
+        if (nextId >= 0) {
+            jQuery(".cart_LoadingArea").fadeIn();
+            jQuery(".cart_LoadingArea").fadeOut(200);
+            carregaProduct(nextId)
+        }
+
+    }
 
 </script>

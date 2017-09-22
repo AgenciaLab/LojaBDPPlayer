@@ -19,6 +19,30 @@
         width: 100%;
     }
 
+    .areaLinkBannerC {
+        background: rgba(0, 0, 0, 0.5);
+        height: 25px;
+        width: 100%;
+    }
+
+       .areaLinkBannerRotA {
+        background: rgba(0, 0, 0, 0.5);
+        height: 25px;
+        width: 100%;
+    }
+
+    .areaLinkBannerRotB {
+        background: rgba(0, 0, 0, 0.5);
+        height: 25px;
+        width: 100%;
+    }
+
+    .areaLinkBannerRotC {
+        background: rgba(0, 0, 0, 0.5);
+        height: 25px;
+        width: 100%;
+    }
+
     .areaTrocaLinks {
         padding: 10px 15px;
     }
@@ -83,18 +107,18 @@
 
 @media (min-width: 768px)
 {
-    .prd_AreaInfo span {
+    /*.prd_AreaInfo span {
         font-size: 16pt;
         font-family: OswaldBOld;
         color: #0099cc;
         line-height: 22px;
-    }
+    }*/
 
     .areaTroca {
         height: 25px;
         width: 100%;
         position: absolute;
-        top: 0px;
+        margin-left: 0.3px;
     }
 
     .areaLinkBannerA {
@@ -104,6 +128,30 @@
     }
 
     .areaLinkBannerB {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+    }
+
+    .areaLinkBannerC {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+    }
+
+        .areaLinkBannerRotA {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+    }
+
+    .areaLinkBannerRotB {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+    }
+
+    .areaLinkBannerRotC {
         background: rgba(0, 0, 0, 0.5);
         height: 100%;
         width: 100%;
@@ -123,13 +171,19 @@
     .areaBannerCategoryContent span {
         font-family: OswaldRegular;
         text-transform: uppercase;
-        font-size: 23pt;
+        font-size: 24pt;
         margin: auto;
         text-align: center;
     }
 }
 
 #bannerHome {
+    text-align: center;
+    background: #000;
+    margin-top: -34px;
+}
+
+#bannerHomeMob {
     text-align: center;
     background: #000;
     margin-top: -34px;
@@ -161,6 +215,18 @@ body {
     display: none;
 }
 
+.areaBannerC {
+    display: none;
+}
+
+.areaBannerRotB {
+    display: none;
+}
+
+.areaBannerRotC {
+    display: none;
+}
+
 .item img {
     min-width: 100%;
 }
@@ -184,6 +250,7 @@ body {
     margin-top: -20px;
     height: 80px; 
     line-height: 80px; 
+    padding: 0;
 }
 
 .prd_AreaInfo {
@@ -193,11 +260,16 @@ body {
 }
 
 .prd_AreaInfo h4 {
-    font-family: OswaldBold;
-    font-size: 12pt; 
+    font-family: Oswald;
+    font-size: 14pt;
     margin-bottom: 5px;
     color: #333;
-} 
+    line-height: 20px;
+    text-align: left;
+}
+.product-price-catalog {
+    text-align: left;
+}
  
 .prd_AreaInfo h5 {
     font-family: OswaldRegular;
@@ -207,7 +279,42 @@ body {
     margin-bottom: 5px;
 }
 
+@media screen and (min-width: 768px) {
+    .prd_AreaInfo span {
+        font-family: OswaldRegular;
+        font-size: 11pt;
+        /*color: #2fa1db;*/
+        /*text-decoration: line-through;*/
+        margin-bottom: 5px;
+    }
 
+}
+@media screen and (max-width: 767px){
+    .prd_AreaInfo span {
+        font-family: OswaldRegular;
+        font-size: 11pt;
+        /*color: #2fa1db;*/
+        /*text-decoration: line-through;*/
+        margin-bottom: 5px;
+    }
+}
+
+        .spanColor {
+        font-family: OswaldRegular;
+        font-size: 11pt;
+        color: #2fa1db;
+        /*text-decoration: line-through;*/
+        margin-bottom: 5px;
+    }
+
+.product-payment-catalog{
+    color: #999;
+    font-size: 1.5rem;
+    font-family: OswaldRegular;
+    font-weight: 800;
+    padding-bottom: 9px;
+    text-align: left;
+}
 
 .product .product-payment,
 .product .product-payment span, .product .product-payment strong {
@@ -216,7 +323,7 @@ body {
 
 .prd_AreaInfo h6 {
     font-family: OswaldRegular;
-    font-size: 12pt;
+    font-size: 14pt;
     color: #999999;
     margin-bottom: 5px;
     margin-top: 10px;

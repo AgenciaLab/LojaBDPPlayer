@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8944f365-e215-41a7-accd-ea6e5569de9f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/assets/categories/vestuario.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshot_1.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/assets/banners/barraDireita.png" afterPath="$PROJECT_DIR$/img/assets/banners/barraDireita.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/assets/banners/barraEsquerda.png" afterPath="$PROJECT_DIR$/img/assets/banners/barraEsquerda.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/settings.html" afterPath="$PROJECT_DIR$/configs/settings.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/settings.json" afterPath="$PROJECT_DIR$/configs/settings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/theme.json" afterPath="$PROJECT_DIR$/configs/theme.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap/bootstrap.min.css" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap/config.json" afterPath="$PROJECT_DIR$/css/bootstrap/config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/custom.css.html" afterPath="$PROJECT_DIR$/css/custom.css.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/BannerCarousel.css" afterPath="$PROJECT_DIR$/css/elements/BannerCarousel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/ban3.css" afterPath="$PROJECT_DIR$/css/elements/ban3.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/cart.css" afterPath="$PROJECT_DIR$/css/elements/cart.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/catalog.css" afterPath="$PROJECT_DIR$/css/elements/catalog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/flyoutCart.css" afterPath="$PROJECT_DIR$/css/elements/flyoutCart.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/footer.css" afterPath="$PROJECT_DIR$/css/elements/footer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/header.css" afterPath="$PROJECT_DIR$/css/elements/header.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/login.css" afterPath="$PROJECT_DIR$/css/elements/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/marcas.css" afterPath="$PROJECT_DIR$/css/elements/marcas.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/menu.css" afterPath="$PROJECT_DIR$/css/elements/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/search.css" afterPath="$PROJECT_DIR$/css/elements/search.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements/userArea.css" afterPath="$PROJECT_DIR$/css/elements/userArea.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/fonts.css" afterPath="$PROJECT_DIR$/css/fonts.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/fonts/Helvetica-Condensed-BlackObl_gdi.svg" afterPath="$PROJECT_DIR$/css/fonts/Helvetica-Condensed-BlackObl_gdi.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/open-mobile-v2.css" afterPath="$PROJECT_DIR$/css/open-mobile-v2.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/open-mobile.css" afterPath="$PROJECT_DIR$/css/open-mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/owl.carousel.css" afterPath="$PROJECT_DIR$/css/owl.carousel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/owl.theme.css" afterPath="$PROJECT_DIR$/css/owl.theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/owl.transitions.css" afterPath="$PROJECT_DIR$/css/owl.transitions.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/catalog.css" afterPath="$PROJECT_DIR$/css/pages/catalog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/centralAnteriores.css" afterPath="$PROJECT_DIR$/css/pages/centralAnteriores.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/centralCliente.css" afterPath="$PROJECT_DIR$/css/pages/centralCliente.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/centralConfirmarPagamento.css" afterPath="$PROJECT_DIR$/css/pages/centralConfirmarPagamento.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/central_comentarios.css" afterPath="$PROJECT_DIR$/css/pages/central_comentarios.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/central_dados.css" afterPath="$PROJECT_DIR$/css/pages/central_dados.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/central_lista_espera.css" afterPath="$PROJECT_DIR$/css/pages/central_lista_espera.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/central_rastrear.css" afterPath="$PROJECT_DIR$/css/pages/central_rastrear.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/central_senha.css" afterPath="$PROJECT_DIR$/css/pages/central_senha.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/central_troca.css" afterPath="$PROJECT_DIR$/css/pages/central_troca.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/default.css" afterPath="$PROJECT_DIR$/css/pages/default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/home.css" afterPath="$PROJECT_DIR$/css/pages/home.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/login.css" afterPath="$PROJECT_DIR$/css/pages/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/navegacao_visitados.css" afterPath="$PROJECT_DIR$/css/pages/navegacao_visitados.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/product.css" afterPath="$PROJECT_DIR$/css/pages/product.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/search.css" afterPath="$PROJECT_DIR$/css/pages/search.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/pages/snippets/product.css" afterPath="$PROJECT_DIR$/css/pages/snippets/product.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/product.css" afterPath="$PROJECT_DIR$/css/product.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/address.scss" afterPath="$PROJECT_DIR$/css/sass/address.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/banners.scss" afterPath="$PROJECT_DIR$/css/sass/banners.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/base.scss" afterPath="$PROJECT_DIR$/css/sass/base.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/bootstrap.scss" afterPath="$PROJECT_DIR$/css/sass/bootstrap.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/brand.scss" afterPath="$PROJECT_DIR$/css/sass/brand.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/brands.scss" afterPath="$PROJECT_DIR$/css/sass/brands.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/breadcrumb.scss" afterPath="$PROJECT_DIR$/css/sass/breadcrumb.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/customer.scss" afterPath="$PROJECT_DIR$/css/sass/customer.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/footer.scss" afterPath="$PROJECT_DIR$/css/sass/footer.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/header.scss" afterPath="$PROJECT_DIR$/css/sass/header.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/menu-mobile.scss" afterPath="$PROJECT_DIR$/css/sass/menu-mobile.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/menu.scss" afterPath="$PROJECT_DIR$/css/sass/menu.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/news.scss" afterPath="$PROJECT_DIR$/css/sass/news.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/newsletter.scss" afterPath="$PROJECT_DIR$/css/sass/newsletter.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/normalize.scss" afterPath="$PROJECT_DIR$/css/sass/normalize.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-cart.scss" afterPath="$PROJECT_DIR$/css/sass/page-cart.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-catalog.scss" afterPath="$PROJECT_DIR$/css/sass/page-catalog.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-central_cliente.scss" afterPath="$PROJECT_DIR$/css/sass/page-central_cliente.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-comparador.scss" afterPath="$PROJECT_DIR$/css/sass/page-comparador.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-contact.scss" afterPath="$PROJECT_DIR$/css/sass/page-contact.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-depoimentos.scss" afterPath="$PROJECT_DIR$/css/sass/page-depoimentos.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-extra.scss" afterPath="$PROJECT_DIR$/css/sass/page-extra.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-implantacao.scss" afterPath="$PROJECT_DIR$/css/sass/page-implantacao.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-login.scss" afterPath="$PROJECT_DIR$/css/sass/page-login.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-newsletter.scss" afterPath="$PROJECT_DIR$/css/sass/page-newsletter.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-noticia.scss" afterPath="$PROJECT_DIR$/css/sass/page-noticia.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-payment.scss" afterPath="$PROJECT_DIR$/css/sass/page-payment.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-product.scss" afterPath="$PROJECT_DIR$/css/sass/page-product.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-register.scss" afterPath="$PROJECT_DIR$/css/sass/page-register.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-search.scss" afterPath="$PROJECT_DIR$/css/sass/page-search.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/page-visitados.scss" afterPath="$PROJECT_DIR$/css/sass/page-visitados.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/payment.scss" afterPath="$PROJECT_DIR$/css/sass/payment.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/product.scss" afterPath="$PROJECT_DIR$/css/sass/product.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/reset-tray.scss" afterPath="$PROJECT_DIR$/css/sass/reset-tray.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/reset.scss" afterPath="$PROJECT_DIR$/css/sass/reset.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/responsive.scss" afterPath="$PROJECT_DIR$/css/sass/responsive.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/search.scss" afterPath="$PROJECT_DIR$/css/sass/search.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/showcase.scss" afterPath="$PROJECT_DIR$/css/sass/showcase.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/sidebar.scss" afterPath="$PROJECT_DIR$/css/sass/sidebar.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/slick.scss" afterPath="$PROJECT_DIR$/css/sass/slick.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/social.scss" afterPath="$PROJECT_DIR$/css/sass/social.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/store-rating.scss" afterPath="$PROJECT_DIR$/css/sass/store-rating.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/styleguide.scss" afterPath="$PROJECT_DIR$/css/sass/styleguide.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/tagcloud.scss" afterPath="$PROJECT_DIR$/css/sass/tagcloud.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/theme.min.scss" afterPath="$PROJECT_DIR$/css/sass/theme.min.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sass/typo.scss" afterPath="$PROJECT_DIR$/css/sass/typo.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sistema.css" afterPath="$PROJECT_DIR$/css/sistema.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/slick-theme.css" afterPath="$PROJECT_DIR$/css/slick-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/slick.css" afterPath="$PROJECT_DIR$/css/slick.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/theme.min.css" afterPath="$PROJECT_DIR$/css/theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/footer.html" afterPath="$PROJECT_DIR$/elements/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/header.html" afterPath="$PROJECT_DIR$/elements/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/showcase-catalog.html" afterPath="$PROJECT_DIR$/elements/showcase-catalog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/showcase-search-catalog.html" afterPath="$PROJECT_DIR$/elements/showcase-search-catalog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/showcase.html" afterPath="$PROJECT_DIR$/elements/showcase.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/sidebar-central.html" afterPath="$PROJECT_DIR$/elements/sidebar-central.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/sidebar-left.html" afterPath="$PROJECT_DIR$/elements/sidebar-left.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/sidebar_left.html" afterPath="$PROJECT_DIR$/elements/sidebar_left.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/sidebar_right.html" afterPath="$PROJECT_DIR$/elements/sidebar_right.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/address.html" afterPath="$PROJECT_DIR$/elements/snippets/address.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/areaUsuario.html" afterPath="$PROJECT_DIR$/elements/snippets/areaUsuario.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/brands.html" afterPath="$PROJECT_DIR$/elements/snippets/brands.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/breadcrumb.html" afterPath="$PROJECT_DIR$/elements/snippets/breadcrumb.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/buy-form.html" afterPath="$PROJECT_DIR$/elements/snippets/buy-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/cart-mobile.html" afterPath="$PROJECT_DIR$/elements/snippets/cart-mobile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/cart.html" afterPath="$PROJECT_DIR$/elements/snippets/cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/categories-menutopo.html" afterPath="$PROJECT_DIR$/elements/snippets/categories-menutopo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/categories.html" afterPath="$PROJECT_DIR$/elements/snippets/categories.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/categories_list.html" afterPath="$PROJECT_DIR$/elements/snippets/categories_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/contact_links.html" afterPath="$PROJECT_DIR$/elements/snippets/contact_links.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/customer-care.html" afterPath="$PROJECT_DIR$/elements/snippets/customer-care.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/customer.html" afterPath="$PROJECT_DIR$/elements/snippets/customer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/flyoutCart.html" afterPath="$PROJECT_DIR$/elements/snippets/flyoutCart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/footer.html" afterPath="$PROJECT_DIR$/elements/snippets/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/greeting.html" afterPath="$PROJECT_DIR$/elements/snippets/greeting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/help_links.html" afterPath="$PROJECT_DIR$/elements/snippets/help_links.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/login-mobile.html" afterPath="$PROJECT_DIR$/elements/snippets/login-mobile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/login.html" afterPath="$PROJECT_DIR$/elements/snippets/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/menu-central.html" afterPath="$PROJECT_DIR$/elements/snippets/menu-central.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/menu-mobile.html" afterPath="$PROJECT_DIR$/elements/snippets/menu-mobile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/menu.html" afterPath="$PROJECT_DIR$/elements/snippets/menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/menu_central.html" afterPath="$PROJECT_DIR$/elements/snippets/menu_central.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/messages.html" afterPath="$PROJECT_DIR$/elements/snippets/messages.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/newsletter.html" afterPath="$PROJECT_DIR$/elements/snippets/newsletter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/paginate.html" afterPath="$PROJECT_DIR$/elements/snippets/paginate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/payment-list.html" afterPath="$PROJECT_DIR$/elements/snippets/payment-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/payment.html" afterPath="$PROJECT_DIR$/elements/snippets/payment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/price.html" afterPath="$PROJECT_DIR$/elements/snippets/price.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/priceCatalog.html" afterPath="$PROJECT_DIR$/elements/snippets/priceCatalog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/product.html" afterPath="$PROJECT_DIR$/elements/snippets/product.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/productGallery.html" afterPath="$PROJECT_DIR$/elements/snippets/productGallery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/productGalleryMobile.html" afterPath="$PROJECT_DIR$/elements/snippets/productGalleryMobile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/productPrice.html" afterPath="$PROJECT_DIR$/elements/snippets/productPrice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/qtd-form.html" afterPath="$PROJECT_DIR$/elements/snippets/qtd-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/search-mobile.html" afterPath="$PROJECT_DIR$/elements/snippets/search-mobile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/search.html" afterPath="$PROJECT_DIR$/elements/snippets/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/showcase.html" afterPath="$PROJECT_DIR$/elements/snippets/showcase.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/smartFilters.html" afterPath="$PROJECT_DIR$/elements/snippets/smartFilters.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/smart_filter.html" afterPath="$PROJECT_DIR$/elements/snippets/smart_filter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/social-list.html" afterPath="$PROJECT_DIR$/elements/snippets/social-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/social.html" afterPath="$PROJECT_DIR$/elements/snippets/social.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/socialProduct.html" afterPath="$PROJECT_DIR$/elements/snippets/socialProduct.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elements/snippets/submenu.html" afterPath="$PROJECT_DIR$/elements/snippets/submenu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/default.js" afterPath="$PROJECT_DIR$/js/default.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/identify.js" afterPath="$PROJECT_DIR$/js/identify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.elevatezoom.js" afterPath="$PROJECT_DIR$/js/jquery.elevatezoom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/modules/animations.js" afterPath="$PROJECT_DIR$/js/modules/animations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/modules/interations.js" afterPath="$PROJECT_DIR$/js/modules/interations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/modules/theme.js" afterPath="$PROJECT_DIR$/js/modules/theme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/open-mobilev2.js" afterPath="$PROJECT_DIR$/js/open-mobilev2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/owl.carousel.js" afterPath="$PROJECT_DIR$/js/owl.carousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/owl.carousel.min.js" afterPath="$PROJECT_DIR$/js/owl.carousel.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/product.js" afterPath="$PROJECT_DIR$/js/product.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/slick.min.js" afterPath="$PROJECT_DIR$/js/slick.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/theme.min.js" afterPath="$PROJECT_DIR$/js/theme.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/default.html" afterPath="$PROJECT_DIR$/layouts/default.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/error.html" afterPath="$PROJECT_DIR$/layouts/error.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/catalog.html" afterPath="$PROJECT_DIR$/pages/catalog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/home.html" afterPath="$PROJECT_DIR$/pages/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/product.html" afterPath="$PROJECT_DIR$/pages/product.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/search.html" afterPath="$PROJECT_DIR$/pages/search.html" />
+    </list>
+    <ignored path="lojaBDPlayer.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="lojaBDPlayer" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../LojaPaulo/js/owl.carousel.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elements" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lojaBDPlayer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LojaAndre/css/elements/flyoutCart.css" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../LojaAndre/css/elements/flyoutCart.css" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8944f365-e215-41a7-accd-ea6e5569de9f" name="Default" comment="" />
+      <created>1496164636323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1496164636323</updated>
+      <workItem from="1496164637921" duration="548000" />
+      <workItem from="1496165207270" duration="1421000" />
+      <workItem from="1496167724439" duration="645000" />
+      <workItem from="1496255137134" duration="2233000" />
+      <workItem from="1496412331789" duration="2479000" />
+      <workItem from="1496745921569" duration="1632000" />
+      <workItem from="1496838817358" duration="13000" />
+      <workItem from="1496860790135" duration="3940000" />
+      <workItem from="1496951488582" duration="1671000" />
+      <workItem from="1497104648419" duration="20000" />
+      <workItem from="1497464784647" duration="1633000" />
+      <workItem from="1497896452126" duration="3909000" />
+      <workItem from="1498077206035" duration="2016000" />
+      <workItem from="1498247610969" duration="1664000" />
+      <workItem from="1498823134138" duration="3261000" />
+      <workItem from="1498827081035" duration="1746000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="28831000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2322239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pages/catalog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LojaPaulo/js/owl.carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LojaPaulo/js/owl.carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/theme.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LojaPaulo/js/owl.carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/pages/snippets/product.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/snippets/priceCatalog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/snippets/flyoutCart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/theme.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/pages/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/catalog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

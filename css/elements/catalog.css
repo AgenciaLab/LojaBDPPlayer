@@ -1,3 +1,10 @@
 .catalog-empty {
     margin: 40px 0px 80px 0px;
 }
+.catalog_Banner {
+    width: 100%;
+    height: auto;
+}
+.catalog_Banner img {
+    width: 100%;
+}

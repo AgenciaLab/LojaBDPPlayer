@@ -1,0 +1,496 @@
+{%
+    set products = Products({
+        'filter': 'featured',
+        'categories': category.id,
+        'order': 'rand',
+        'limit': '12'
+    })
+%}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+
+<style>
+    .product_RelatedArea {
+        background: #000;
+        color: #fff;
+        /*text-align: center;*/
+        min-height: 75px;
+        /*padding: 2px 0 0 0;*/
+        font-family: "Oswald";
+    }
+    .product_RelatedTitle {
+        /*margin: 0 0 0 6%;*/
+    }
+    .product_RelatedArea h3 {
+        font-size: 30pt;
+        text-transform: uppercase;
+    }
+    .areaProdutos {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .areaProdutosMobile {
+        width: 903%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .owl-carousel {
+        position: relative;
+        width: 100%;
+    }
+    .owl-carousel {
+        display: block;
+    }
+
+    @media screen and (min-width: 768px) {
+        .productImg {
+            width: 25%;
+            float: left;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .owl-pagination {
+            position: absolute;
+            width: 100%;
+            transform: translateX(-50%);
+        }
+        .productImg {
+            width: 11.1%;
+            float: left;
+        }
+        .prd_AreaInfo h4 {
+            font-size: 16pt !important;
+        }
+        .product-price-catalog span, .price-promotion-catalog {
+            font-size: 2.1rem !important;
+        }
+        .product-payment-catalog {
+            font-size: 2rem !important;
+        }
+    }
+    .owl-theme .owl-controls .owl-page {
+        margin-left: 4px;
+        height: 25px;
+        width: 30%;
+    }
+    #owl-demo .owl-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .prd_AreaInfo {
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 1280px) {
+        .owl-wrapper-outer {
+            max-height: 425px;
+        }
+        .owl-pagination {
+            position: absolute;
+            bottom: 357px;
+            left: 51%;
+            width: 90%;
+            height: 25px;
+            transform: translateX(-50%);
+        }
+    }
+    @media (min-width: 1281px) and (max-width: 1399px) {
+        .owl-wrapper-outer {
+            max-height: 448px;
+        }
+        .owl-pagination {
+            position: absolute;
+            bottom: 381px;
+            left: 51%;
+            width: 90%;
+            height: 25px;
+            transform: translateX(-50%);
+        }
+    }
+    @media (min-width: 1400px) and (max-width: 1450px) {
+        .owl-wrapper-outer {
+            max-height: 464px;
+        }
+        .owl-pagination {
+            position: absolute;
+            bottom: 395px;
+            left: 51%;
+            width: 90%;
+            height: 25px;
+            transform: translateX(-50%);
+        }
+    }
+    @media (min-width: 1451px) {
+        .owl-wrapper-outer {
+            max-height: 639px;
+        }
+        .owl-pagination {
+            position: absolute;
+            bottom: 572px;
+            left: 51%;
+            width: 90%;
+            height: 25px;
+            transform: translateX(-50%);
+        }
+    }
+
+</style>
+
+<script type="text/javascript">
+        $(document).on('ready', function () {
+            $(".regular").slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    }]
+            })
+        });
+  </script>
+<style>
+    /*Funcionalidades especificas no Edge*/
+    @media screen and (min-width: 768px) {
+        @supports (-ms-accelerator:true) {
+                .product_RelatedArea{
+                    height: 81px;
+                }
+                .slick-next, .slick-prev {
+                    transform: translate(0,40%);
+                }
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1450px) {
+        .slick-next, .slick-prev {
+            font-size: 0;
+            line-height: 0;
+            top: -13%;
+            -ms-transform: translate(0,-62px);
+            -moz-transform: translate(0,50%);
+            /*transform: translate(0,0);*/
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: 0;
+            background: 0 0;
+        }
+    }
+    @media (min-width: 1451px) { 
+        .slick-next, .slick-prev {
+            font-size: 0;
+            line-height: 0;
+            top: -9.6%;
+            -ms-transform: translate(0,-62px);
+            -moz-transform: translate(0,50%);
+            /*transform: translate(0,0);*/
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: 0;
+            background: 0 0;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        .slick-prev {
+            left:35%;
+            z-index: 1;
+        }
+        .slick-prev:before {
+            content: '' !important;
+        }
+        .slick-next {
+            right: 36%;
+        }
+        .slick-next:before {
+            content: '' !important;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .slick-next, .slick-prev {
+            font-size: 0;
+            line-height: 0;
+            top: 44%;
+            -webkit-transform: translate(0,-50%);
+            -ms-transform: translate(0,-50%);
+            transform: translate(0,-50%);
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: 0;
+            background: 0 0;
+        }
+        .slick-prev {
+            left:0;
+            z-index: 1;
+        }
+        .slick-prev:before {
+            content: '' !important;
+        }
+        .slick-next {
+            right: 0;
+        }
+        .slick-next:before {
+            content: '' !important;
+        }
+    }
+</style>
+
+<!-- Banner 1-->
+
+<div class="container-fluid noMargin noSpacing" >
+    {% if utils.is_mobile %}
+        <img src="{{ banners.extra17.src }}" alt="{{ banners.extra17.alt }}">
+    {% else %}
+        <img src="{{ banners.extra8.src }}" alt="{{ banners.extra8.alt }}">
+    {% endif %}
+    
+</div>
+
+<!-- Area 3 banners, area central 4 banners -->
+<div class="row noMargin noSpacing">
+    <div class="col-sm-4 noMargin noSpacing">
+
+        <div id="banner" class="">
+            {% if banners.extra7.slides %}
+            <div id="owl-demo" class="owl-carousel owl-theme">
+                {% for slide in banners.extra7.slides %}
+                <div class="item">
+                    <a href="{{ slide.link }}">
+                        <img src="{{ slide.image }}" alt="{{ slide.label}}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+                <div style="width: 99.7%; position: relative; right: -1px;">
+                    <img class="img-responsive" src="{{ banners.extra7.src }}" alt="{{ banners.extra7.alt }}"   >
+                </div>
+            {% endif %}
+        </div>
+
+
+    </div>
+    <div class="col-sm-4 noSpacing noMargin">
+        <div class="row noMargin noSpacing">
+            <div class="col-sm-6 col-xs-6 noMargin noSpacing">
+                <img class="img-responsive" src="{{ banners.extra9.src }}" alt="{{ banners.extra9.alt }}">
+                <!--<img src="{{ asset('img/curadoria/2.jpg') }}" alt="Sem produtos">-->
+            </div>
+            <div class="col-sm-6 col-xs-6 noMargin noSpacing">
+                <img class="img-responsive" src="{{ banners.extra10.src }}" alt="{{ banners.extra10.alt }}">
+                <!--<img src="{{ asset('img/curadoria/3.jpg') }}" alt="Sem produtos">-->
+            </div>
+        </div>
+        <div class="row noMargin noSpacing">
+            <div class="col-sm-6 col-xs-6 noMargin noSpacing">
+                <img class="img-responsive" src="{{ banners.extra11.src }}" alt="{{ banners.extra11.alt }}">
+                <!--<img src="{{ asset('img/curadoria/4.jpg') }}" alt="Sem produtos">-->
+            </div>
+            <div class="col-sm-6 col-xs-6 noMargin noSpacing">
+                <img class="img-responsive" src="{{ banners.extra12.src }}" alt="{{ banners.extra12.alt }}">
+                <!--<img src="{{ asset('img/curadoria/5.jpg') }}" alt="Sem produtos">-->
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 noMargin noSpacing" id="comboRight">
+        {% if utils.is_mobile %}
+            <img class="img-responsive" style="max-width:99.5%;" src="{{ banners.extra18.src }}" alt="{{ banners.extra18.alt }}" >
+        {% else %}
+            <img class="img-responsive" style="max-width:99.5%;" src="{{ banners.extra13.src }}" alt="{{ banners.extra13.alt }}" >
+        {% endif %}
+    </div>
+</div>
+
+<!-- Banner marca aberta -->
+<div class="row noMargin noSpacing">
+        {% if utils.is_mobile %}
+            <img src="{{ banners.extra19.src }}" alt="{{ banners.extra19.alt }}">
+        {% else %}
+            <img src="{{ banners.extra14.src }}" alt="{{ banners.extra14.alt }}">
+        {% endif %}
+</div>
+
+<!-- Mais produtos -->
+
+<div class="row noMargin noSpacing">
+
+    <div class="row noMargin noSpacing" style="background:#000;">
+        <div class="product_RelatedArea">
+            <div class="product_RelatedTitle">
+                <h3>Mais Produtos</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="areaTotal">
+        <div class="areaProdutos">
+            {% if products|length > 0 %}
+
+            <div class="catalog-content row" style="margin-left: 0px; margin-right: 0px;">
+
+                <section class="regular slider">
+                    
+                        {% if products|length > 0 %}
+                                {% for product in products %}
+                                    
+                                        
+                                    <div>
+                                        <a href="{{ product.link }}">
+                                            <div class="areaProdutoRelacionado">
+                                                {% if product.images %}
+                                                    <img src="{{ product.images[0].full }}" alt="{{ product.name }}">
+                                                {% else %}
+                                                    <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100">
+                                                {% endif %}
+                                            </div>
+                                            <div class="prd_AreaInfo">
+                                                <div class="product-name" itemprop="name">
+                                                    <h4>{{ product.name }}</h4>
+                                                </div>
+                                                
+                                                <div class="product-price-catalog">
+                                                    {% element 'snippets/priceCatalog' {"product": product} %}
+                                                </div>
+                                            
+                                                <div class="product-payment-catalog">
+                                                    {{ product.payment }}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                            
+                                                
+                                            
+                                    
+                                {% endfor %}
+                            
+                        {% endif %}
+                    
+                </section>
+
+            </div>
+
+            {% else %}
+
+            <div class="catalog-empty">
+                <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
+                <p>Nenhum produto encontrado nessa categoria.</p>
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+<!-- Banner footer -->
+<div class="row noMargin noSpacing">
+        {% if utils.is_mobile %}
+            <img src="{{ banners.extra20.src }}" alt="{{ banners.extra20.alt }}">
+        {% else %}
+            <img src="{{ banners.extra15.src }}" alt="{{ banners.extra15.alt }}">
+        {% endif %}
+</div>
+
+<script>
+    var x;
+    var scrollGalleria = 0;
+    jQuery(document).ready(function () {
+        x = getCookie('pageCuradoria');
+
+        var p = $(".areaProdutosMobile").height();
+        p = p/2;
+        var l = p -60;
+        var r = p +60;
+
+        $(".btnLeftScrol").css("margin-top", l+"px");
+        $(".btnRightScrol").css("margin-top", "-"+r+"px");
+        //getProdutcsBrands(x);
+    });
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function getProdutcsBrands(brand) {
+
+        var params = {};
+		params["page"] = "1";
+        params["category_id"] = '77';
+        params["limit"] = "12";
+
+		$.ajax({
+			method: "GET",
+			url: `/web_api/products/`,
+			data: params
+		}).done(function( response, textStatus, jqXHR ) {
+
+            var products = response.Products;
+            var i = 0;
+
+            products.forEach(function(prod) {
+
+                jQuery("#cur_prd_" + i + " img").attr({ src:  prod.Product.ProductImage[0].https })
+                jQuery("#cur_prd_" + i + " h4").text(prod.Product.name)
+                jQuery("#cur_prd_" + i + " h5").text("de: " + prod.Product.price)
+                jQuery("#cur_prd_" + i + " span").text("A partir de: " + prod.Product.price)
+                jQuery("#cur_prd_" + i + " h6").text("Ou 3x sem juros de R$ " + prod.Product.price)
+                jQuery("#cur_prd_" + i + " a").attr({ href:  prod.Product.url.https })
+
+                i++;
+            });
+
+            //jQuery(".prd_loading").fadeOut(400);
+
+		}).fail(function( jqXHR, status, errorThrown ){
+			jQuery(".prd_loading").fadeOut(400);
+		});
+
+    }
+
+    function HorizontalScrolling(lado) {
+        var tamanhoRoll = jQuery(".areaProdutoRelacionado img").width();
+
+        if( scrollGalleria < -1 )
+            scrollGalleria = 0;
+
+        if(lado == "left"){
+            scrollGalleria = scrollGalleria+tamanhoRoll;
+            jQuery(".areaTotal").scrollLeft(scrollGalleria);
+        } else {
+            scrollGalleria = scrollGalleria-tamanhoRoll;
+            jQuery(".areaTotal").scrollLeft(scrollGalleria);
+        }
+        
+    }
+    if (navigator.userAgent.match(/msie/i) ) {
+        $(".slick-next").addClass("ie");
+    }
+</script>

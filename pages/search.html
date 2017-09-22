@@ -1,44 +1,265 @@
+<style>
+    .selectFormasPgto {
+        padding: 7px 1px;
+        margin-right: 3px;
+        font-size: 0.9rem;
+        width: 99%;
+        height: 42px;
+        background-color: #ffff33;
+        padding: 10px 15px;
+        font-family: OxygenRegular;
+        font-weight: bold;
+        font-size: 10pt;
+        margin: 0px 15px 8px 0px;
+        border: 1px solid #666;
+    }
+    .plain-select {
+        width: 100%;
+    }
+    .plain-select select {
+        line-height: normal;
+        height: 42px !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        display: block;
+        width: 99% !important;
+        background: #ffff33 !important;
+        line-height: normal;
+    }
+    .plain-select:after{
+        content:"";
+        position:absolute;
+        z-index:2;
+        right:8px;
+        top:50%;
+        margin-top:-3px;
+        height:0;
+        width:0;
+        border-top:6px solid #000;
+        border-left:6px solid transparent;
+        border-right:6px solid transparent;
+        pointer-events:none;
+    }
+
+    .catalog_Filter_Item .plain-select select{
+        background: #000 !important;
+    }
+    .catalog_Filter_Item .plain-select{
+        position: inherit !important;
+    }
+    .catalog_Filter_Item .plain-select:after {
+        border-top: 6px solid #fff;
+    }
+    @media (max-width:768px) { 
+        .margemMob {
+            margin-left: 9% !important;
+        }
+    }
+</style>
+
+{% if search.brands|length == 1 %}
+
+    {% element 'curadoria' %}
+
+{% else %}
+
 <div>
-    <div class="search_Banner">
-        <img class="img-responsive" src="{{ asset('img/assets/categories/vestuario.jpg') }}" />
+    <div class="catalog_Banner">
+        {% if banner.extra21  %}
+            {{ banner.extra21 }}
+        {% else %}
+            <img class="img-responsive" src="{{ asset('img/assets/categories/banner-categoria-vestuario-busca.jpg') }}" />
+        {% endif %}
     </div>
-    <div class="search_Filter">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="search_Filter_Item filter" onclick="filtersClick()" style="cursor: pointer">
-                    <div class="search_Filter_Area">
-                        <img src="{{ asset('img/assets/icons/iconFilter.png') }}" />
-                        <span>Filtros</span>
+
+        {% if utils.is_mobile %}
+
+            <div class="catalog_Filter filter visible-xs">
+                <div class="row" style="padding-left:0px;padding-right:0px;margin-right:0px;">
+                    <div class="col-xs-12" style="padding-right:0px; padding-left:0px;">
+                        <div class="catalog_Filter_Item filter" onclick="filtersClick()" style="cursor: pointer;">
+                            <div class="catalog_Filter_Area margemMob">
+                                <img src="{{ asset('img/assets/icons/iconFilterBranco.png') }}" />
+                                <span style="margin-left:15px;">Filtros</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-right: 0px; margin-left: 0px;">
+                        <div class="catalog_AreaFiltros"> {% element('snippets/smartFilters') %} </div>
+                    </div>
+                </div>
+                <div class="visible-xs row" style="margin:0;padding:0px; ">
+
+                    {% if category.parent == '77' %}
+
+                        {% for categorie in categories %}
+
+                            <a href="{{ categorie.link }}">
+                                <div class="col-xs-4" style="border-top: 1px solid gray;border-right: 1px solid gray; border-bottom:1px solid gray;">
+                                    <div class="catalog_Filter_Item" style="padding-top:0px;">
+                                        <div class="catalog_Filter_Area category" style="padding-top:0px;text-align:center;">
+                                            <span style="padding:20px 0 0 5px;">{{categorie.name}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if category.parent != '77' %}
+                        {% set cont = 0%}
+                        {% set aberto = 0 %}
+
+                        {% for categorie in categories %}
+                            {% for child in categorie.children %}
+                                {% if category.parent == child.parent_id %}
+
+                                    <a href="{{ child.link }}">
+                                        <div class="col-xs-4" style="border-top: 1px solid gray;border-right: 1px solid gray; border-bottom:1px solid gray;">
+                                            <div class="catalog_Filter_Item" style="padding-top:0px;">
+                                                <div class="catalog_Filter_Area category" style="padding-top:0px;text-align:center;">
+                                                    <span style="padding:20px 0 0 5px;">{{child.name}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <div class="col-xs-12 Item-Catalog-filter row" style="margin:0;padding:0px;" >
+                        <div class="catalog_Filter_Item" style="padding-left:10%;">
+                            <span class="plain-select">
+                                {% if products|length > 0 %} {% element 'snippets/filter'  %} {% endif %}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
-                <div class="search_Filter_Item">
-                    {% if products|length > 0 %} {% element 'snippets/filter' { 'brands': category.brands } %} {% endif %}
+        
+        <!--mobile termina aqui-->
+        {% else %}
+        
+            <div class="catalog_Filter filter hidden-xs">
+                <div class="row" style=" background-color:black; margin-right:0;"  >
+                    <div class="col-xs-2 " style="padding-left:0px;" >
+                        {% if products|length > 0 %}
+                        <div class="catalog_Filter_Item  filter " id="filtro" onclick="filtersClickd()" style="cursor: pointer;">
+                        {% else %}
+                        <div class="catalog_Filter_Item  filter " id="filtro" style="cursor: pointer;">
+                        {% endif %}
+                            <div class="catalog_Filter_Area ">
+                                <img id="imgFilterP" style="display:none;" src="{{ asset('img/assets/icons/iconFilter.png') }}" />
+                                <img id="imgFilterB" src="{{ asset('img/assets/icons/iconFilterBranco.png') }}" />
+                                <span id="filtros" style="margin-left:15px;">Filtros</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="hidden-xs">
+
+                        {% if category.parent == '77' %}
+                            {% for categorie in categories %}
+                                <div class="bordaDireita" style="width:auto; min-width:100px; padding:0 15px 0 15px; float:left;">
+                                    <a href="{{ categorie.link }}">
+                                        <div class="catalog_Filter_Item itemMenu">
+                                            <span style="width:100%;">{{categorie.name}}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        {% if category.parent != '77' %}
+                            {% for categorie in categories %}
+                                {% for child in categorie.children %}
+                                    {% if category.parent == child.parent_id %}
+                                        <div class="bordaDireita" style="width:auto; min-width:16%; padding:0 15px 0 15px; float:left;">
+                                            <a href="{{ child.link }}">
+                                                <div class="catalog_Filter_Item itemMenu">
+                                                    <span style="width:100%;">{{child.name}}</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+
+                        <div class="col-md-3" style="width:240px;margin:0;padding:0;" >
+                            <div class="catalog_Filter_Item">
+                                {% if products|length > 0 %}
+                                    <span class="plain-select">
+                                        {% element 'snippets/filter'  %}
+                                    </span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row" style="margin-right: 0px; margin-left: 0px;">
-            <div class="search_AreaFiltros">
-                {% element('snippets/smartFilters') %}
+
+            <div class="row hidden-xs" style="margin-right: 0px; margin-left: 0px; background-color: #ffff33">
+                <div class="catalog_AreaFiltros">
+                    {% element('snippets/smartFilters') %}
+                </div>
             </div>
 
+        {% endif %}
+
+</div>
+
+<div class="row noSpacing" style="background:#000; border-top:1px solid #ffff33; margin-left:0px; margin-right:0px;">
+    <div class="col-md-12 hidden-xs noSmacing noMargin" style="margin-top:10px;">
+        <div class="catalog-linhaInfo">
+            <div class="showcase">
+                <h1 class="showcase-title">{{ search.word }}</h1>
+            </div>
+            <div style="float:left; padding:10px 0 10px 10px"> / </div>
+        
+            <div class="vspace-sm paginacaoTopo">
+                {% element 'snippets/pagination' %}
+            </div>
+        </div>
+    </div>
+    <div class="visible-xs">        
+        <div class="col-xs-12">
+            {% element 'snippets/pagination' %}
         </div>
     </div>
 </div>
 
 {% if products|length > 0 %}
 
-<div class="search-content row" style="margin-left: 0px; margin-right: 0px">
-    {% element 'showcase-catalog' { "products": products } %}
-</div>
+    <div class="search-content row" style="margin-left: 0px; margin-right: 0px">
+        {% element 'showcase-catalog' { "products": products } %}
+    </div>
+
+    <div style="margin-left:0;">
+        <div>
+            <div class="paginate paginateBottom">
+                <div class="vspace-sm">
+                    {% element 'snippets/pagination' %}
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% else %}
 
-<div class="search-empty">
-    <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
-    <p>Nenhum produto encontrado nessa categoria.</p>
-</div>
+    <div class="search-empty">
+        <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
+        <p>Nenhum produto encontrado nessa categoria.</p>
+    </div>
 
 {% endif %}
 
@@ -53,11 +274,44 @@
 {% endif %}
 
 <script>
+    var page = 'busca';
     function filtersClick() {
 
         if (jQuery(".catalog_AreaFiltros").css("display") === "none") {
             jQuery(".catalog_AreaFiltros").css("display", "block");
+            jQuery("#imgFilterP").css("display", "block");
+            jQuery("#imgFilterB").css("display", "none");
+            jQuery(".Item-Catalog-filter").css("margin-top", "100px");
+            jQuery("#menuMob").hide();
+            jQuery(".catalog_AreaFiltros").animate({
+                height: "100px"
+            }, {
+                duration: 1,
+                specialEasing: {
+                    width: 'linear'
+                }
+            });
+        } else {
+            jQuery("#imgFilterP").css("display", "none");
+            jQuery("#imgFilterB").css("display", "block");
+            jQuery(".Item-Catalog-filter").css("margin-top", "0px");
+            jQuery(".catalog_AreaFiltros").css("display", "none");
+            jQuery(".catalog_AreaFiltros").css("height", "0px");
+            JQuery("#menuMob").show();
+        }
 
+    }
+    function filtersClickd() {
+
+        if (jQuery(".catalog_AreaFiltros").css("display") === "none") {
+            trocaFundo(1);
+            jQuery(".catalog_AreaFiltros").css("display", "block");
+            jQuery("#imgFilterP").css("display", "block");
+            jQuery("#imgFilterB").css("display", "none");
+            jQuery(".Item-Catalog-Expanced").css("display", "none");
+            jQuery(".Item-Catalog-filter").css("margin-top", "130px");
+
+            jQuery(".catalog_AreaFiltros").addClass("filterActive")
             jQuery(".catalog_AreaFiltros").animate({
                 height: "100px"
             }, {
@@ -67,9 +321,33 @@
                 }
             });
         } else {
+            trocaFundo(0);
+            jQuery("#imgFilterP").css("display", "none");
+            jQuery("#imgFilterB").css("display", "block");
+            jQuery(".Item-Catalog-Expanced").css("display", "block");
+            jQuery(".Item-Catalog-filter").css("margin-top", "0px");
             jQuery(".catalog_AreaFiltros").css("display", "none");
             jQuery(".catalog_AreaFiltros").css("height", "0px");
+
+        }
+
+    }
+
+     function trocaFundo(cor) {
+
+        if (cor == 1) {
+           jQuery("#filtro").removeClass("filter");
+           jQuery("#filtro").addClass("filterAtive");
+           jQuery("#filtros").css("color","black");
+
+        } else {
+            jQuery("#filtro").removeClass("filterAtive");
+           jQuery("#filtro").addClass("filter");
+           jQuery("#filtros").css("color","white");
+
         }
 
     }
 </script>
+
+{% endif %}

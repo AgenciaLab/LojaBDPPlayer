@@ -90,7 +90,6 @@
 
                 $('button').addClass('bgcolor');
                 $('.botao-commerce').addClass('bgcolor');
-                console.log($('#button-buy').find('img').length);
 
                 if ($('#button-buy').find('img').length > 0) {
                     $('#button-buy img').css('display', 'block');
@@ -414,8 +413,11 @@
             })
 
             var sair = $("html").attr("data-store");
-            $('.central-menu').append('<div class="icoFilho central-icons"> <p>Sair</p><a href="/loja/logout.php?loja=' + sair + '"></a></div>');
 
+            // var element = document.getElementById("BtnSairLogin");
+	        // if (element != null){
+            //     $('.central-menu').append('<div class="icoFilho central-icons" id="BtnSairLogin"> <p>Sair</p><a href="/loja/logout.php?loja=' + sair + '"></a></div>');
+            // }
 
 
 

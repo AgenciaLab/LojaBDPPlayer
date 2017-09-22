@@ -40,8 +40,8 @@
 @media (min-width: 992px)
 {
     .search {
-        margin-top: 40px;
-        width: 90%;
+        margin-top: 30px;
+        width: 100%;
     }
 
     #btnOpenSearch {
@@ -50,21 +50,28 @@
     }
 
     .search .search-key {
+        font-family: oswald;
+    text-transform: uppercase;
         background: #fff02a;
         border: none;
         border-right: none;
         border-bottom: 2px solid #000;
         font-size: 1.5rem;
-        height: 55px;
-        padding: 19px 10px;
-        width: 80%;
+        /*height: 55px;*/
+        padding: 26px 0px 0px;
+        width: 60%;
+        outline:none !important;
     }
+
+
 
     .search .search-button {
         background: #fff02a;
         color: #000;
         border: none;
         line-height: 65px;
+        margin: 0;
+        padding-right: 0;
     }
 
     .search-button svg {

@@ -1,20 +1,18 @@
 <div class=" visible-xs">
     <div class="searchMobileArea">
         <div class="">
-            <div class="mnuMob_AreaItem borderBottom underline  col-xs-9">
-                {% element 'snippets/search' %}
+            <div class="mnuMob_AreaItem borderBottom underline  col-xs-10">
+                {% element 'snippets/search-form-mobile' %}
             </div>
-            <div class="mnuMob_AreaItem borderBottom alignCenter col-xs-3">
-                <a onclick="closeMarcasMobile()">
-                    <h4 class="mnuMob_btnClose">X</h4>
-                </a>
-            </div>               
+            <div class="mnuMob_AreaItem borderBottom alignCenter col-xs-2 noMargin" style="padding:0px 0;" onclick="closeMarcasMobile()">
+                <img src="{{ asset('img/close.png') }}" style="width:30px;margin-top:19.5px; margin-right:18px; " alt="fechar">
+            </div>
         </div>
         <div>
-            {% element 'snippets/brands' %}        
+            {% element 'snippets/brands' %}
         </div>
     </div>
-</div>    
+</div>
 
 <script>
     jQuery(".mrc_Area").addClass("mrc_Efeito");

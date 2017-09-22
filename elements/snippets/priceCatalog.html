@@ -15,7 +15,7 @@
                         <span itemprop="offers" class="price-off" itemscope itemtype="http://schema.org/Offer">por R$ {{ product.price_offer|currency  }}</span>
                     </div>
                 {% else %}
-                <span itemprop="priceCurrency-catalog" content="BRL">A partir de R$ {{ product.price|currency }}</span>
+                <span class="spanColor" itemprop="priceCurrency-catalog" content="BRL">A partir de R$ {{ product.price|currency }}</span>
                 {% endif %}
             {% endif %}
             

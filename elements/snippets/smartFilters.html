@@ -1,213 +1,663 @@
-<div class="catalog_ContentFiltros">
-    <div class="row">
-        <div class="col-md-1">
-            <div class="catalog_Close">
-                <a href="{{ category.link }}">
-                    <h3>X</h3>
-                </a>
+{% if utils.is_mobile %}
+
+    <div class="catalog_ContentFiltros visible-xs" style="position:absolute; z-index:1; padding:0px; margin:0px; left:0%; width:100%;background-color:#ffff33 !important; ">
+    
+        <div class="col-xs-9" style="padding:0px; height:67px;" >
+            <div class="catalog_Filter_Item filter" onclick="filtersClick()" style="cursor: pointer; padding-left: 4.9%; height:67px; background-color:#ffff33 !important; ">
+                <div class="catalog_Filter_Area margemMob">
+                    <img id="imgFilterP" src="{{ asset('img/assets/icons/iconFilter.png') }}" />
+                    
+                    <span style="color:#000 !important; font-weight: bolder; margin: 0 0 0 15px;">Filtros</span>
+                </div>
             </div>
         </div>
-        <div class="col-md-2">
-            <div class="catalog_Apply">
-                <a>
-                    <h3>APLICAR FILTROS</h3>
-                </a>
+        <div class="col-xs-3" style="padding:0px; height:67px;" >
+            
+            <div class="col-xs-12" style="padding:0px; height:67px;  border-left: 1px solid #000; background-color:#ffff33 !important;" >
+                <div class="catalog_Close" style="border:0;">
+                    <a href="{{ category.link }}">
+                        <h3>X</h3>
+                    </a>
+                </div>
             </div>
+
         </div>
-        <div class="col-md-8">
 
+        <div class="col-xs-12" style="padding:0px; padding-left:15px; height:67px;  display:none;  background-color:#000 !important;" id="DivBuscar" >
+            {% element 'snippets/search-form-mobile' %}
+        </div>
 
-
+        <div class="col-md-12" style="padding:0px; margin-top:67px; height:154px; background:#000;">
             {% if filters %}
-            <form name="form-filter" method="get" class="smart-filter">
-                <input type="hidden" name="loja" value="{{ store.id }}"> {% if category.id %}
-                <input type="hidden" name="categoria" value="{{ category.id }}"> {% endif %} {% set prdSelect = Products()
-                %} {% set prdSelect = Products({ 'categories': category.id }) %}
+                <form name="form-filter" method="get" class="smart-filter">
+                    <input type="hidden" name="loja" value="{{ store.id }}">
+                    {% if category.id %}
+                        <input type="hidden" name="categoria" value="{{ category.id }}">
+                    {% endif %}
 
-                <select id="marcasSelected" class="selectFormasPgto" onchange="filtroAlteradoMarca(this)">
-                    <option value="NonSelected">Marca</option>
-                    {% for p in prdSelect %} 
-                        {% set brandTray = Brands( { "brand": p.brand } ) %}    
-                            {% for brand in brandTray %}                     
-                                <option value="{{ brand.slug }}">  
-                                        {{ brand.name }}
-                                </option>                            
-                            {% endfor %}                 
-                    {% endfor %}        
-                </select> {% for myFilter in filters %}
+                    {% set prdSelect = Products() %}
+                    {% set prdSelect = Products({ 'categories': category.id }) %}
 
-                <!--{% if myFilter.items |length > 1 %}
+                    {% for myFilter in filters %}
 
-                    {% if myFilter.title == 'Filtrar por Marca' %}
-                        <select class="selectFormasPgto" onchange="filtroAlterado(this)" >
-                            <option value="NonSelected">Marca</option>
-                            {% for item in myFilter.items %}
-                                <option value="{{ item.url }}">
-                                    {{ item.title }}
-                                </option>
-                            {% endfor %}
-                        </select>
-                    {% endif %}-->
-                {% if 'Faixa de Pre' in myFilter.title %}
-                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
-                            <option value="NonSelected">Faixa de Preço</option>
-                            {% for item in myFilter.items %}
-                                <option value="{{ item.url }}">
-                                    {{ item.title }}
-                                </option>
-                            {% endfor %}
-                        </select> {% endif %} {% else %}
+                        {% if myFilter|length %}
+                            {% if 'Faixa de Pre' in myFilter.title %}
+                                {% if myFilter.items |length > 1 %}
+                                    <div class="col-xs-6" style="padding:0px; height:67px; background-color:#ffff33 !important; border-top:1px solid #000;" >
+                                        <select name="range" class="selectFormasPgto" onchange="filtroAlterado(1, this)" style="height: 100%;width:100%;padding:0px;margin:0px;padding-left:20px; border:0;color:#000; font-weight: bold;">
+                                            
+                                            {% for item in myFilter.items %}
+                                                {% if loop.index == 1%}
 
-                <!--{% if myFilter.title == 'Filtrar por Marca' %}
-                        <select class="selectFormasPgto" >
-                            {% if myFilter.items |length == 1 %}
-                                {% for item in myFilter.items %}
-                                    <option value="{{ item.url }}">
-                                        {{ item.title }}
-                                    </option>
-                                {% endfor %}
-                            {% else %}
-                                <option value="NonSelected">Marca</option>
+                                                    {% if filters.applied %} 
+                                                        {% for applied in filters.applied %}
+                                                            {% for item in applied %}
+                                                                {% set filtroAplicado = item.title|split(':') %}
+
+                                                                    {% if not filtroAplicado[1] %}
+                                                                        <option value="" selected>{{ filtroAplicado[0] }}</option>
+                                                                        {% set preco = preco + 1 %}
+                                                                    {% endif %}
+
+                                                            {% endfor %}
+                                                        {% endfor %}                                                   
+                                                    {% endif %}
+                                                    {% if preco == 0 %}
+                                                        <option value="" selected >{{ myFilter.title }}</option>
+                                                    {% endif %}
+
+
+                                                {% endif %}
+                                                {% if item.type == "selected" %}
+                                                    {% set selected= item.applied ? 'selected="selected"' %}
+                                                    <option name="{{ item.name }}" value="{{ item.value }}" {{ selected }} />{{ item.title }}</option>
+                                                {% endif %}
+                                                <option name="{{ item.name }}" value="{{ item.value }}" />{{ item.title }}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                {% endif %}
                             {% endif %}
-                        </select>
-                    {% endif %}-->
-                {% if 'Faixa de Pre' in myFilter.title %}
-                <select class="selectFormasPgto">
-                            {% if myFilter.items |length == 1 %}
-                                {% for item in myFilter.items %}
-                                    <option value="{{ item.url }}">
-                                        {{ item.title }}
-                                    </option>
-                                {% endfor %}
-                            {% else %}
-                                <option value="NonSelected">Faixa de Preço</option>
-                            {% endif %}
-                        </select> {% endif %} {% endif %} {% if myFilter|length %} {% for var in myFilter
-                %} {% if var.items |length > 1 %} {% if var.title == 'Tamanho' %}
-                <select class="selectFormasPgto" onchange="filtroAlterado(this)">
-                                    <option value="NonSelected">Tamanho</option>
-                                        {% for item in var.items %}
-                                            <option value="{{ item.url }}">
-                                                {{ item.title }}
-                                            </option>
-                                        {% endfor %}                                    
-                                </select> {% elseif var.title == 'Cor' %}
-                <select class="selectFormasPgto" onchange="filtroAlterado(this)">  
-                                        <option value="NonSelected">Cor</option>
-                                        {% for item in var.items %}                                        
-                                            <option value="{{ item.url }}">
-                                                {{ item.title }}
-                                            </option>
-                                        {% endfor %}                                    
-                                </select> {% endif %} {% else %} {% if var.title == 'Tamanho' %}
-                <select class="selectFormasPgto">
-                                    {% if var.items |length == 1 %}
-                                        {% for item in var.items %}
-                                            <option value="{{ item.url }}">
-                                                {{ item.title }}
-                                            </option>
+
+                            {% for var in myFilter %}
+                                {% if var.items |length > 1 %}
+                                            
+                                        {% if var.title == "Tamanho" %}
+                                            <div class="col-xs-6" style="padding:0px; height:67px; background-color:#ffff33 !important; border-top:1px solid #000;" >
+                                            <select name="variacao" class="selectFormasPgto" data-title="{{ var.title }}" onchange="filtroAlterado('3', this)" style="height: 100%;width:100%;padding:0px;margin:0px;padding-left:20px; border:0;color:#000; font-weight: bold;" >
+                                        {% elseif var.title == "Marca" %}
+                                            <div class="col-xs-6" style="padding:0px; height:67px; background-color:#ffff33 !important; border-top:1px solid #000; border-left:1px solid #000;" >
+                                            <select name="caracteristica" class="selectFormasPgto" data-title="{{ var.title }}" onchange="filtroAlterado('4', this)" style="height: 100%;width:100%;padding:0px;margin:0px;padding-left:20px; border:0;color:#000; font-weight: bold;" >
+                                        {% elseif var.title == "Modelo" %}
+                                            <div class="col-xs-6" style="padding:0px; height:67px; background-color:#ffff33 !important; border-top:1px solid #000; border-left:1px solid #000;" >
+                                            <select name="variacao" class="selectFormasPgto" data-title="{{ var.title }}" onchange="filtroAlterado('2', this)" style="height: 100%;width:100%;padding:0px;margin:0px;padding-left:20px; border:0;color:#000; font-weight: bold;" >
+                                        {% endif %}
+                                        {% set contador = 0 %}
+                                        {% for item in var.items %}'
+                                            {% if loop.index == 1%}
+
+                                                {% if filters.applied %} 
+                                                    {% for applied in filters.applied %}
+                                                        {% for item in applied %}
+                                                            {% set filtroAplicado = item.title|split(':') %}
+
+                                                            {% if filtroAplicado[1] %}
+                                                                {% if filtroAplicado[0] == var.title %}
+                                                                    <option value="" selected="selected">{{ filtroAplicado[1] }}</option>
+                                                                    {% set contador = contador + 1  %}
+                                                                {% endif %}
+                                                            {% endif %}
+
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                                {% if contador == 0 %}
+                                                    <option value="" selected>{{ var.title }}</option>
+                                                {% endif %}
+
+                                            {% endif %}
+                                            {% if item.type == "selected" %}
+                                                {% set selected= item.applied ? 'selected="selected"' %}
+                                                <option name="{{ item.name }}" value="{{ item.value }}" {{ selected }} />{{ item.title }}</option>
+                                            {% endif %}
+                                            <option name="{{ item.name }}" value="{{ item.value }}" />{{ item.title }}</option>
                                         {% endfor %}
-                                    {% else %}
-                                        <option value="NonSelected">Tamanho</option>
-                                    {% endif %}
-                                </select> {% elseif var.title == 'Cor' %}
-                <select class="selectFormasPgto">
-                                    {% if var.items |length == 1 %}
-                                        {% for item in var.items %}
-                                            <option value="{{ item.url }}">
-                                                {{ item.title }}
-                                            </option>
-                                        {% endfor %}
-                                    {% else %}
-                                        <option value="NonSelected">Cor</option>
-                                    {% endif %}
-                                </select> {% endif %} {% endif %} {% endfor %} {% endif %}
+                                        </select>
+
+                                    </div>
+                                    
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
 
 
-            </form>
-            {% endfor %} {% endif %}
+                    {% endfor %}
 
+                    <div class="col-xs-1" style="padding:1px; display:none;">
+                        <div class="catalog_Search" style="margin:0px; margin-top:7px;">
+                            <input name="palavra_busca" type="hidden" value="{{ search.word }}">
+                            <a><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+
+                </form>
+            {% endif %}
 
         </div>
 
-        <div class="col-md-1">
-            <div class="catalog_Search">
-                {% if search.word %}
-                <input name="palavra_busca" type="hidden" value="{{ search.word }}">
-                <a><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a> {% endif %}
+    </div>
+
+{% else %}
+
+{% set newFilter = '' %}
+{% set MarcaFilter = '' %}
+{% set ModeloFilter = '' %}
+{% set TamanhoFilter = '' %}
+{% set fxpFilter = '' %}
+
+{% for Ft in filters %}
+    {% if 'Faixa de Pre' in Ft.title %}
+        {% set fxpFilter = Ft %}
+    {% endif %}
+{% endfor %}
+
+{% for aleFilters in filters %}
+    
+    {% if aleFilters.marca|length %}
+        {% if MarcaFilter == '' %}
+            {% set MarcaFilter = [aleFilters.marca] %}
+        {% endif %}
+    {% endif %}
+
+    
+    {% if aleFilters.modelo|length %}
+        {% if ModeloFilter == '' %}
+            {% set ModeloFilter = [aleFilters.modelo] %}
+        {% endif %}
+    {% endif %}
+
+    
+    {% if aleFilters.tamanho|length %}
+        {% if TamanhoFilter == '' %}
+            {% set TamanhoFilter = [aleFilters.tamanho] %}
+        {% endif %}
+    {% endif %}
+    
+    {% set newFilter = [MarcaFilter, ModeloFilter, TamanhoFilter, fxpFilter] %}
+    
+{% endfor %}
+
+
+    <div class="catalog_ContentFiltros hidden-xs"style="margin-top: 5px; ">
+        <div class="row" style="margin-top:25px;">
+
+            <div class="col-md-2" style="padding:0px;">
+                <div class="col-md-6" >
+                </div>
+                <div class="col-md-2"  >
+                    <div class="catalog_Close">
+                        <a href="{{ category.link }}">
+                            <h3>X</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10" style="padding:0px;">
+                
+                {% if filters %}
+                <!--<form name="form-filter" method="get" class="smart-filter" data-form="filter" >-->
+                    <form name="form-filter" method="get" class="smart-filter">
+                    <input type="hidden" name="loja" value="{{ store.id }}">
+                    {% if category.id %}
+                        <input type="hidden" name="categoria" value="{{ category.id }}">
+                    {% endif %}
+                    
+                    {% set preco = 0 %}
+                    
+                    {% set showDisplay = 0 %}
+                    {% set dsp = "display:none;" %}
+                    
+                    {% set marca = 0 %}
+                    {% set modelo = 0 %}
+                    {% set tamanho = 0 %}
+                    {% set Fpreco = 0 %}
+                    
+                    
+
+                    {% for myFilter in newFilter %}
+
+                        {% if myFilter|length %}
+
+                            {% if 'Faixa de Pre' in myFilter.title %}
+                                {% if myFilter.items |length > 1 %}
+                                    <div class="col-md-3 noSpacing">
+                                        <span class="plain-select">
+                                            <select name="range" class="selectFormasPgto"  onchange="filtroAlterado('1', this)"  >
+                                                
+                                                {% if showDisplay == 0 %}
+                                                    {% set showDisplay = 0 %}
+                                                    {% set Fpreco = "1" %}
+                                                    {% set dsp = "display:none;" %}
+                                                {% endif %}
+                                                
+                                                {% for item in myFilter.items %}
+
+                                                    {% if loop.index == 1%}
+
+                                                        {% if filters.applied %} 
+                                                            {% for applied in filters.applied %}
+                                                                {% for item in applied %}
+                                                                    {% set filtroAplicado = item.title|split(':') %}
+
+                                                                        {% if not filtroAplicado[1] %}
+                                                                            <option value="" selected>{{ filtroAplicado[0] }}</option>
+                                                                            {% set preco = preco + 1 %}
+                                                                        {% endif %}
+
+                                                                {% endfor %}
+                                                            {% endfor %}                                                   
+                                                        {% endif %}
+                                                        {% if preco == 0 %}
+                                                            <option value="" selected >{{ myFilter.title }}</option>
+                                                        {% endif %}
+
+
+                                                    {% endif %}
+                                                    {% if item.type == "selected" %}
+                                                        {% set selected= item.applied ? 'selected="selected"' %}
+                                                        <option name="{{ item.name }}" value="{{ item.value }}" {{ selected }} />{{ item.title }}</option>
+                                                    {% endif %}
+                                                    <option name="{{ item.name }}" value="{{ item.value }}" />{{ item.title }}</option>
+                                                {% endfor %}
+
+                                            </select>
+                                        </span>
+                                    </div>
+                                {% else %}
+
+                                    {% if filters.applied %} 
+                                        {% for applied in filters.applied %}
+                                            {% for item in applied %}
+                                                {% set filtroAplicado = item.title|split(':') %}
+
+                                                {% if not filtroAplicado[1] %}
+                                                    {% if showDisplay == 0 %}
+                                                        {% set showDisplay = 1 %}
+                                                        {% set dsp = "display:block;" %}
+                                                    {% endif %}
+                                                {% endif %}
+
+                                            {% endfor %}
+                                        {% endfor %}
+                                    {% endif %}
+
+                                {% endif %}
+                            {% endif %}
+
+                            {% for var in myFilter %}
+                                {% if var.items %}
+
+                                    {% if var.title == "Marca" %}
+                            
+                                        {% set marca = "1" %}
+
+                                        {% if showDisplay == 0 %}
+                                            {% set showDisplay = 0 %}
+                                            {% set dsp = "display:none;" %}
+                                        {% endif %}
+                                        <div class="col-md-3 noSpacing"> 
+                                        <span class="plain-select">
+                                            <select name="caracteristica" class="selectFormasPgto" data-title="{{ var.title }}" onchange="filtroAlterado('4', this)">
+
+                                    {% elseif var.title == "Modelo" %}
+
+                                        {% set modelo = "1" %}
+
+                                        {% if showDisplay == 0 %}
+                                            {% set showDisplay = 0 %}
+                                            {% set dsp = "display:none;" %}
+                                        {% endif %}
+                                        <div class="col-md-3 noSpacing"> 
+                                        <span class="plain-select">
+                                            <select name="variacao" class="selectFormasPgto" data-title="{{ var.title }}" onchange="filtroAlterado('2', this)">
+                                        
+                                    {% elseif var.title == "Tamanho" %}
+
+                                        {% set tamanho = "1" %}
+
+                                        {% if showDisplay == 0 %}
+                                            {% set showDisplay = 0 %}
+                                            {% set dsp = "display:none;" %}
+                                        {% endif %}
+                                        <div class="col-md-3 noSpacing"> 
+                                        <span class="plain-select">
+                                            <select name="variacao" class="selectFormasPgto" data-title="{{ var.title }}" onchange="filtroAlterado('3', this)">
+
+
+                                    {% endif %}
+
+
+                                        {% set contador = 0 %}
+                                            {% if var.title == "Tamanho" or var.title == "Marca" or var.title == "Modelo" %}
+                                                {% for item in var.items %}
+                                                    {% if loop.index == 1 %}
+
+                                                        {% if filters.applied %} 
+                                                            {% for applied in filters.applied %}
+                                                                {% for item in applied %}
+                                                                    {% set filtroAplicado = item.title|split(':') %}
+
+                                                                        {% if filtroAplicado[1] %}
+                                                                            {% if filtroAplicado[0] == var.title %}
+                                                                                <option value="" selected="selected">{{ filtroAplicado[1] }}</option>
+                                                                                {% set contador = contador + 1  %}
+                                                                            {% endif %}
+                                                                        {% endif %}
+
+                                                                {% endfor %}
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                        {% if contador == 0 %}
+                                                            <option value="" selected>{{ var.title }}</option>
+                                                        {% endif %}
+
+                                                    {% endif %}
+                                                    {% if item.type == "selected" %}
+                                                        {% set selected= item.applied ? 'selected="selected"' %}
+                                                        <option name="{{ item.name }}" value="{{ item.value }}" {{ selected }} />{{ item.title }}</option>
+                                                    {% endif %}
+                                                    <option name="{{ item.name }}" value="{{ item.value }}" />{{ item.title }}</option>
+                                                {% endfor %}
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            {% endif %}
+                                {% endif %}
+                            {% endfor %}
+
+                        {% endif %}
+
+
+                    {% endfor %}
+
+
+
+
+
+
+                    <div class="col-xs-1" style="padding:1px; display:none;">
+                        <div class="catalog_Search" style="margin:0px; margin-top:7px;">
+                            <input name="palavra_busca" type="hidden" value="{{ search.word }}">
+                            <a><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </form>
+                {% endif %}
+
+            </div>
+        </div>
+
+        <div class="row" style="{{ dsp }}" >
+            <div class="col-md-3"></div>
+            <div class="col-md-9 noSpacing" >
+                <span style="color:#000; font-family:Oswald; float:left;position: relative; top: 6px;"> <h3 style="font-size:17px ;"> Filtrado por: </h3> </span>
+                {% if filters.applied %} 
+                    {% for applied in filters.applied %}
+                        {% for item in applied %}
+                            {% set filtroAplicado = item.title|split(':') %}
+
+                                {% if filtroAplicado[0] != "Categoria" %}
+
+                                    {% if Fpreco == 0 %}
+                                        {% if not filtroAplicado[1] %}
+                                            <span style="float:left; padding: 8px 15px; border:1px solid #000; background:#ffff33; color:#000; margin-left:10px; margin-bottom:10px;">
+                                                {{ filtroAplicado[0] }}
+                                            </span>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if tamanho == 0 %}
+                                        {% if filtroAplicado[1] == "Tamanho" %}
+                                            <span style="float:left; padding: 8px 15px; border:1px solid #000; background:#ffff33; color:#000; margin-left:10px; margin-bottom:10px;">
+                                                {{ filtroAplicado[0] }}: {{ filtroAplicado[1] }}
+                                            </span>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if modelo == 0 %}
+                                        {% if filtroAplicado[1] == "Modelo" %}
+                                            <span style="float:left; padding: 8px 15px; border:1px solid #000; background:#ffff33; color:#000; margin-left:10px; margin-bottom:10px;">
+                                                {{ filtroAplicado[0] }}: {{ filtroAplicado[1] }}
+                                            </span>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if marca == 0 %}
+                                        {% if filtroAplicado[1] == "Marca" %}
+                                            <span style="float:left; padding: 8px 15px; border:1px solid #000; background:#ffff33; color:#000; margin-left:10px; margin-bottom:10px;">
+                                                {{ filtroAplicado[0] }}: {{ filtroAplicado[1] }}
+                                            </span>
+                                        {% endif %}
+                                    {% endif %}
+                                
+                                {% endif %}
+
+                        {% endfor %}
+                    {% endfor %}                                                   
+                {% endif %}
             </div>
         </div>
     </div>
-</div>
 
+{% endif %}
 
 <script>
+
     var url = window.location.href;
 
-    if (url.indexOf("marca") > 0) {
-        marca = url.substring(url.indexOf("marca"), url.length).replace("marca=marca_", "");
-
-        if (
-            marca.indexOf("&") > 0 || marca.indexOf("?") > 0
-        ) {
-            var posicao = marca.length;
-
-            if (marca.indexOf("&") > 0)
-                posicao = marca.indexOf("&");
-
-            if (marca.indexOf("?") && marca.indexOf("?") < posicao)
-                posicao = marca.indexOf("?");
-
-            marca = marca.substring(0, posicao);
-        }
-
-        jQuery("#marcasSelected").val(marca);
-    }
-
-    function filtroAlterado(valor) {
-
-        if (valor.value !== "NonSelected") {
-            window.location.replace(valor.value);
-        }
-
-    }
-
-    function filtroAlteradoMarca(valor) {
-
-        var url = window.location.href;
+    function filtroAlterado(filtro, valor) {
         var urlFinal = "";
 
-        if (url.indexOf("marca") < 0) {
-            urlFinal = url + "&marca=marca_" + valor.value;
-            window.location.replace(urlFinal);
-        } else {
+        if( urlFinal.indexOf("?") == '-1' )
+        {
+            if(url.indexOf("?") == '-1') {
+                url = url + '?';
+            }
+        }
 
-            if (valor.value == "NonSelected") {
-                urlFinal = url.replace(url.substring(url.indexOf("marca") - 1, url.length), "");
+        if(filtro == '1') {
+            urlFinal = url + '&range=' + valor.value;
+
+            if (url.indexOf("range=") < 0) {
+                urlFinal = url + "&range=" + valor.value;
+                window.location.replace(urlFinal);
             } else {
-                var marca = url.substring(url.indexOf("marca"), url.length).replace("marca=marca_", "");
 
-                if (
-                    marca.indexOf("&") > 0 || marca.indexOf("?") > 0
-                ) {
-                    var posicao = marca.length;
+                if (valor.value == "") {
+                    urlFinal = url.replace(url.substring(url.indexOf("range=") - 1, url.length), "");
+                } else {
+                    var marca = url.substring(url.indexOf("range="), url.length).replace("range=", "");
 
-                    if (marca.indexOf("&") > 0)
-                        posicao = marca.indexOf("&");
+                    if (
+                        marca.indexOf("&") > 0 || marca.indexOf("?") > 0
+                    ) {
+                        var posicao = marca.length;
 
-                    if (marca.indexOf("?") && marca.indexOf("?") < posicao)
-                        posicao = marca.indexOf("?");
+                        if (marca.indexOf("&") > 0)
+                            posicao = marca.indexOf("&");
 
-                    marca = marca.substring(0, posicao);
+                        if (marca.indexOf("?") && marca.indexOf("?") < posicao)
+                            posicao = marca.indexOf("?");
+
+                        marca = marca.substring(0, posicao);
+                    }
+
+                    urlFinal = url.replace(marca, valor.value);
                 }
 
-                urlFinal = url.replace(marca, valor.value);
+            }            
+        }
+        if(filtro == '2') {
+            urlFinal = url + '&variacao=' + valor.value;
 
-                //urlFinal = url.replace(url.substring(url.indexOf("marca") -1, url.length), "") + "&marca=marca_" + valor.value;
-            }
+            if (url.indexOf("variacao=modelo") < 0) {
+                urlFinal = url + "&variacao=modelo_" + valor.value;
+                window.location.replace(urlFinal);
+            } else {
+
+                if (valor.value == "") {
+                    urlFinal = url.replace(url.substring(url.indexOf("variacao=modelo_") - 1, url.length), "");
+                } else {
+                    var marca = url.substring(url.indexOf("variacao=modelo_"), url.length).replace("variacao=modelo_", "");
+
+                    if (
+                        marca.indexOf("&") > 0 || marca.indexOf("?") > 0
+                    ) {
+                        var posicao = marca.length;
+
+                        if (marca.indexOf("&") > 0)
+                            posicao = marca.indexOf("&");
+
+                        if (marca.indexOf("?") && marca.indexOf("?") < posicao)
+                            posicao = marca.indexOf("?");
+
+                        marca = marca.substring(0, posicao);
+                    }
+
+                    urlFinal = url.replace(marca, valor.value);
+                }
+
+            }   
+        }
+        if(filtro == '3') {
+            urlFinal = url + '&variacao=' + valor.value;
+
+            if (url.indexOf("variacao=tamanho") < 0) {
+                urlFinal = url + "&variacao=tamanho_" + valor.value;
+                window.location.replace(urlFinal);
+            } else {
+
+                if (valor.value == "") {
+                    urlFinal = url.replace(url.substring(url.indexOf("variacao=tamanho_") - 1, url.length), "");
+                } else {
+                    var marca = url.substring(url.indexOf("variacao=tamanho_"), url.length).replace("variacao=tamanho_", "");
+
+                    if (
+                        marca.indexOf("&") > 0 || marca.indexOf("?") > 0
+                    ) {
+                        var posicao = marca.length;
+
+                        if (marca.indexOf("&") > 0)
+                            posicao = marca.indexOf("&");
+
+                        if (marca.indexOf("?") && marca.indexOf("?") < posicao)
+                            posicao = marca.indexOf("?");
+
+                        marca = marca.substring(0, posicao);
+                    }
+
+                    urlFinal = url.replace(marca, valor.value);
+                }
+
+            } 
+        }
+        if(filtro == '4') {
+             urlFinal = url + '&caracteristica=' + valor.value;
+
+            if (url.indexOf("caracteristica=marca_") < 0) {
+                urlFinal = url + "&caracteristica=marca_" + valor.value;
+                window.location.replace(urlFinal);
+            } else {
+
+                if (valor.value == "") {
+                    urlFinal = url.replace(url.substring(url.indexOf("caracteristica=marca_") - 1, url.length), "");
+                } else {
+                    var marca = url.substring(url.indexOf("caracteristica=marca_"), url.length).replace("caracteristica=marca_", "");
+
+                    if (
+                        marca.indexOf("&") > 0 || marca.indexOf("?") > 0
+                    ) {
+                        var posicao = marca.length;
+
+                        if (marca.indexOf("&") > 0)
+                            posicao = marca.indexOf("&");
+
+                        if (marca.indexOf("?") && marca.indexOf("?") < posicao)
+                            posicao = marca.indexOf("?");
+
+                        marca = marca.substring(0, posicao);
+                    }
+
+                    urlFinal = url.replace(marca, valor.value);
+                }
+
+            } 
 
         }
 
-        window.location.replace(urlFinal);
+        if (valor.value !== "") {
+
+            window.location.replace(urlFinal);
+        }
+
+    }
+
+    function clearFilter() {
+        window.location.replace(url);
+    }
+
+    jQuery(document).ready(function () {
+        
+        var filters = {{ filters.applied|length }};
+
+        if (page == "busca") {
+            if (filters >= 1) {
+                filtersClicked()();
+            }
+        }
+        if(page == "categoria") {
+            if (filters > 1) {
+                filtersClicked();
+            }
+        }        
+    });
+ 
+    function filtersClicked() {
+
+        if (jQuery(".catalog_AreaFiltros").css("display") === "none") {
+            trocaFundo(1);
+            jQuery(".catalog_AreaFiltros").css("display", "block");
+            jQuery("#imgFilterP").css("display", "block");
+            jQuery("#imgFilterB").css("display", "none");
+
+            jQuery(".Item-Catalog-Expanced").css("border", "none");
+
+            jQuery(".catalog_AreaFiltros").addClass("filterActive")
+            jQuery(".catalog_AreaFiltros").animate({
+                height: "100px"
+            }, {
+                duration: 300,
+                specialEasing: {
+                    width: 'linear'
+                }
+            });
+        } else {
+            trocaFundo(0);
+            jQuery("#imgFilterP").css("display", "none");
+            jQuery("#imgFilterB").css("display", "block");
+            jQuery(".catalog_AreaFiltros").css("display", "none");
+            jQuery(".catalog_AreaFiltros").css("height", "0px");
+
+        }
+
+    }
+
+    function MostarBusca() {
+
+        if (jQuery("#DivBuscar").css("display") === "none") {
+            jQuery("#DivBuscar").css("display", "block");
+
+        } else {
+            jQuery("#DivBuscar").css("display", "none");
+        }
+
     }
 </script>

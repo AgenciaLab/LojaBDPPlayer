@@ -1,0 +1,24 @@
+<div style="width:25%; float:left;">
+    <a href="{{ product.link }}">
+        <div class="areaProdutoRelacionado">
+            {% if product.images %}
+                <img src="{{ product.images[0].full }}" alt="{{ product.name }}">
+            {% else %}
+                <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100">
+            {% endif %}
+        </div>
+        <div class="prd_AreaInfo">
+            <div class="product-name" itemprop="name">
+                <h4>{{ product.name }}</h4>
+            </div>
+            
+            <div class="product-price-catalog">
+                {% element 'snippets/priceCatalog' {"product": product} %}
+            </div>
+        
+            <div class="product-payment-catalog">
+                {{ product.payment }}
+            </div>
+        </div>
+    </a>
+</div>

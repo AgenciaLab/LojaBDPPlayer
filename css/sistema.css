@@ -123,9 +123,9 @@ input[type="submit"],button{cursor:pointer}
 
 #Page .text,#Page .mensagensErro,#Page fieldset,p,.board,#CadastroAbas,#CadastroAbas ul,#CadastroAbas li,#CadastroAbas a,#CadastroAbas .aberta a,#ProdAbas,#ProdAbas ul,#ProdAbas li,#ProdAbas a,#ProdAbas .aberta a,.blocoAlerta{background:none;border:0 none;margin:0;padding:0;width:auto}
 
-body,.color,.color a,td,p{font-family:'Oxygen', sans-serif}
+body,.color,.color a,td,p{font-family:'Oxygen', sans-serif;color:#000 !important}
 
-body{color:#555;font-size:12px;line-height:20px}
+body{color:#555;/*font-size:12px;*/line-height:20px}
 
 .color,.color a{font-weight:700}
 
@@ -139,7 +139,7 @@ h3{font-size:14px;font-weight:700;line-height:16px}
 
 h4{font-size:13px;font-weight:400;line-height:15px}
 
-h5{font-size:13px;font-weight:400;line-height:15px;font:400 13px/15px inherit}
+h5{font-size:13px;font-weight:400;line-height:17px;font:400 13px/15px inherit}
 
 
 h6{font-size:13px;font-weight:400;line-height:15px}
@@ -147,7 +147,7 @@ p{border:0 none;color:#555;font-size:12px;font-weight:400;line-height:20px}
 /*a{color:#198ffd; font-size:12px; font-weight:400; line-height:20px;}*/
 /*a:link,a:visited{color:#198ffd}*/
 a:hover{text-decoration:underline}
-ul{line-height:1.42857143}
+ul{line-height:2.4}
 h2 + br{display:none}
 hr,.line{border-top:1px solid #ddd}
 .line{display:block;height:auto;margin:5px 0;width:auto}
@@ -214,12 +214,12 @@ hr,.line{border-top:1px solid #ddd}
 #Page .tablePage input,#Page table input,#Page .Pedidos input{margin-top:0}
 .tablePage h3,table h3,.Pedidos h3{margin:0}
 .tablePage h3 span{font-size:14px;font-weight:700;margin-top:17px}
-.bgcolor{background:#0794f7}
+.bgcolor{background:#ffff33}
 .bt-altera-compra a,.bt-altera-entrega a,.bt-trocar-forma a{background:url("https://images.tcdn.com.br/img/arquivos/identidade_visual/images/sistema/ico-alterar.png?v=3") no-repeat left top;display:inline-block;height:31px;width:40px;-webkit-transition:200ms -webkit-transform linear;-moz-transition:200ms -moz-transform linear;-o-transition:200ms -o-transform linear;transition:200ms transform linear}
 .bt-trocar-forma a{background-image:url("https://images.tcdn.com.br/img/arquivos/identidade_visual/images/sistema/ico-alterar-azul.png?v=4")}
 .bt-altera-compra a:hover,.bt-altera-entrega a:hover,.bt-trocar-forma a:hover{background-position:0 -33px;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg)}
 .bt-altera-compra img,.bt-altera-entrega img,.bt-trocar-forma img{display:none}
-.blocoAlerta,.board .blocoAlerta{background-color:#f20000;color:white;font-size:10px;font-weight:700;line-height:12px;padding:9px 0;text-transform:uppercase; padding-left:10px;}
+/*.blocoAlerta,.board .blocoAlerta{background-color:#f20000;color:white;font-size:10px;font-weight:700;line-height:12px;padding:9px 0;text-transform:uppercase; padding-left:10px;}*/
 .blocoAlerta a{color:white;display:inline-block;font:700 10px/12px 'Oxygen', sans-serif;font-weight:700;text-decoration:underline}
 .blocoAlerta .red{color:white}
 .blocoSucesso{background:#CBFFD0;color:#034409;text-transform:uppercase}
@@ -273,7 +273,7 @@ a,input,#CadastroAbas .aberta a,#ProdAbas .aberta a{-webkit-transition:300ms all
 .carrinho-tabs ol{display:flex}
 .carrinho-tabs li{background:#dedede;flex:1 auto;margin-left:2px;padding:0 3%}
 .carrinho-tabs li:first-child{margin-left:0}
-.carrinho-tabs li.active{background:#c3c3c3}
+.carrinho-tabs li.active{background:#c3c3c3 !important}
 .carrinho-tabs li.active .passo-text{color:white}
 .carrinho-tabs .passo-num{background-color:#747474;border-radius:50%;color:white;display:inline-block;font:400 14px/18px 'Oxygen', sans-serif;height:18px;text-align:center;width:18px}
 .carrinho-tabs .passo-text{color:#747474;display:inline-block;font:700 16px/49px 'Oxygen', sans-serif;padding:0 5px 0 12px;margin:0;text-transform:uppercase;white-space:nowrap}
@@ -529,24 +529,24 @@ a,input,#CadastroAbas .aberta a,#ProdAbas .aberta a{-webkit-transition:300ms all
 .produto-zoom-detalhe{background:url("https://images.tcdn.com.br/img/arquivos/identidade_visual/images/sistema/ico-lupa.png") no-repeat left top;display:inline-block;line-height:17px;margin:15px 0 0 0;padding:0 20px;text-transform:uppercase}
 .detalhesFormas tr td,#foto_a,.varCont{border:0 none}
 .detalhesFormas tr td b{background:none;color:#198ffd}
-.texto_variacao,.varTit{background:#aeaeae;clear:both;display:block;padding:10px 22px 8px;overflow:hidden}
-.varTit{margin:20px 0 0 0}
+.texto_variacao,.varTit{clear:both;display:block;padding:0px 0px 5px;overflow:hidden}
+.varTit{margin:0px 0 0 0}
 .varTit:first-child{margin-top:0}
-.onVar:hover{background:#aeaeae;cursor:auto}
-.texto_variacao h2,.varTit strong,.texto_variacao span,.varTit{color:white;display:block;font-size:12px;font-weight:700;line-height:12px;margin:0;text-transform:uppercase;vertical-align:top}
+.onVar:hover{cursor:auto}
+/*.texto_variacao h2,.varTit strong,.texto_variacao span,.varTit{color:white;display:block;font-size:12px;font-weight:700;line-height:12px;margin:0;text-transform:uppercase;vertical-align:top}*/
 #Page .varTit input{margin:0}
 .texto_variacao h2{float:left}
-#menuVars{margin:0 0 20px 0}
+#menuVars{margin:0; margin-bottom: -27px;}
 .lista_cor_variacao,
 .lista_cor_variacao2,
 .lista_cor_variacao3,
 .varContAdd,
 .varCont{height:auto; margin:0 0 20px 0px; padding:3px 0 0 0; overflow:hidden; width:auto;}
-.lista_cor_variacao li,.lista_cor_variacao2 li,.lista_cor_variacao3 li{border:1px solid transparent;margin:0 4px 0 0;padding:1px;position:relative}
+.lista_cor_variacao li,.lista_cor_variacao2 li,.lista_cor_variacao3 li{border:1px solid #000;margin:0 4px 4px 0;float: left;}
 .lista_cor_variacao li:last-child,.lista_cor_variacao2 li:last-child,.lista_cor_variacao3 li:last-child{margin-right:0}
-.lista_cor_variacao li:hover,.lista_cor_variacao2 li:hover,.lista_cor_variacao3 li:hover{border-color:#c2c2c2}
-.lista_cor_variacao li div,.lista_cor_variacao2 li div,.lista_cor_variacao3 li div{background:#747474;border:1px solid #e5e5e5;color:white;font:700 14px/23px 'Oxygen', sans-serif;padding:0;min-width:38px;text-align:center}
-.lista_cor_variacao .cor_selecionada,.lista_cor_variacao2 .cor_selecionada,.lista_cor_variacao3 .cor_selecionada{background-color:#0794f7;border:2px solid #CCCBCB !important}
+.lista_cor_variacao li:hover,.lista_cor_variacao2 li:hover,.lista_cor_variacao3 li:hover{border-color:#c2c2c2;}
+.lista_cor_variacao li div,.lista_cor_variacao2 li div,.lista_cor_variacao3 li div{font:700 14px/23px 'Oxygen', sans-serif;}
+.lista_cor_variacao .cor_selecionada,.lista_cor_variacao2 .cor_selecionada,.lista_cor_variacao3 .cor_selecionada{background-color:#000;padding: 2px 15px; color: #ffff33;}
 .lista_cor_variacao li img,.lista_cor_variacao2 li img{border:1px solid #e5e5e5 !important;display:block;width:38px}
 .lista_cor_variacao .sem_estoque,.lista_cor_variacao .nao_disp,.lista_cor_variacao2 .sem_estoque,.lista_cor_variacao2 .nao_disp{background:none;opacity:1}
 .lista_cor_variacao .sem_estoque:before,.lista_cor_variacao .nao_disp:before,.lista_cor_variacao2 .sem_estoque:before,.lista_cor_variacao2 .nao_disp:before{background:url("https://images.tcdn.com.br/img/arquivos/identidade_visual/images/sistema/ico-indisponivel.png?v=2") no-repeat left top;content:"";height:11px;position:absolute;right:0;top:-3px;width:11px}
@@ -579,7 +579,7 @@ a,input,#CadastroAbas .aberta a,#ProdAbas .aberta a{-webkit-transition:300ms all
 .Forma1 .tablePags{border:1px solid #ddd;display:none;margin:0 0 15px 0}
 .Forma1 .item-parcela{margin:8px 0 0 0}
 .Forma1 tr,.Forma1 tr:first-child{background-color:white}
-.rateBlock{border:0 none;display:block;margin:0 0 10px 0;overflow:hidden;width:auto}
+.rateBlock{border:0 none;display:block;margin:0 0 10px 0;width:auto;padding-top:15px;padding-bottom: 10px;}
 #linkPagParcelado{border:0 none;/*color:#198ffd !important;*/font-size:14px;padding:0}
 .paginacao_ajax{border:0 none;height:auto;margin:0;overflow:hidden}
 .paginacao_ajax_prod{margin:10px 0 0 0;text-transform:uppercase}
@@ -607,5 +607,5 @@ a,input,#CadastroAbas .aberta a,#ProdAbas .aberta a{-webkit-transition:300ms all
 .modal-body #Page .text,.modal-body #Page .select,.modal-body #Page .textarea,.modal-body #Page select,.modal-body #Page textarea{margin:0px;padding:0px}
 .modal-body #Page #send_link button[type="submit"]{border:0px}
 .page-product .prodCod{top:35px}
-.page-product abbr[title]{border-bottom: 0}
+.page-product abbr[title]{border-bottom: 0; text-decoration: none;}
 .page-checkout_payment #dados_cartao_campos label{display: initial}

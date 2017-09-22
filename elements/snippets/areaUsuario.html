@@ -1,41 +1,85 @@
-<div class="user_Area"> <!--onmouseleave="hideLogin()"-->
-    <div class="user_header">
+<div class="user_Area hidden-xs"> <!--onmouseleave="hideLogin()"-->
+    <div class="user_header hidden-xs">
         <ul>
             <li>
                 <a href="{{ links.central }}" data-tray-tst="meu_cadastro">
-                    <div class="user_Content">
-                        <span>MINHA CONTA</span>
+                    <div class="user_Content" style=" border-top:1px solid gray; height:75px; background-color:#252525; padding-top:7%;">
+                      <center>  <span >MINHA CONTA</span> </center>
                     </div>
                 </a>
             </li>
             <li>
                 <a href="{{ links.orders }}" data-tray-tst="meus_pedidos">
-                    <div class="user_Content">
-                        <span>MEUS PEDIDOS</span>
+                    <div class="user_Content" style="border-top:1px solid gray; height:75px; background-color:#252525;padding-top:7%;">
+                        <center> <span >MEUS PEDIDOS</span></center>
                     </div>
                 </a>
             </li>
             <li>
-                <a>
-                    <div class="user_Content">
-                        <span>TROCA E DEVOLUÇÕES</span>
+                <a href="{{ links.orders_return }}" >
+                    <div class="user_Content" style="border-top:1px solid gray; height:75px; background-color:#252525;padding-top:7%;">
+                        <center> <span>TROCAS E DEVOLUÇÕES</span></center>
                     </div>
                 </a>
             </li>
             <li>
-                <a>
-                    <div class="user_Content">
-                        <span>LISTA DE DESEJOS</span>
+                <a href="/loja/central_listas.php" >
+                    <div class="user_Content" style="border-top:1px solid gray; height:75px; background-color:#252525;padding-top:7%;">
+                       <center>  <span>LISTA DE DESEJOS</span></center>
                     </div>
                 </a>
             </li>
             <li>
                 <a href="{{ links.logout }}">
-                    <div class="user_Content">
-                        <span>SAIR</span>
+                    <div class="user_Content" style="border-top:1px solid gray; height:75px; background-color:#252525;padding-top:7%;">
+                        <center> <span>SAIR</span></center>
                     </div>
                 </a>
             </li>
         </ul>
     </div>
 </div>
+
+
+<div class=" AreaLogado col-xs-12" style="display:none; padding:0;">
+       <ul>
+            <li>
+                <a href="{{ links.central }}" data-tray-tst="meu_cadastro">
+                    <div class="user_Content" style=" border-top:1px solid gray; height:72px;  background-color:#252525; padding-top:7%;">
+                      <center>  <span >MINHA CONTA</span> </center>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ links.orders }}" data-tray-tst="meus_pedidos">
+                    <div class="user_Content" style="border-top:1px solid gray;height:72px;  background-color:#252525;padding-top:7%;">
+                        <center> <span >MEUS PEDIDOS</span></center>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ links.orders_return }}" >
+                    <div class="user_Content" style="border-top:1px solid gray; height:72px; background-color:#252525;padding-top:7%;">
+                        <center> <span>TROCAS E DEVOLUÇÕES</span></center>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/loja/central_listas.php" >
+                    <div class="user_Content" style="border-top:1px solid gray; height:72px;  background-color:#252525;padding-top:7%;">
+                       <center>  <span>LISTA DE DESEJOS</span></center>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ links.logout }}">
+                    <div class="user_Content" style="border-top:1px solid gray; height:72px; background-color:#252525;padding-top:7%;">
+                        <center> <span>SAIR</span></center>
+                    </div>
+                </a>
+            </li>
+        </ul>
+</div>
+
+
+

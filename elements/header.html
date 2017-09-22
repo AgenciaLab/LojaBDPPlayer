@@ -5,14 +5,14 @@
                 <span>OFFICIAL PRODUCTS LICENSED</span>
             </div>
             <div class="hdr_InfoRight col-sm-6">
-                <span>@Bdpplayer All Rights Reserved</span>
+                <span>@Bdplayer All Rights Reserved</span>
             </div>
         </div>
     </div>
 
     <div class="hdr_Info visible-xs">
         <div class="hdr_InfoLeft col-xs-6">
-            <span>@Bdpplayer All Rights Reserved</span>
+            <span>@Bdplayer All Rights Reserved</span>
         </div>
         <div class="hdr_InfoRight col-xs-6">
             <span>OFFICIAL PRODUCTS LICENSED</span>
@@ -20,104 +20,139 @@
     </div>
 
     <div class="hdr_AreaLogo">
-        <div class="noSpacing col-sm-3 hidden-xs">
-            <div class="noSpacing col-sm-8" id="hdr_AreaMenu">
-                <a onclick="openMenu()">
-                    <div class="hdr_AreaButton hidden-sm">
-                        <img  class="unselectable" src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
-                        <span class="unselectable">MENU</span>
-                    </div>        
-                </a>
-
-                <div class="areaDoMenu">
-                    {% element 'snippets/menu' %}
-                    {% element 'snippets/brands' %}
-                    {% element 'snippets/submenu' %}
-                </div>
-                            
-            </div>
-            <div class="areaBusca col-sm-4">
-                <div id="areaMenu" class="areaPesquisa">
-                    <a onclick="openSearch()" id="btnAbrirMarcas">
-                        <div class="hdr_AreaButton">       
-                            <div class="hdr_AreaImagem">             
-                                <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
-                            </div>
-                        </div>            
+        <div class="noSpacing col-sm-4 hidden-xs">
+            <div class="row">
+                <div class="noSpacing col-sm-6" id="hdr_AreaMenu">
+                    <a onclick="openMenu()" >
+                        <div class="hdr_AreaButton hidden-sm">
+                            <img  class="unselectable" src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
+                            <span class="unselectable">MENU</span>
+                        </div>
                     </a>
-                    <div id="btnOpenSearch">
-                        {% element 'snippets/search' %}
+
+                    <div class="areaDoMenu">
+                        {% element 'snippets/menu' %}
                     </div>
+
                 </div>
+                <div class="areaBusca col-sm-4">
+                    <div id="areaMenu" class="areaPesquisa">
+                        <a onclick="openSearch()" id="btnAbrirMarcas">
+                            <div class="hdr_AreaButton">
+                                <div class="hdr_AreaImagem">
+                                    <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>
+                                </div>
+                            </div>
+                        </a>
+                        <div id="btnOpenSearch" >
+                            {% element 'snippets/search' %}
+                        </div>
+                        <div class="AreaManterabertoSeach" onmouseover="openSearch()" style="display:none;"></div>
+                    </div>
+
+                        {% element 'snippets/brands' %}
+                        {% element 'snippets/submenu' %}
+                </div>
+                <div class="col-sm-4"></div>
             </div>
         </div>
-        <div class="hdr_AreaImagemLogo col-sm-6">
-            <a class="logo-brand" href="{{ links.home }}" title="{{ store.name }}">               
+        <div class="hdr_AreaImagemLogo col-sm-4" onmouseover="CloseAllSubMenuTabs()">
+            <a class="logo-brand" href="{{ links.home }}" title="{{ store.name }}">
                <img class="img-responsive unselectable" src="{{ asset('img/assets/logo.png') }}'" alt=""/>
-            </a>            
+            </a>
         </div>
-        <div class="col-sm-3 hidden-xs">
-            <div class="AreaBotaoLogin col-sm-6" style="padding-bottom: 3px;">
-                
+        <div class="col-sm-4 hidden-xs" style="padding-right:0px;">
+            <div class="AreaBotaoLogin col-sm-6" style="padding-bottom: 3px;height:150px;">
+
                 <div class="login tray-hide" data-logged-user="false">
                     <a onclick="showLogin()">
                         <div class="hdr_AreaButton hidden-sm">
-                            <img  class="unselectable" src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
-                            <span class="unselectable">LOGIN</span>
-                        </div>      
+                            <div id="botaoLogin" onclick="mostrarFecharLogin()">
+                                <img  class="unselectable" src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                                <span class="unselectable">LOGIN</span>
+                            </div>
+                            <div id="fecharLogin" onclick="mostrarFecharLogin()" style="display:none;padding-top:9px;">
+                                <img src="{{ asset('img/assets/btnClose.png') }}'" alt="" />
+                                <span>FECHAR</span>
+                            </div>
+                        </div>
                     </a>
                 </div>
 
-                <div class="login tray-hide usr_Logado" data-logged-user="true">
+                <div class="login  tray-hide usr_Logado" data-logged-user="true">
                     <a onclick="showUserArea()">
-                        <div class="areaUsuarioLogin hdr_AreaButton hidden-sm">
+                        <div  id="botaoLogado"  class="areaUsuarioLogin hdr_AreaButton hidden-sm"  onclick="mostrarFecharLogado()" style="padding-left: 24%;">
                             <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
                             <span id="nomeUsuarioValue" data-customer="name">{{ customer.name }}</span>
                             <span id="nomeUsuarioText"></span>
-                        </div>      
+                        </div>
+                        <div id="fecharLogado" class="areaUsuarioLogin hdr_AreaButton hidden-sm" onclick="mostrarFecharLogado()" style="display:none; padding-top:4%;padding-left:29%;">
+                            <img src="{{ asset('img/assets/btnClose.png') }}'" alt="" />
+                            <span>FECHAR</span>
+                        </div>
                     </a>
                 </div>
 
                 {% element 'snippets/areaUsuario' %}
             </div>
-            <div class="AreaBotaoCart col-sm-6">
+            <div class="AreaBotaoCart col-sm-6" style="height:150px;">
                 <a onclick="showCart()">
-                    <div class="hdr_AreaButton hidden-sm">     
-                        <img  class="unselectable" src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
-                        <span class="unselectable">CARRINHO</span>
-                    </div>        
+                    <div class="hdr_AreaButton hidden-sm">
+                        <div id="carrinho" onclick="mostrarFecharCarrinho()">
+                            <img  class="unselectable" src="{{ asset('img/assets/btnCart.png') }}'" alt=""/>
+                            <span class="unselectable">CARRINHO</span>
+                        </div>
+                        <div id="fecharCarrinho" onclick="mostrarFecharCarrinho()" style="display:none;padding-top:6px;">
+                            <img src="{{ asset('img/assets/btnClose.png') }}'" alt="" />
+                            <span>FECHAR</span>
+                        </div>
+                    </div>
                 </a>
             </div>
-            {% element 'snippets/login' %}        
-            {% element 'snippets/cart' %}    
+            {% element 'snippets/login' %}
+            {% element 'snippets/cart' %}
         </div>
-        <div class="hdr_mobileMenu visible-xs">
-            <div class="col-xs-3">
+
+        <div class="hdr_mobileMenu">
+            <div class="col-xs-3" style="height:100%; border-right:1px solid #a49919">
                 <div class="hdr_AreaButton">
                     <a onclick="openMenuMobile()">
                         <div class="hdr_AreaImagem">
                             <img src="{{ asset('img/assets/btnMenu.png') }}'" alt=""/>
                         </div>
                     </a>
-                </div>                
+                </div>
             </div>
             <div class="col-xs-3">
                 <div class="hdr_AreaButton">
                     <a onclick="openMarcasMobile()">
                         <div class="hdr_AreaImagem">
-                            <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>                        
-                        </div>
-                    </a>
-                </div>                
-            </div>
-            <div class="col-xs-3">
-                <div class="hdr_AreaButton">
-                    <a onclick="showLoginMobile()">
-                        <div class="hdr_AreaImagem">
-                            <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                            <img id="imgSearch" src="{{ asset('img/assets/btnSearch.png') }}'" alt=""/>
                         </div>
                     </a>
                 </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="login tray-hide" data-logged-user="false">
+                    <div class="hdr_AreaButton">
+                        <a onclick="showLoginMobile()">
+                            <div class="hdr_AreaImagem">
+                                <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="login tray-hide usr_Logado" data-logged-user="true">
+                    <div class="hdr_AreaButton" data-logged-user="true">
+                        <a onclick="showUserAreaMobile()">
+                            <div class="hdr_AreaImagem">
+                                <img src="{{ asset('img/assets/btnLogin.png') }}'" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
             <div class="col-xs-3">
                 <div class="hdr_AreaButton">
@@ -128,13 +163,16 @@
                     </a>
                 </div>
             </div>
+
             <div class="areaDoMenu">
-                <!--{% element 'snippets/menu-mobile' %}
+                {% element 'snippets/menu-mobile' %}
                 {% element 'snippets/search-mobile' %}
                 {% element 'snippets/login-mobile' %}
-                {% element 'snippets/cart-mobile' %}-->
+                {% element 'snippets/areaUsuario' %}
+                {% element 'snippets/cart-mobile' %}
             </div>
         </div>
+
     </div>
 </header>
 
@@ -163,6 +201,47 @@
         }
 
     }
+
+    function mostrarFecharCarrinho(){
+
+        if (jQuery("#carrinho").css("display") === "block") {
+
+            jQuery("#fecharCarrinho").css("display", "block");
+            jQuery("#carrinho").css("display", "none");
+
+        } else {
+            jQuery("#fecharCarrinho").css("display", "none");
+            jQuery("#carrinho").css("display", "block");
+        }
+    }
+
+        function mostrarFecharLogin(){
+
+        if (jQuery("#botaoLogin").css("display") === "block") {
+
+            jQuery("#fecharLogin").css("display", "block");
+            jQuery("#botaoLogin").css("display", "none");
+
+        } else {
+            jQuery("#fecharLogin").css("display", "none");
+            jQuery("#botaoLogin").css("display", "block");
+        }
+    }
+
+        function mostrarFecharLogado(){
+
+        if (jQuery("#botaoLogado").css("display") === "block") {
+
+            jQuery("#fecharLogado").css("display", "block");
+            jQuery("#botaoLogado").css("display", "none");
+
+        } else {
+            jQuery("#fecharLogado").css("display", "none");
+            jQuery("#botaoLogado").css("display", "block");
+        }
+    }
+
+
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);

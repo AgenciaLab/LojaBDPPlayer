@@ -1,0 +1,137 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+
+<style>
+    /*Funcionalidades especificas no Edge*/
+    @media screen and (min-width: 768px) {
+        @supports (-ms-accelerator:true) {
+                .product_RelatedArea{
+                    height: 81px;
+                }
+                .slick-next, .slick-prev {
+                    transform: translate(0,40%);
+                }
+        }
+    }
+    .showcase-title{color:#232323; font:400 55px/55px 'Oswald',sans-serif; margin:12px 0 !important; text-align:center; text-transform:uppercase; letter-spacing:-1px;}
+    .product-name{ text-align: left; }
+    .product-price-catalog{ text-align: left; }
+    .product-payment-catalog{ text-align: left; }
+    .preco-parc2, .preco-de, .preco-parc2 span{ color: #999 !important; }
+    @media screen and (min-width: 768px) {
+        .slick-next, .slick-prev {
+            font-size: 0;
+            line-height: 0;
+            top: -16.5%;
+            -ms-transform: translate(0,-62px);
+            -moz-transform: translate(0,50%);
+            /*transform: translate(0,0);*/
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: 0;
+            background: 0 0;
+        }
+        .slick-prev {
+            left:69%;
+            z-index: 1;
+        }
+        .slick-prev:before {
+            content: '' !important;
+        }
+        .slick-next {
+            right: 3%;
+        }
+        .slick-next:before {
+            content: '' !important;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .slick-next, .slick-prev {
+            font-size: 0;
+            line-height: 0;
+            top: 44%;
+            -webkit-transform: translate(0,-50%);
+            -ms-transform: translate(0,-50%);
+            transform: translate(0,-50%);
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: 0;
+            background: 0 0;
+        }
+        .slick-prev {
+            left:0;
+            z-index: 1;
+        }
+        .slick-prev:before {
+            content: '\276E' !important;
+        }
+        .slick-next {
+            right: 0;
+        }
+        .slick-next:before {
+            content: '\276F' !important;
+        }
+        .slick-next:before, .slick-prev:before {
+            color: #000;
+        }
+    }
+    
+</style>
+
+{% if products|length > 0 %}
+    
+        <div class="catalog-content row" style="margin-left: 0px; margin-right: 0px;">
+
+            <section class="regular slider">
+                {% for product in products %}
+                    
+                    <div>
+                        <a href="{{ product.link }}">
+                            <div class="areaProdutoRelacionado">
+                                {% if product.images %}
+                                    <img src="{{ product.images[0].full }}" alt="{{ product.name }}">
+                                {% else %}
+                                    <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100">
+                                {% endif %}
+                            </div>
+                            <div class="prd_AreaInfo">
+                                <div class="product-name" itemprop="name">
+                                    <h4>{{ product.name }}</h4>
+                                </div>
+                                
+                                <div class="product-price-catalog">
+                                    {% element 'snippets/priceCatalog' {"product": product} %}
+                                </div>
+                            
+                                <div class="product-payment-catalog">
+                                    {{ product.payment }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+
+                {% endfor %}
+            </section>
+        </div>
+    
+{% else %}
+
+    <div class="catalog-empty">
+        <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
+        <p>Nenhum produto encontrado nessa categoria.</p>
+    </div>
+{% endif %}
+
+<script type="text/javascript">
+        $(document).on('ready', function () {
+            $(".regular").slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+            })
+        });
+  </script>

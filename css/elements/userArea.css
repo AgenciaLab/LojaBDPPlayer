@@ -99,7 +99,7 @@ and open the template in the editor.
         z-index: 999;
         width: 100%;
         min-width: 370px;
-        height: 360px;
+        /*height: 360px;*/
         background: #252525;
         top: 100px;
         right: -400px;
@@ -154,7 +154,7 @@ and open the template in the editor.
         z-index: 999;
         width: 100%;
         min-width: 420px;
-        height: 420px;
+        /*height: 250px;*/
         background: #252525;
         top: 150px;
         right: -400px;
@@ -195,12 +195,22 @@ and open the template in the editor.
 @media (min-width: 1400px) {
 
     .user_header .user_Content {
+        font-family: oswald;
+        font-size: bold 13.3pt;
         width: 100%;
         text-align: center;
-        padding: 40px 20px;
+        /*padding: 40px 20px;*/
         border-bottom: 1px solid lightgray;
     }
-    
+
+    .user_Content {
+    border-top: 1px solid gray;
+    height: 75px;
+    background-color: #252525;
+    padding-top: 7%;
+    /*width: 200px;*/
+}
+
     .usr_Logado {
         margin-left: -150px;
     }
@@ -216,7 +226,7 @@ and open the template in the editor.
         z-index: 999;
         width: 100%;
         min-width: 300px;
-        height: 476px;
+        /*height: 476px;*/
         background: #252525;
         top: 150px;
         right: -400px;
@@ -256,6 +266,8 @@ and open the template in the editor.
 
 .user_header a {
     color: #fff;
+            font-family: OswaldBold;
+        font-size: 13.3pt;
 }
 
 

@@ -1,0 +1,83 @@
+   
+{% set strNav = 'navegue por categoria games' %}
+{% set Brands = {
+    '1': {'1': 'marca_bdplayer', '2': 'img/assets/marcas/marca1.png'},
+    '2': {'1': 'marca_diablo-iii', '2': 'img/assets/marcas/marca7.png'}, 
+    '3': {'1': 'marca_halo', '2': 'img/assets/marcas/marca8.png'}, 
+    '4': {'1': 'marca_hearthstone', '2': 'img/assets/marcas/marca5.png'},
+    '5': {'1': 'marca_heroes-of-the-storm', '2': 'img/assets/marcas/marca6.png'},
+    '6': {'1': 'marca_mortal-kombat', '2': 'img/assets/marcas/marca13.png'},
+    '7': {'1': 'marca_overwatch', '2': 'img/assets/marcas/marca2.png'},
+    '8': {'1': 'marca_resident-evil', '2': 'img/assets/marcas/marca9.png'},
+    '9': {'1': 'marca_space-invaders', '2': 'img/assets/marcas/marca10.png'},
+    '10':{'1': 'marca_starcraft-2', '2': 'img/assets/marcas/marca4.png'},
+    '11':{'1': 'marca_world-of-warcraft', '2': 'img/assets/marcas/marca3.png'}
+   }   %}
+
+ 
+   <div class="row">
+       <div class="col-md-1" style="width:11.666667%; margin:10px 0;" >
+           <p style="font:700 13px 'Oswald',sans-serif; color:#999;" >
+               {{ strNav|upper }}
+           </p>
+       </div>
+       <div class="col-md-10" style="min-width: 88.33499%; margin: 0;">
+            {% for marcas in Brands %}
+               <div class="contentImgBrands" style="float:left; margin: 8px;">
+                    <img class="img-responsive" src="{{ asset(marcas[2]) }}"  onclick="BrandLink('{{marcas[1]}}')" style="max-width:80px; cursor: pointer;">
+                </div>
+            {% endfor %}           
+       </div>
+   </div>
+
+
+<script>
+
+    var url = window.location.href;
+
+    function BrandLink(valor) {
+        var urlFinal = "";
+
+        if( urlFinal.indexOf("?") == '-1' )
+        {
+            if(url.indexOf("?") == '-1') {
+                url = url + '?';
+            }
+        }
+
+        urlFinal = url + '&caracteristica=' + valor;
+
+        if (url.indexOf("caracteristica=marca_") < 0) {
+            urlFinal = url + "&caracteristica=marca_" + valor;
+            window.location.replace(urlFinal);
+        } else {
+            
+            if (valor == "") {
+                urlFinal = url.replace(url.substring(url.indexOf("caracteristica=marca_") - 1, url.length), "");
+            } else {
+                var marca = url.substring(url.indexOf("caracteristica=marca_"), url.length).replace("caracteristica=marca_", "");
+
+                if (
+                    marca.indexOf("&") > 0 || marca.indexOf("?") > 0
+                ) {
+                    var posicao = marca.length;
+
+                    if (marca.indexOf("&") > 0)
+                        posicao = marca.indexOf("&");
+
+                    if (marca.indexOf("?") && marca.indexOf("?") < posicao)
+                        posicao = marca.indexOf("?");
+
+                    marca = marca.substring(0, posicao);
+                }
+
+                urlFinal = url.replace(marca, valor);
+
+                window.location.replace(urlFinal);
+            }
+
+        } 
+
+    }
+
+</script>

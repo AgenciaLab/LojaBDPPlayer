@@ -1,136 +1,64 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <section> 
-    <div class="row "> <!--  .is-table-row -->
-        <div class="col-md-5 col-sm-6 noSpacing" id="areaImagem">
-            {% if utils.is_mobile %}
-                <div class="product-gallery">
-                    {{ productHelper.gallery() }}
-                </div>
-                {% else %}
-                {% if product.images %}
-                <div class="product-gallery">
 
-                    <div class="thumbs-vertical" id="product-gallery">
-                        <div class="carousel-gallery carousel-trigger-{{ product.id }}">
-                            {% for key,product_image in product.images %}
-                            <a href="#" data-image="{{ product_image.large }}" class="itrigger-{{ product.id }}" data-zoom-image="{{ product_image.full }}" alt="{{ product.name }}" title="{{ product.name }}">
-                                <img src="{{ product_image.large }}" alt="{{ product.name }}">
-                            </a>
-                            {% endfor %}
+    {% if utils.is_mobile %}
+        <div class="row">
+            <div class="row noSpacing noMargin">
+                <div class="col-xs-12 noSpacing">
+                    <div class="row product_Share">
+                        <div class="col-xs-4" style="padding:10px 0 0 10px;">
+                            <span onclick="javascript:window.history.go(-1)" style="color:#666; font-family:Oswald; font-size:9pt;">&lsaquo; Continuar Comprando</span>
                         </div>
-
-                        {% if product.variants.sku.Tamanho|length >= 2 %}
-                        {% for key,product_image in product.variants.sku.Tamanho %}
-                        <div class="carousel-gallery carousel-trigger-{{ product_image.id }}" style="display: none;">
-                            {% for key2,product_img in product_image.images %}
-                            <a href="#" data-image="{{ product_image.large }}" class="itrigger-{{ product.id }}" data-zoom-image="{{ product_image.full }}" alt="{{ product.name }}" title="{{ product.name }}">
-                                <img src="{{ product_image.medium }}" alt="{{ product.name }}">
-                            </a>
-                            {% endfor %}
-                        </div>
-                        {% endfor %} 
-                        {% endif %}
+                        <div class="col-xs-8 noSpacing product_ShareTextArea">
+                            <div class="product_ShareText">COMPARTILHAR</div>
+                            <div class="product_ShareArea">                        
+                                {{ productHelper.social() }}
+                            </div>
+                        </div>                
                     </div>
-
-                    {% if product.video %}
-                    <iframe width="560" height="315" src="{{ product.video }}" frameborder="0" allowfullscreen></iframe>
-                    {% endif %}
-
-                    <div class="container-imagem">
-                        <figure>
-                            <img src="{{ product.images[0].full }}" data-zoom-image="{{ product.images[0].full }}" class="zoom" alt="{{ product.name }}">
-                        </figure>
-                    </div>
-
                 </div>
-                {% endif %}
-                {% endif %}
-                <!-- /Galeria -->
-        </div>
-
-        <div class="col-md-7 col-sm-6 noSpacing">
-
-            <div class="product_Share">
-                <div class="col-sm-6"></div>
-                <div class="col-sm-6 noSpacing product_ShareTextArea">                                            
-                    <span class="product_ShareText">COMPARTILHAR</span>
-                    <div class="product_ShareArea">                        
-                        {{ productHelper.social() }}
+            </div>
+            <div class="row noSpacing noMargin">
+                <div class="col-xs-12 noSpacing">
+                    <div class="product-gallery">
+                        {{ productHelper.gallery() }}
                     </div>
-                </div>                
-            </div>      
-
-            <div id="Comprar" class="tabcontent">
-
+                </div>
+            </div>
+            <div class="row noSpacing noMargin" >
                 <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
-                
                     <div class="product_Info">
                         <div class="product_Title"> 
-                            <h1>{{ product.name }}</h1>
+                            <h1>{{ product.name }}</h1> <br>
                             <h3>COD {{ product.id }}</h3>
                         </div>
-                    </div>
-                    <div class="product_Price">
-                        <div class="row">   
-                            <div class="col-sm-12 noSpacing">                     
-
-                                <div class="col-sm-6 noSpacing">
-                                    {% element 'snippets/productPrice' {"product": product} %} 
-                                </div>
-                                <div class="col-sm-6 noSpacing"> 
-
-                                    <div class="texto_Formas">
-                                        <h2>Formas Pagamento</h2>
-                                    </div>
-
-                                    <select class="selectFormasPgto" style="background-color:#fff">
-                                        <option value="Vista">Á vista</option>
-                                        {% for payment in paymentMethods.order %}
-                                            <option value="{{ payment.display_name }}">
-                                                {{ payment.display_name }}
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-        
-                                    <select class="selectFormasPgto" style="background-color:#fff">
-                                        <option value="Parcelado">Parcelado</option>
-                                        {% for payment in paymentMethods.credit %}
-                                            <option value="{{ payment.display_name }}">
-                                                {{ payment.display_name }}
-                                            </option>
-                                        {% endfor %}                                    
-                                    </select>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product_Cart">
-                        <div class="row">
-                            <div class="col-sm-6 noSpacing">
-                                
-                                {% if productHelper.variants != '' %}
+                        
+                        <div class="row noSpacing noMargin">
+                            {% if productHelper.variants != '' %}
                                 <div class="product_Variants">
                                     {{ productHelper.variants() }}
                                 </div>
-                                {% endif %}
-
-                            </div>
-
-                            <div class="col-sm-6 noSpacing">
-
+                                
+                            {% endif %}
+                        </div>
+                        <div class="row noMargin noSpacing">
+                            <div class="col-xs-6 noSpacing">
                                 {% element 'snippets/qtd-form' {"product": product} %}
-
+                            </div>
+                            <div class="col-xs-6 noSpacing" style="text-align:right;">
+                                {% element 'snippets/productPrice' {"product": product} %} 
+                                <p data-toggle="modal" data-target="#myModal" data-modal-width="600px" style="color:#0099cc !important; cursor:pointer; " >
+                                    Formas de pagamento
+                                </p> 
                             </div>
                         </div>
 
-                        <div class="row"> 
+                    </div>
 
-                            <div class="col-sm-12 noSpacing product_BuyArea">
+                    <div class="product_Cart">
+                        <div class="row noMargin"> 
 
-                                <a>
-                                    <span class="product_WishList">Colocar na lista de desejos</span>
-                                </a>
-
+                            <div class="col-xs-12 noSpacing product_BuyArea">
 
                                 {% element 'snippets/buy-form' {"product": product} %}
 
@@ -145,104 +73,537 @@
                                 </div>
                                 {% endif %}
                             </div>
+                            <div class="col-xs-12 WishList noSpacing">
+                                 {{ productHelper.wishlist() }}
+
+
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
 
-            <div id="Informacoes" class="tabcontent">
-                <div class="product_Info">
-                    <div class="product_Title"> 
-                        <h1>INFORMAÇÕES</h1>
-                        <h5>DESCRIÇÃO GERAL</h5>
+            <div class="row noSpacing noMargin">
+                <div class="tabMobile">
+                    <a onclick="openCity(event, 'InformacoesMobile')" class=" active">
+                        <div id="spanInfo" class="tablinksMobile">
+                            <span>INFORMAÇÕES</span>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a onclick="openCity(event, 'MedidasMobile')">
+                        <div id="spanMedidas" class="tablinksMobile">
+                            <span>MEDIDAS</span>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a onclick="openCity(event, 'ComentariosMobile')">
+                        <div id="spanComentarios" class="tablinksMobile">
+                            <span>COMENTÁRIOS</span>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
 
-                        <div class="board">
-                            <div class="board_htm description">
-                                {{ product.description ? product.description : product.description_small }}
+            </div>
+            <div class="row noSpacing noMargin">
+                <div id="InformacoesMobile" class="row tabcontentMobile" style="display:block;">
+                    <div class="product_Info_Informacoes">
+                        <div class="product_Title" style="margin:5%;"> 
+                            <h1>INFORMAÇÕES</h1>
+                            <h5>DESCRIÇÃO GERAL</h5>
+
+                            <div class="board">
+                                <div class="board_htm description">
+                                    {{ product.description ? product.description : product.description_small }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="MedidasMobile" class="tabcontentMobile">
+                    <div class="product_Info_Informacoes">
+                        <div class="row noSpacing" style="padding:5%;">
+                            <div class="col-xs-12">
+                                <div class="product_Title">
+                                    <h1 class="Titlemedidas"> Tabela de Medidas </h1>
+                                    <h3 class="medidas"> {{ product.name }} </h3>
+                                </div>
+                                <img class="img-responsive" src="{{ asset('img/tabela_medidas.jpg') }}" alt="" />
+                            </div>
+                            <div class="col-xs-12">
+                                <img class="img-responsive" src="{{ asset('img/camiseta_medidas.jpg') }}" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ComentariosMobile" class="tabcontentMobile">
+                    <div class="product_Info_Informacoes">
+                        <div class="product_Title" style="padding:0 5%;"> 
+                            <h1>COMENTÁRIOS</h1>
+                            
+                            <div class="board">
+                                {% element 'product/comments' %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="Medidas" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
+        </div>
+    {% else %}
+
+        <div class="row" style="margin-right: -3px;"> <!--  .is-table-row -->
+            <div class="col-sm-5 col-md-5 col-lg-5  noSpacing" id="areaImagem">
+                {% if utils.is_mobile %}
+                    <div class="product-gallery">
+                        {{ productHelper.gallery() }}
+                    </div>
+                {% else %}
+                    {% if product.images %}
+                    {% set count = '0' %}
+                    <div class="product-gallery">
+
+                        <div class="row" id="product-gallery-box">
+
+                            <div class="col-sm-2 col-md-2 noSpacing thmb-vertical">
+
+                                <div class="thumbs-vertical" id="product-gallery">
+                                    <div class="carousel-gallery carousel-trigger-{{ product.id }}">
+                                        {% for key,product_image in product.images %}
+                                            {% set count = count + 1 %}
+                                            <a href="#" data-image="{{ product_image.full }}" class="itrigger-{{ product.id }}" data-zoom-image="{{ product_image.full }}" alt="{{ product.name }}" title="{{ product.name }}">
+                                                <img style="width:100%;" src="{{ product_image.large }}" alt="{{ product.name }}">
+                                            </a>
+                                            {% if count > 5 %}
+                                                <div class="botaoVerticalTransitionTop" onclick="VerticalScrolling('bottom')">
+                                                        &and;
+                                                </div>
+                                            {% endif %}
+                                            {% if count > 5 %}
+                                                <div class="botaoVerticalTransitionBottom" onclick="VerticalScrolling('top')">
+                                                        &or;
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                        
+                                    </div>
+
+                                    {% if product.variants.sku.Tamanho|length >= 2 %}
+                                        {% for key,product_image in product.variants.sku.Tamanho %}
+                                            <div class="carousel-gallery carousel-trigger-{{ product_image.id }}" style="display: none;">
+                                                {% for key2,product_img in product_image.images %}
+                                                    {% set count = count + 1 %}
+                                                    <a href="#" data-image="{{ product_image.full }}" class="itrigger-{{ product.id }}" data-zoom-image="{{ product_image.full }}" alt="{{ product.name }}" title="{{ product.name }}">
+                                                        <img style="width:100%;" src="{{ product_image.medium }}" alt="{{ product.name }}">
+                                                    </a>
+                                                    {% if count > 5 %}
+                                                        <div class="botaoVerticalTransitionTop" onclick="VerticalScrolling('top')">
+                                                                &and;
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if count > 5 %}
+                                                        <div class="botaoVerticalTransitionBottom" onclick="VerticalScrolling('bottom')">
+                                                                &or;
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        {% endfor %} 
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                            <div class="col-md-10 col-sm-10 noSpacing full-lateral">
+
+                                {% if product.video %}
+                                <iframe width="560" height="315" src="{{ product.video }}" frameborder="0" allowfullscreen></iframe>
+                                {% endif %}
+
+                                <div class="container-imagem">
+                                    <figure>
+                                        <img src="{{ product.images[0].full }}" data-zoom-image="{{ product.images[0].full }}" class="zoom" alt="{{ product.name }}">
+                                    </figure>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    {% endif %}
+                {% endif %}
+                    <!-- /Galeria -->
             </div>
-            <div id="Comentarios" class="tabcontent">
-                <div class="product_Info">
-                    <div class="product_Title"> 
-                        <h1>COMENTÁRIOS</h1>
+
+            <div class="col-sm-7 col-md-7 col-lg-7 noSpacing" id="cProductDescription" >
+
+                <div class="row product_Share">
+                    <div class="col-sm-4 noSpacing product_ShareTextArea"  >
+                        <span onclick="javascript:window.history.go(-1)" class="product_ShareText" style="cursor: pointer;padding-left:15px;">&lsaquo; CONTINUAR COMPRANDO</span>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-7 noSpacing product_ShareTextArea"  >
+                            <div class="product_ShareText" style="cursor: pointer;">COMPARTILHAR</div>
+                            <div class="product_ShareArea">                        
+                                {{ productHelper.social() }}
+                            </div>
+                    </div>                
+                </div>
+
+                <div id="Comprar" class="row tabcontent" >
+
+                    <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
+                    
+                        <div class="product_Info">
+                            <div class="product_Title"> 
+                                <h1>{{ product.name }}</h1>
+                                <h3>COD {{ product.id }}</h3>
+                            </div>
+                        </div>
+                        <div class="product_Price">
+                            <div class="row noMargin">   
+                                <div class="col-sm-12 noSpacing">                     
+
+                                    <div class="col-sm-9 noSpacing">
+                                        {% element 'snippets/productPrice' {"product": product} %} 
+                                    </div>
+                                </div>
+                            </div>
+                            <p data-toggle="modal" data-target="#myModal" data-modal-width="600px" style="color:#0099cc !important; cursor:pointer; " >
+                                Formas de pagamento
+                            </p>
+                        </div>
                         
-                        <div class="board">
-                            {% element 'product/comments' %}
+                        
+                        <div class="product_Cart">
+                            <div class="row noMargin" >
+                                <div class="col-sm-12 noSpacing">    
+                                    <div class="col-sm-12 noSpacing">
+                                        
+                                        {% if productHelper.variants != '' %}
+                                            
+                                            <div class="product_Variants">
+                                                {{ productHelper.variants() }}
+                                            </div>
+                                            
+                                        {% endif %}
+
+                                    </div>
+
+                                    <div class="col-sm-6 noSpacing product_BuyArea">
+
+                                        {% element 'snippets/qtd-form' {"product": product} %}
+
+                                        {% element 'snippets/buy-form' {"product": product} %}
+
+
+                                        {% if not product.upon_request and product.available %}
+                                        {% endif %}
+                                        {{ productHelper.shipping() }}
+
+                                        {% if product.additional_message %}
+                                        <div class="additional-message">
+                                            {{ product.additional_message }}
+                                        </div>
+                                        {% endif %}
+
+                                        {{ productHelper.wishlist() }}
+                                    </div>
+
+                                </div>
+ 
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="Informacoes" class="tabcontent" >
+                    <div class="product_Info_Informacoes">
+                        <div id="productInfoInformations" style="overflow-y:auto;">
+                            <div class="product_Title"> 
+                                <h1>INFORMAÇÕES</h1>
+                                <h5>DESCRIÇÃO GERAL</h5>
+
+                                <div class="board">
+                                    <div class="board_htm description">
+                                        {{ product.description ? product.description : product.description_small }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div id="Medidas" class="tabcontent" >
+                    <div class="product_Info_Informacoes">
+                        <div class="row noSpacing noMargin">
+                            <div class="col-sm-5">
+                                <div class="product_Title">
+                                    <h1 class="Titlemedidas"> Tabela de Medidas </h1>
+                                    <h3 class="medidas"> {{ product.name }} </h3>
+                                </div>
+                                <img class="img-responsive" src="{{ asset('img/tabela_medidas.jpg') }}" alt="" />
+                            </div>
+                            <div class="col-sm-6">
+                                <img class="img-responsive" src="{{ asset('img/camiseta_medidas.jpg') }}" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Comentarios" class="tabcontent" style="height:563px !important;">
+                    <div class="product_Info_Informacoes">
+                        <div class="product_Title"> 
+                            <h1>COMENTÁRIOS</h1>
+                            
+                            <div class="board">
+                                {% element 'product/comments' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <a id="linkComprar" onclick="openCity(event, 'Comprar')" class=" active">
+                        <div id="spanComprar" class="tablinks">
+                            <p></p>
+                            <span>COMPRAR</span>
+                        </div>
+                    </a>
+                    <a onclick="openCity(event, 'Informacoes')" >
+                        <div id="spanInfo" class="tablinks">
+                            <p></p>
+                            <span>INFORMAÇÕES</span>
+                        </div>
+                    </a>
+                    <a onclick="openCity(event, 'Medidas')">
+                        <div id="spanMedidas" class="tablinks">
+                            <p></p>
+                            <span>MEDIDAS</span>
+                        </div>
+                    </a>
+                    <a onclick="openCity(event, 'Comentarios')">
+                        <div id="spanComentarios" class="tablinks">
+                            <p></p>
+                            <span>COMENTÁRIOS</span>
+                        </div>
+                    </a>
+                </div>
+
             </div>
-
-
-            <div class="tab">
-                <a id="linkComprar" onclick="openCity(event, 'Comprar')" class=" active">
-                    <div id="spanComprar" class="tablinks">
-                        <p></p>
-                        <span>COMPRAR</span>
-                    </div>
-                </a>
-                <a onclick="openCity(event, 'Informacoes')" >
-                    <div id="spanInfo" class="tablinks">
-                        <p></p>
-                        <span>INFORMAÇÕES</span>
-                    </div>
-                </a>
-                <a onclick="openCity(event, 'Medidas')">
-                    <div id="spanMedidas" class="tablinks">
-                        <p></p>
-                        <span>MEDIDAS</span>
-                    </div>
-                </a>
-                <a onclick="openCity(event, 'Comentarios')">
-                    <div id="spanComentarios" class="tablinks">
-                        <p></p>
-                        <span>COMENTÁRIOS</span>
-                    </div>
-                </a>
-            </div>
-
+            
         </div>
-        
-    </div>
+
+    {% endif %}
 
     {% if product.related_products %}
+        {% if utils.is_mobile %}
+            <div class="row">
+                <div class="product_RelatedArea">
+                    <div class="product_RelatedTitle">
+                        <h3>QUEM VIU, TAMBÉM CURTIU</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row product-list" id="product-list-mobile" style="overflow-x:scroll;">
+                <div class="areaProductRelated" style="width:200%">
+                    {% for related in product.related_products %}
+                        {% element 'snippets/productRelatedMobile' {"product": related} %}                    
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row noSpacing noMargin" style="position:relative; top:-12px; z-index:999; background:#fff;">
+                <div onclick="HorizontalScrolling('margin-right')" class="col-xs-6 noSpacing" style="padding:5%; border-top:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd">
+                    <img src="{{ asset('img/assets/banners/barraEsquerda.png') }}" />
+                </div>
+                <div onclick="HorizontalScrolling('margin-left')" class="col-xs-6 noSpacing" style="padding:5%; border-top:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd; border-left: 1px solid #cdcdcd;">
+                    <img src="{{ asset('img/assets/banners/barraDireita.png') }}" style="float: right;" />
+                </div>
+            </div>
+        {% else %}
+            <script type="text/javascript">
+                jQuery(document).on('ready', function () {
+                    jQuery(".regular").slick({
+                        dots: true,
+                        infinite: true,
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        responsive: [
+                            {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                            }]
+                    })
+                });
+            </script>
+            <style>
+                .areaProdutos {
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                }
+                .slick-next, .slick-prev {
+                    font-size: 0;
+                    line-height: 0;
+                    top: -6.2%;
+                    -webkit-transform: translate(0,-50%);
+                    -ms-transform: translate(0,-50%);
+                    transform: translate(0,-50%);
+                    cursor: pointer;
+                    color: transparent;
+                    border: none;
+                    outline: 0;
+                    background: 0 0;
+                }
+                .slick-prev {
+                    left:30%;
+                    z-index: 1;
+                }
+                .slick-prev:before {
+                    content: '' !important;
+                }
+                .slick-next {
+                    right: 30%;
+                }
+                .slick-next:before {
+                    content: '' !important;
+                }
+                
+            </style>
 
-    <div class="row">
-        <div class="product_RelatedArea">
-            <div class="product_RelatedTitle">
-                <h3>QUEM VIU, TAMBÉM CURTIU</h3>
+            <div class="row noMargin noSpacing">
+
+                <div class="row noMargin noSpacing" style="background:#000;">
+                    <div class="product_RelatedArea">
+                        <div class="product_RelatedTitle">
+                            <h3>QUEM VIU, TAMBÉM CURTIU</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="areaTotal">
+                    <div class="areaProdutos">
+                        
+                        {% if product.related_products|length > 0 %}
+
+                            <div class="catalog-content row" style="margin-left: 0px; margin-right: 0px;">
+
+                                <section class="regular slider">
+                                    {% for products in product.related_products %}
+                                        <div>
+                                            <a href="{{ products.link }}">
+                                                <div class="areaProdutoRelacionado">
+                                                    {% if products.images %}
+                                                        <img src="{{ products.images[0].full }}" alt="{{ products.name }}">
+                                                    {% else %}
+                                                        <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100">
+                                                    {% endif %}
+                                                </div>
+                                                <div class="prd_AreaInfo">
+                                                    <div class="product-name" itemprop="name">
+                                                        <h4>{{ products.name }}</h4>
+                                                    </div>
+                                                    
+                                                    <div class="product-price-catalog">
+                                                        {% element 'snippets/priceCatalog' {"product": products} %}
+                                                    </div>
+                                                
+                                                    <div class="product-payment-catalog">
+                                                        {{ products.payment }}
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                                
+                                    {% endfor %}
+                                </section>
+
+                            </div>
+
+                            {% else %}
+
+                            <div class="catalog-empty">
+                                <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
+                                <p>Nenhum produto encontrado nessa categoria.</p>
+                            </div>
+
+                        {% endif %}
+                        
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
-    <div class="row product-list">
-        {% for related in product.related_products %}
-            <div class="col-sm-3 product">
-                {% element 'snippets/product' {"product": related} %}
-            </div>
-        {% endfor %}
-    </div>
+        {% endif %}
 
 
     {% endif %}
 
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document" >
+            <div class="modal-content">
+                <div class="modal-header" style="padding: 11px 11px 30px 11px !important;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row noMargin noSpacing" >
+                        <div class="col-sm-6 col-md-6" >
+                            <h5> <b> A Vista </b> </h5>
+                            {% for payment in paymentMethods.order %}
+                                <img src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}">
+                                <p>
+                                    {{ payment.display_name }} <br>
+
+                                </p>
+                            {% endfor %}
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <h5> <b>A Prazo</b> </h5>
+                            {% for payment in paymentMethods.credit %}
+                                <img src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}">
+                                <p>
+                                    {{ payment.display_name }}     <br>                         
+                                </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </section>
 
-<script>    
-    jQuery(window).resize(function () {
+<style>
+    #cProductDescription{ 
+        margin-left:-3px;
+    }
+    @media (min-width: 1450px) {
+        #cProductDescription{ 
+            margin-left:-3px;
+        }        
+    }
+</style>
+
+<script>
+    var ScrollGaleria = 0;
+    var scrollGalleriaMobile = 0;
+
+    /*jQuery(window).resize(function () {
         ajustaTela();
-    });
+    });*/
 
     (function (jQuery) {
         jQuery(document).ready(function () {
             ajustaTela();
+            ajustarThumbs();
         })
 
         jQuery(".texto_variacao h2").text("Tamanho");
@@ -250,16 +611,65 @@
 
     function ajustaTela() {
         document.getElementById('Comprar').style.display = "block";
-        var altura = jQuery("#areaImagem").height() - jQuery(".product_Share").height() - 12;
-        jQuery("#Comprar").height(altura);
-        jQuery("#Informacoes").height(altura);        
-        jQuery("#Medidas").height(altura);   
-        jQuery("#Comentarios").height(altura);   
+        var widthScren = $( document ).width();
+        
+        var altura = jQuery(".container-imagem").height() - 50;
+        var alturaComprar = jQuery("#Comprar").height();
+
+        var alturaInfo = altura - 32;
+        var alturaMedidas = altura - 32;
+        var alturaMedidasInformations = altura - 75;
+        var alturaComent = altura - 32;
+
+       if(widthScren > 1400) {
+            jQuery("#Comprar").height('872');
+            jQuery("#Informacoes").height('841');
+            jQuery("#productInfoInformations").height('800');
+            jQuery("#Medidas").height('841');
+            jQuery("#Comentarios").height('841');   
+        }
+
+        if(alturaComprar < altura) {
+            jQuery("#Comprar").height(altura);
+            jQuery("#Informacoes").height(alturaInfo);
+            jQuery("#productInfoInformations").height(alturaInfo);
+            jQuery("#Medidas").height(alturaMedidas);
+            jQuery("#Comentarios").height(alturaComent);   
+        }
+    }
+    
+    function ajustarThumbs() {
+        var widthScren = $( document ).width();
+        
+        if(widthScren > 1400) {
+            var alturathumbs = 918;
+        }
+        if(widthScren > 767 && widthScren < 1400) {
+            var alturathumbs = 646;
+        }
+
+        if (jQuery(".container-imagem").height() === null)
+        {
+            altura = alturathumbs;
+        }
+        else
+        {
+            altura = jQuery(".container-imagem").height();
+        }
+
+        if(altura < alturathumbs) {
+            alturathumbs = alturathumbs;
+        }
+
+        //jQuery(".thumbs-vertical .carousel-gallery").height(altura);
+        jQuery(".thumbs-vertical .carousel-gallery").css("height", altura+"px");
+        /*jQuery("#product-gallery-box").css("height", alturathumbs);
+        jQuery(".product-gallery").css("height", alturathumbs);*/
     }
 
     function openCity(evt, cityName) {
         // Declare all variables
-        var i, tabcontent, tablinks;
+        var i, tabcontent, tablinks, tabcontentMobile, tablinksMobile;
 
         // Get all elements with class="tabcontent" and hide them
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -267,14 +677,64 @@
             tabcontent[i].style.display = "none";
         }
 
+        tabcontentMobile = document.getElementsByClassName("tabcontentMobile");
+        for (i = 0; i < tabcontentMobile.length; i++) {
+            tabcontentMobile[i].style.display = "none";
+        }
+
         jQuery(".tab a").each(function(e) {
             if (this.className === " active")
                 this.className = "";
         });
+        jQuery(".tabMobile a").each(function(e) {
+            if(this.className === " active")
+            this.className = "";
+        })
 
         // Show the current tab, and add an "active" class to the button that opened the tab
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
     }
+
+    function VerticalScrolling(lado) {
+        var tamanhoRoll = jQuery(".itrigger-23 img").height();
+
+        if(lado == 'top') {
+            if(ScrollGaleria < 508) {
+                    ScrollGaleria = ScrollGaleria+tamanhoRoll;
+                    
+                jQuery(".carousel-gallery").scrollTop(ScrollGaleria);
+
+                jQuery(".botaoVerticalTransitionTop").css("margin-top", ScrollGaleria+"px");
+                jQuery(".botaoVerticalTransitionBottom").css("margin-top", ScrollGaleria+"px");
+            }
+        } else {
+            if(ScrollGaleria > 0) {
+                ScrollGaleria = ScrollGaleria-tamanhoRoll;
+                jQuery(".carousel-gallery").scrollTop(ScrollGaleria);
+
+                jQuery(".botaoVerticalTransitionTop").css("margin-top", ScrollGaleria+"px");
+                jQuery(".botaoVerticalTransitionBottom").css("margin-top", ScrollGaleria+"px");
+            }
+        }
+        console.log(ScrollGaleria);
+
+    }
+
+    function HorizontalScrolling(lado) {
+        var tamanhoRoll = jQuery(".areaProdutoRelacionado img").width();
+
+        if(scrollGalleriaMobile < -1 || scrollGalleriaMobile > 400)
+            scrollGalleriaMobile = 0;
+
+        if(lado == "margin-left"){
+            scrollGalleriaMobile = scrollGalleriaMobile+tamanhoRoll;
+            jQuery("#product-list-mobile").scrollLeft(scrollGalleriaMobile);
+        } else {
+            scrollGalleriaMobile = scrollGalleriaMobile-tamanhoRoll;
+            jQuery("#product-list-mobile").scrollLeft(scrollGalleriaMobile);
+        }
+        
+    }
+
 </script>
- 

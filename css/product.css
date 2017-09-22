@@ -63,8 +63,8 @@
 .thumbs-vertical ul.thumbs-vertical-slide button.slick-next.slick-disabled svg.bcd-icon-arrow-right{fill:#595959;}
 
 
-.container-imagem{text-align:center; margin-left:96px;}
-.container-imagem>div{max-width:100%; padding:0 0 5px; margin-bottom:10px; position:relative;}
+/*.container-imagem{text-align:center; margin-left:96px;}
+.container-imagem>div{max-width:100%; padding:0 0 5px; margin-bottom:10px; position:relative;}*/
 
 .zoomContainer{z-index:2 !important;}
 
@@ -269,7 +269,7 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
 
 
 /* -----------------------------------------------
-    Botão Comprar
+    Botï¿½o Comprar
 ----------------------------------------------- */
 #bt_comprar{text-align:center !important; margin:0 !important;}
 #bt_comprar button{width:100%; border:0 !important; background:none; outline:0;}
@@ -286,7 +286,7 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
 
 
 /* -----------------------------------------------
-    Star Ranks - Avaliação do Produto
+    Star Ranks - Avaliaï¿½ï¿½o do Produto
 ----------------------------------------------- */
 #direita .duvidasDescricaoProduto{margin:20px 0 0;}
 #direita .duvidasDescricaoProduto li{display:inline-block; vertical-align:middle; min-height:65px;}
@@ -329,7 +329,7 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
 .comentarioDescricaoProd a:hover{color:#232323;}
 
 /* -----------------------------------------------
-    Abas - Descrição / Pgto / Comentário
+    Abas - Descriï¿½ï¿½o / Pgto / Comentï¿½rio
 ----------------------------------------------- */
 #ProdBlock{padding-bottom:0 !important; border-bottom:0 !important; margin:50px 0 !important;}
 #ProdBlock > div{border:0 !important;}
@@ -385,7 +385,7 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
 
 
 /* ----------------------------------------------------------
-        #Showcase Pg. Descrição Produto
+        #Showcase Pg. Descriï¿½ï¿½o Produto
 ----------------------------------------------------------- */
 .showcase-produto{padding:0 0 15px 15px; border-top:1px solid #232323;}
 .showcase-title-produto{font:500 55px/55px 'Oswald', sans-serif;text-transform: uppercase;padding:5px 0;color:#232323; text-align:center;}
@@ -467,7 +467,7 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
 
 
 /* ----------------------------------------------------------
-        #Relacionados - Você Viu?
+        #Relacionados - Vocï¿½ Viu?
 ----------------------------------------------------------- */
 .page-product .products-related > div.row{margin:0;}
 .page-product .products-related .product{margin:15px 0 30px;}
@@ -477,7 +477,7 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
 
 
 /* ----------------------------------------------------------
-        #Variação1
+        #Variaï¿½ï¿½o1
 ----------------------------------------------------------- */
 .page-product #quantidade,
 .page-product .fn,
@@ -504,7 +504,7 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
 .page-product #direita #menuVars .lista_cor_variacao .cor_selecionada,
 .page-product #direita #menuVars .lista_cor_variacao2 .cor_selecionada,
 .page-product #direita #menuVars .lista_cor_variacao3 .cor_selecionada{background-color:#e6e6e6;}
-/* fim da Variação1 */
+/* fim da Variaï¿½ï¿½o1 */
 
 
 
@@ -586,11 +586,11 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
         #Media Queries - Layout Responsive
 ----------------------------------------------------------- */
 @media all and (min-width:992px ) and (max-width:1200px) {
-/*Descrição Produto*/
+/*Descriï¿½ï¿½o Produto*/
     #direita #info,.produto-calcular-frete #cepbox{width:100% !important; max-width:222px !important;}
     #direita #info a{padding:18px 0px !important;}
     #direita #info a:before{margin:0 8px 0 0 !important;}
-    #direita #info a:after{max-width:138px !important; font-size:12px !important;}
+    /*#direita #info a:after{max-width:138px !important; font-size:12px !important;}*/
     .produto-calcular-frete #cepbox{padding: 7px 0 13px 66px !important;}
     .produto-calcular-frete #cepbox input[id="cep1"]{max-width:84px !important;}
     .produto-calcular-frete #cepbox input[id="cep2"]{max-width:50px !important;}
@@ -635,6 +635,11 @@ h3.product-title{font:800 21px/27px 'Oxygen', sans-serif; margin-bottom:10px; te
 
 
 @media all and (max-width:767px) {
+    blocoAlerta:required{
+        position: absolute;
+        top: 50%;
+    }
+
     .page-product .products-related,
     .page-product .comprejuntoprod{display: none;}
 

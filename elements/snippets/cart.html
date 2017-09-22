@@ -1,13 +1,13 @@
 <div class="cartArea">
     <div class="fly_header">
-            <div class="col-sm-6">
-                <div class="flyMenu Selected" id="tabLogin">
+            <div class="col-sm-12" style="padding-left:2px;padding-right:2px;">
+                <div class="flyMenu Selected" id="tabLogin" style="height:15px;">
                     <div class="flyMenuOption" onclick="showTab('tabLogin', 'tabCreateAccount', 'areaLogin', 'areaCreateAccount')">
                         <span>CARRINHO</span>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <!--<div class="col-sm-6">
                     <div class="flyMenu UnSelected" id="tabCreateAccount">
                         <a href="{{ links.wishlist }}">
                             <div class="flyMenuOption">
@@ -15,7 +15,7 @@
                             </div>
                         </a>
                     </div>
-            </div>
+            </div>-->
     </div>
     <div class="noCart">
         <h4>Não há itens no seu carrinho</h4>
@@ -40,7 +40,9 @@
             <a href="{{ links.cart }}">
                 <h4>Ir para Carrinho</h4>
             </a>
-        </div>       
+        </div>
+        <div class="cartButton2">
+        </div>
     </div>
 </div> 
 
@@ -48,7 +50,7 @@
     (function (jQuery) {
         // cart products
         jQuery.getJSON( "/mvc/store/cart/count?loja=549520", function( data ) {
-                console.log(data);
+             //   console.log(data);
                 var cartItem,
                     cartItemHtml = '',
                     totalItemsCart = data.cart.Products.length;

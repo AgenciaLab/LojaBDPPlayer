@@ -38,9 +38,11 @@ jQuery(document).ready(function(){
             }
         }
     ]
-    });
+});
 
+var heightGalleryBox = jQuery(".container-imagem").height;
 
+jQuery(".thmb-vertical").css("margin-bootom", "13px");
 
 
 });

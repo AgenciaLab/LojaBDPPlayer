@@ -1,9 +1,9 @@
 <div class="mnu_Area">
     <div class="mnu_GroupLink">
-        <ul class="mnu_Links">
+        <ul class="mnu_Links" >
             <li>
                 <a onclick="closeMenu()">
-                    <div class="mnu_AreaLinks">
+                    <div class="mnu_AreaLinks" onmouseover="CloseAllSubMenuTabs()">
                         <div class="mnu_Link">
                             <img src="{{ asset('img/assets/btnClose.png') }}'" alt="" />
                             <span>FECHAR</span>
@@ -14,5 +14,5 @@
             {% element 'snippets/categories' {"categories": categories} %}
         </ul>
     </div>
-    
+    <div class="borderMenu"> &nbsp; </div>
 </div> 

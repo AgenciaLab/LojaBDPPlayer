@@ -1,62 +1,58 @@
+
 <div class="visible-xs">
-    <div class="fly_AreaMobile" onmouseleave="hideLoginMobile()">
-        <div class="fly_header">
-            <div class="col-xs-6">
-                <div class="flyMenu Selected" id="tabLogin">
-                    <div class="flyMenuOption" onclick="showTab('tabLogin', 'tabCreateAccount', 'areaLogin', 'areaCreateAccount')">
+<div class="fly_AreaMobile"> <!--onmouseleave="hideLogin()"-->
+
+    <form action="/loja/login_layout.php?loja={{ store.id }}&login=1&origem=central" method="post" name="form_login">
+        <div class="fly_header ">
+
+
+
+            <div class="col-xs-6" >
+                <div class="flyMenu Selected" id="tabLogin2"  >
+                    <div class="flyMenuOption" onclick="showTab('tabLogin2', 'tabCreateAccount2', 'areaLogin2', 'areaCreateAccount2')">
                         <span>LOGIN</span>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6">
-                    <div class="flyMenu UnSelected" id="tabCreateAccount">
-                        <div class="flyMenuOption" onclick="showTab('tabCreateAccount', 'tabLogin', 'areaCreateAccount', 'areaLogin')">
-                            <span>CRIAR CONTA</span>
-                        </div>
+
+
+            <div class="col-xs-6" >
+                    <div class="flyMenu UnSelected" id="tabCreateAccount2">
+                            <div class="flyMenuOption"  onclick="showTab('tabCreateAccount2', 'tabLogin2', 'areaCreateAccount2', 'areaLogin2')"  >
+                                <span>CRIAR CONTA</span>
+                            </div>
                     </div>
             </div>
         </div>
-        <div class="fly_Body" id="areaLogin">
-            <div id="flyOut_LoginArea" class="fly_AreaInput">
-                <form action="#" method="post" name="form_login">
-                    <input name="email_login" type="email" class="form-control" placeholder="Email">
-                    <input name="senha_login" type="password" class="form-control" placeholder="Senha">
 
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Lembrar ?
-                        </label>
+        <div class="fly_Body" id="areaLogin2" >
+            <div id="flyOut_LoginArea" class="fly_AreaInput" >
+                <form action="#" method="post" name="form_login">
+                    <input name="email_login" type="email" class="form-control" placeholder="Email" style="padding-top:13px; margin-left:5px;">
+                    <input name="senha_login" type="password" class="form-control" placeholder="Senha" style="padding-top:5px; margin-left:5px;">
+
+                    <div style="padding-top:10px; margin-left:5px;">
                     </div>
 
-                    <button type="submit">LOGIN</button>
+                    <button type="submit" style="padding-top:15px; margin-left:5px;">LOGIN</button>
 
-                    <a><span>Esqueceu sua senha?</span></a>
                 </form>
             </div>
         </div>
 
-        <div class="fly_Body" id="areaCreateAccount" style="display: none;">
-            <div id="flyOut_LoginArea" class="fly_AreaInput">
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome">
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
-                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Senha">
-                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Confirme Senha">
 
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Receber novidades por e-mail
-                    </label>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-8">
-                        <button class="buttonFb"> ENTRAR COM FACEBOOK </button>
-                    </div>
-                    <div class="col-md-4">
-                        <button> Criar Conta </button>
-                    </div>
-                </div>
+
+        <div class="fly_Body" id="areaCreateAccount2" style="display:none" >
+            <div id="flyOut_LoginArea" class="fly_AreaInput" >
+                <form action="https://www.bdplayer.com.br/loja/cadastro_layout.php?loja=549520&frete=&origem=logout&IdProd=" method="POST" name="cadastro_pre_insercao">
+                    <input type="email" name="email_cadastro" id="email_cadastro" maxlength="100"  class="form-control" placeholder="Email" style="margin-top:13px; margin-left:5px;">
+
+                      <button type="submit" style="margin-top: 5px;margin-left:5px;">Cadastre-se</button>
+
+                </form>
             </div>
         </div>
-    </div>
+    </form>
+</div>
 </div>

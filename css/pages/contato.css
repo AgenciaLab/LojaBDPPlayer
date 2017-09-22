@@ -1,0 +1,41 @@
+.paginaConteudo {
+    margin: 28px 4.6%;
+}
+p {
+    line-height: 17px;
+}
+.container3 {
+    margin: 10px 0;
+}
+.container2 .board {
+    margin: 10px 0;
+}
+.container2 .board h3 {
+    line-height: 35px;
+}
+.msg-obriga {
+    margin: 15px 0;
+}
+input {
+    margin: 0;
+}
+textarea {
+    -webkit-appearance: none;
+    color: #000;
+    font: inherit;
+    background-color: #fff;
+    margin: 0px 30px 0px 20px;
+    padding: 5px;
+    float: none;
+    border: 0;
+    width: auto !important;
+    height: 60px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+.board span.block {
+    margin: 10px 0;
+}
+.rdp_submit {
+    margin-top: 0px !important;
+}

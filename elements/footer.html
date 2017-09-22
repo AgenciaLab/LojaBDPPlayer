@@ -1,86 +1,200 @@
 {% set checkout = "checkout" in pages.current ? "true" : "false" %}
 <footer>
 
-    <div class="rdp_Area" style="margin-top: 20px">
-        <div class="rdp_Container">
-            <div class="row">
-                <div class="rdp_ConteudoPrimary">
-                    <div class="noSpacing col-md-12">
-                        <div class="col-md-5">
-                            <div class="noSpacing col-md-5">
-                                <span>FALE COM A GENTE</span>
-                                <h4>14 3602 0000</h4>
-                                <h5>SEG A SEX DAS 8H30 ÁS 16H30</h5>
-                                <h5>sac@bdplayer.com.br</h5>
+    <div class="rdp_Area rdp_Area1">
+
+        <div class="rdp_Container rdp_Container1 backgroundmob">
+
+            <div class="noSpacing row borda backgroundmob">
+
+                <div class=" noSpacing rdp_ConteudoPrimary rdp_ConteudoPrimary1 backgroundmobs">
+
+                    <div class="noSpacing col-md-12 rdp_ConteudoPrimary1">
+
+                        <div class="col-md-4 newslettermobile"  >
+                            <div class="rdp_AreaLinksSection noSpacing col-md-12">
+                                <form   action="{{ links.newsletter }}" method="POST" class="rdp_form" style="margin-top:2px;">
+                                <span style="font-size: 13pt;">CADASTRE-SE PARA RECEBER </span>
+                                <h5 style="font-size: 10pt;">AS NOVIDADES E GANHAR DESCONTOS!</h5>
+                                <div class="input-group">
+                                    <input class="form-control rdp_email" name="email" type="text"  placeholder="Digite seu e-mail aqui" >
+                                    <span class="input-group-btn" >
+                                         <button type="submit" class="rdp_submit">GO!</button>
+                                    </span>
+                                </div>
+                                </form>
                             </div>
-                            <div class="rdp_AreaRedes noSpacing col-md-5">
+                        </div>
+
+                        <div class="noSpacing col-md-4 rdp_ConteudoPrimary1 ">
+                            <div class="noSpacing col-md-6 rdp_espacamento bordamobile" >
+                                <span>FALE COM A GENTE</span>
+                                 <h4>{{ Translation('ag_telefone_1') }}</h4>
+                                <h5 style="font-size:11pt;">SEG A SEX DAS 8H30 ÁS 16H30</h5>
+
+                                <h5 style="font-size:13pt; font-weight: bolder;"><a href="mailto:{{ Translation('ag_email_1') }}">{{ Translation('ag_email_1') }}</a></h5>
+                            </div>
+                            <div class="rdp_AreaRedes noSpacing col-md-6 rdp_espacamento bordamobile hidden-xs"   >
                                 <span>CONECTE-SE</span>
-                                <h5>BDP PLAYER NAS REDES SOCIAIS</h5>
+                                <h5>BDPLAYER NAS REDES SOCIAIS</h5>
                                 <div class="rdp_AreaImagens">
-                                    <div class="noSpacing col-xs-3">
+                                    <div class="col-xs-3" style="padding-left:5px; padding-right:0px;">
                                         <img class="img-responsive" src="{{ asset('img/assets/icons/iconFacebook.png') }}" alt="" />
                                     </div>
-                                    <div class="noSpacing col-xs-3">
+                                    <div class="col-xs-3" style="padding-left:5px; padding-right:0px;">
                                         <img class="img-responsive" src="{{ asset('img/assets/icons/iconInstagram.png') }}" alt="" />
                                     </div>
-                                    <div class="noSpacing col-xs-3">
+                                    <div class="col-xs-3" style="padding-left:5px; padding-right:0px;">
                                         <img class="img-responsive" src="{{ asset('img/assets/icons/iconTwitter.png') }}" alt="" />
                                     </div>
-                                    <div class="noSpacing col-xs-3">
+                                    <div class="col-xs-3" style="padding-left:5px; padding-right:0px;">
                                         <img class="img-responsive" src="{{ asset('img/assets/icons/iconPininterest.png') }}" alt="" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2"></div>
+                            <div class="rdp_AreaRedes noSpacing col-md-6 rdp_espacamento bordamobile visible-xs">
+                                <span>CONECTE-SE</span>
+                                <h5>BDPLAYER NAS REDES SOCIAIS</h5>
+                                <div class="rdp_AreaImagens">
+                                    <div class="col-xs-3" style="padding-left:5px; padding-right:0px;">
+                                        <img class="img-responsive" src="{{ asset('img/assets/icons/iconFacebookMob.png') }}" alt=""  style="width:75%;"/>
+                                    </div>
+                                    <div class="col-xs-3" style="padding-left:5px; padding-right:0px;">
+                                        <img class="img-responsive" src="{{ asset('img/assets/icons/iconInstagramMob.png') }}" alt="" style="width:75%;"/>
+                                    </div>
+                                    <div class="col-xs-3" style="padding-left:5px; padding-right:0px;">
+                                        <img class="img-responsive" src="{{ asset('img/assets/icons/iconTwitterMob.png') }}" alt="" style="width:75%;"/>
+                                    </div>
+                                    <div class="col-xs-3" style="padding-left:5px; padding-right:0px;">
+                                        <img class="img-responsive" src="{{ asset('img/assets/icons/iconPininterestMob.png') }}" alt="" style="width:75%;"/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="noSpacing col-md-7">
-                            <div class="rdp_AreaLinksSection noSpacing col-md-2">
+
+                        <div class="noSpacing col-md-4 borda_central desktop">
+                            <div class="rdp_AreaLinksSection noSpacing col-md-4 espacamento_coluna1">
                                 <span>DUVIDAS</span>
-                                <h5>ENTREGAS</h5>
-                                <h5>PAGAMENTOS</h5>
-                                <h5>TROCAS E DEVOLUÇÕES</h5>
-                                <h5>SEGURANÇA</h5>
+                                <h5><a href="{{ links.send }}">ENTREGAS</a> </h5>
+                                <h5><a href="{{ links.payment }}">PAGAMENTOS</a></h5>
+                                <h5> <a href="{{ links.warranty }}">TROCAS E DEVOLUÇÕES</a></h5>
+                                <h5><a href="{{ links.warranty }}">SEGURANÇA</a></h5>
                             </div>
-                            <div class="rdp_AreaLinksSection noSpacing col-md-2">
+                            <div class="rdp_AreaLinksSection noSpacing col-md-3 espacamento_coluna2">
                                 <span>INSTITUCIONAL</span>
-                                <h5>A MARCA</h5>
-                                <h5>CADASTRE-SE</h5>
-                                <h5>PEDIDOS</h5>
-                                <h5>CONTATO</h5>
+                                <h5><a href="{{ links.company }}">A MARCA</a></h5>
+                                <h5><a href="{{ links.register }}">CADASTRE-SE</a></h5>
+                                <h5> <a href="{{ links.orders }}">PEDIDOS</a> </h5>
+                                <h5> <a href="{{ links.contact }}">CONTATO</a> </h5>
                             </div>
-                            <div class="rdp_AreaLinksSection noSpacing col-md-3">
-                                <span>FORMAS PAGAMENTO</span>
-                                <img src="{{ asset('img/assets/cards.jpg') }}" alt="" />
+                            <div class="rdp_AreaLinksSection noSpacing col-md-5 espacamento_coluna3">
+                                <span>FORMAS DE PAGAMENTO</span>
+                               <h5> <img   src="{{ asset('img/assets/cards.jpg') }}" alt="" /> </h5>
                             </div>
-                            <div class="rdp_AreaLinksSection noSpacing col-md-5">
+                        </div>
+
+                        <div class="noSpacing col-md-4 borda_central mobile bordamobile">
+
+                            <div class="rdp_AreaLinksSection noSpacing col-md-6">
+                                <div class="rdp_AreaLinksSection noSpacing col-xs-6 espacamento_coluna1 ">
+                                <span>INSTITUCIONAL</span>
+                                <h5><a href="{{ links.company }}">A MARCA</a></h5>
+                                <h5><a href="{{ links.register }}">CADASTRE-SE</a></h5>
+                                <h5> <a href="{{ links.orders }}">PEDIDOS</a> </h5>
+                                <h5> <a href="{{ links.contact }}">CONTATO</a> </h5>
+                                </div>
+                                <div class="rdp_AreaLinksSection noSpacing col-xs-6 espacamento_coluna2 "  >
+                                <span>DUVIDAS</span>
+                                <h5><a href="{{ links.send }}">ENTREGAS</a> </h5>
+                                <h5><a href="{{ links.payment }}">PAGAMENTOS</a></h5>
+                                <h5> <a href="{{ links.warranty }}">TROCAS E DEVOLUÇÕES</a></h5>
+                                <h5><a href="{{ links.warranty }}">SEGURANÇA</a></h5>
+                                </div>
+                            </div>
+
+                            <div class="noSpacing col-xs-12 espacamento_coluna3 bordamobile">
+                                <span  style="padding-right:20px !important;">FORMAS DE PAGAMENTO</span>
+                                 <img src="{{ asset('img/assets/cards.jpg') }}" alt="" style="width:100%; padding-top:10px;padding-right:10px;" />
+                            </div>
+                        </div>
+
+
+               <div class="noSpacing col-md-12 mobile">
+                    <div class="col-xs-12 rdp_espacamento_baixo  " style="margin:0; padding-left:0px !important; padding-right:0px !important;">
+                        <div class="rdp_Conteudo backgroundmob">
+                            <img src="{{ asset('img/assets/logoRodape.png') }}'" alt="" style="max-width:42%; padding-left:5%;  padding-top:15px;"/>
+                            <div class="rdp_ConteudoTexto   " style="padding-top:15px;float: right; padding-right:5px; margin-left:0px;" >
+                                <h5>OFFICIAL PRODUCTS LICENSED</h5>
+                                <h6>© Bdplayer All Rights Reserved</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="noSpacing col-md-12 mobile">
+                     <div class="col-xs-12 rdp_espacamento_baixo backgroundmob" style="  margin:0; padding-left:0px !important; padding-right:0px !important;">
+                    <div class="rdp_Conteudo backgroundmob " style="height:100px;">
+                        <div class="noSpacing col-xs-6  ">
+                            <div class="rdp_ConteudoTextoB  " >
+                                <h6>Fan Store Entretenimento S.A. </h6>
+                                <h6>BDPLAYER STORE </h6>
+                                <h6>Av. Predro Ometto, 1570 - Vila Narcisa </h6>
+                                <h6>17340-000 - Barra Bonita (SP)</h6>
+                                <h6>CNPJ: 01.424.397/0001-01 </h6>
+                                <h6> Inscrição Estadual: 202.032.630.110</h6>
+                            </div>
+                        </div>
+                        <div class="col-xs-6  " style="padding-top:20px;">
+                            <img class="img-responsive rdp_float_right" src="{{ asset('img/assets/bandup.png') }}" alt="" />
+                        </div>
+                    </div>
+                     </div>
+                </div>
+
+
+
+
+
+                        <div class="col-md-4 newsletterdesktop" >
+                            <div class="rdp_AreaLinksSection noSpacing col-md-12">
+                                <form   action="{{ links.newsletter }}" method="POST" class="rdp_form">
                                 <span>NEWSLETTER</span>
-                                <h5>CADASTRE-SE PARA RECEBER AS NOVIDADES</h5>
+                                <h5>CADASTRE-SE PARA RECEBER AS NOVIDADES E GANHAR DESCONTOS!</h5>
+                                <div class="input-group">
+                                    <input class="form-control rdp_email" name="email" type="text"  placeholder="Digite seu e-mail aqui" >
+                                    <span class="input-group-btn" >
+                                         <button type="submit" class="rdp_submit">GO!</button>
+                                    </span>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="rdp_Faixa row hidden-xs">
-                <div class="col-md-4">
-                    <div class="rdp_Conteudo">
+
+
+
+            <div class="rdp_Faixa row desktop  ">
+                <div class="col-md-5 rdp_espacamento_baixo">
+                    <div class="rdp_Conteudo ">
                         <img src="{{ asset('img/assets/logoRodape.png') }}'" alt="" />
-                        <div class="rdp_ConteudoTexto">
+                        <div class="rdp_ConteudoTexto" >
                             <h5>OFFICIAL PRODUCTS LICENSED</h5>
                             <h6>© Bdplayer All Rights Reserved</h6>
                         </div>
                     </div>
                 </div>
-                <div class="noSpacing col-md-8">
-                    <div class="rdp_Conteudo">
+                <div class="noSpacing col-md-7 rdp_espacamento_baixo1">
+                    <div class="rdp_Conteudo" >
                         <div class="noSpacing col-md-10">
                             <div class="rdp_ConteudoTextoB">
-                                <h6>Fan Store Entretenimento S.A. - BLIZZARD STORE - Av. Predro Ometto, 1570 - Vila Narcisa -
-                                    7340-000 - Barra Bonita (SP)</h6>
+                                <h6>Fan Store Entretenimento S.A. - BDPLAYER STORE - Av. Predro Ometto, 1570 - Vila Narcisa -
+                                    17340-000 - Barra Bonita (SP)</h6>
                                 <h6>CNPJ: 01.424.397/0001-01 - Inscrição Estadual: 202.032.630.110</h6>
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <img class="img-responsive" src="{{ asset('img/assets/bandup.png') }}" alt="" style="float: right" />
+                        <div class="col-md-2" style="margin-top:10px;">
+                            <img class="img-responsive rdp_float_right" src="{{ asset('img/assets/bandup.png') }}" alt="" />
                         </div>
                     </div>
                 </div>

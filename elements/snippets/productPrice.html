@@ -17,8 +17,8 @@
             <div itemprop="offers" class="price-off" itemscope itemtype="http://schema.org/Offer">por R$ {{ product.price_offer|currency  }}</div>
         </div>
         {% else %}
-        <h4>por</h4>
-        <h2 itemprop="priceCurrency" content="BRL"><strong class="product_PriceValue">R$ {{ product.price|currency }}</strong></h2>
+        <h4 style="min-width:100%;">por <strong class="product_PriceValue">R$ {{ product.price|currency }}</strong> </h4> <br>
+        <!--<h2 itemprop="priceCurrency" content="BRL"><strong class="product_PriceValue">R$ {{ product.price|currency }}</strong></h2>-->
         {% endif %}
         {% endif %}
 

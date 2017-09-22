@@ -42,9 +42,9 @@
 .slick-next:hover,
 .slick-next:focus
 {
-    color: transparent;
+    color: #fff;
     outline: none;
-    background: transparent;
+    background: #000;
 }
 .slick-prev:hover:before,
 .slick-prev:focus:before,
@@ -87,7 +87,7 @@
 
 
 /* Dots */
-.slick-slider{margin-bottom: 30px;}
+.slick-slider{/*margin-bottom: 30px;*/}
 
 .slick-dots
 {

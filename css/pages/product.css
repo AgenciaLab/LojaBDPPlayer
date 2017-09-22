@@ -8,56 +8,383 @@ and open the template in the editor.
     Author     : MarceloMacedo
 */
 
-@media (min-width: 768px) and (max-width: 992px)
-{
-    .thumbs-vertical{
-        width:60px; float:left;
-    }
-    .thumbs-vertical .carousel-gallery > a{display:block; margin-bottom:0px;}
-    .container-imagem{
-        text-align:center; margin-left:60px;
-    }
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+li.item-level1 .row {
+    margin: 0 -15px;
+}
 
-    .product_Share {
-        background-color: #333333;
-        width: 100%;
-        height: 30px;
+
+.page-product .product-detail {
+    border: none;
+}
+
+.product_AreaPreviewImage img {
+    margin: 10px auto;
+}
+
+.product_AreaImage img {
+    margin:auto;
+}
+
+
+.container-imagem>div{max-width:100%; padding:0 0 5px; margin-bottom:10px; position:relative;}
+
+.product_Breadcrumb {
+    margin: 20px 0px 0 0;
+}
+.product_Title {
+    margin-bottom: 5px;
+    font-family: OswaldBold;
+}
+
+.page-product #bt_comprar {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.page-product .product-quantity {
+    width: 100% !important;
+}
+
+.product_Quantidade h3 {
+    line-height: 35px;
+    padding: 4px;
+    color: #959595;
+    margin-left: 5px;
+}
+.product_TabelaMedidas a  h3{
+    text-decoration: underline;
+    font-style: italic;
+    border: none;
+}
+
+.product_Quantidade input {
+    float: left;
+    height: 44px;
+    border: none;
+}
+
+.prodBox .board {
+    margin: 0px;
+}
+
+.produto-formas-pagamento a {
+    color: #8d3757 !important;
+    font-weight: 600 !important;
+    background: none !important;
+    text-transform: none !important;
+        font-size: 10pt;
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+
+.page-product .product-buy-button i {
+    display: none;
+}
+
+.product_TabelaMedidas a {
+    position: absolute;
+    z-index: 99;
+    right: 0px;
+}
+
+.board_htm.description p {
+    margin: 0.5em 0;
+}
+
+.prodBox {
+    font-size: 130%;
+    font-family: OxygenRegular;
+    margin: 20px 0px;
+}
+
+.qtminus {
+    display: none;
+}
+
+.qtplus {
+    display: none;
+}
+
+#show_size_and_color_secondary_type {
+    display: none;
+}
+
+#foto_a {
+    margin: auto;
+}
+
+#catalog_OrganizarLbl {
+    color: #433f3f;
+    font: 700 12px 'OxygenRegular',sans-serif;
+}
+
+.noSpacing {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.at-svc-whatsapp, .at-svc-compact {
+    display: none!important;
+}
+
+.at-share-tbx-element .at-share-btn {
+    margin: 0px!important;
+}
+
+#quantidade {
+    border: 1px solid #666;
+}
+
+/* ------------ Apartir daqui conteúdo do Media --> */
+
+.thumbs-vertical{
+    float:left;
+    margin-left: -6px;
+    margin-right: -5px;
+}
+.thumbs-vertical .carousel-gallery > a{display:block; margin-bottom:0px;}
+.thumbs-vertical .carousel-gallery > a{
+    margin-left: -18px;
+    margin-right: -19px;
+}
+.thumbs-vertical .carousel-gallery {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.thumbs-vertical .botaoVerticalTransitionTop {
+    position: absolute;
+    top: 0.5%;
+    left: 22%;
+    font-size: 18px;
+    background: #000;
+    font-weight: 800;
+    padding: 0px 13px 5px 12px;
+    border-radius: 4px;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+}
+.thumbs-vertical .botaoVerticalTransitionBottom  {
+    position: absolute;
+    top: 95.9%;
+    left: 22%;
+    font-size: 18px;
+    background: #000;
+    font-weight: 800;
+    padding: 1px 13px 3px 12px;
+    border-radius: 4px;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+}
+
+#comentario_cliente {
+    margin-top: 15px;
+}
+@media (max-width:768px) {
+    textarea#mensagem_coment {
+        background: #fff;
+        border: 1px solid #999;
+        border-radius: 4px;
+        margin-top: 0px;
+    }
+}
+@media (min-width: 768px) {
+    textarea#mensagem_coment {
+        background: #fff;
+        border: 1px solid #999;
+        border-radius: 4px;
+        margin-top: -29px;
+    }
+}
+input#nome_coment {
+    min-width: 250px;
+    max-width: 250px;
+}
+input#email_coment {
+    min-width: 250px;
+    max-width: 250px;
+}
+#form-comments h5 {
+    padding-top: 10px;
+    line-height: 15px;
+    font-size: 10pt;
+}
+.qtdForm_Area {
+    margin-top: 25px;
+}
+
+.container-imagem{
+    text-align:center;
+}
+    @media (min-width: 1400px) {
+        .container-imagem{
+            margin-left: -2px;
+            margin-right: -2px;
+        }
+
     }
 
     .product_ShareArea {
         float: right;
     }
 
-    .at-icon-wrapper {
-        height: 30px!important;
-        width: 30px!important;
+    @media (min-width: 768px) {
+        .at-icon-wrapper {
+            height: 50px!important;
+            width: 50px!important;
+            padding: 10px;
+        }
+        .product_ShareText {
+            color: #666;
+            font-family: OswaldBold;
+            padding-left: 25%;
+            line-height: 47px;
+            font-size: 13pt;
+            margin: auto;
+            right: 0px;
+            text-align: right;
+            float: left;
+        }
+        .product_Share {
+            background-color: #333333;
+            width: 100%;
+            height: 50px;
+        }
+        .product_Info {
+            margin: 30px 40px;
+        }
+        .product_Info {
+            margin: 3%;
+        }
+        .product_Info_Informacoes {
+            margin-left: 7%;
+            margin-top: 32px;
+        }
+
+        .product_Price {
+            margin: 3% 3%;
+        }
+        .product_Title h3 {
+            font-family: OxygenRegular;
+            text-transform: uppercase;
+            font-size: 12pt;
+            line-height: 20px;
+            float: left;
+        }
+        .product_WishList {
+            float: left;
+            font-size: 10pt;
+            text-decoration: underline;
+            font-family: OswaldRegular;
+            margin: 15.5% 5px 0px 20%;
+            width: 80%;
+            color: #000;
+
+        }
+    }
+    @media (max-width: 768px) {
+        .prd_AreaInfo span {
+            font-size: 16pt;
+            font-family: OswaldBOld;
+            color: #0099cc;
+            line-height: 22px;
+        }
+        .at-icon-wrapper {
+            height: 40px!important;
+            width: 35px!important;
+            padding: 5px 5px 5px 3px;
+        }
+        .product_ShareText {
+            color: #666;
+            font-family: OswaldBold;
+            line-height: 41px;
+            font-size: 9pt;
+            margin: auto;
+            right: 0px;
+            text-align: right;
+            float: left;
+        }
+        .product_Share {
+            background-color: #333333;
+            width: 100%;
+            height: 40px;
+        }
+        .product_Info {
+            margin: 0 7%;
+            margin-bottom: 8%;
+        }
+        .product_Info_Informacoes {
+            margin-left: 0 7%;
+            margin-top: 32px;
+        }
+
+        .product_Price {
+            margin: 0 7%;
+        }
+        .product_Title h3 {
+            font-family: OxygenRegular;
+            text-transform: uppercase;
+            font-size: 8pt;
+            float: left;
+        }
+        .texto_variacao, .varTit {
+            padding: 10px 0 !important;
+        }
+        .texto_Quantidade {
+            margin-bottom: 5px;
+        }
+        .page-product #quantidade {
+            max-width: 120px;
+        }
+        .product_WishList {
+            float: left;
+            font-size: 11pt;
+            text-decoration: underline;
+            font-family: OswaldRegular;
+            margin: 2% 0px;
+            width: 100%;
+            text-align: center;
+            color: #000;
+
+        }
+    }
+
+
+
+    @media (min-width: 1450px) {
+        .product_Info {
+            margin: 5%;
+        }
+        .product_Price {
+            margin: 7% 5%;
+        }
     }
 
     .at-icon {
         height: 30px!important;
         width: 30px!important;
     }
-    .product_ShareText {
-        color: #666;
-        font-family: OswaldBold;
-        line-height: 30px;
-        font-size: 7pt;
-        margin: auto;
-        right: 0px;
-        text-align: right;
-        float: left;
-    }
-    .product_Info {
-        margin: 30px 40px;
-    }
 
     .product-name {
         font-family: OswaldBold;
-        font-size: 12pt; 
+        font-size: 12pt;
         margin-bottom: 5px;
         color: #000;
         text-transform: uppercase;
-        height: 35px; 
+        text-align: left;
+    }
+    .product-price-catalog {
+        text-align: left;
     }
 
     .prd_AreaInfo .product-payment span, .product-payment {
@@ -85,24 +412,46 @@ and open the template in the editor.
     }
 
     .product_Title h5 {
-        line-height: 60px;
-        font-size: 10pt;
+        line-height: 30px;
+        font-size: 15pt;
         color: #666666;
         font-family: OswaldBold;
+        padding-top: 5px;
     }
 
-    .product_RelatedTitle h3 {
-        color: #fff;
-        font-size: 18pt;
-        font-family: OswaldRegular;
-        line-height: 85px;
-        margin: auto;
-        float: inherit;
+    @media screen and (min-width: 768px) {
+        .product_RelatedTitle h3 {
+            color: #fff;
+            font-size: 30pt;
+            font-family: OswaldRegular;
+            line-height: 85px;
+            margin: auto;
+            float: inherit;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .product_RelatedTitle h3 {
+            color: #fff;
+            font-size: 20pt;
+            font-family: OswaldRegular;
+            line-height: 85px;
+            margin: auto;
+            float: inherit;
+        }
     }
 
     .board_htm.description p {
         margin: 0.8em 0;
-        font-size: 8pt;
+        font-size: 10pt;
+        font-family: Oxygen;
+        font-style: normal;
+    }
+
+        .board_htm.description p em {
+        margin: 0.8em 0;
+        font-size: 10pt;
+        font-family: Oxygen;
+        font-style: normal !important;
     }
 
     .board {
@@ -117,7 +466,7 @@ and open the template in the editor.
         width: 100%;
         height: 83px;
         background: #000;
-        margin-top: -2px;
+        margin-top: 0px;
         text-align: center;
     }
 
@@ -156,7 +505,7 @@ and open the template in the editor.
         line-height: 0;
         left: 10px;
     }
- 
+
     #minus {
         position: absolute;
         left: 64px;
@@ -190,11 +539,7 @@ and open the template in the editor.
         background: transparent;
         width: 100%;
         font-size: 11pt;
-    }
-
-    .page-product #quantidade {
-        margin-top: 13px;
-        max-width: 90px;
+        float: left;
     }
 
     div.tab span {
@@ -208,7 +553,26 @@ and open the template in the editor.
         margin: auto;
         text-align: center;
         width: 100%;
+        font-family: OswaldBold;
         font-size: 8pt;
+    }
+
+    div.tabMobile span {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: -1px 16px;
+        transition: 0.3s;
+        margin: -10px 0;
+        text-align: center;
+        color: #696969;
+        width: 100%;
+        font-size: 8pt;
+    }
+    div.tabMobile .active span {
+        color: #fff;
     }
 
     .tablinks {
@@ -219,205 +583,982 @@ and open the template in the editor.
         padding: 17px 10px;
         font-size: 13pt;
         border: none;
+        border-right: 1px solid #fff;
         font-family: OswaldBold;
-        text-align: center; 
+        text-align: center;
+        line-height: 32px;
+        float: left;
+    }
+
+    .tablinksMobile {
+        background-color: #333333!important;
+        width: 33%;
+        height: 55px;
+        color: #fff;
+        padding: 17px 10px;
+        font-size: 13pt;
+        border: none;
+        font-family: OswaldBold;
+        text-align: center;
         line-height: 32px;
         float: left;
     }
 
 
     #button-buy span {
-        font-family: OswaldBold;
+        font-family: Oswald;
         letter-spacing: 2px;
-        font-weight: 300;
-        font-size: 10pt;
-        margin-top: -13px;
-        line-height: 6px;
+        font-weight: 600;
+        font-size: 15pt;
+        line-height: -1px;
+        text-transform: uppercase;
     }
 
     #button-buy {
-        min-width: 190px;
-        height: 40px;
+        min-width: 99.5%;
+        height: 60px;
         background: #ffff33;
         color: #000;
         font-family: OswaldBold;
         letter-spacing: 0px;
-        border-bottom: 2px solid #cc9900;
-        margin-left: 0px;
+        border: none;
+        margin-left: 0;
+        margin-top: 6%;
         float: left;
     }
+    @media (min-width: 1399px) and (max-width: 1919px) {
+        #button-buy { margin-top: 10%;}
+        .texto_Quantidade { margin-top: 0;}
+        #menuVars .lista_radios { margin: 10px 0 5px 0px; }
+    }
 
-    .product_BuyArea {
-        margin-top: 15px;
+    @media (min-width: 1919px) {
+        #button-buy {
+            margin-top:15%;
+        }
+        .texto_Quantidade { margin-bottom: 6px; }
+        .product_BuyArea{ margin-top: 3%; }
+        .product_Variants { line-height: 4; }
+        .product_Price { line-height: 4; margin: 7% 5% 3% 5%; }
+        .product_Price p { line-height: 28px; }
+        .page-product #quant { height: 36px; font-size: 13pt; }
+        #plus { margin: 7px 0 0 -5px; }
+        #minus { width: 18px; margin: 5px 0 0 0; }
+    }
+
+    /* ******************* Variant */
+
+
+.varCont{padding:0 !important; /*max-width: 300px; width: 100%;*/}
+.varCont .select{font-weight:normal !important; /*font-size:12px !important;*/ width:100%; outline:0;}
+.varCont .select option{outline:0;}
+.varCont ul li > ul li{border:none !important;}
+
+.page-product .varCont .lista_radios .on{background-color:#525252}
+
+.varCont ul.lista_radios li label.lista-radios-input{
+    cursor:pointer;
+    display:inline-flex;
+    font-size:0;
+    height:22px;
+    padding:0;
+    position:relative;
+    vertical-align:middle;
+}
+.varCont ul.lista_radios>.color>label>input{visibility:visible;position:static;width:auto;height:auto;line-height:11px;margin-right:4px;display:inline-block;vertical-align:middle}
+.varCont ul.lista_radios>.color>label>span{display:inline-block;vertical-align:middle; padding:6px 0;}
+.page-product .texto_variacao span,
+.page-product .varTit input{display:none}
+
+.varCont ul.lista_radios li{display:inline-block; background-color:#ffffff !important; padding:0 4px 1px 0 !important; font-size:12px !important; font-weight: normal !important; color:#0f55c5 !important;}
+.varCont ul.lista_radios li label.lista-radios-input span{color:#2d2d2d; font:400 12px/12px 'Oxygen',sans-serif;}
+.varCont ul.lista_radios li label.lista-radios-input .on span{color:#fff;}
+.varCont ul.lista_radios li label.lista-radios-input input[type=radio]{
+    height:100%;
+    left:0;
+    margin:0;
+    position:absolute;
+    top:0;
+    /*visibility:hidden;*/
+    opacity:0;
+    width:auto;
+}
+
+.varCont ul.lista_radios[data-tray-tst="variation_type_radio"] li label.lista-radios-input input[type=radio] ~ span{
+    border:1px solid #b1b1b1;
+    height:29px;
+    line-height:25px;
+    padding:0;
+    text-align:center;
+    width:50px;
+    display:block;
+}
+
+.varCont ul.lista_radios li label.lista-radios-input input[type=radio] ~ span{
+    border:1px solid #b1b1b1;
+    height:27px;
+    line-height:25px;
+    padding:0;
+    text-align:center;
+    width:100%;
+    padding: 0px 9px;
+    display:block;
+}
+
+.varCont ul.lista_radios li label.lista-radios-input input[type=radio]:checked ~ span {
+  border:1px solid #000;
+  background: #000;
+  color:#fff;
+}
+
+.varCont ul.lista_radios li#variacao_texto_0{display:block !important; font:400 12px/12px 'Oxygen',sans-serif !important; color:#000 !important; margin-top:10px;}
+.varCont ul.lista_radios li#variacao_texto_0 input[type=text].text.obriga{font-size:14px !important; color:#000 !important; width:100% !important; margin-top:6px;}
+
+
+.lista_cor_variacao li div, .lista_cor_variacao2 li div {
+    background-color: transparent;
+    padding: 2px 15px;
+}
+
+    /*.page-product .lista_cor_variacao li div.cor_selecionada {
+        background-color: #232323;
+        color: #fff;
+        border: none!important;
+        height: 100%;
+        width: 100%;
     }
 
     .page-product .lista_cor_variacao li div, .page-product .lista_cor_variacao2 li div {
-        height: 30px;
-        width: 30px;
+        /*height: 30px;
+        width: 30px;*/
+        /*margin: 3px 17px 3px 17px;
         color: #121212;
         font-family: OxygenRegular;
         font-size: 9pt;
+        /*line-height: 2.5;
     }
 
     .page-product .lista_cor_variacao li, .page-product .lista_cor_variacao2 li {
         border: 1px solid #666;
-        height: 30px;
-        width: 30px;
+        height: 33px;
+        width: 34px;
+        display: inline-block;
         text-align: center;
     }
 
     .page-product .lista_cor_variacao, .page-product .lista_cor_variacao2 {
         padding: 10px 2px 0;
+    }*/
+
+    /**********  Variant */
+
+    .page-product #span_erro_carrinho .blocoAlerta {
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid lightgray;
+        color: #333;
+        display: block;
+        /*font: 400 12px 'Oxygen',Helvetica,sans-serif;*/
+        margin-left: 10px;
+        padding: 10px;
+        max-width: 250px;
+        position: relative;
+        margin-top: -20px;
     }
 
     .product-PaymentForm {
-        line-height: 6px; 
-        font-size: 9pt; 
+        /*line-height: 6px;*/
+        font-size: 16pt;
+        font-weight: 700;
         font-family: OswaldRegular;
     }
-
-    .product_PriceValue, .price-promotion { 
-        font-family: OswaldRegular;
-        color: #3399ff;
-        font-size: 20pt;
+    .preco-parc2 {
+        font-size: 16pt;
+    }
+    b, optgroup, strong {
+        font-size: 16pt;
+    }
+    .product-PaymentForm .txt-corparcelas .preco-parc2 .color {
+        color: #000 !important;
     }
 
-    .price-before { 
+    @media (max-width: 767px) {
+        .product_PriceValue, .price-promotion {
+            font-family: OswaldRegular;
+            color: #3399ff;
+            font-size: 21pt;
+            margin-left: 7px;
+            float: right;
+            line-height: 1.2;
+        }
+    }
+    @media (min-width: 768px) {
+        .product_PriceValue, .price-promotion {
+            font-family: OswaldRegular;
+            color: #3399ff;
+            font-size: 35pt;
+            line-height: 1.2;
+        }
+    }
+
+    .price-before {
         font-family: OswaldRegular;
         color: #999999;
-        font-size: 10pt;
+        font-size: 13pt;
         text-decoration: line-through;
     }
 
     .product_Price {
-        margin-top: 25px;
-        margin-left: 6px;
+        /*margin-top: 25px;*/
+        /*margin-left: 6px;*/
     }
 
     .product_Title h1 {
-           text-transform: uppercase;
-           font-size: 14pt;
-           line-height: 18px;
-           font-family: OswaldBold;
-           letter-spacing: -1px;
-    }
-
-    .product_Title h3 { 
-        font-family: OxygenRegular;
         text-transform: uppercase;
-        font-size: 8pt;
-        line-height: 20px;
-        float: left;
+        font-size: 25pt;
+        line-height: 36px;
+        font-family: Oswald;
+        /*letter-spacing: -1px;*/
     }
 
-    .product_Info {
-        margin: 12px;
+    .product_Title .Titlemedidas {
+        font-weight: 400;
+        font-size: 23pt;
     }
-
-    .product_WishList {
-        float: left;
-        font-size: 9pt;
-        text-decoration: underline;
-        font-family: OswaldRegular;
-        margin: 10px 5px;
-        width: 120px;
+    .product_Title .medidas {
+        color: #cdcdcd;
+        font-size: 10pt;
     }
 
     .texto_Formas {
-        margin-top: 24px;
-        margin-bottom: 5px;
     }
 
     .texto_Formas h2 {
-        font-size: 1.2rem;
+        font-size: 20pt;
+        font-family: Oswald;
+        margin: 15px 0 0 0;
+        line-height: 25px;
     }
 
     .selectFormasPgto {
         padding: 7px 1px;
         margin-right: 3px;
         font-size: 0.9rem;
-        width: 75px;
+        width: 99%;
+        height: 42px;
         background-color: #ffff33;
         padding: 10px 15px;
         font-family: OxygenRegular;
         font-weight: bold;
-        font-size: 9pt;
-        margin-top: 11px;
+        font-size: 10pt;
+        margin: 0px 15px 8px 0px;
         border: 1px solid #666;
     }
 
-    .texto_Quantidade {
-        margin-top: 50px;
-    }
+.plain-select  {
+	display:inline-block;
+	vertical-align:middle;
+    width: 99%;
+	position:relative;
+}
+
+.plain-select select {
+	line-height:normal;
+	height:45px;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	appearance:none;
+	display:block;
+	width:100%;
+	background:#fff url(images/inpbg.png) repeat-x 0 0;
+	line-height:normal;
+}
+.ie8 .plain-select select{padding-right:3px}
+.plain-select select:focus {
+	background:#f9f9f9;
+	outline:none;
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 7px rgba(100,100,100,0.3);
+	border-color:#00c0f3;
+}
+.plain-select ::-ms-expand {
+ display:none;
+}
+.plain-select:after{
+	content:"";
+	position:absolute;
+	z-index:2;
+	right:8px;
+	top:50%;
+	margin-top:3px;
+	height:0;
+	width:0;
+	border-top:6px solid #000;
+	border-left:6px solid transparent;
+	border-right:6px solid transparent;
+	pointer-events:none;
+}
+.smart-filter .col-md-3 .plain-select:after{
+    top: 34% !important;
+}
+
 
     .texto_Quantidade h2 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
+        font-family: Oswald;
+        margin: 0;
     }
 
     .page-product .texto_variacao h2 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
+        font-family: Oswald;
+        margin: 0;
     }
 
-    
     .product-payment-catalog, .product-payment-catalog span {
         font-family: OswaldRegular;
         font-size: 9pt;
         color: #999999;
         margin-bottom: 5px;
         line-height: 8px;
+        text-align: left;
+    }
+    .prd_AreaInfo .product-payment-catalog .color, .color a {
+        color: #999999 !important;
     }
 
     .product-price-catalog span, .price-promotion-catalog  {
-        color: #0099cc;
-        font-size: 1.6rem;
-        font-family: OswaldBold;
+        color: #0099cc !important;
+        font-size: 1.6rem !important;
+        font-family: OswaldBold !important;
     }
 
-    .product_Cart {    
-        margin: -25px 8px;
+    .thmb-vertical {
+            margin-right: -3px;
+    }
+    @media (max-width: 767px){
+        .page-product #quantidade {
+            margin-top: 5px;
+            max-width: 125px;
+        }
+        #bloco-add-lista {
+            margin-top: 2%;
+            color: #000 !important;
+            text-align: center;
+            display: none;
+        }
+        .product-PaymentForm {
+            line-height: 1.1;
+        }
+    }
+    @media (min-width: 768px) {
+        .page-product #quantidade {
+            margin-top: 5px;
+            max-width: 90px;
+        }
+        #bloco-add-lista {
+            /*margin-top: 2%;
+            color: #000 !important;*/
+            display: none;
+        }
+    }
+    .texto_Quantidade {
+        margin-top: -12px;
+    }
+    .product_Cart {
+        margin: 2% 3%;
+    }
+    .product_BuyArea {
+        margin-top: 1%;
     }
 
-    
+    @media (min-width: 1450px) {
+        .thmb-vertical {
+            margin-right: -5px;
+        }
+        .page-product #quantidade {
+            margin-top: 13px;
+            max-width: 90px;
+        }
+        .texto_Quantidade {
+            margin-top: 2px;
+        }
+        .product_Cart {
+            margin: 3% 5%;
+        }
+        .product_BuyArea {
+            margin-top: 5%;
+        }
+        #bloco-add-lista {
+            margin-top: 5%;
+        }
+    }
+
+
     div.tab p {
         width: 25%;
         height: 8px;
         background: #666666;
         position: absolute;
-        top: 0px;    
+        top: 0px;
         margin-left: -10px;
+    }
+
+@media (max-width: 768px) {
+    .page-product #comentario_cliente form#form-comments label{width:100%;}
+    .page-product #comentario_cliente form#form-comments label input.checkbox{display:inline-block;}
+    .page-product #comentario_cliente .stars{font-size:0}
+    .page-product #comentario_cliente a{color:#000;}
+    .page-product #comentario_cliente .starn{background:url(/imggeral/loja/img01/stars-old.png);display:inline-block;width:37px;height:35px;text-align:left;/*margin-left: 10px;margin-bottom: 30px; margin-top: -23px;*/cursor:pointer}
+	.page-product #comentario_cliente .ajuste-nota {
+		display: block;
+		width: 100%;
+		/*position: absolute;
+		margin: -3px 50px;*/
+	}
+
+    .page-product #comentario_cliente .star-on{background-position:0 -38px!important}
+    .page-product #comentario_cliente .rateBlock+img{background:url(../img/comment-button.jpg);cursor:pointer;height:0;margin-top:20px;padding:23px 91px;width:0}
+    .page-product .tray-hide{display:none;}
+    .modal.in .modal-dialog {
+        margin-top: 15px !important;
+        margin-left: auto !important;
     }
 }
 
+@media (min-width: 768px) {
+    .modal.in .modal-dialog {
+        margin-top: 150px !important;
+        margin-left: auto !important;
+    }
+
+    #Page{display:block;padding:10px;width:auto}
+    #Page br{font-size:0;line-height:0}
+    #Page fieldset{display:block;margin:5px 0 15px 0;text-align:left}
+    #Page fieldset > div{margin:20px 0 0 0}
+    #Page label{color:#959595;font-size:11px;font-weight:400;line-height:13px}
+    #Page .text{display:inline-block;height:27px !important}
+    #Page .text,#Page .select,#Page .textarea,#Page select,#Page textarea{background:white;border:1px solid #d7d7d7;border-radius:3px;color:#959595;font-size:12px;font-weight:400;line-height:15px;height:27px;margin:7px 0 13px 0;outline:0 none;padding:6px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+    #Page .obriga select{margin-bottom:0}
+    #Page .textarea,#Page textarea{display:block;line-height:14px;min-height:150px;padding:6px;width:100%}
+    #Page .text[readonly],#Page .text[readonly]:hover,#Page .text[readonly]:focus,#Page input[readonly],#Page input[readonly]:hover,#Page input[readonly]:focus{background-color:#f9f9f9;border-color:#d7d7d7;box-shadow:none;cursor:normal}
+    #Page .text:hover,#Page .select:hover,#Page input:hover,#Page select:hover{border-color:#bfbfbf}
+    #Page .text:focus,#Page .select:focus,#Page input:focus,#Page select:focus{border-color:#bbb;box-shadow:0 1px 2px 0px #bbb}
+    #Page span.obriga{margin-top:7px}
+    #Page .obriga .select{margin-top:0}
+    #Page .obriga{border-left:2px solid red;border-radius:3px}
+    #spanTextarea.obriga{border-left:0 none}
+    #Page .inputErro,#Page .inputErro:focus{background-color:#ffe5e5;border:1px solid red}
+    #Page .mensagensErro{color:red;font:400 10px/10px inherit;margin:0 0 0 4px}
+    #Page .check,#Page .checkbox,#Page input[type=checkbox],#Page .radio,#Page input[type=radio]{background-color:transparent;border:0 none;height:auto;margin:0 0 15px 2px;padding:0}
+    #Page button,#Page input[type=submit],#Page input[type=image]{margin:0 0 15px 0}
+    #pf_span_sexo{border:0 none}
+    #pf_span_sexo span{vertical-align:middle !important}
+    #CadastroAbas,#ProdAbas{border-bottom:1px solid #ddd;display:block;font-size:0;margin:15px 0 23px 0;padding:0 0 0 8px}
+    #CadastroAbas ul,#ProdAbas ul{overflow:visible}
+    #CadastroAbas li,#ProdAbas li,#CadastroAbas .aberta,#ProdAbas .aberta{float:none;display:inline-block;margin:0 0 0 2px;vertical-align:top}
+    #CadastroAbas li:first-child,#ProdAbas li:first-child{margin-left:0}
+    #CadastroAbas li a,#ProdAbas li a,#CadastroAbas .aberta a,#ProdAbas .aberta a{background-color:#c9c9c9;border-left:1px solid #ddd;border-right:1px solid #ddd;border-top:1px solid #ddd;border-radius:5px 5px 0 0;color:white;display:block;font-size:12px;font-weight:700;letter-spacing:0;line-height:31px;margin:0 0 -1px 0;padding:0 10px;text-transform:uppercase}
+    #CadastroAbas .aberta a,#ProdAbas .aberta a{background-color:white;color:#747474}
+    #CadastroAbas a:hover,#ProdAbas a:hover{color:white}
+    #CadastroAbas .aberta a:hover,#ProdAbas .aberta a:hover{color:#747474}
+    .tablePage,table,.Pedidos{border:0 none;margin:10px 0;width:100%}
+    .board_htm.description table{width:inherit;margin:inherit}
+
+    #CadastroAbas li a, #ProdAbas.abasProduto li a, #CadastroAbas .aberta a, #ProdAbas.abasProduto .aberta a {
+        font-size: 26px !important;
+        font-weight: normal !important;
+        font-family: 'Oswald', sans-serif !important;
+    }
+
+    #ProdAbas .aberta, #ProdAbas li:hover {
+        background-color: #fff !important;
+        border-bottom: 4px solid #232323 !important;
+    }
+
+    /* -----------------------------------------------
+        Abas - Descri��o / Pgto / Coment�rio
+    ----------------------------------------------- */
+    #ProdBlock{padding-bottom:0 !important; border-bottom:0 !important; margin:15px 0 !important;}
+    #ProdBlock > div{border:0 !important;}
+
+    /*#ProdBlock #formasPagto,
+    #ProdBlock #coments,*/
+    #ProdBlock .board{background-color:#f9f9f9 !important; border:0 !important; padding: 25px;}
+
+    /*
+    #ProdBlock .board .board_htm,
+    #ProdBlock .board .board_htm p,
+    #ProdBlock .board .board_htm p > span,
+    #ProdBlock .board .board_htm p span{font:14px 'Oxygen', sans-serif !important; color:#909090 !important;}
+    */
+
+    .page-product #comentario_cliente form#form-comments label{width:100%;}
+    .page-product #comentario_cliente form#form-comments label input.checkbox{display:inline-block;}
+    .page-product #comentario_cliente .stars{font-size:0}
+    .page-product #comentario_cliente a{color:#000;}
+    .page-product #comentario_cliente .starn{background:url(/imggeral/loja/img01/stars-old.png);display:inline-block;width:37px;height:35px;text-align:left;margin-left: 10px;margin-bottom: 30px; /*margin-top: -23px;*/cursor:pointer}
+	.page-product #comentario_cliente .ajuste-nota {
+		display: inline-block;
+		width: 60px;
+		height: 25px;
+		position: absolute;
+		margin: -3px 50px;
+	}
+
+    .page-product #comentario_cliente .star-on{background-position:0 -38px!important}
+    .page-product #comentario_cliente .rateBlock+img{background:url(../img/comment-button.jpg);cursor:pointer;height:0;margin-top:20px;padding:23px 91px;width:0}
+    .page-product .tray-hide{display:none;}
+
+
+    #ProdAbas li{margin:0 30px !important;border-bottom:4px solid rgba(255,255,255,0) !important;}
+
+    #ProdAbas li a,
+    #ProdAbas .aberta a{padding:14px 0 !important;}
+
+    #CadastroAbas li a,
+    #ProdAbas li a,
+    #CadastroAbas .aberta a,
+    #ProdAbas .aberta a{border:0 !important; border-radius:inherit !important; -webkit-border-radius:inherit !important; -moz-border-radius:inherit !important; margin: 0 !important;}
+
+    .page-product #CadastroAbas,
+    .page-product #ProdAbas{background-color:#fff !important; padding:0 !important; margin:0;}
+
+    #ProdAbas li a{outline:0; background-color: transparent !important; text-decoration:none !important;}
+    #ProdAbas .aberta,
+    #ProdAbas li:hover{background-color:#fff !important;border-bottom:4px solid #232323 !important;}
+
+    #ProdAbas .aberta a{color: #232323 !important;}
+    #ProdAbas li a{color:#232323 !important;}
+    #ProdAbas li a:hover,
+    #ProdAbas .aberta a:hover{color:#232323 !important;}
+
+    #CadastroAbas li a,
+    #ProdAbas.abasProduto li a,
+    #CadastroAbas .aberta a,
+    #ProdAbas.abasProduto .aberta a{font-size:26px !important;font-weight:normal !important;font-family:'Oswald', sans-serif !important;}
+    /*#ProdAbas.abasProduto{margin-bottom:20px !important;}*/
+
+
+    #form_pagamento h2{color:black !important;padding:0 12px}
+    #form_pagamento th{background:none}
+    .tablePage h3{color:black;font-size:16px;line-height:16px}
+    #form_pagamento .tit-valor-frete h3,#form_pagamento .caixa-frete .tit-frete{color:#747474;font-size:16px;font-weight:700;line-height:16px}
+    #form_pagamento .caixa-frete .tit-frete{padding:31px 9px;text-transform:uppercase}
+    .caixa-detalhes-compra .tit-nome-produto > div{margin-left:20px !important}
+    .caixa-detalhes-compra .tit-produto-total{width:110px}
+    .caixa-detalhes-compra .tit-qtde{text-align:center}
+    #form_pagamento .tit-produto-total h3{color:#555;font-size:14px}
+    .caixa-dados-entrega{background:#f9f9f9;padding:16px 21px 26px}
+    .board .caixa-dados-entrega tr{background:transparent}
+    .caixa-dados-entrega td,.caixa-dados-entrega th,.caixa-dados-entrega tr:first-child th{border:0 none;margin:0;padding:0}
+    #form_pagamento .caixa-dados-entrega h3{color:red;font:700 13px/13px 'Oxygen', sans-serif;margin:10px 0 0 0}
+    .escolha-forma-pagamento .tit-escolha-forma{color:black;display:block;margin:37px 0}
+    #form_pagamento .bt-altera-compra{background-color:white}
+    .Forma2{border:0 none;display:block;display:flex;width:auto}
+    .Forma2 > li{background-color:#f9f9f9;border:0 none;flex:1 auto;margin:0;padding:0;width:50%}
+    .Forma2 h3{background-color:#f0f0f0;border-bottom:0 none;border-left:2px solid white;border-right:0 none;border-top:0 none;color:black !important;font:700 16px/16px 'Oxygen', sans-serif;margin:0;padding:32px 21px;text-align:left}
+    .Forma2 > li:first-child h3{border-left:0 none}
+    .Forma2 ul{display:block;border-top:6px solid white;padding:10px 18px;text-align:left}
+    .caixa-formas-pagamento .Forma2 ul > li{display:inline-block;float:none;margin:5px 10px 0 0;vertical-align:middle;width:auto}
+    .caixa-formas-pagamento .Forma2 ul > li:first-child{margin-top:0}
+    .caixa-formas-pagamento .Forma2 ul > li:last-child{margin-right:0}
+    .caixa-formas-pagamento a{display:block}
+    .caixa-lista-formas #ProdAbas{border:0 none;margin:6px 0 0 0;padding:0}
+    .caixa-lista-formas #ProdAbas li{background:#f0f0f0;display:block;padding:30px 23px}
+    .caixa-lista-formas #ProdAbas a{background-color:transparent;border:0 none;border-radius:0;color:black;font:700 16px/16px 'Oxygen', sans-serif;letter-spacing:0;margin:0;padding:0}
+    #FormasPagamento fieldset{margin:0}
+    #FormasPagamento legend{background:none;border:0 none;display:block;margin-bottom:0;padding:0}
+    #FormasPagamento fieldset > span{min-height:53px;padding:10px 0 0 0;width:78%}
+    .Forma1 li{background:#f0f0f0;border:0 none}
+    .Forma1 li:nth-child(odd){background:white}
+    .Forma1 li:hover{background:#ddd}
+    .Forma1 .tablePags{border:1px solid #ddd;display:none;margin:15px}
+    .Forma1 .item-parcela{margin:8px 0 0 0}
+    .Forma1 tr,.Forma1 tr:first-child{background-color:white}
+
+    .page-product .Forma1 li, .page-product .Forma1 li:hover {
+        border: none;
+        margin: 0px 0;
+        padding: 20px;
+        background: #f9f9f9;
+    }
+
+    .Forma1 li:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .tablePags img {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+
+    .Forma1 .tablePags, .caixa-formas-pagamento {
+        display: contents;
+    }
+
+    .page-product .Forma1 td {
+        width: 100%;
+    }
+
+    .page-product .Forma1 .item-parcela:first-child {
+        border-top: none;
+
+    }
+
+    .page-product .Forma1 .item-parcela {
+        border-bottom: none;
+    }
+
+    .page-product .Forma1 td:nth-child(2) {
+            text-align: center;
+            width: 50%;
+            padding: 5px!important;
+            float: left;
+    }
+
+    .page-product .Forma1 td:nth-child(3) {
+        display: list-item;
+        width: 50%;
+        float: left;
+        padding: 5px!important;
+    }
+
+    #CadastroAbas li a, #ProdAbas.abasProduto li a, #CadastroAbas .aberta a, #ProdAbas.abasProduto .aberta a {
+        font-size: 26px !important;
+        font-weight: normal !important;
+        font-family: 'Oswald', sans-serif !important;
+    }
+
+    #ProdAbas .aberta>a, .caixa-lista-formas #ProdAbas>li>a {
+        background-color: #fff !important;
+        border-radius: 0!important;
+        /* padding: 10px 0 !important; */
+        color: #000 !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+
+
+    .redesSociaisProd {
+        margin-top: 100px;
+    }
+
+
+
+    .product {
+        margin: 0px;
+    }
+
+
+
+    .product .product-image {
+        margin-bottom: 5px;
+        text-align: inherit;
+        height: auto;
+    }
+
+
+
+    .product {
+        padding: 0px;
+        margin: 0px;
+        border: none;
+    }
+
+    .product_Quantidade {
+        border: 1px solid #b1b1b1;
+        border-radius: 0px;
+        margin:  10px 0 20px 0;
+        height: 45px;
+    }
+
+    .product_PriceArea h2 {
+        font: 600 14px 'OxygenRegular', sans-serif;
+        font-size: 20pt;
+        letter-spacing: 1px;
+    }
+
+    .product_PriceArea h4 {
+        font-size: 35pt;
+        float: left;
+        margin-right: 8px;
+        font-family: OswaldRegular;
+        color: #3399ff;
+    }
+
+    .product_TabelaMedidas h3 {
+        margin-top: -91px;
+        float: right;
+        margin-right: 60px;
+        text-decoration: underline;
+    }
+
+
+    .product_Details {
+        max-width: 100%;
+        margin-top: 40px;
+        border-top: 1.4px solid #c2c2c2;
+        padding: 20px 40px;
+    }
+
+    .product_Quantidade h2 {
+        line-height: 35px;
+        padding: 4px 0px;
+        color: #959595;
+    }
+
+    .texto_variacao {
+        /*margin-top: 45px;*/
+        color: #333;
+        background: none;
+        padding: 0px 0px 10px 0px;
+    }
+
+    .produto-formas-pagamento {
+        padding-bottom: 20px;
+    }
+
+    .produto-formas-pagamento a:hover{
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 767px) {
+    .varCont ul.lista_radios li label.lista-radios-input input[type=radio]{
+        height: 44px;
+        left: 0;
+        margin: 0;
+        position: relative;
+        top: 0;
+        /* visibility: hidden; */
+        opacity: 0;
+        width: 1px;
+    }
+    .page-product #quant {
+        height: auto;
+        margin: -3px 0 0 0px;
+        border: none;
+        color: #000;
+        float:left;
+    }
+
+    #plus {
+        position: absolute;
+        margin: 3px 0 0 -4px;
+        width: 30px;
+        height: 30px;
+        /*background-color: #e9e9e9;
+        border: 1px solid #999;*/
+        color: #000;
+        line-height: 0;
+
+    }
+
+    #minus {
+        position: absolute;
+        left: 85px;
+        height: 30px;
+        width: 30px;
+        margin: 3px 0 0 0 ;
+        line-height: 0;
+        /*background-color: #e9e9e9;
+        border: 1px solid #999;*/
+        color: #000;
+
+    }
+
+    .product_Quantidade {
+        border: 1px solid #b1b1b1;
+        border-radius: 3px;
+        margin:  10px 0 20px 0;
+        height: 45px;
+    }
+
+    .page-product #quantidade {
+        margin: 0;
+    }
+
+    .product_Title h1 {
+        font-family: OswaldRegular;
+        text-transform: uppercase;
+        font-size: 17pt;
+        letter-spacing: 1px;
+        /*text-align: center;*/
+        /*margin-top: 30px;*/
+    }
+
+    .product_Title h3 {
+        font-family: OxygenRegular;
+        text-transform: uppercase;
+        font-size: 10pt;
+        text-align: center;
+        /*margin-top: 25px;
+        margin-bottom: 25px;*/
+    }
+
+    .product_Price {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .product_PriceArea {
+        max-width: 150px;
+        margin: 15px 0 10px 26px;
+    }
+
+    .product_PriceArea h2 {
+        font-family: OxygenRegular;
+        font-size: 20pt;
+        letter-spacing: 1px;
+    }
+
+    .product_PriceArea h4 {
+        font-family: OswaldRegular;
+        font-weight: 500;
+        font-size: 21pt;
+        float: left;
+        /* margin-right: 42px; */
+        line-height: 30px;
+        color: #3399ff;
+    }
+
+    .page-product #menuVars {
+    }
+
+    .product_TabelaMedidas {
+        height: 10px;
+    }
+
+    #cepbox a {
+        position: absolute;
+        margin-top: -2px;
+    }
+
+    .product_TabelaMedidas h3 {
+        margin-top: -10px;
+        margin-right: 10px;
+        text-decoration: underline;
+    }
+
+    .page-product .product-name {
+        margin-top: 10px;
+    }
+
+    .varCont ul li ul li {
+        display: block;
+        border: none;
+        background: #FFF;
+        font-weight: 400;
+        font-size: 11px;
+        margin: 0;
+        color: #555;
+    }
+
+    .page-product .lista_cor_variacao, .page-product .lista_cor_variacao2 {
+        display: block;
+        overflow: hidden;
+        padding: 2px 2px 0;
+        max-width: 223px;
+        margin-bottom: 9px;
+    }
+
+    #button-buy {
+        min-width: 100%;
+        height: 70px;
+        background: #ffff33;
+        color: #000;
+        font-family: OswaldBold;
+        font-size: 21px;
+        letter-spacing: 0px;
+    }
+
+    .areaBreadCrumb {
+        text-align: left;
+    }
+
+    .board_htm, .description {
+        /*max-width: 300px;*/
+        overflow: scroll;
+    }
+
+    .product_Details {
+        max-width: 100%;
+        overflow: scroll;
+        padding: 20px 10px;
+        margin-top: 40px;
+        border-top: 1.4px solid #c2c2c2;
+    }
+
+    .showcase>h2 strong {
+        line-height: 35px;
+    }
+
+    .product {
+        padding: 0px;
+    }
+
+    .product_Galeria {
+        max-width: 98%;
+    }
+
+    .product_Quantidade h2 {
+        line-height: 35px;
+        padding: 4px;
+        color: #959595;
+        margin-left: 5px;
+    }
+
+    .produto-formas-pagamento {
+        padding-bottom: 10px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 992px)
+{
+    /* Tirei desse aqui  <-- */
+}
+/*
 @media (min-width: 992px) and (max-width: 1400px)
-{    
+{
     div.tab p {
         width: 25%;
         height: 10px;
         background: #666666;
         position: absolute;
-        top: 0px;    
+        top: 0px;
         margin-left: -10px;
     }
 
-    .product_Cart {    
-        margin: 0px 45px;
+    .product_Cart {
+        margin: 0px 20px 0 20px;
     }
 
     .thumbs-vertical{
         width:110px; float:left;
     }
+
     .thumbs-vertical .carousel-gallery > a{display:block; margin-bottom:0px;}
     .container-imagem{
-        text-align:center; margin-left:110px;
+        text-align:center;
+
     }
 
     .product-name {
         font-family: OswaldBold;
-        font-size: 12pt; 
+        font-size: 12pt;
         margin-bottom: 5px;
         color: #000;
         text-transform: uppercase;
-        height: 35px; 
+        height: 35px;
     }
 
     .prd_AreaInfo .product-payment span, .product-payment {
@@ -506,23 +1647,22 @@ and open the template in the editor.
     }
 
     #plus {
-        position: absolute;
-        margin: 4px 0 0 -7px;
+        position: relative;
+        /*margin: 4px 0 0 10px;
         width: 20px;
-        height: 30px;
+        height: 10px;
         background-color: transparent;
         border: none;
         color: #666;
         line-height: 0;
-        left: 11px;  
+        left: 15px;
+        top:20px;
     }
- 
+
     #minus {
-        position: absolute;
-        left: 90px;
-        height: 30px;
-        width: 20px;
-        margin: 4px 0 0 0;
+        position: relative;
+        left: 95px;
+        top:19px;
         line-height: 0;
         background-color: transparent;
         border: none;
@@ -542,8 +1682,7 @@ and open the template in the editor.
     }
 
     .page-product #quant {
-        height: 37px;
-        margin: 0px 0 0 0px;        
+        position: relative;
         padding: 19px 0;
         border: none;
         color: #232323;
@@ -553,7 +1692,9 @@ and open the template in the editor.
     }
 
     .page-product #quantidade {
+        position: relative;
         margin-top: 7px;
+        margin-left: 15px;
         max-width: 120px;
     }
 
@@ -580,7 +1721,7 @@ and open the template in the editor.
         font-size: 13pt;
         border: none;
         font-family: OswaldBold;
-        text-align: center; 
+        text-align: center;
         line-height: 32px;
         float: left;
     }
@@ -597,22 +1738,25 @@ and open the template in the editor.
 
     #button-buy {
         min-width: 350px;
-        height: 55px;
+        height: auto;
         background: #ffff33;
         color: #000;
         font-family: OswaldBold;
         letter-spacing: 0px;
         border-bottom: 2px solid #cc9900;
-        margin-left: 40px;
+        float: right;
+        margin-right: 60px;
     }
 
     .product_BuyArea {
-        margin-top: 15px;
+        /*margin-top: -30px;
     }
 
     .page-product .lista_cor_variacao li div, .page-product .lista_cor_variacao2 li div {
-        height: 34px;
-        width: 40px;
+        position: relative;
+        padding-top: 3px;
+        width: 100%;
+        height: 100%;
         color: #121212;
         font-family: OxygenRegular;
         font-size: 10pt;
@@ -622,6 +1766,7 @@ and open the template in the editor.
         border: 1px solid #666;
         height: 35px;
         width: 45px;
+        display: inline-block;
         text-align: center;
     }
 
@@ -630,18 +1775,19 @@ and open the template in the editor.
     }
 
     .product-PaymentForm {
-        line-height: 6px; 
-        font-size: 11pt; 
+        line-height: 6px;
+        font-size: 11pt;
         font-family: OswaldRegular;
     }
 
-    .product_PriceValue, .price-promotion { 
+    .product_PriceValue, .price-promotion {
         font-family: OswaldRegular;
         color: #3399ff;
-        font-size: 24pt;
+        font-size: 40pt;
+        line-height: 60px;
     }
 
-    .price-before { 
+    .price-before {
         font-family: OswaldRegular;
         color: #999999;
         font-size: 12pt;
@@ -649,22 +1795,22 @@ and open the template in the editor.
     }
 
     .product_Price {
-        margin: 30px 20px;
+        margin: 0px 40px 0 40px;
     }
 
     .product_Title h1 {
-           text-transform: uppercase;
-           font-size: 20pt;
-           line-height: 28px;
-           font-family: OswaldBold;
-           letter-spacing: -1px;
+        text-transform: uppercase;
+        font-size: 32pt;
+        line-height: 48px;
+        font-family: OswaldBold;
+        letter-spacing: -1px;
     }
 
-    .product_Title h3 { 
+    .product_Title h3 {
         font-family: OxygenRegular;
         text-transform: uppercase;
-        font-size: 10pt;
-        line-height: 30px;
+        font-size: 12pt;
+        line-height: 40px;
         float: left;
     }
 
@@ -704,10 +1850,10 @@ and open the template in the editor.
 
     .product_WishList {
         float: left;
-                                             font-size: 12pt;
-                                             text-decoration: underline;
-                                             font-family: OswaldRegular;
-                                             margin: 40px 15px;
+        font-size: 12pt;
+        text-decoration: underline;
+        font-family: OswaldRegular;
+        margin: 40px 15px;
     }
 
     .texto_Formas {
@@ -720,12 +1866,9 @@ and open the template in the editor.
     }
 
     .selectFormasPgto {
-        padding: 7px 4px;
         margin-right: 25px;
-        font-size: 1.2rem;
-        width: 125px;
+        width: 36%;
         float: left;
-        background-color: #ffff33;
         padding: 10px 15px;
         font-family: OxygenRegular;
         font-weight: bold;
@@ -735,14 +1878,14 @@ and open the template in the editor.
     }
 
     .texto_Quantidade {
-        margin-top: 50px;
+        margin-top: 20px;
     }
 
     .texto_Quantidade h2 {
         font-size: 1.6rem;
     }
 
-    
+
     .product-payment-catalog, .product-payment-catalog span {
         font-family: OswaldRegular;
         font-size: 11pt;
@@ -757,7 +1900,6 @@ and open the template in the editor.
         font-family: OswaldBold;
     }
 }
-
 
 @media (min-width: 1400px) {
 
@@ -775,18 +1917,18 @@ and open the template in the editor.
     .product-payment-catalog {
         line-height: 10px;
     }
-        
+
     div.tab p {
         width: 25%;
         height: 10px;
         background: #666666;
         position: absolute;
-        top: 0px;    
+        top: 0px;
         margin-left: -10px;
     }
 
-    .product_Cart {    
-        margin: 0px 45px;
+    .product_Cart {
+        margin: 0px 20px 0 20px;
     }
 
     .thumbs-vertical{
@@ -813,7 +1955,7 @@ and open the template in the editor.
         background-color: #333333;
         width: 100%;
         height:70px;
-    }    
+    }
 
     .product_ShareArea {
         float: right;
@@ -829,7 +1971,7 @@ and open the template in the editor.
         width: 70px!important;
     }
 
-    .product_ShareTextArea { 
+    .product_ShareTextArea {
         text-align: right;
     }
 
@@ -862,7 +2004,7 @@ and open the template in the editor.
            letter-spacing: -1px;
     }
 
-    .product_Title h3 { 
+    .product_Title h3 {
         font-family: OxygenRegular;
         text-transform: uppercase;
         font-size: 12pt;
@@ -870,7 +2012,7 @@ and open the template in the editor.
         float: left;
     }
 
-    .price-before { 
+    .price-before {
         font-family: OswaldRegular;
         color: #999999;
         font-size: 20pt;
@@ -878,7 +2020,7 @@ and open the template in the editor.
         line-height: 30px;
     }
 
-    .product_PriceValue, .price-promotion { 
+    .product_PriceValue, .price-promotion {
         font-family: OswaldRegular;
         color: #3399ff;
         font-size: 40pt;
@@ -886,8 +2028,8 @@ and open the template in the editor.
     }
 
     .product-PaymentForm {
-        line-height: 12px; 
-        font-size: 15pt; 
+        line-height: 12px;
+        font-size: 15pt;
         font-family: OswaldRegular;
     }
 
@@ -925,12 +2067,13 @@ and open the template in the editor.
     }
 
     .product_BuyArea {
-        margin-top: 40px;
+        /*margin-top: 40px;
     }
 
     #button-buy {
+        float: right;
+        margin-right: 224px;
         min-width: 500px;
-        height: 75px;
         background: #ffff33;
         color: #000;
         font-family: OswaldBold;
@@ -952,8 +2095,8 @@ and open the template in the editor.
         font-size: 16pt;
         text-decoration: underline;
         font-family: OswaldRegular;
-        margin: 40px 50px;
-    }    
+        margin: 40px 10px;
+    }
 
     .tablinks {
         background-color: #333333!important;
@@ -964,7 +2107,7 @@ and open the template in the editor.
         font-size: 13pt;
         border: none;
         font-family: OswaldBold;
-        text-align: center; 
+        text-align: center;
         line-height: 32px;
         float: left;
     }
@@ -1015,6 +2158,7 @@ and open the template in the editor.
     .page-product #quantidade {
         max-width: 140px;
         margin-top: 15px;
+        margin-left: 15px;
     }
 
     .qtdForm_Area {
@@ -1032,29 +2176,23 @@ and open the template in the editor.
     }
 
     #plus {
-        position: absolute;
-        margin: 4px 0 0 -7px;
-        width: 30px;
-        height: 36px;
+        position: relative;
         background-color: transparent;
         border: none;
         color: #666;
         line-height: 0;
-        left: 11px;  
-        top: 90px;
+        left: 25px;
+        top: 22px;
     }
- 
+
     #minus {
-        position: absolute;
-        left: 100px;
-        height: 36px;
-        width: 30px;
-        margin: 4px 0 0 0;
+        position: relative;
+        left: 105px;
+        top: 20px;
         line-height: 0;
         background-color: transparent;
         border: none;
         color: #666;
-        top: 90px;
     }
 
      .page-product .product-quantity>div>span:nth-child(1):before {
@@ -1104,7 +2242,7 @@ and open the template in the editor.
     .product_RelatedArea {
         width: 100%;
         height: 150px;
-        background: #000; 
+        background: #000;
         margin-top: -2px;
         text-align: center;
     }
@@ -1131,7 +2269,7 @@ and open the template in the editor.
         margin-bottom: 5px;
         overflow: hidden;
         line-height: 2.8rem;
-        margin: 0px;    
+        margin: 0px;
     }
 
     .prd_AreaInfo span {
@@ -1144,7 +2282,7 @@ and open the template in the editor.
 
     .product .product-price {
         color: #000;
-        display: block; 
+        display: block;
         height: 36px;
         overflow: hidden;
         font-family: Roboto,sans-serif;
@@ -1182,11 +2320,11 @@ and open the template in the editor.
 
     .product-name {
         font-family: OswaldBold;
-        font-size: 12pt; 
+        font-size: 12pt;
         margin-bottom: 5px;
         color: #000;
         text-transform: uppercase;
-        height: 40px; 
+        height: 40px;
     }
 
     .price-before-catalog {
@@ -1197,655 +2335,4 @@ and open the template in the editor.
         line-height: 35px;
     }
 }
-
-.row {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-
-.page-product .product-detail {
-    border: none;
-}
-
-.product_AreaPreviewImage img {
-    margin: 10px auto;
-}
-
-.product_AreaImage img {
-    margin:auto;
-}
-
-
-.container-imagem>div{max-width:100%; padding:0 0 5px; margin-bottom:10px; position:relative;}
-
-.product_Breadcrumb {
-    margin: 20px 0px 0 0;
-}
-.product_Title {
-    margin-bottom: 5px;
-    font-family: OswaldBold;
-}
-    
-@media (min-width: 768px) {
-
-    
-    
-    .redesSociaisProd {
-        margin-top: 100px;
-    }
-    
-    
-
-    .product {
-        margin: 0px;
-    }
-
-    
-
-    .product .product-image {
-        margin-bottom: 5px;
-        text-align: inherit;
-        height: auto;
-    }
-
-    
-
-    .product {
-        padding: 0px;
-        margin: 0px;
-        border: none;
-    }
-
-    
-    
-
-   
-
-    
-
-    .product_Quantidade {
-        border: 1px solid #b1b1b1;
-        border-radius: 0px;
-        margin:  10px 0 20px 0;
-        height: 45px;
-    }
-
-    
-
-    
-    
-    .product_Price { 
-        margin-bottom: 15px;
-    }
-
-    .product_PriceArea h2 {
-        font: 600 14px 'OxygenRegular', sans-serif;
-        font-size: 20pt;
-        letter-spacing: 1px;
-    } 
-
-    .product_PriceArea h4 {
-        font-size: 19pt;
-        float: left;
-        margin-right: 8px;
-        margin-top: 22px;
-        font-family: OswaldRegular;
-        color: #3399ff;
-    }
-
-    .product_TabelaMedidas h3 {
-        margin-top: -91px;
-        float: right;
-        margin-right: 60px;
-        text-decoration: underline;
-    }
-
-  
-    .product_Details {
-        max-width: 100%;
-        margin-top: 40px;
-        border-top: 1.4px solid #c2c2c2;
-        padding: 20px 40px;
-    }
-
-    .product_Quantidade h2 {
-        line-height: 35px;
-        padding: 4px 0px;
-        color: #959595;
-    }
-    
-    .texto_variacao {
-        margin-top: 45px;
-        color: #333;
-        background: none;
-        padding: 10px 0px 10px 0px;
-    }
-     
-    .produto-formas-pagamento {
-        padding-bottom: 20px;
-    }
-    
-    .produto-formas-pagamento a:hover{
-        text-decoration: underline;
-    }
-}
-
-@media (max-width: 767px) {
-
-    .page-product #quant {
-        height: auto;
-        margin: -10px 0 0 40px;
-        border: none;
-        color: #959595;
-    }
-
-    #plus {
-        position: absolute;
-        margin: 6px 0 0 10px;
-        width: 30px;
-        height: 30px;
-        background-color: #e9e9e9;
-        border: 1px solid #999;
-        color: #666;
-        line-height: 0;
-        
-    }
-
-    #minus {
-        position: absolute;
-        left: 112px;
-        height: 30px;
-        width: 30px;
-        margin: 6px 0 0 0 ;
-        line-height: 0;
-        background-color: #e9e9e9;
-        border: 1px solid #999;
-        color: #666;
-        
-    }
-
-    .product_Quantidade {
-        border: 1px solid #b1b1b1;
-        border-radius: 3px;
-        margin:  10px 0 20px 0;
-        height: 45px;
-    }
-
-    .page-product #quantidade {
-        margin: 0;
-    }
-
-    .product_Title h1 {
-        font-family: OxygenRegular;
-        text-transform: uppercase;
-        font-size: 18pt;
-        letter-spacing: 1px;
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .product_Title h3 {
-        font-family: OxygenRegular;
-        text-transform: uppercase;
-        font-size: 10pt;
-        text-align: center;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-
-    .product_Price {
-        text-align: center;
-        margin-bottom: 45px;
-    }
-
-    .product_PriceArea {
-        max-width: 150px;
-        margin: auto;
-    }
-
-    .product_PriceArea h2 {
-        font-family: OxygenRegular;
-        font-size: 20pt;
-        letter-spacing: 1px;
-    }
-
-    .product_PriceArea h4 {
-        font-family: OxygenRegular;
-        font-size: 11pt;
-        float: left;
-        margin-right: 5px;
-        line-height: 30px;
-    }
-
-    .page-product #menuVars {
-    }
-
-    .product_TabelaMedidas {
-        height: 10px;
-    }
-
-    #cepbox a {
-        position: absolute;
-        margin-top: -2px;
-    }
-
-    .product_TabelaMedidas h3 {
-        margin-top: -10px;
-        margin-right: 10px;
-        text-decoration: underline;
-    }
-
-    .page-product .product-name {
-        margin-top: 10px;
-    }
-
-    .varCont ul li ul li {
-        display: block;
-        border: none;
-        background: #FFF;
-        font-weight: 400;
-        font-size: 11px;
-        margin: 0;
-        color: #555;
-    }
-
-    .page-product .lista_cor_variacao, .page-product .lista_cor_variacao2 {
-        display: block;
-        overflow: hidden;
-        padding: 2px 2px 0;
-        max-width: 223px;
-        margin-bottom: 9px;
-    }
-
-    #button-buy {
-            min-width: 387px;
-    height: 60px;
-    background: #ffff33;
-    color: #000;
-    font-family: OswaldBold;
-    letter-spacing: 0px;
-    border-bottom: 3px solid #cc9900;
-
-    }
-
-    .areaBreadCrumb {
-        text-align: left;
-    }
-
-    .board_htm, .description {
-        max-width: 300px;
-        overflow: scroll;
-    }
-
-    .product_Details {
-        max-width: 100%;
-        overflow: scroll;
-        padding: 20px 10px;
-        margin-top: 40px;
-        border-top: 1.4px solid #c2c2c2;
-    }
-
-    .showcase>h2 strong {
-        line-height: 35px;
-    } 
-
-    .product {
-        padding: 0px;
-    }
-
-    .product_Galeria { 
-        max-width: 98%;
-    }
-
-    .product_Quantidade h2 {
-        line-height: 35px;
-        padding: 4px;
-        color: #959595;
-        margin-left: 5px;
-    }
-     
-    .produto-formas-pagamento {
-        padding-bottom: 10px;
-    } 
-   
-}
-.lista_cor_variacao li div, .lista_cor_variacao2 li div {
-    background-color: transparent;
-}
-
-
-
-
-
-.page-product #bt_comprar {
-    width: 100%;
-    padding-top: 20px;
-}
-
-
-
-.page-product .product-quantity {
-    width: 100% !important;
-}
-
-.product_Quantidade h3 {
-    line-height: 35px;
-    padding: 4px;
-    color: #959595;
-    margin-left: 5px;
-}
-.product_TabelaMedidas a  h3{
-    text-decoration: underline;
-    font-style: italic;
-    border: none;
-}
-
-.product_Quantidade input {
-    float: left;
-    height: 44px;
-    border: none;
-}
-
-.prodBox .board {
-    margin: 0px;
-}
-
-.produto-formas-pagamento a {
-    color: #8d3757 !important;
-    font-weight: 600 !important;
-    background: none !important;
-    text-transform: none !important;
-        font-size: 10pt;
-}
-
-input::-webkit-calendar-picker-indicator {
-    opacity: 100;
-}
-
-.page-product .product-buy-button i {
-    display: none;
-}
-
-.product_TabelaMedidas a {
-    position: absolute;
-    z-index: 99;
-    right: 0px;
-}
-
-.board_htm.description p {
-    margin: 0.5em 0;
-}
-
-.prodBox {
-    font-size: 130%;
-    font-family: OxygenRegular;
-    margin: 20px 0px;
-}
-
-.qtminus {
-    display: none;
-}
-
-.qtplus {
-    display: none;
-}
-
-#show_size_and_color_secondary_type {
-    display: none;
-}
-
-.page-product .lista_cor_variacao li div.cor_selecionada {
-    background-color: #232323;
-    color: #fff;
-    border: none!important;
-    height: 100%;
-}
-
-#foto_a {
-    margin: auto;
-}
-
-
-
-#catalog_OrganizarLbl {
-    color: #433f3f;
-    font: 700 12px 'OxygenRegular',sans-serif;
-}
-
-
-@media (min-width: 768px) {
-    #Page{display:block;padding:10px;width:auto}
-    #Page br{font-size:0;line-height:0}
-    #Page fieldset{display:block;margin:5px 0 15px 0;text-align:left}
-    #Page fieldset > div{margin:20px 0 0 0}
-    #Page label{color:#959595;font-size:11px;font-weight:400;line-height:13px}
-    #Page .text{display:inline-block;height:27px !important}
-    #Page .text,#Page .select,#Page .textarea,#Page select,#Page textarea{background:white;border:1px solid #d7d7d7;border-radius:3px;color:#959595;font-size:12px;font-weight:400;line-height:15px;height:27px;margin:7px 0 13px 0;outline:0 none;padding:6px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-    #Page .obriga select{margin-bottom:0}
-    #Page .textarea,#Page textarea{display:block;line-height:14px;min-height:150px;padding:6px;width:100%}
-    #Page .text[readonly],#Page .text[readonly]:hover,#Page .text[readonly]:focus,#Page input[readonly],#Page input[readonly]:hover,#Page input[readonly]:focus{background-color:#f9f9f9;border-color:#d7d7d7;box-shadow:none;cursor:normal}
-    #Page .text:hover,#Page .select:hover,#Page input:hover,#Page select:hover{border-color:#bfbfbf}
-    #Page .text:focus,#Page .select:focus,#Page input:focus,#Page select:focus{border-color:#bbb;box-shadow:0 1px 2px 0px #bbb}
-    #Page span.obriga{margin-top:7px}
-    #Page .obriga .select{margin-top:0}
-    #Page .obriga{border-left:2px solid red;border-radius:3px}
-    #spanTextarea.obriga{border-left:0 none}
-    #Page .inputErro,#Page .inputErro:focus{background-color:#ffe5e5;border:1px solid red}
-    #Page .mensagensErro{color:red;font:400 10px/10px inherit;margin:0 0 0 4px}
-    #Page .check,#Page .checkbox,#Page input[type=checkbox],#Page .radio,#Page input[type=radio]{background-color:transparent;border:0 none;height:auto;margin:0 0 15px 2px;padding:0}
-    #Page button,#Page input[type=submit],#Page input[type=image]{margin:0 0 15px 0}
-    #pf_span_sexo{border:0 none}
-    #pf_span_sexo span{vertical-align:middle !important}
-    #CadastroAbas,#ProdAbas{border-bottom:1px solid #ddd;display:block;font-size:0;margin:15px 0 23px 0;padding:0 0 0 8px}
-    #CadastroAbas ul,#ProdAbas ul{overflow:visible}
-    #CadastroAbas li,#ProdAbas li,#CadastroAbas .aberta,#ProdAbas .aberta{float:none;display:inline-block;margin:0 0 0 2px;vertical-align:top}
-    #CadastroAbas li:first-child,#ProdAbas li:first-child{margin-left:0}
-    #CadastroAbas li a,#ProdAbas li a,#CadastroAbas .aberta a,#ProdAbas .aberta a{background-color:#c9c9c9;border-left:1px solid #ddd;border-right:1px solid #ddd;border-top:1px solid #ddd;border-radius:5px 5px 0 0;color:white;display:block;font-size:12px;font-weight:700;letter-spacing:0;line-height:31px;margin:0 0 -1px 0;padding:0 10px;text-transform:uppercase}
-    #CadastroAbas .aberta a,#ProdAbas .aberta a{background-color:white;color:#747474}
-    #CadastroAbas a:hover,#ProdAbas a:hover{color:white}
-    #CadastroAbas .aberta a:hover,#ProdAbas .aberta a:hover{color:#747474}
-    .tablePage,table,.Pedidos{border:0 none;margin:10px 0;width:100%}
-    .board_htm.description table{width:inherit;margin:inherit}
-
-    #CadastroAbas li a, #ProdAbas.abasProduto li a, #CadastroAbas .aberta a, #ProdAbas.abasProduto .aberta a {
-        font-size: 26px !important;
-        font-weight: normal !important;
-        font-family: 'Oswald', sans-serif !important;
-    }
-
-    #ProdAbas .aberta, #ProdAbas li:hover {
-        background-color: #fff !important;
-        border-bottom: 4px solid #232323 !important;
-    }
-
-    /* -----------------------------------------------
-        Abas - Descrição / Pgto / Comentário
-    ----------------------------------------------- */
-    #ProdBlock{padding-bottom:0 !important; border-bottom:0 !important; margin:15px 0 !important;}
-    #ProdBlock > div{border:0 !important;}
-
-    /*#ProdBlock #formasPagto,
-    #ProdBlock #coments,*/
-    #ProdBlock .board{background-color:#f9f9f9 !important; border:0 !important; padding: 25px;}
-
-    /*
-    #ProdBlock .board .board_htm,
-    #ProdBlock .board .board_htm p,
-    #ProdBlock .board .board_htm p > span,
-    #ProdBlock .board .board_htm p span{font:14px 'Oxygen', sans-serif !important; color:#909090 !important;}
-    */
-
-    .page-product #comentario_cliente form#form-comments label{width:100%;}
-    .page-product #comentario_cliente form#form-comments label input.checkbox{display:inline-block;}
-    .page-product #comentario_cliente .stars{font-size:0}
-    .page-product #comentario_cliente .starn{background:url(/imggeral/loja/img01/stars-old.png);display:inline-block;width:37px;height:35px;text-align:left;cursor:pointer}
-    .page-product #comentario_cliente .star-on{background-position:0 -38px!important}
-    .page-product #comentario_cliente .rateBlock+img{background:url(../img/comment-button.jpg);cursor:pointer;height:0;margin-top:20px;padding:23px 91px;width:0}
-    .page-product .tray-hide{display:none;}
-
-
-    #ProdAbas li{margin:0 30px !important;border-bottom:4px solid rgba(255,255,255,0) !important;}
-
-    #ProdAbas li a,
-    #ProdAbas .aberta a{padding:14px 0 !important;}
-
-    #CadastroAbas li a,
-    #ProdAbas li a,
-    #CadastroAbas .aberta a,
-    #ProdAbas .aberta a{border:0 !important; border-radius:inherit !important; -webkit-border-radius:inherit !important; -moz-border-radius:inherit !important; margin: 0 !important;}
-
-    .page-product #CadastroAbas,
-    .page-product #ProdAbas{background-color:#fff !important; padding:0 !important; margin:0;}
-
-    #ProdAbas li a{outline:0; background-color: transparent !important; text-decoration:none !important;}
-    #ProdAbas .aberta,
-    #ProdAbas li:hover{background-color:#fff !important;border-bottom:4px solid #232323 !important;}
-
-    #ProdAbas .aberta a{color: #232323 !important;}
-    #ProdAbas li a{color:#232323 !important;}
-    #ProdAbas li a:hover,
-    #ProdAbas .aberta a:hover{color:#232323 !important;}
-
-    #CadastroAbas li a,
-    #ProdAbas.abasProduto li a,
-    #CadastroAbas .aberta a,
-    #ProdAbas.abasProduto .aberta a{font-size:26px !important;font-weight:normal !important;font-family:'Oswald', sans-serif !important;}
-    /*#ProdAbas.abasProduto{margin-bottom:20px !important;}*/
-
-
-    #form_pagamento h2{color:black !important;padding:0 12px}
-    #form_pagamento th{background:none}
-    .tablePage h3{color:black;font-size:16px;line-height:16px}
-    #form_pagamento .tit-valor-frete h3,#form_pagamento .caixa-frete .tit-frete{color:#747474;font-size:16px;font-weight:700;line-height:16px}
-    #form_pagamento .caixa-frete .tit-frete{padding:31px 9px;text-transform:uppercase}
-    .caixa-detalhes-compra .tit-nome-produto > div{margin-left:20px !important}
-    .caixa-detalhes-compra .tit-produto-total{width:110px}
-    .caixa-detalhes-compra .tit-qtde{text-align:center}
-    #form_pagamento .tit-produto-total h3{color:#555;font-size:14px}
-    .caixa-dados-entrega{background:#f9f9f9;padding:16px 21px 26px}
-    .board .caixa-dados-entrega tr{background:transparent}
-    .caixa-dados-entrega td,.caixa-dados-entrega th,.caixa-dados-entrega tr:first-child th{border:0 none;margin:0;padding:0}
-    #form_pagamento .caixa-dados-entrega h3{color:red;font:700 13px/13px 'Oxygen', sans-serif;margin:10px 0 0 0}
-    .escolha-forma-pagamento .tit-escolha-forma{color:black;display:block;margin:37px 0}
-    #form_pagamento .bt-altera-compra{background-color:white}
-    .Forma2{border:0 none;display:block;display:flex;width:auto}
-    .Forma2 > li{background-color:#f9f9f9;border:0 none;flex:1 auto;margin:0;padding:0;width:50%}
-    .Forma2 h3{background-color:#f0f0f0;border-bottom:0 none;border-left:2px solid white;border-right:0 none;border-top:0 none;color:black !important;font:700 16px/16px 'Oxygen', sans-serif;margin:0;padding:32px 21px;text-align:left}
-    .Forma2 > li:first-child h3{border-left:0 none}
-    .Forma2 ul{display:block;border-top:6px solid white;padding:10px 18px;text-align:left}
-    .caixa-formas-pagamento .Forma2 ul > li{display:inline-block;float:none;margin:5px 10px 0 0;vertical-align:middle;width:auto}
-    .caixa-formas-pagamento .Forma2 ul > li:first-child{margin-top:0}
-    .caixa-formas-pagamento .Forma2 ul > li:last-child{margin-right:0}
-    .caixa-formas-pagamento a{display:block}
-    .caixa-lista-formas #ProdAbas{border:0 none;margin:6px 0 0 0;padding:0}
-    .caixa-lista-formas #ProdAbas li{background:#f0f0f0;display:block;padding:30px 23px}
-    .caixa-lista-formas #ProdAbas a{background-color:transparent;border:0 none;border-radius:0;color:black;font:700 16px/16px 'Oxygen', sans-serif;letter-spacing:0;margin:0;padding:0}
-    #FormasPagamento fieldset{margin:0}
-    #FormasPagamento legend{background:none;border:0 none;display:block;margin-bottom:0;padding:0}
-    #FormasPagamento fieldset > span{min-height:53px;padding:10px 0 0 0;width:78%}
-    .Forma1 li{background:#f0f0f0;border:0 none}
-    .Forma1 li:nth-child(odd){background:white}
-    .Forma1 li:hover{background:#ddd}
-    .Forma1 .tablePags{border:1px solid #ddd;display:none;margin:15px}
-    .Forma1 .item-parcela{margin:8px 0 0 0}
-    .Forma1 tr,.Forma1 tr:first-child{background-color:white}
-
-    .page-product .Forma1 li, .page-product .Forma1 li:hover {
-        border: none;
-        margin: 0px 0;
-        padding: 20px;
-        background: #f9f9f9;
-    }
-
-    .Forma1 li:hover {
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .tablePags img { 
-        padding: 10px;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    
-    
-    .Forma1 .tablePags, .caixa-formas-pagamento {
-        display: contents;
-    }
-    
-    .page-product .Forma1 td {
-        width: 100%;
-    }
-    
-    .page-product .Forma1 .item-parcela:first-child {
-        border-top: none;
-        
-    }
-        
-    .page-product .Forma1 .item-parcela {
-        border-bottom: none;
-    }
-    
-    .page-product .Forma1 td:nth-child(2) {
-            text-align: center;
-            width: 50%;
-            padding: 5px!important;
-            float: left;
-    }
-    
-    .page-product .Forma1 td:nth-child(3) {
-        display: list-item; 
-        width: 50%; 
-        float: left;
-        padding: 5px!important;
-    }
-    
-    #CadastroAbas li a, #ProdAbas.abasProduto li a, #CadastroAbas .aberta a, #ProdAbas.abasProduto .aberta a {
-        font-size: 26px !important;
-        font-weight: normal !important;
-        font-family: 'Oswald', sans-serif !important;
-    }
-    
-    #ProdAbas .aberta>a, .caixa-lista-formas #ProdAbas>li>a {
-        background-color: #fff !important; 
-        border-radius: 0!important;
-        /* padding: 10px 0 !important; */
-        color: #000 !important;
-    }
-
-}
-
-.noSpacing {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-
-
-.at-svc-whatsapp, .at-svc-compact {
-    display: none!important;
-}
-
-
-.at-share-tbx-element .at-share-btn {
-    margin: 0px!important;
-}
-
-
-
-
-
- 
-#quantidade {    
-    border: 1px solid #666;
-}
-
-
-
-
-
-
-
-
+*/

@@ -6,7 +6,7 @@
         font-size: 1.5rem;
         font-family: OswaldRegular;
         line-height: 0px;
-        font-weight: normal!important;
+        font-weight: 800;
     }
 .search_Filter {
     background-color: #000;
@@ -149,7 +149,64 @@ select.inpSelect {
     background-color: red;
 }
 
-@media (max-width: 1400px) { 
+@media (max-width: 1400px) {
+    .catalog_Filter_Area span {
+        float: left;
+        font-size: 11pt;
+        font-family: OswaldRegular;
+        /*margin-left: 12px;*/
+        line-height: 22px;
+        text-transform: uppercase;
+    }
+    .filtro-ordem {
+        float: left;
+        color: #fff;
+        margin-top: 25px;
+        font-size: 8pt;
+        margin-left: 10px;
+    }
+    #select_ordem {
+        margin-left: 5px;
+        border-radius: 0;
+        display: inline-block;
+        font: 600 13px 'OxygenRegular', sans-serif;
+        margin: 0;
+        width: auto;
+        height: 34px;
+        padding: 6px 12px;
+        background-color: #000;
+        border: none;
+        color: #fff;
+        margin-top: -9px;
+        margin-right: -50px;
+        /*padding-left: 10%;*/
+        left:40%;
+    }
+
+    .filter {
+    background-color: #000 ;
+    margin:0; padding: 0;
+    color:#fff;
+    text-align:left;
+
+}
+
+    .filtermob {
+
+     margin-right:20px;
+    padding-right:0px;
+}
+    .margemMob {
+
+     margin-left:15%;
+
+}
+
+
+}
+
+
+@media (max-width: 1400px) {
     .search_Filter_Area span {
         float: left;
         font-size: 11pt;

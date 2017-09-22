@@ -18,8 +18,9 @@
     
     {% if settings.store_rating %}
     <div class="store-rating">
+        
         <h4>As melhores</h4>
-        <h3>Avalia&ccedil;&otilde;es</h3>
+        <h3>{{ Translation('avaliacoes') }}</h3>
         {% element 'CustomerReview.reviews' %}
     </div>
     {% endif %}
@@ -27,7 +28,7 @@
     {% if settings.store_top_search %}
     <div class="tagcloud">
         <h4>As palavras</h4>
-        <h3>Mais buscadas</h3>
+        <h3>{{ Translation('tags_mais_buscadas') }}</h3>
         {% element 'snippets/tagcloud' %}
     </div>
     {% endif %}
